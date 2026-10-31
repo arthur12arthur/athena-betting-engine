@@ -34,7 +34,7 @@ jobs:
         run: pip install -e .
 
       - name: Cache des données téléchargées
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: data/cache
           key: athena-cache-${{ github.run_id }}
