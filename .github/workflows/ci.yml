@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['site/**', 'data/state/**', '*.md']
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  qualite:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Installer
+        run: pip install -e ".[dev]"
+      - name: Lint
+        run: ruff check athena tests
+      - name: Tests unitaires
+        run: pytest -q
+      - name: Diagnostic des sources (réseau réel)
+        run: python -m athena.cli doctor
+      - name: Smoke test du pipeline (données minimales)
+        env:
+          ATHENA_SEASONS_FROM: "2023"
+          ATHENA_DISABLE_LLM: "true"
+        run: |
+          python -m athena.cli ingest --seasons-from 2023

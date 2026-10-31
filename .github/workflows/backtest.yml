@@ -1,0 +1,85 @@
+name: Backtest hebdomadaire
+
+# Réentraînement complet + backtest walk-forward sur les 3 dernières saisons.
+# Sert de garde-fou : si la méthodologie se dégrade, les chiffres bougent ici.
+on:
+  schedule:
+    - cron: "0 3 * * 1"   # lundi 03:00 UTC
+  workflow_dispatch:
+
+concurrency:
+  group: athena-backtest
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Installer ATHENA
+        run: pip install -e .
+
+      - name: Cache des données
+        uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: athena-cache-bt-${{ github.run_id }}
+          restore-keys: athena-cache-
+
+      - name: Déterminer les saisons à tester
+        id: saisons
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          from datetime import datetime
+          now = datetime.utcnow()
+          cur = now.year if now.month >= 7 else now.year - 1
+          print("seasons=" + ",".join(str(y) for y in (cur - 2, cur - 1, cur)))
+          PY
+
+      - name: Backtest walk-forward
+        env:
+          ATHENA_SEASONS_FROM: "2016"
+        run: |
+          python -m athena.cli backtest --seasons "${{ steps.saisons.outputs.seasons }}" --render
+
+      - name: Résumé des performances
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          r = json.loads(Path("site/data/backtest.json").read_text())
+          p, pr = r["performance"], r["predictions"]
+          lines = [
+            "## Backtest ATHENA",
+            f"- saisons : {r['seasons']}",
+            f"- prédictions : n={pr['n']} · logloss={pr['logloss']} · brier={pr['brier']} · RPS={pr['rps']} · précision={pr['accuracy']}",
+            f"- paris : n={p['n_bets']} · ROI={p['roi']:.2%} · P&L={p['pnl']} · drawdown max={p['max_drawdown']:.2%}",
+            f"- CLV moyen : {p['clv_avg']}",
+            f"- par saison : {[(s['season'], s['n_bets'], s['roi']) for s in r['per_season']]}",
+          ]
+          Path("resume.md").write_text("\n".join(lines) + "\n")
+          print("\n".join(lines))
+          PY
+          cat resume.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Committer le rapport
+        run: |
+          git config user.name "ATHENA Bot"
+          git config user.email "athena-bot@users.noreply.github.com"
+          git add site
+          if git diff --cached --quiet; then
+            echo "Aucun changement."
+          else
+            git commit -m "chore(backtest): rapport $(date -u +'%Y-%m-%d')"
+            git push
+          fi

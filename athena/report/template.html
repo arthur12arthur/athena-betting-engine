@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ATHENA — moteur de pronostics sportifs</title>
+<meta name="description" content="ATHENA : moteur quantitatif de pronostics football. Dixon-Coles + Elo + gradient boosting, value betting et gestion de bankroll. Données et infrastructure 100 % gratuites.">
+<style>
+  :root{
+    --bg:#070b14; --bg2:#0b1120; --card:#0f172a; --card2:#131c31;
+    --line:#1e293b; --line2:#273449;
+    --txt:#e2e8f0; --muted:#8b9bb4; --dim:#64748b;
+    --green:#34d399; --blue:#38bdf8; --amber:#fbbf24; --red:#f87171;
+    --violet:#a78bfa;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:
+      radial-gradient(1100px 520px at 12% -10%, #12233d 0%, transparent 60%),
+      radial-gradient(900px 420px at 92% 0%, #0d2a2a 0%, transparent 55%),
+      var(--bg);
+    color:var(--txt);
+    font:15px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1180px;margin:0 auto;padding:26px 20px 70px}
+  .muted{color:var(--muted)}
+  .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum";white-space:nowrap}
+
+  /* ---------- header ---------- */
+  header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;
+    padding:22px 24px;border:1px solid var(--line);border-radius:18px;
+    background:linear-gradient(160deg,var(--card2),var(--card));margin-bottom:22px}
+  .brand{display:flex;gap:14px;align-items:center}
+  .logo{width:46px;height:46px;flex:0 0 auto}
+  h1{margin:0;font-size:23px;letter-spacing:.16em;font-weight:700}
+  .tagline{margin:2px 0 0;color:var(--muted);font-size:12.5px;letter-spacing:.02em}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+  .badge{font-size:11.5px;padding:5px 10px;border-radius:999px;border:1px solid var(--line2);
+    background:#0b1322;color:var(--muted);white-space:nowrap}
+  .badge b{color:var(--txt);font-weight:600}
+
+  /* ---------- sections ---------- */
+  section{margin:30px 0 0}
+  .sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:14px}
+  h2{font-size:15px;letter-spacing:.12em;text-transform:uppercase;margin:0;color:#cbd5e1}
+  .sec-sub{color:var(--dim);font-size:12.5px}
+
+  /* ---------- KPI ---------- */
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:12px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .kpi.accent{border-color:#1c4d3f;background:linear-gradient(160deg,#0d211c,#0f172a)}
+  .kpi-l{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--dim)}
+  .kpi-v{font-size:22px;font-weight:700;margin-top:4px;font-variant-numeric:tabular-nums}
+  .kpi-s{font-size:11.5px;color:var(--muted);margin-top:2px}
+
+  /* ---------- cards ---------- */
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .bet-top{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+  .league{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+  .card h3{margin:4px 0 12px;font-size:16.5px;line-height:1.3}
+  .bet-line{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;font-size:13px}
+  .bet-line div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--line);padding-bottom:5px}
+  .bet-foot{margin-top:10px;font-size:11.5px}
+  .tag{font-size:10.5px;padding:3px 8px;border-radius:999px;border:1px solid transparent;letter-spacing:.04em}
+  .tag.green{background:#0c2a22;color:var(--green);border-color:#17503f}
+  .tag.warn{background:#2a2210;color:var(--amber);border-color:#4d3c12}
+  .empty{padding:18px;border:1px dashed var(--line2);border-radius:14px;text-align:center}
+
+  /* ---------- tables ---------- */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  thead th{position:sticky;top:0;background:#0c1526;text-align:left;padding:11px 12px;
+    font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);
+    border-bottom:1px solid var(--line);white-space:nowrap}
+  tbody td{padding:10px 12px;border-bottom:1px solid #141e30;vertical-align:middle}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:#0d1626}
+  td.lg{color:var(--dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em}
+  td.teams{min-width:196px}
+  td.teams b{font-weight:600}
+  .probcell{min-width:150px}
+  .pbar{display:flex;height:8px;border-radius:6px;overflow:hidden;background:#0a1120}
+  .pb{display:block;height:100%}
+  .pb.h{background:var(--blue)}
+  .pb.d{background:#475569}
+  .pb.a{background:var(--violet)}
+  .plabels{display:flex;justify-content:space-between;font-size:10.5px;color:var(--dim);margin-top:3px;
+    font-variant-numeric:tabular-nums}
+
+  /* ---------- grid panels ---------- */
+  .cols{display:grid;grid-template-columns:1.55fr 1fr;gap:14px}
+  @media(max-width:900px){.cols{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .panel h3{margin:0 0 4px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#cbd5e1}
+  .panel .sub{color:var(--dim);font-size:12px;margin-bottom:12px}
+  .chart{width:100%;height:190px;display:block}
+  .chart.small{height:170px}
+  .chart-legend{display:flex;justify-content:space-between;font-size:11px;color:var(--dim);margin-top:6px;flex-wrap:wrap;gap:8px}
+  .chart-legend .k{padding-left:12px;position:relative}
+  .chart-legend .k:before{content:"";position:absolute;left:0;top:5px;width:7px;height:7px;border-radius:2px}
+  .chart-legend .k.blue:before{background:var(--blue)}
+  .chart-legend .k.green:before{background:var(--green)}
+
+  .ratings{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+  .rating-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+  .rating-card h4{margin:0 0 8px;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+  .rating-card ol{list-style:none;margin:0;padding:0;font-size:13px}
+  .rating-card li{display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px dashed #162034}
+  .rating-card li:last-child{border-bottom:none}
+  .rk{width:16px;color:var(--dim);font-size:11px}
+  .tn{flex:1}
+  .rt{color:var(--green);font-variant-numeric:tabular-nums;font-size:12px}
+
+  /* ---------- method ---------- */
+  .method{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .method .panel p{margin:6px 0 0;font-size:13px;color:var(--muted)}
+  .method .panel b{color:var(--txt)}
+  code{background:#0a1220;border:1px solid var(--line);padding:1px 5px;border-radius:5px;font-size:12px}
+  footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);color:var(--dim);font-size:12px}
+  .warnbox{margin-top:14px;padding:12px 14px;border:1px solid #4d3c12;background:#241c0c;
+    border-radius:12px;color:#e9d8a6;font-size:12.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient></defs>
+      <path d="M24 3 43 13.5v21L24 45 5 34.5v-21L24 3Z" stroke="url(#g)" stroke-width="2.2"/>
+      <path d="M16 33 24 14l8 19" stroke="url(#g)" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M19.5 27h9" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <h1>ATHENA</h1>
+      <p class="tagline">Moteur quantitatif de pronostics football · Dixon-Coles + Elo + gradient boosting · value betting</p>
+    </div>
+  </div>
+  <div class="meta">
+    <span class="badge">maj <b>__GENERATED__</b></span>
+    <span class="badge">modèle <b>__VERSION__</b></span>
+    <span class="badge">poids Dixon-Coles <b>__MODEL_WDC__</b></span>
+    <span class="badge">T° calibration <b>__MODEL_T__</b></span>
+    <span class="badge">apprentissage <b>__N_MATCHES__ matchs</b></span>
+  </div>
+</header>
+
+<section>
+  <div class="sec-head">
+    <h2>Portefeuille papier</h2>
+    <span class="sec-sub">bankroll simulée — aucun argent réel, aucun compte bookmaker</span>
+  </div>
+  <div class="kpis">__KPI__</div>
+  <div style="margin-top:14px" class="panel">
+    <h3>Courbe de capital (paper trading)</h3>
+    <div class="sub">Chaque point = une exécution quotidienne après règlement des paris.</div>
+    __LEDGER_EQUITY__
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>Value bets du jour</h2>
+    <span class="sec-sub">edge = probabilité juste × cote − 1, après ancrage sur le marché sharp</span>
+  </div>
+  <div class="cards">__BETS__</div>
+  <div class="warnbox">
+    <b>Lecture honnête :</b> un value bet n'est pas une certitude. Sans clé <code>ODDS_API_KEY</code>
+    (palier gratuit), le prix comparé est celui du même bookmaker que la référence : l'edge est alors
+    plus fragile, il est donc plafonné et misé à demi-Kelly (badge « source unique »).
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>Prédictions — __N_FIXTURES__ matchs</h2>
+    <span class="sec-sub">probabilités 1X2, cotes justes, buts attendus, score le plus probable</span>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr>
+        <th>Ligue</th><th>Match</th><th>1 / X / 2 (modèle)</th>
+        <th>Cote juste</th><th>Cote Pinnacle</th><th>xG</th><th>Score</th><th>Value</th>
+      </tr></thead>
+      <tbody>__ROWS__</tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>Performance du modèle</h2>
+    <span class="sec-sub">backtest walk-forward, saisons complètes, aucune donnée future</span>
+  </div>
+  <div class="kpis">__BT_KPI__</div>
+  <div class="cols" style="margin-top:14px">
+    <div class="panel">
+      <h3>Courbe de capital du backtest</h3>
+      <div class="sub">Paris pris aux cotes moyennes du marché, dégradées de 1,5 % (slippage).</div>
+      __EQUITY__
+    </div>
+    <div class="panel">
+      <h3>Calibration</h3>
+      <div class="sub">Probabilité annoncée vs fréquence réelle : les barres doivent coïncider.</div>
+      __CALIB__
+    </div>
+  </div>
+  <div class="cols" style="margin-top:14px">
+    <div class="panel">
+      <h3>Par ligue</h3>
+      <div class="sub">ROI et P&amp;L du backtest.</div>
+      <div class="tablewrap" style="border:none">
+        <table><thead><tr><th>Ligue</th><th>Paris</th><th>ROI</th><th>P&amp;L</th></tr></thead>
+        <tbody>__LEAGUE_TABLE__</tbody></table>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Par saison</h3>
+      <div class="sub">Poids Dixon-Coles et ROI par saison testée.</div>
+      <div class="tablewrap" style="border:none">
+        <table><thead><tr><th>Saison</th><th>Paris</th><th>ROI</th><th>P&amp;L</th><th>w(DC)</th></tr></thead>
+        <tbody>__SEASON_TABLE__</tbody></table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>Classements internes</h2>
+    <span class="sec-sub">force offensive/défensive estimée par Dixon-Coles (rating = attaque + défense, deux forces croissantes)</span>
+  </div>
+  <div class="ratings">__RATINGS__</div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>Méthodologie</h2></div>
+  <div class="method">
+    <div class="panel">
+      <h3>1 · Données</h3>
+      <p><b>football-data.co.uk</b> — résultats et cotes de clôture depuis 2016 (gratuit, sans clé).
+      <b>ESPN</b> — calendriers et scores. <b>Pinnacle</b> — cotes sharp de référence.
+      Tout est public et gratuit.</p>
+    </div>
+    <div class="panel">
+      <h3>2 · Modèles</h3>
+      <p><b>Dixon-Coles</b> (Poisson bivarié, décroissance temporelle, correction des scores faibles)
+      + <b>Elo</b> + <b>LightGBM</b> (forme, xG, calendrier). Mélange au niveau des matrices de scores,
+      poids choisi par validation temporelle, puis calibration de température.</p>
+    </div>
+    <div class="panel">
+      <h3>3 · Décision</h3>
+      <p>Les cotes sont dé-viggées (méthode <i>power</i>) pour estimer la probabilité de marché.
+      L'edge est calculé sur une probabilité <b>ancrée 70 % sur le marché</b>, plafonné, avec garde-fou
+      de divergence : un désaccord énorme est traité comme une erreur de modèle, pas comme une aubaine.</p>
+    </div>
+    <div class="panel">
+      <h3>4 · Mise</h3>
+      <p><b>Kelly fractionnaire</b> (22 %), plafond 2 % de bankroll par pari, 7 % d'exposition
+      journalière, 8 paris maximum. Deux métriques comptent : le ROI et surtout le <b>CLV</b>
+      (battre la cote de clôture), seul indicateur d'un edge réel.</p>
+    </div>
+  </div>
+  <div class="warnbox" style="border-color:#4d3c12">
+    <b>Avertissement.</b> Ce projet est un outil d'analyse et de paper trading à but éducatif.
+    Aucune méthode ne garantit un gain : le backtest est une reconstitution historique, pas une promesse.
+    Les paris sportifs comportent un risque de perte et d'addiction. Jouer comporte des risques :
+    endettement, isolement, dépendance. 18+.
+  </div>
+</section>
+
+<footer>
+  ATHENA · moteur open-source · données publiques gratuites · généré automatiquement par GitHub Actions.
+  Les probabilités affichées sont des estimations statistiques, pas des conseils d'investissement.
+</footer>
+
+</div>
+</body>
+</html>

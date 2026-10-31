@@ -1,0 +1,68 @@
+name: ATHENA quotidien
+
+# Trois exécutions par jour : ingestion des résultats, règlement des paris,
+# nouvelles prédictions, publication du dashboard.
+on:
+  schedule:
+    - cron: "20 5,11,17 * * *"   # 05:20 / 11:20 / 17:20 UTC
+  workflow_dispatch:
+    inputs:
+      horizon:
+        description: "Fenêtre de pronostic (jours)"
+        default: "3"
+
+concurrency:
+  group: athena-daily
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Installer ATHENA
+        run: pip install -e .
+
+      - name: Cache des données téléchargées
+        uses: actions/cache@v4
+        with:
+          path: data/cache
+          key: athena-cache-${{ github.run_id }}
+          restore-keys: athena-cache-
+
+      - name: Pipeline quotidien
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python -m athena.cli daily
+
+      - name: Publier les artefacts du jour
+        uses: actions/upload-artifact@v4
+        with:
+          name: athena-publication
+          path: |
+            site/
+            data/state/ledger.json
+          retention-days: 14
+
+      - name: Committer les résultats
+        run: |
+          git config user.name "ATHENA Bot"
+          git config user.email "athena-bot@users.noreply.github.com"
+          git add site data/state
+          if git diff --cached --quiet; then
+            echo "Aucun changement à committer."
+          else
+            git commit -m "chore(daily): prédictions du $(date -u +'%Y-%m-%d %H:%M') UTC"
+            git push
+          fi

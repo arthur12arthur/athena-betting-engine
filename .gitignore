@@ -1,0 +1,18 @@
+# données volumineuses et caches (regénérables)
+data/cache/
+data/raw/
+*.pyc
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+.DS_Store
+
+# ne jamais versionner de clé
+.env
+*.key
+secrets*

@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ATHENA — moteur de pronostics sportifs</title>
+<meta name="description" content="ATHENA : moteur quantitatif de pronostics football. Dixon-Coles + Elo + gradient boosting, value betting et gestion de bankroll. Données et infrastructure 100 % gratuites.">
+<style>
+  :root{
+    --bg:#070b14; --bg2:#0b1120; --card:#0f172a; --card2:#131c31;
+    --line:#1e293b; --line2:#273449;
+    --txt:#e2e8f0; --muted:#8b9bb4; --dim:#64748b;
+    --green:#34d399; --blue:#38bdf8; --amber:#fbbf24; --red:#f87171;
+    --violet:#a78bfa;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:
+      radial-gradient(1100px 520px at 12% -10%, #12233d 0%, transparent 60%),
+      radial-gradient(900px 420px at 92% 0%, #0d2a2a 0%, transparent 55%),
+      var(--bg);
+    color:var(--txt);
+    font:15px/1.55 ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .wrap{max-width:1180px;margin:0 auto;padding:26px 20px 70px}
+  .muted{color:var(--muted)}
+  .num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum";white-space:nowrap}
+
+  /* ---------- header ---------- */
+  header{display:flex;flex-wrap:wrap;gap:18px;align-items:center;justify-content:space-between;
+    padding:22px 24px;border:1px solid var(--line);border-radius:18px;
+    background:linear-gradient(160deg,var(--card2),var(--card));margin-bottom:22px}
+  .brand{display:flex;gap:14px;align-items:center}
+  .logo{width:46px;height:46px;flex:0 0 auto}
+  h1{margin:0;font-size:23px;letter-spacing:.16em;font-weight:700}
+  .tagline{margin:2px 0 0;color:var(--muted);font-size:12.5px;letter-spacing:.02em}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+  .badge{font-size:11.5px;padding:5px 10px;border-radius:999px;border:1px solid var(--line2);
+    background:#0b1322;color:var(--muted);white-space:nowrap}
+  .badge b{color:var(--txt);font-weight:600}
+
+  /* ---------- sections ---------- */
+  section{margin:30px 0 0}
+  .sec-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;margin-bottom:14px}
+  h2{font-size:15px;letter-spacing:.12em;text-transform:uppercase;margin:0;color:#cbd5e1}
+  .sec-sub{color:var(--dim);font-size:12.5px}
+
+  /* ---------- KPI ---------- */
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:12px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+  .kpi.accent{border-color:#1c4d3f;background:linear-gradient(160deg,#0d211c,#0f172a)}
+  .kpi-l{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--dim)}
+  .kpi-v{font-size:22px;font-weight:700;margin-top:4px;font-variant-numeric:tabular-nums}
+  .kpi-s{font-size:11.5px;color:var(--muted);margin-top:2px}
+
+  /* ---------- cards ---------- */
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .bet-top{display:flex;gap:8px;align-items:center;margin-bottom:8px;flex-wrap:wrap}
+  .league{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+  .card h3{margin:4px 0 12px;font-size:16.5px;line-height:1.3}
+  .bet-line{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px;font-size:13px}
+  .bet-line div{display:flex;justify-content:space-between;gap:8px;border-bottom:1px dashed var(--line);padding-bottom:5px}
+  .bet-foot{margin-top:10px;font-size:11.5px}
+  .tag{font-size:10.5px;padding:3px 8px;border-radius:999px;border:1px solid transparent;letter-spacing:.04em}
+  .tag.green{background:#0c2a22;color:var(--green);border-color:#17503f}
+  .tag.warn{background:#2a2210;color:var(--amber);border-color:#4d3c12}
+  .empty{padding:18px;border:1px dashed var(--line2);border-radius:14px;text-align:center}
+
+  /* ---------- tables ---------- */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  thead th{position:sticky;top:0;background:#0c1526;text-align:left;padding:11px 12px;
+    font-size:10.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);
+    border-bottom:1px solid var(--line);white-space:nowrap}
+  tbody td{padding:10px 12px;border-bottom:1px solid #141e30;vertical-align:middle}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:#0d1626}
+  td.lg{color:var(--dim);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em}
+  td.teams{min-width:196px}
+  td.teams b{font-weight:600}
+  .probcell{min-width:150px}
+  .pbar{display:flex;height:8px;border-radius:6px;overflow:hidden;background:#0a1120}
+  .pb{display:block;height:100%}
+  .pb.h{background:var(--blue)}
+  .pb.d{background:#475569}
+  .pb.a{background:var(--violet)}
+  .plabels{display:flex;justify-content:space-between;font-size:10.5px;color:var(--dim);margin-top:3px;
+    font-variant-numeric:tabular-nums}
+
+  /* ---------- grid panels ---------- */
+  .cols{display:grid;grid-template-columns:1.55fr 1fr;gap:14px}
+  @media(max-width:900px){.cols{grid-template-columns:1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px}
+  .panel h3{margin:0 0 4px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#cbd5e1}
+  .panel .sub{color:var(--dim);font-size:12px;margin-bottom:12px}
+  .chart{width:100%;height:190px;display:block}
+  .chart.small{height:170px}
+  .chart-legend{display:flex;justify-content:space-between;font-size:11px;color:var(--dim);margin-top:6px;flex-wrap:wrap;gap:8px}
+  .chart-legend .k{padding-left:12px;position:relative}
+  .chart-legend .k:before{content:"";position:absolute;left:0;top:5px;width:7px;height:7px;border-radius:2px}
+  .chart-legend .k.blue:before{background:var(--blue)}
+  .chart-legend .k.green:before{background:var(--green)}
+
+  .ratings{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+  .rating-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
+  .rating-card h4{margin:0 0 8px;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim)}
+  .rating-card ol{list-style:none;margin:0;padding:0;font-size:13px}
+  .rating-card li{display:flex;align-items:center;gap:8px;padding:4px 0;border-bottom:1px dashed #162034}
+  .rating-card li:last-child{border-bottom:none}
+  .rk{width:16px;color:var(--dim);font-size:11px}
+  .tn{flex:1}
+  .rt{color:var(--green);font-variant-numeric:tabular-nums;font-size:12px}
+
+  /* ---------- method ---------- */
+  .method{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+  .method .panel p{margin:6px 0 0;font-size:13px;color:var(--muted)}
+  .method .panel b{color:var(--txt)}
+  code{background:#0a1220;border:1px solid var(--line);padding:1px 5px;border-radius:5px;font-size:12px}
+  footer{margin-top:36px;padding-top:18px;border-top:1px solid var(--line);color:var(--dim);font-size:12px}
+  .warnbox{margin-top:14px;padding:12px 14px;border:1px solid #4d3c12;background:#241c0c;
+    border-radius:12px;color:#e9d8a6;font-size:12.5px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%" stop-color="#34d399"/><stop offset="100%" stop-color="#38bdf8"/></linearGradient></defs>
+      <path d="M24 3 43 13.5v21L24 45 5 34.5v-21L24 3Z" stroke="url(#g)" stroke-width="2.2"/>
+      <path d="M16 33 24 14l8 19" stroke="url(#g)" stroke-width="2.6" stroke-linejoin="round"/>
+      <path d="M19.5 27h9" stroke="url(#g)" stroke-width="2.4" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <h1>ATHENA</h1>
+      <p class="tagline">Moteur quantitatif de pronostics football · Dixon-Coles + Elo + gradient boosting · value betting</p>
+    </div>
+  </div>
+  <div class="meta">
+    <span class="badge">maj <b>31/10/2026 22:35 UTC</b></span>
+    <span class="badge">modèle <b>athena-1.0-20261031</b></span>
+    <span class="badge">poids Dixon-Coles <b>0.1</b></span>
+    <span class="badge">T° calibration <b>1.073</b></span>
+    <span class="badge">apprentissage <b>41323 matchs</b></span>
+  </div>
+</header>
+
+<section>
+  <div class="sec-head">
+    <h2>Portefeuille papier</h2>
+    <span class="sec-sub">bankroll simulée — aucun argent réel, aucun compte bookmaker</span>
+  </div>
+  <div class="kpis"><div class="kpi "><div class="kpi-l">Bankroll papier</div><div class="kpi-v">1 000 u</div><div class=kpi-s>départ 1 000 u</div></div><div class="kpi "><div class="kpi-l">Paris réglés</div><div class="kpi-v">0</div><div class=kpi-s>8 en cours</div></div><div class="kpi "><div class="kpi-l">ROI (papier)</div><div class="kpi-v">+0.0 %</div></div><div class="kpi "><div class="kpi-l">Taux de réussite</div><div class="kpi-v">0.0 %</div></div><div class="kpi "><div class="kpi-l">CLV moyen</div><div class="kpi-v">—</div><div class=kpi-s>battre la clôture</div></div><div class="kpi "><div class="kpi-l">Exposition</div><div class="kpi-v">41.23 u</div><div class=kpi-s>mises ouvertes</div></div></div>
+  <div style="margin-top:14px" class="panel">
+    <h3>Courbe de capital (paper trading)</h3>
+    <div class="sub">Chaque point = une exécution quotidienne après règlement des paris.</div>
+    <p class="muted">Pas encore assez de données pour tracer la courbe.</p>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>Value bets du jour</h2>
+    <span class="sec-sub">edge = probabilité juste × cote − 1, après ancrage sur le marché sharp</span>
+  </div>
+  <div class="cards">
+    <article class="card bet">
+      <div class="bet-top">
+        <span class="league">Bundesliga</span>
+        <span class="tag green">edge +9.8 %</span><span class="tag warn">source unique</span>
+      </div>
+      <h3>Ein Frankfurt <span class="muted">vs</span> Hamburg</h3>
+      <div class="bet-line">
+        <div><span class="muted">Pari</span><b>X (nul)</b></div>
+        <div><span class="muted">Cote</span><b>4.75</b></div>
+        <div><span class="muted">Probabilité juste</span><b>23.1 %</b></div>
+        <div><span class="muted">Mise</span><b>5.76 u</b></div>
+      </div>
+      <div class="bet-foot muted">2026-11-01 · pinnacle · marché sharp
+        19.7 %</div>
+    </article>
+    <article class="card bet">
+      <div class="bet-top">
+        <span class="league">Serie A</span>
+        <span class="tag green">edge +7.8 %</span><span class="tag warn">source unique</span>
+      </div>
+      <h3>Lecce <span class="muted">vs</span> Genoa</h3>
+      <div class="bet-line">
+        <div><span class="muted">Pari</span><b>1 (domicile)</b></div>
+        <div><span class="muted">Cote</span><b>3.41</b></div>
+        <div><span class="muted">Probabilité juste</span><b>31.6 %</b></div>
+        <div><span class="muted">Mise</span><b>7.17 u</b></div>
+      </div>
+      <div class="bet-foot muted">2026-11-01 · pinnacle · marché sharp
+        28.3 %</div>
+    </article>
+    <article class="card bet">
+      <div class="bet-top">
+        <span class="league">Serie A</span>
+        <span class="tag green">edge +6.8 %</span><span class="tag warn">source unique</span>
+      </div>
+      <h3>Frosinone <span class="muted">vs</span> Torino</h3>
+      <div class="bet-line">
+        <div><span class="muted">Pari</span><b>X (nul)</b></div>
+        <div><span class="muted">Cote</span><b>3.96</b></div>
+        <div><span class="muted">Probabilité juste</span><b>27.0 %</b></div>
+        <div><span class="muted">Mise</span><b>5.08 u</b></div>
+      </div>
+      <div class="bet-foot muted">2026-11-01 · pinnacle · marché sharp
+        24.3 %</div>
+    </article>
+    <article class="card bet">
+      <div class="bet-top">
+        <span class="league">Primeira Liga</span>
+        <span class="tag green">edge +6.5 %</span><span class="tag warn">source unique</span>
+      </div>
+      <h3>Sp Braga <span class="muted">vs</span> Famalicao</h3>
+      <div class="bet-line">
+        <div><span class="muted">Pari</span><b>2 (extérieur)</b></div>
+        <div><span class="muted">Cote</span><b>5.32</b></div>
+        <div><span class="muted">Probabilité juste</span><b>20.0 %</b></div>
+        <div><span class="muted">Mise</span><b>3.31 u</b></div>
+      </div>
+      <div class="bet-foot muted">2026-11-01 · pinnacle · marché sharp
+        17.5 %</div>
+    </article>
+    <article class="card bet">
+      <div class="bet-top">
+        <span class="league">Ligue 1</span>
+        <span class="tag green">edge +6.2 %</span><span class="tag warn">source unique</span>
+      </div>
+      <h3>Strasbourg <span class="muted">vs</span> Auxerre</h3>
+      <div class="bet-line">
+        <div><span class="muted">Pari</span><b>2 (extérieur)</b></div>
+        <div><span class="muted">Cote</span><b>4.01</b></div>
+        <div><span class="muted">Probabilité juste</span><b>26.5 %</b></div>
+        <div><span class="muted">Mise</span><b>4.52 u</b></div>
+      </div>
+      <div class="bet-foot muted">2026-11-01 · pinnacle · marché sharp
+        23.7 %</div>
+    </article>
+    <article class="card bet">
+      <div class="bet-top">
+        <span class="league">Serie A</span>
+        <span class="tag green">edge +5.2 %</span><span class="tag warn">source unique</span>
+      </div>
+      <h3>Sassuolo <span class="muted">vs</span> Fiorentina</h3>
+      <div class="bet-line">
+        <div><span class="muted">Pari</span><b>1 (domicile)</b></div>
+        <div><span class="muted">Cote</span><b>2.90</b></div>
+        <div><span class="muted">Probabilité juste</span><b>36.3 %</b></div>
+        <div><span class="muted">Mise</span><b>5.97 u</b></div>
+      </div>
+      <div class="bet-foot muted">2026-11-02 · pinnacle · marché sharp
+        33.5 %</div>
+    </article>
+    <article class="card bet">
+      <div class="bet-top">
+        <span class="league">Championship</span>
+        <span class="tag green">edge +5.1 %</span><span class="tag warn">source unique</span>
+      </div>
+      <h3>West Brom <span class="muted">vs</span> Southampton</h3>
+      <div class="bet-line">
+        <div><span class="muted">Pari</span><b>2 (extérieur)</b></div>
+        <div><span class="muted">Cote</span><b>2.76</b></div>
+        <div><span class="muted">Probabilité juste</span><b>38.1 %</b></div>
+        <div><span class="muted">Mise</span><b>6.38 u</b></div>
+      </div>
+      <div class="bet-foot muted">2026-11-03 · pinnacle · marché sharp
+        34.7 %</div>
+    </article>
+    <article class="card bet">
+      <div class="bet-top">
+        <span class="league">Primeira Liga</span>
+        <span class="tag green">edge +4.5 %</span><span class="tag warn">source unique</span>
+      </div>
+      <h3>Academico Viseu <span class="muted">vs</span> Rio Ave</h3>
+      <div class="bet-line">
+        <div><span class="muted">Pari</span><b>2 (extérieur)</b></div>
+        <div><span class="muted">Cote</span><b>4.26</b></div>
+        <div><span class="muted">Probabilité juste</span><b>24.5 %</b></div>
+        <div><span class="muted">Mise</span><b>3.04 u</b></div>
+      </div>
+      <div class="bet-foot muted">2026-11-01 · pinnacle · marché sharp
+        22.3 %</div>
+    </article></div>
+  <div class="warnbox">
+    <b>Lecture honnête :</b> un value bet n'est pas une certitude. Sans clé <code>ODDS_API_KEY</code>
+    (palier gratuit), le prix comparé est celui du même bookmaker que la référence : l'edge est alors
+    plus fragile, il est donc plafonné et misé à demi-Kelly (badge « source unique »).
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>Prédictions — 57 matchs</h2>
+    <span class="sec-sub">probabilités 1X2, cotes justes, buts attendus, score le plus probable</span>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead><tr>
+        <th>Ligue</th><th>Match</th><th>1 / X / 2 (modèle)</th>
+        <th>Cote juste</th><th>Cote Pinnacle</th><th>xG</th><th>Score</th><th>Value</th>
+      </tr></thead>
+      <tbody>
+      <tr>
+        <td class="lg">Eredivisie</td>
+        <td class="teams"><b>Cambuur</b><span class="muted"> — </span>Go Ahead Eagles</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:32.4%"></span><span class="pb d" style="width:31.3%"></span><span class="pb a" style="width:36.3%"></span></div><div class="plabels"><span>32%</span><span>31%</span><span>36%</span></div></td>
+        <td class="num">3.08 · 3.19 · 2.76</td>
+        <td class="num">—</td>
+        <td class="num">1.52 - 1.94</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Super Lig</td>
+        <td class="teams"><b>Amedspor</b><span class="muted"> — </span>Eyupspor</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:71.5%"></span><span class="pb d" style="width:18.1%"></span><span class="pb a" style="width:10.4%"></span></div><div class="plabels"><span>71%</span><span>18%</span><span>10%</span></div></td>
+        <td class="num">1.40 · 5.53 · 9.59</td>
+        <td class="num">1.25 · 6.44 · 11.72</td>
+        <td class="num">1.46 - 1.09</td>
+        <td class="num">2-0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Eredivisie</td>
+        <td class="teams"><b>Zwolle</b><span class="muted"> — </span>Den Haag</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:48.7%"></span><span class="pb d" style="width:23.3%"></span><span class="pb a" style="width:28.0%"></span></div><div class="plabels"><span>49%</span><span>23%</span><span>28%</span></div></td>
+        <td class="num">2.05 · 4.29 · 3.58</td>
+        <td class="num">2.35 · 3.74 · 2.92</td>
+        <td class="num">1.70 - 1.49</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Serie A</td>
+        <td class="teams"><b>Como</b><span class="muted"> — </span>Venezia</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:76.6%"></span><span class="pb d" style="width:16.1%"></span><span class="pb a" style="width:7.3%"></span></div><div class="plabels"><span>77%</span><span>16%</span><span>7%</span></div></td>
+        <td class="num">1.31 · 6.21 · 13.68</td>
+        <td class="num">1.30 · 6.32 · 9.20</td>
+        <td class="num">1.66 - 0.87</td>
+        <td class="num">2-0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Pro League</td>
+        <td class="teams"><b>Cercle Brugge</b><span class="muted"> — </span>Antwerp</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:37.9%"></span><span class="pb d" style="width:29.1%"></span><span class="pb a" style="width:33.0%"></span></div><div class="plabels"><span>38%</span><span>29%</span><span>33%</span></div></td>
+        <td class="num">2.64 · 3.44 · 3.03</td>
+        <td class="num">2.07 · 3.91 · 3.35</td>
+        <td class="num">1.43 - 1.31</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">LaLiga</td>
+        <td class="teams"><b>Getafe</b><span class="muted"> — </span>Sevilla</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:35.4%"></span><span class="pb d" style="width:31.9%"></span><span class="pb a" style="width:32.8%"></span></div><div class="plabels"><span>35%</span><span>32%</span><span>33%</span></div></td>
+        <td class="num">2.83 · 3.14 · 3.05</td>
+        <td class="num">3.30 · 3.04 · 2.49</td>
+        <td class="num">1.29 - 0.96</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Premiership</td>
+        <td class="teams"><b>Falkirk</b><span class="muted"> — </span>Celtic</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:12.3%"></span><span class="pb d" style="width:17.2%"></span><span class="pb a" style="width:70.5%"></span></div><div class="plabels"><span>12%</span><span>17%</span><span>70%</span></div></td>
+        <td class="num">8.11 · 5.83 · 1.42</td>
+        <td class="num">6.46 · 5.00 · 1.46</td>
+        <td class="num">1.13 - 2.01</td>
+        <td class="num">1-2</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Super Lig</td>
+        <td class="teams"><b>Buyuksehyr</b><span class="muted"> — </span>Samsunspor</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:60.2%"></span><span class="pb d" style="width:28.5%"></span><span class="pb a" style="width:11.3%"></span></div><div class="plabels"><span>60%</span><span>29%</span><span>11%</span></div></td>
+        <td class="num">1.66 · 3.51 · 8.84</td>
+        <td class="num">1.79 · 4.08 · 4.26</td>
+        <td class="num">1.67 - 1.11</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Super Lig</td>
+        <td class="teams"><b>Trabzonspor</b><span class="muted"> — </span>Gaziantep</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:70.8%"></span><span class="pb d" style="width:18.7%"></span><span class="pb a" style="width:10.5%"></span></div><div class="plabels"><span>71%</span><span>19%</span><span>10%</span></div></td>
+        <td class="num">1.41 · 5.35 · 9.56</td>
+        <td class="num">1.28 · 6.49 · 9.39</td>
+        <td class="num">1.97 - 1.03</td>
+        <td class="num">2-0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Eredivisie</td>
+        <td class="teams"><b>Excelsior</b><span class="muted"> — </span>Twente</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:21.0%"></span><span class="pb d" style="width:26.6%"></span><span class="pb a" style="width:52.4%"></span></div><div class="plabels"><span>21%</span><span>27%</span><span>52%</span></div></td>
+        <td class="num">4.76 · 3.76 · 1.91</td>
+        <td class="num">5.45 · 4.61 · 1.56</td>
+        <td class="num">1.34 - 1.63</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Eredivisie</td>
+        <td class="teams"><b>Telstar</b><span class="muted"> — </span>Utrecht</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:36.3%"></span><span class="pb d" style="width:32.0%"></span><span class="pb a" style="width:31.6%"></span></div><div class="plabels"><span>36%</span><span>32%</span><span>32%</span></div></td>
+        <td class="num">2.75 · 3.12 · 3.16</td>
+        <td class="num">2.94 · 3.74 · 2.33</td>
+        <td class="num">1.56 - 1.53</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Ligue 1</td>
+        <td class="teams"><b>Strasbourg</b><span class="muted"> — </span>Auxerre</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:40.3%"></span><span class="pb d" style="width:26.9%"></span><span class="pb a" style="width:32.9%"></span></div><div class="plabels"><span>40%</span><span>27%</span><span>33%</span></div></td>
+        <td class="num">2.48 · 3.72 · 3.04</td>
+        <td class="num">1.85 · 4.05 · 4.01</td>
+        <td class="num">1.71 - 1.14</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Serie A</td>
+        <td class="teams"><b>Frosinone</b><span class="muted"> — </span>Torino</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:37.5%"></span><span class="pb d" style="width:33.3%"></span><span class="pb a" style="width:29.1%"></span></div><div class="plabels"><span>38%</span><span>33%</span><span>29%</span></div></td>
+        <td class="num">2.66 · 3.00 · 3.43</td>
+        <td class="num">2.18 · 3.96 · 3.13</td>
+        <td class="num">1.39 - 1.13</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Serie A</td>
+        <td class="teams"><b>Lazio</b><span class="muted"> — </span>Cagliari</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:63.1%"></span><span class="pb d" style="width:22.9%"></span><span class="pb a" style="width:14.1%"></span></div><div class="plabels"><span>63%</span><span>23%</span><span>14%</span></div></td>
+        <td class="num">1.59 · 4.38 · 7.10</td>
+        <td class="num">1.45 · 4.74 · 7.35</td>
+        <td class="num">1.42 - 0.96</td>
+        <td class="num">2-0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Bundesliga</td>
+        <td class="teams"><b>Union Berlin</b><span class="muted"> — </span>FC Koln</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:36.8%"></span><span class="pb d" style="width:31.7%"></span><span class="pb a" style="width:31.5%"></span></div><div class="plabels"><span>37%</span><span>32%</span><span>32%</span></div></td>
+        <td class="num">2.72 · 3.16 · 3.17</td>
+        <td class="num">2.79 · 3.52 · 2.56</td>
+        <td class="num">1.62 - 1.32</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Pro League</td>
+        <td class="teams"><b>St Truiden</b><span class="muted"> — </span>Oud-Heverlee Leuven</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:52.5%"></span><span class="pb d" style="width:25.3%"></span><span class="pb a" style="width:22.1%"></span></div><div class="plabels"><span>53%</span><span>25%</span><span>22%</span></div></td>
+        <td class="num">1.90 · 3.95 · 4.52</td>
+        <td class="num">1.68 · 4.20 · 4.85</td>
+        <td class="num">1.72 - 1.02</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Super League</td>
+        <td class="teams"><b>Levadeiakos</b><span class="muted"> — </span>Aris</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:28.4%"></span><span class="pb d" style="width:31.2%"></span><span class="pb a" style="width:40.4%"></span></div><div class="plabels"><span>28%</span><span>31%</span><span>40%</span></div></td>
+        <td class="num">3.52 · 3.21 · 2.48</td>
+        <td class="num">3.96 · 3.38 · 2.02</td>
+        <td class="num">1.41 - 1.22</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">LaLiga</td>
+        <td class="teams"><b>Santander</b><span class="muted"> — </span>Real Madrid</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:14.7%"></span><span class="pb d" style="width:15.1%"></span><span class="pb a" style="width:70.2%"></span></div><div class="plabels"><span>15%</span><span>15%</span><span>70%</span></div></td>
+        <td class="num">6.80 · 6.64 · 1.42</td>
+        <td class="num">10.29 · 8.04 · 1.22</td>
+        <td class="num">1.21 - 1.59</td>
+        <td class="num">1-2</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Primeira Liga</td>
+        <td class="teams"><b>Arouca</b><span class="muted"> — </span>Nacional</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:53.5%"></span><span class="pb d" style="width:24.9%"></span><span class="pb a" style="width:21.6%"></span></div><div class="plabels"><span>53%</span><span>25%</span><span>22%</span></div></td>
+        <td class="num">1.87 · 4.01 · 4.63</td>
+        <td class="num">1.77 · 3.88 · 4.64</td>
+        <td class="num">1.52 - 1.14</td>
+        <td class="num">1-0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Eredivisie</td>
+        <td class="teams"><b>Groningen</b><span class="muted"> — </span>Sparta Rotterdam</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:43.3%"></span><span class="pb d" style="width:26.4%"></span><span class="pb a" style="width:30.3%"></span></div><div class="plabels"><span>43%</span><span>26%</span><span>30%</span></div></td>
+        <td class="num">2.31 · 3.78 · 3.30</td>
+        <td class="num">1.77 · 4.29 · 4.16</td>
+        <td class="num">1.60 - 1.22</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Super Lig</td>
+        <td class="teams"><b>Kasimpasa</b><span class="muted"> — </span>Besiktas</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:21.4%"></span><span class="pb d" style="width:27.6%"></span><span class="pb a" style="width:51.0%"></span></div><div class="plabels"><span>21%</span><span>28%</span><span>51%</span></div></td>
+        <td class="num">4.66 · 3.63 · 1.96</td>
+        <td class="num">5.68 · 4.35 · 1.57</td>
+        <td class="num">1.27 - 1.47</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Super League</td>
+        <td class="teams"><b>Panetolikos</b><span class="muted"> — </span>OFI Crete</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:26.9%"></span><span class="pb d" style="width:37.8%"></span><span class="pb a" style="width:35.3%"></span></div><div class="plabels"><span>27%</span><span>38%</span><span>35%</span></div></td>
+        <td class="num">3.72 · 2.65 · 2.83</td>
+        <td class="num">3.28 · 2.84 · 2.61</td>
+        <td class="num">1.32 - 1.16</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Ligue 1</td>
+        <td class="teams"><b>Paris FC</b><span class="muted"> — </span>Monaco</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:41.7%"></span><span class="pb d" style="width:27.0%"></span><span class="pb a" style="width:31.3%"></span></div><div class="plabels"><span>42%</span><span>27%</span><span>31%</span></div></td>
+        <td class="num">2.40 · 3.71 · 3.20</td>
+        <td class="num">2.53 · 3.53 · 2.82</td>
+        <td class="num">1.51 - 1.46</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Ligue 1</td>
+        <td class="teams"><b>Lyon</b><span class="muted"> — </span>Angers</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:68.2%"></span><span class="pb d" style="width:19.9%"></span><span class="pb a" style="width:11.8%"></span></div><div class="plabels"><span>68%</span><span>20%</span><span>12%</span></div></td>
+        <td class="num">1.47 · 5.02 · 8.45</td>
+        <td class="num">1.40 · 5.27 · 7.48</td>
+        <td class="num">1.81 - 0.92</td>
+        <td class="num">2-0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Bundesliga</td>
+        <td class="teams"><b>Ein Frankfurt</b><span class="muted"> — </span>Hamburg</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:39.9%"></span><span class="pb d" style="width:31.0%"></span><span class="pb a" style="width:29.1%"></span></div><div class="plabels"><span>40%</span><span>31%</span><span>29%</span></div></td>
+        <td class="num">2.51 · 3.23 · 3.43</td>
+        <td class="num">1.55 · 4.75 · 5.52</td>
+        <td class="num">1.89 - 1.26</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Premier League</td>
+        <td class="teams"><b>Liverpool</b><span class="muted"> — </span>Arsenal</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:30.4%"></span><span class="pb d" style="width:25.5%"></span><span class="pb a" style="width:44.0%"></span></div><div class="plabels"><span>30%</span><span>26%</span><span>44%</span></div></td>
+        <td class="num">3.29 · 3.92 · 2.27</td>
+        <td class="num">2.93 · 3.44 · 2.49</td>
+        <td class="num">1.41 - 1.52</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Serie A</td>
+        <td class="teams"><b>Lecce</b><span class="muted"> — </span>Genoa</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:39.4%"></span><span class="pb d" style="width:28.1%"></span><span class="pb a" style="width:32.5%"></span></div><div class="plabels"><span>39%</span><span>28%</span><span>33%</span></div></td>
+        <td class="num">2.54 · 3.56 · 3.07</td>
+        <td class="num">3.41 · 3.05 · 2.44</td>
+        <td class="num">1.03 - 1.09</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Super League</td>
+        <td class="teams"><b>PAOK</b><span class="muted"> — </span>Asteras Tripolis</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:74.4%"></span><span class="pb d" style="width:16.2%"></span><span class="pb a" style="width:9.4%"></span></div><div class="plabels"><span>74%</span><span>16%</span><span>9%</span></div></td>
+        <td class="num">1.34 · 6.16 · 10.67</td>
+        <td class="num">1.28 · 5.95 · 10.37</td>
+        <td class="num">2.19 - 0.75</td>
+        <td class="num">2-0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Pro League</td>
+        <td class="teams"><b>Lommel SK</b><span class="muted"> — </span>Gent</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:31.2%"></span><span class="pb d" style="width:22.3%"></span><span class="pb a" style="width:46.5%"></span></div><div class="plabels"><span>31%</span><span>22%</span><span>47%</span></div></td>
+        <td class="num">3.21 · 4.48 · 2.15</td>
+        <td class="num">4.85 · 4.08 · 1.70</td>
+        <td class="num">1.48 - 1.15</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">LaLiga</td>
+        <td class="teams"><b>Elche</b><span class="muted"> — </span>Valencia</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:40.0%"></span><span class="pb d" style="width:30.2%"></span><span class="pb a" style="width:29.8%"></span></div><div class="plabels"><span>40%</span><span>30%</span><span>30%</span></div></td>
+        <td class="num">2.50 · 3.31 · 3.35</td>
+        <td class="num">2.35 · 3.48 · 3.12</td>
+        <td class="num">1.43 - 1.15</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Super League</td>
+        <td class="teams"><b>Panathinaikos</b><span class="muted"> — </span>AEK</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:42.1%"></span><span class="pb d" style="width:28.6%"></span><span class="pb a" style="width:29.3%"></span></div><div class="plabels"><span>42%</span><span>29%</span><span>29%</span></div></td>
+        <td class="num">2.37 · 3.50 · 3.41</td>
+        <td class="num">2.30 · 3.45 · 3.15</td>
+        <td class="num">1.15 - 1.22</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Primeira Liga</td>
+        <td class="teams"><b>Academico Viseu</b><span class="muted"> — </span>Rio Ave</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:45.9%"></span><span class="pb d" style="width:24.3%"></span><span class="pb a" style="width:29.8%"></span></div><div class="plabels"><span>46%</span><span>24%</span><span>30%</span></div></td>
+        <td class="num">2.18 · 4.12 · 3.35</td>
+        <td class="num">1.89 · 3.65 · 4.26</td>
+        <td class="num">1.53 - 1.07</td>
+        <td class="num">1-0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Primeira Liga</td>
+        <td class="teams"><b>Maritimo</b><span class="muted"> — </span>Santa Clara</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:23.1%"></span><span class="pb d" style="width:30.9%"></span><span class="pb a" style="width:46.0%"></span></div><div class="plabels"><span>23%</span><span>31%</span><span>46%</span></div></td>
+        <td class="num">4.32 · 3.24 · 2.17</td>
+        <td class="num">3.71 · 3.06 · 2.27</td>
+        <td class="num">1.26 - 1.04</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Pro League</td>
+        <td class="teams"><b>Charleroi</b><span class="muted"> — </span>RAAL La Louviere</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:62.3%"></span><span class="pb d" style="width:21.2%"></span><span class="pb a" style="width:16.5%"></span></div><div class="plabels"><span>62%</span><span>21%</span><span>16%</span></div></td>
+        <td class="num">1.60 · 4.73 · 6.06</td>
+        <td class="num">1.52 · 4.42 · 6.46</td>
+        <td class="num">1.55 - 0.95</td>
+        <td class="num">2-0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Serie A</td>
+        <td class="teams"><b>Juventus</b><span class="muted"> — </span>Napoli</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:40.6%"></span><span class="pb d" style="width:28.5%"></span><span class="pb a" style="width:30.8%"></span></div><div class="plabels"><span>41%</span><span>29%</span><span>31%</span></div></td>
+        <td class="num">2.46 · 3.50 · 3.25</td>
+        <td class="num">2.38 · 3.29 · 3.27</td>
+        <td class="num">1.26 - 1.10</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Ligue 1</td>
+        <td class="teams"><b>Marseille</b><span class="muted"> — </span>Toulouse</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:41.5%"></span><span class="pb d" style="width:29.5%"></span><span class="pb a" style="width:29.0%"></span></div><div class="plabels"><span>42%</span><span>30%</span><span>29%</span></div></td>
+        <td class="num">2.41 · 3.39 · 3.45</td>
+        <td class="num">1.99 · 4.00 · 3.54</td>
+        <td class="num">1.84 - 1.16</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">LaLiga</td>
+        <td class="teams"><b>Ath Bilbao</b><span class="muted"> — </span>Sociedad</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:41.6%"></span><span class="pb d" style="width:29.8%"></span><span class="pb a" style="width:28.5%"></span></div><div class="plabels"><span>42%</span><span>30%</span><span>29%</span></div></td>
+        <td class="num">2.40 · 3.36 · 3.50</td>
+        <td class="num">2.16 · 3.71 · 3.32</td>
+        <td class="num">1.53 - 1.09</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Primeira Liga</td>
+        <td class="teams"><b>Sp Braga</b><span class="muted"> — </span>Famalicao</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:48.1%"></span><span class="pb d" style="width:26.1%"></span><span class="pb a" style="width:25.9%"></span></div><div class="plabels"><span>48%</span><span>26%</span><span>26%</span></div></td>
+        <td class="num">2.08 · 3.84 · 3.87</td>
+        <td class="num">1.72 · 3.67 · 5.32</td>
+        <td class="num">1.56 - 0.96</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Super League</td>
+        <td class="teams"><b>Atromitos</b><span class="muted"> — </span>Volos NFC</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:42.9%"></span><span class="pb d" style="width:34.3%"></span><span class="pb a" style="width:22.8%"></span></div><div class="plabels"><span>43%</span><span>34%</span><span>23%</span></div></td>
+        <td class="num">2.33 · 2.92 · 4.39</td>
+        <td class="num">1.91 · 3.52 · 4.05</td>
+        <td class="num">1.66 - 0.93</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Super Lig</td>
+        <td class="teams"><b>Genclerbirligi</b><span class="muted"> — </span>Alanyaspor</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:32.9%"></span><span class="pb d" style="width:33.1%"></span><span class="pb a" style="width:33.9%"></span></div><div class="plabels"><span>33%</span><span>33%</span><span>34%</span></div></td>
+        <td class="num">3.04 · 3.02 · 2.95</td>
+        <td class="num">2.68 · 3.31 · 2.70</td>
+        <td class="num">1.32 - 1.09</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Super League</td>
+        <td class="teams"><b>Kalamata</b><span class="muted"> — </span>Iraklis</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:36.7%"></span><span class="pb d" style="width:30.6%"></span><span class="pb a" style="width:32.6%"></span></div><div class="plabels"><span>37%</span><span>31%</span><span>33%</span></div></td>
+        <td class="num">2.72 · 3.26 · 3.07</td>
+        <td class="num">2.38 · 3.12 · 3.21</td>
+        <td class="num">1.37 - 1.11</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Serie A</td>
+        <td class="teams"><b>Sassuolo</b><span class="muted"> — </span>Fiorentina</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:42.8%"></span><span class="pb d" style="width:30.0%"></span><span class="pb a" style="width:27.2%"></span></div><div class="plabels"><span>43%</span><span>30%</span><span>27%</span></div></td>
+        <td class="num">2.34 · 3.33 · 3.68</td>
+        <td class="num">2.90 · 3.82 · 2.36</td>
+        <td class="num">1.32 - 1.30</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Ligue 1</td>
+        <td class="teams"><b>Lorient</b><span class="muted"> — </span>Brest</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:37.2%"></span><span class="pb d" style="width:26.8%"></span><span class="pb a" style="width:36.0%"></span></div><div class="plabels"><span>37%</span><span>27%</span><span>36%</span></div></td>
+        <td class="num">2.69 · 3.73 · 2.78</td>
+        <td class="num">2.52 · 3.31 · 3.01</td>
+        <td class="num">1.59 - 1.30</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Serie A</td>
+        <td class="teams"><b>Atalanta</b><span class="muted"> — </span>Parma</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:55.9%"></span><span class="pb d" style="width:26.0%"></span><span class="pb a" style="width:18.1%"></span></div><div class="plabels"><span>56%</span><span>26%</span><span>18%</span></div></td>
+        <td class="num">1.79 · 3.85 · 5.52</td>
+        <td class="num">1.52 · 4.65 · 6.14</td>
+        <td class="num">1.60 - 0.84</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">LaLiga</td>
+        <td class="teams"><b>La Coruna</b><span class="muted"> — </span>Osasuna</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:41.7%"></span><span class="pb d" style="width:32.4%"></span><span class="pb a" style="width:25.9%"></span></div><div class="plabels"><span>42%</span><span>32%</span><span>26%</span></div></td>
+        <td class="num">2.40 · 3.09 · 3.86</td>
+        <td class="num">2.18 · 3.30 · 3.67</td>
+        <td class="num">1.46 - 1.06</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Premier League</td>
+        <td class="teams"><b>Newcastle</b><span class="muted"> — </span>Everton</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:43.2%"></span><span class="pb d" style="width:26.4%"></span><span class="pb a" style="width:30.4%"></span></div><div class="plabels"><span>43%</span><span>26%</span><span>30%</span></div></td>
+        <td class="num">2.31 · 3.79 · 3.29</td>
+        <td class="num">2.43 · 3.56 · 2.93</td>
+        <td class="num">1.59 - 1.12</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Primeira Liga</td>
+        <td class="teams"><b>Benfica</b><span class="muted"> — </span>Alverca</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:72.4%"></span><span class="pb d" style="width:21.6%"></span><span class="pb a" style="width:6.0%"></span></div><div class="plabels"><span>72%</span><span>22%</span><span>6%</span></div></td>
+        <td class="num">1.38 · 4.64 · 16.58</td>
+        <td class="num">—</td>
+        <td class="num">2.46 - 0.78</td>
+        <td class="num">2-0</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Primeira Liga</td>
+        <td class="teams"><b>Gil Vicente</b><span class="muted"> — </span>Guimaraes</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:33.8%"></span><span class="pb d" style="width:30.2%"></span><span class="pb a" style="width:36.0%"></span></div><div class="plabels"><span>34%</span><span>30%</span><span>36%</span></div></td>
+        <td class="num">2.96 · 3.31 · 2.78</td>
+        <td class="num">2.89 · 3.05 · 2.69</td>
+        <td class="num">1.32 - 1.05</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Championship</td>
+        <td class="teams"><b>Blackburn</b><span class="muted"> — </span>Stoke</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:44.3%"></span><span class="pb d" style="width:26.6%"></span><span class="pb a" style="width:29.0%"></span></div><div class="plabels"><span>44%</span><span>27%</span><span>29%</span></div></td>
+        <td class="num">2.26 · 3.76 · 3.44</td>
+        <td class="num">2.67 · 3.31 · 2.70</td>
+        <td class="num">1.28 - 0.99</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Championship</td>
+        <td class="teams"><b>Charlton</b><span class="muted"> — </span>Bolton</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:42.3%"></span><span class="pb d" style="width:29.1%"></span><span class="pb a" style="width:28.6%"></span></div><div class="plabels"><span>42%</span><span>29%</span><span>29%</span></div></td>
+        <td class="num">2.36 · 3.44 · 3.49</td>
+        <td class="num">2.26 · 3.59 · 3.07</td>
+        <td class="num">1.27 - 1.12</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Championship</td>
+        <td class="teams"><b>Derby</b><span class="muted"> — </span>Norwich</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:36.6%"></span><span class="pb d" style="width:30.8%"></span><span class="pb a" style="width:32.6%"></span></div><div class="plabels"><span>37%</span><span>31%</span><span>33%</span></div></td>
+        <td class="num">2.73 · 3.25 · 3.07</td>
+        <td class="num">3.29 · 3.81 · 2.08</td>
+        <td class="num">1.46 - 1.27</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Championship</td>
+        <td class="teams"><b>Portsmouth</b><span class="muted"> — </span>Swansea</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:34.9%"></span><span class="pb d" style="width:31.7%"></span><span class="pb a" style="width:33.4%"></span></div><div class="plabels"><span>35%</span><span>32%</span><span>33%</span></div></td>
+        <td class="num">2.87 · 3.15 · 2.99</td>
+        <td class="num">2.66 · 3.35 · 2.69</td>
+        <td class="num">1.31 - 1.24</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Championship</td>
+        <td class="teams"><b>Preston</b><span class="muted"> — </span>Sheffield United</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:26.0%"></span><span class="pb d" style="width:29.2%"></span><span class="pb a" style="width:44.8%"></span></div><div class="plabels"><span>26%</span><span>29%</span><span>45%</span></div></td>
+        <td class="num">3.85 · 3.42 · 2.23</td>
+        <td class="num">3.18 · 3.82 · 2.12</td>
+        <td class="num">1.24 - 1.25</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Championship</td>
+        <td class="teams"><b>QPR</b><span class="muted"> — </span>Burnley</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:42.9%"></span><span class="pb d" style="width:25.1%"></span><span class="pb a" style="width:32.0%"></span></div><div class="plabels"><span>43%</span><span>25%</span><span>32%</span></div></td>
+        <td class="num">2.33 · 3.98 · 3.13</td>
+        <td class="num">2.00 · 3.78 · 3.51</td>
+        <td class="num">1.20 - 1.34</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Championship</td>
+        <td class="teams"><b>Watford</b><span class="muted"> — </span>Lincoln</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:36.8%"></span><span class="pb d" style="width:30.1%"></span><span class="pb a" style="width:33.1%"></span></div><div class="plabels"><span>37%</span><span>30%</span><span>33%</span></div></td>
+        <td class="num">2.72 · 3.32 · 3.02</td>
+        <td class="num">2.29 · 3.47 · 3.11</td>
+        <td class="num">1.34 - 1.18</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Championship</td>
+        <td class="teams"><b>Birmingham</b><span class="muted"> — </span>Millwall</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:40.9%"></span><span class="pb d" style="width:28.3%"></span><span class="pb a" style="width:30.8%"></span></div><div class="plabels"><span>41%</span><span>28%</span><span>31%</span></div></td>
+        <td class="num">2.44 · 3.54 · 3.25</td>
+        <td class="num">1.96 · 3.69 · 3.74</td>
+        <td class="num">1.24 - 1.11</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="lg">Championship</td>
+        <td class="teams"><b>West Brom</b><span class="muted"> — </span>Southampton</td>
+        <td class="probcell"><div class="pbar" title="1 / X / 2"><span class="pb h" style="width:29.6%"></span><span class="pb d" style="width:24.3%"></span><span class="pb a" style="width:46.0%"></span></div><div class="plabels"><span>30%</span><span>24%</span><span>46%</span></div></td>
+        <td class="num">3.38 · 4.11 · 2.17</td>
+        <td class="num">2.44 · 3.65 · 2.76</td>
+        <td class="num">1.36 - 1.39</td>
+        <td class="num">1-1</td>
+        <td></td>
+      </tr></tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>Performance du modèle</h2>
+    <span class="sec-sub">backtest walk-forward, saisons complètes, aucune donnée future</span>
+  </div>
+  <div class="kpis"><div class="kpi "><div class="kpi-l">Log loss</div><div class="kpi-v">0.9919</div><div class=kpi-s>n = 9029 matchs</div></div><div class="kpi "><div class="kpi-l">Brier</div><div class="kpi-v">0.5918</div></div><div class="kpi "><div class="kpi-l">RPS</div><div class="kpi-v">0.2015</div></div><div class="kpi "><div class="kpi-l">Précision 1X2</div><div class="kpi-v">51.0 %</div></div><div class="kpi "><div class="kpi-l">ROI backtest</div><div class="kpi-v">-0.7 %</div><div class=kpi-s>1446 paris</div></div><div class="kpi "><div class="kpi-l">Drawdown max</div><div class="kpi-v">-23.5 %</div></div></div>
+  <div class="cols" style="margin-top:14px">
+    <div class="panel">
+      <h3>Courbe de capital du backtest</h3>
+      <div class="sub">Paris pris aux cotes moyennes du marché, dégradées de 1,5 % (slippage).</div>
+      <svg viewBox="0 0 760 190" preserveAspectRatio="none" class="chart"><defs><linearGradient id="eq" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#34d399" stop-opacity="0.35"/><stop offset="100%" stop-color="#34d399" stop-opacity="0"/></linearGradient></defs><polygon points="8,182 8.0,96.6 9.9,101.0 11.7,93.3 13.6,98.9 15.5,90.2 17.3,93.8 19.2,101.7 21.1,110.3 22.9,114.1 24.8,116.9 26.6,120.4 28.5,114.3 30.4,116.1 32.2,109.1 34.1,95.8 36.0,99.3 37.8,86.7 39.7,69.9 41.6,52.9 43.4,59.7 45.3,62.8 47.2,65.6 49.0,67.4 50.9,62.9 52.8,65.2 54.6,74.9 56.5,66.8 58.3,58.2 60.2,60.6 62.1,43.4 63.9,51.4 65.8,61.7 67.7,53.1 69.5,61.7 71.4,71.1 73.3,75.5 75.1,78.8 77.0,69.4 78.9,65.9 80.7,69.3 82.6,76.2 84.5,79.6 86.3,69.2 88.2,71.9 90.0,75.2 91.9,66.4 93.8,67.5 95.6,69.6 97.5,71.7 99.4,72.8 101.2,82.5 103.1,94.3 105.0,101.3 106.8,104.6 108.7,108.0 110.6,114.3 112.4,116.8 114.3,118.2 116.2,119.8 118.0,113.3 119.9,117.1 121.7,122.0 123.6,126.8 125.5,130.9 127.3,136.1 129.2,127.1 131.1,120.4 132.9,117.1 134.8,123.4 136.7,130.4 138.5,120.5 140.4,122.4 142.3,124.0 144.1,125.2 146.0,120.8 147.8,105.1 149.7,108.6 151.6,110.2 153.4,101.6 155.3,104.6 157.2,108.7 159.0,113.3 160.9,115.9 162.8,111.2 164.6,105.5 166.5,92.2 168.4,83.9 170.2,74.7 172.1,62.7 174.0,51.3 175.8,45.1 177.7,49.6 179.5,56.1 181.4,57.4 183.3,53.2 185.1,57.4 187.0,66.8 188.9,74.6 190.7,76.6 192.6,82.7 194.5,101.6 196.3,94.7 198.2,96.7 200.1,98.4 201.9,94.0 203.8,90.6 205.7,95.7 207.5,104.2 209.4,106.4 211.2,114.1 213.1,108.5 215.0,116.2 216.8,118.2 218.7,112.9 220.6,119.7 222.4,122.2 224.3,111.6 226.2,117.7 228.0,120.7 229.9,124.7 231.8,116.3 233.6,119.2 235.5,121.1 237.4,124.3 239.2,120.4 241.1,122.6 242.9,123.8 244.8,135.9 246.7,126.0 248.5,129.3 250.4,134.1 252.3,144.9 254.1,154.2 256.0,156.5 257.9,148.5 259.7,144.2 261.6,150.1 263.5,138.3 265.3,141.1 267.2,144.5 269.1,151.7 270.9,147.7 272.8,155.9 274.6,157.4 276.5,153.3 278.4,154.6 280.2,151.7 282.1,148.6 284.0,151.4 285.8,153.7 287.7,157.9 289.6,166.3 291.4,169.3 293.3,171.6 295.2,168.3 297.0,169.9 298.9,174.8 300.8,166.6 302.6,167.5 304.5,161.4 306.3,154.9 308.2,147.5 310.1,154.3 311.9,158.6 313.8,168.1 315.7,173.6 317.5,177.3 319.4,182.0 321.3,172.0 323.1,173.6 325.0,178.1 326.9,167.6 328.7,170.4 330.6,161.6 332.5,157.8 334.3,160.3 336.2,156.7 338.0,141.1 339.9,146.8 341.8,149.1 343.6,156.4 345.5,157.5 347.4,152.7 349.2,147.2 351.1,141.7 353.0,135.8 354.8,129.1 356.7,131.0 358.6,137.2 360.4,127.6 362.3,120.4 364.2,122.8 366.0,118.5 367.9,122.4 369.7,117.4 371.6,120.4 373.5,108.6 375.3,97.3 377.2,102.5 379.1,108.6 380.9,113.4 382.8,131.7 384.7,117.1 386.5,126.2 388.4,120.4 390.3,123.2 392.1,139.3 394.0,135.8 395.8,132.2 397.7,123.7 399.6,129.5 401.4,145.3 403.3,142.1 405.2,144.5 407.0,147.1 408.9,136.2 410.8,127.6 412.6,131.0 414.5,135.0 416.4,141.5 418.2,127.7 420.1,130.2 422.0,132.8 423.8,134.6 425.7,128.0 427.5,143.4 429.4,131.9 431.3,139.5 433.1,145.6 435.0,147.9 436.9,150.5 438.7,159.2 440.6,146.2 442.5,151.0 444.3,140.5 446.2,135.0 448.1,136.4 449.9,139.3 451.8,132.2 453.7,123.5 455.5,128.2 457.4,134.7 459.2,126.2 461.1,143.0 463.0,144.1 464.8,134.4 466.7,127.4 468.6,120.8 470.4,125.0 472.3,119.2 474.2,129.4 476.0,118.6 477.9,120.2 479.8,123.0 481.6,119.7 483.5,120.8 485.4,110.8 487.2,122.6 489.1,109.6 490.9,100.4 492.8,101.7 494.7,105.5 496.5,124.1 498.4,127.7 500.3,116.4 502.1,125.5 504.0,115.6 505.9,120.0 507.7,125.0 509.6,137.8 511.5,129.2 513.3,130.2 515.2,132.9 517.1,138.0 518.9,139.1 520.8,147.1 522.6,155.4 524.5,162.2 526.4,155.1 528.2,157.4 530.1,151.8 532.0,154.9 533.8,156.9 535.7,159.2 537.6,161.2 539.4,146.4 541.3,153.4 543.2,145.8 545.0,147.7 546.9,150.0 548.8,151.0 550.6,146.7 552.5,138.8 554.3,141.2 556.2,144.6 558.1,139.0 559.9,140.9 561.8,147.6 563.7,140.8 565.5,145.6 567.4,147.9 569.3,159.6 571.1,151.6 573.0,155.4 574.9,156.8 576.7,161.3 578.6,162.6 580.5,168.0 582.3,170.3 584.2,174.1 586.0,176.3 587.9,172.9 589.8,157.8 591.6,160.2 593.5,161.3 595.4,158.3 597.2,161.6 599.1,155.4 601.0,157.4 602.8,161.8 604.7,153.2 606.6,143.7 608.4,135.8 610.3,138.5 612.2,122.9 614.0,108.2 615.9,94.9 617.7,82.9 619.6,89.2 621.5,96.1 623.3,89.9 625.2,91.7 627.1,101.4 628.9,103.8 630.8,106.3 632.7,113.5 634.5,119.8 636.4,112.2 638.3,115.0 640.1,117.5 642.0,121.7 643.8,130.3 645.7,137.6 647.6,142.8 649.4,145.7 651.3,138.9 653.2,141.7 655.0,144.9 656.9,134.0 658.8,129.7 660.6,126.1 662.5,123.0 664.4,118.1 666.2,112.9 668.1,119.1 670.0,109.0 671.8,118.2 673.7,108.4 675.5,101.8 677.4,103.8 679.3,98.5 681.1,94.9 683.0,96.1 684.9,101.3 686.7,102.9 688.6,105.9 690.5,92.4 692.3,95.4 694.2,87.0 696.1,89.7 697.9,82.0 699.8,78.8 701.7,80.8 703.5,85.2 705.4,87.1 707.2,82.7 709.1,84.6 711.0,93.4 712.8,79.4 714.7,63.9 716.6,69.4 718.4,74.1 720.3,60.0 722.2,61.7 724.0,64.7 725.9,70.3 727.8,61.9 729.6,65.1 731.5,66.8 733.4,60.7 735.2,64.1 737.1,70.9 738.9,71.9 740.8,82.9 742.7,66.0 744.5,72.7 746.4,60.8 748.3,51.5 750.1,57.5 752.0,59.0 752,182" fill="url(#eq)"/><line x1="8" y1="8.0" x2="752" y2="8.0" stroke="#475569" stroke-dasharray="4 4" stroke-width="1"/><polyline points="8.0,96.6 9.9,101.0 11.7,93.3 13.6,98.9 15.5,90.2 17.3,93.8 19.2,101.7 21.1,110.3 22.9,114.1 24.8,116.9 26.6,120.4 28.5,114.3 30.4,116.1 32.2,109.1 34.1,95.8 36.0,99.3 37.8,86.7 39.7,69.9 41.6,52.9 43.4,59.7 45.3,62.8 47.2,65.6 49.0,67.4 50.9,62.9 52.8,65.2 54.6,74.9 56.5,66.8 58.3,58.2 60.2,60.6 62.1,43.4 63.9,51.4 65.8,61.7 67.7,53.1 69.5,61.7 71.4,71.1 73.3,75.5 75.1,78.8 77.0,69.4 78.9,65.9 80.7,69.3 82.6,76.2 84.5,79.6 86.3,69.2 88.2,71.9 90.0,75.2 91.9,66.4 93.8,67.5 95.6,69.6 97.5,71.7 99.4,72.8 101.2,82.5 103.1,94.3 105.0,101.3 106.8,104.6 108.7,108.0 110.6,114.3 112.4,116.8 114.3,118.2 116.2,119.8 118.0,113.3 119.9,117.1 121.7,122.0 123.6,126.8 125.5,130.9 127.3,136.1 129.2,127.1 131.1,120.4 132.9,117.1 134.8,123.4 136.7,130.4 138.5,120.5 140.4,122.4 142.3,124.0 144.1,125.2 146.0,120.8 147.8,105.1 149.7,108.6 151.6,110.2 153.4,101.6 155.3,104.6 157.2,108.7 159.0,113.3 160.9,115.9 162.8,111.2 164.6,105.5 166.5,92.2 168.4,83.9 170.2,74.7 172.1,62.7 174.0,51.3 175.8,45.1 177.7,49.6 179.5,56.1 181.4,57.4 183.3,53.2 185.1,57.4 187.0,66.8 188.9,74.6 190.7,76.6 192.6,82.7 194.5,101.6 196.3,94.7 198.2,96.7 200.1,98.4 201.9,94.0 203.8,90.6 205.7,95.7 207.5,104.2 209.4,106.4 211.2,114.1 213.1,108.5 215.0,116.2 216.8,118.2 218.7,112.9 220.6,119.7 222.4,122.2 224.3,111.6 226.2,117.7 228.0,120.7 229.9,124.7 231.8,116.3 233.6,119.2 235.5,121.1 237.4,124.3 239.2,120.4 241.1,122.6 242.9,123.8 244.8,135.9 246.7,126.0 248.5,129.3 250.4,134.1 252.3,144.9 254.1,154.2 256.0,156.5 257.9,148.5 259.7,144.2 261.6,150.1 263.5,138.3 265.3,141.1 267.2,144.5 269.1,151.7 270.9,147.7 272.8,155.9 274.6,157.4 276.5,153.3 278.4,154.6 280.2,151.7 282.1,148.6 284.0,151.4 285.8,153.7 287.7,157.9 289.6,166.3 291.4,169.3 293.3,171.6 295.2,168.3 297.0,169.9 298.9,174.8 300.8,166.6 302.6,167.5 304.5,161.4 306.3,154.9 308.2,147.5 310.1,154.3 311.9,158.6 313.8,168.1 315.7,173.6 317.5,177.3 319.4,182.0 321.3,172.0 323.1,173.6 325.0,178.1 326.9,167.6 328.7,170.4 330.6,161.6 332.5,157.8 334.3,160.3 336.2,156.7 338.0,141.1 339.9,146.8 341.8,149.1 343.6,156.4 345.5,157.5 347.4,152.7 349.2,147.2 351.1,141.7 353.0,135.8 354.8,129.1 356.7,131.0 358.6,137.2 360.4,127.6 362.3,120.4 364.2,122.8 366.0,118.5 367.9,122.4 369.7,117.4 371.6,120.4 373.5,108.6 375.3,97.3 377.2,102.5 379.1,108.6 380.9,113.4 382.8,131.7 384.7,117.1 386.5,126.2 388.4,120.4 390.3,123.2 392.1,139.3 394.0,135.8 395.8,132.2 397.7,123.7 399.6,129.5 401.4,145.3 403.3,142.1 405.2,144.5 407.0,147.1 408.9,136.2 410.8,127.6 412.6,131.0 414.5,135.0 416.4,141.5 418.2,127.7 420.1,130.2 422.0,132.8 423.8,134.6 425.7,128.0 427.5,143.4 429.4,131.9 431.3,139.5 433.1,145.6 435.0,147.9 436.9,150.5 438.7,159.2 440.6,146.2 442.5,151.0 444.3,140.5 446.2,135.0 448.1,136.4 449.9,139.3 451.8,132.2 453.7,123.5 455.5,128.2 457.4,134.7 459.2,126.2 461.1,143.0 463.0,144.1 464.8,134.4 466.7,127.4 468.6,120.8 470.4,125.0 472.3,119.2 474.2,129.4 476.0,118.6 477.9,120.2 479.8,123.0 481.6,119.7 483.5,120.8 485.4,110.8 487.2,122.6 489.1,109.6 490.9,100.4 492.8,101.7 494.7,105.5 496.5,124.1 498.4,127.7 500.3,116.4 502.1,125.5 504.0,115.6 505.9,120.0 507.7,125.0 509.6,137.8 511.5,129.2 513.3,130.2 515.2,132.9 517.1,138.0 518.9,139.1 520.8,147.1 522.6,155.4 524.5,162.2 526.4,155.1 528.2,157.4 530.1,151.8 532.0,154.9 533.8,156.9 535.7,159.2 537.6,161.2 539.4,146.4 541.3,153.4 543.2,145.8 545.0,147.7 546.9,150.0 548.8,151.0 550.6,146.7 552.5,138.8 554.3,141.2 556.2,144.6 558.1,139.0 559.9,140.9 561.8,147.6 563.7,140.8 565.5,145.6 567.4,147.9 569.3,159.6 571.1,151.6 573.0,155.4 574.9,156.8 576.7,161.3 578.6,162.6 580.5,168.0 582.3,170.3 584.2,174.1 586.0,176.3 587.9,172.9 589.8,157.8 591.6,160.2 593.5,161.3 595.4,158.3 597.2,161.6 599.1,155.4 601.0,157.4 602.8,161.8 604.7,153.2 606.6,143.7 608.4,135.8 610.3,138.5 612.2,122.9 614.0,108.2 615.9,94.9 617.7,82.9 619.6,89.2 621.5,96.1 623.3,89.9 625.2,91.7 627.1,101.4 628.9,103.8 630.8,106.3 632.7,113.5 634.5,119.8 636.4,112.2 638.3,115.0 640.1,117.5 642.0,121.7 643.8,130.3 645.7,137.6 647.6,142.8 649.4,145.7 651.3,138.9 653.2,141.7 655.0,144.9 656.9,134.0 658.8,129.7 660.6,126.1 662.5,123.0 664.4,118.1 666.2,112.9 668.1,119.1 670.0,109.0 671.8,118.2 673.7,108.4 675.5,101.8 677.4,103.8 679.3,98.5 681.1,94.9 683.0,96.1 684.9,101.3 686.7,102.9 688.6,105.9 690.5,92.4 692.3,95.4 694.2,87.0 696.1,89.7 697.9,82.0 699.8,78.8 701.7,80.8 703.5,85.2 705.4,87.1 707.2,82.7 709.1,84.6 711.0,93.4 712.8,79.4 714.7,63.9 716.6,69.4 718.4,74.1 720.3,60.0 722.2,61.7 724.0,64.7 725.9,70.3 727.8,61.9 729.6,65.1 731.5,66.8 733.4,60.7 735.2,64.1 737.1,70.9 738.9,71.9 740.8,82.9 742.7,66.0 744.5,72.7 746.4,60.8 748.3,51.5 750.1,57.5 752.0,59.0" fill="none" stroke="#34d399" stroke-width="2" stroke-linejoin="round"/></svg><div class="chart-legend"><span>min 830</span><span>max 1 000</span></div>
+    </div>
+    <div class="panel">
+      <h3>Calibration</h3>
+      <div class="sub">Probabilité annoncée vs fréquence réelle : les barres doivent coïncider.</div>
+      <svg viewBox="0 0 520 190" class="chart small"><rect x="28.0" y="111.8" width="26.7" height="52.2" fill="#38bdf8" rx="2"/><rect x="56.8" y="113.9" width="26.7" height="50.1" fill="#34d399" rx="2"/><text x="48.7" y="177.0" font-size="9" fill="#94a3b8" text-anchor="middle">0.3-0.4</text><rect x="94.9" y="102.3" width="26.7" height="61.7" fill="#38bdf8" rx="2"/><rect x="123.6" y="105.6" width="26.7" height="58.4" fill="#34d399" rx="2"/><text x="115.6" y="177.0" font-size="9" fill="#94a3b8" text-anchor="middle">0.4-0.5</text><rect x="161.7" y="88.9" width="26.7" height="75.1" fill="#38bdf8" rx="2"/><rect x="190.5" y="88.2" width="26.7" height="75.8" fill="#34d399" rx="2"/><text x="182.4" y="177.0" font-size="9" fill="#94a3b8" text-anchor="middle">0.5-0.6</text><rect x="228.6" y="74.8" width="26.7" height="89.2" fill="#38bdf8" rx="2"/><rect x="257.3" y="73.4" width="26.7" height="90.6" fill="#34d399" rx="2"/><text x="249.3" y="177.0" font-size="9" fill="#94a3b8" text-anchor="middle">0.6-0.7</text><rect x="295.4" y="61.3" width="26.7" height="102.7" fill="#38bdf8" rx="2"/><rect x="324.2" y="60.8" width="26.7" height="103.2" fill="#34d399" rx="2"/><text x="316.2" y="177.0" font-size="9" fill="#94a3b8" text-anchor="middle">0.7-0.8</text><rect x="362.3" y="48.4" width="26.7" height="115.6" fill="#38bdf8" rx="2"/><rect x="391.0" y="50.8" width="26.7" height="113.2" fill="#34d399" rx="2"/><text x="383.0" y="177.0" font-size="9" fill="#94a3b8" text-anchor="middle">0.8-0.9</text><rect x="429.1" y="37.8" width="26.7" height="126.2" fill="#38bdf8" rx="2"/><rect x="457.9" y="32.3" width="26.7" height="131.7" fill="#34d399" rx="2"/><text x="449.9" y="177.0" font-size="9" fill="#94a3b8" text-anchor="middle">0.9-1.0</text><line x1="26" y1="164" x2="494" y2="164" stroke="#334155"/></svg><div class="chart-legend"><span class="k blue">probabilité annoncée</span><span class="k green">fréquence observée</span></div>
+    </div>
+  </div>
+  <div class="cols" style="margin-top:14px">
+    <div class="panel">
+      <h3>Par ligue</h3>
+      <div class="sub">ROI et P&amp;L du backtest.</div>
+      <div class="tablewrap" style="border:none">
+        <table><thead><tr><th>Ligue</th><th>Paris</th><th>ROI</th><th>P&amp;L</th></tr></thead>
+        <tbody><tr><td>Championship</td><td class="num">208</td><td class="num">+3.6 %</td><td class="num">33.8</td></tr><tr><td>Premier League</td><td class="num">164</td><td class="num">-6.7 %</td><td class="num">-53.2</td></tr><tr><td>Serie A</td><td class="num">145</td><td class="num">-20.3 %</td><td class="num">-143.1</td></tr><tr><td>Ligue 1</td><td class="num">125</td><td class="num">+2.9 %</td><td class="num">16.6</td></tr><tr><td>LaLiga</td><td class="num">125</td><td class="num">+14.5 %</td><td class="num">90.9</td></tr><tr><td>Bundesliga</td><td class="num">116</td><td class="num">-13.7 %</td><td class="num">-80.5</td></tr><tr><td>Pro League</td><td class="num">113</td><td class="num">-10.8 %</td><td class="num">-70.6</td></tr><tr><td>Super Lig</td><td class="num">111</td><td class="num">+4.5 %</td><td class="num">27.5</td></tr><tr><td>Eredivisie</td><td class="num">93</td><td class="num">+7.8 %</td><td class="num">46.5</td></tr><tr><td>Primeira Liga</td><td class="num">89</td><td class="num">-3.1 %</td><td class="num">-16.2</td></tr><tr><td>Super League</td><td class="num">84</td><td class="num">+11.7 %</td><td class="num">59.2</td></tr><tr><td>Premiership</td><td class="num">73</td><td class="num">+7.8 %</td><td class="num">39.5</td></tr></tbody></table>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Par saison</h3>
+      <div class="sub">Poids Dixon-Coles et ROI par saison testée.</div>
+      <div class="tablewrap" style="border:none">
+        <table><thead><tr><th>Saison</th><th>Paris</th><th>ROI</th><th>P&amp;L</th><th>w(DC)</th></tr></thead>
+        <tbody><tr><td>2024/25</td><td class="num">761</td><td class="num">-2.9 %</td><td class="num">-120.8</td><td class="num">0.2</td></tr><tr><td>2025/26</td><td class="num">541</td><td class="num">+0.4 %</td><td class="num">10.6</td><td class="num">0.30000000000000004</td></tr><tr><td>2026/27</td><td class="num">144</td><td class="num">+8.3 %</td><td class="num">60.4</td><td class="num">0.30000000000000004</td></tr></tbody></table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>Classements internes</h2>
+    <span class="sec-sub">force offensive/défensive estimée par Dixon-Coles (rating = attaque + défense, deux forces croissantes)</span>
+  </div>
+  <div class="ratings"><div class="rating-card"><h4>Pro League</h4><ol><li><span class="rk">1</span><span class="tn">Club Brugge</span><span class="rt">+0.18</span></li><li><span class="rk">2</span><span class="tn">Westerlo</span><span class="rt">+0.17</span></li><li><span class="rk">3</span><span class="tn">Waregem</span><span class="rt">+0.10</span></li><li><span class="rk">4</span><span class="tn">Cercle Brugge</span><span class="rt">+0.08</span></li></ol></div><div class="rating-card"><h4>Bundesliga</h4><ol><li><span class="rk">1</span><span class="tn">Bayern Munich</span><span class="rt">+0.38</span></li><li><span class="rk">2</span><span class="tn">Hoffenheim</span><span class="rt">+0.15</span></li><li><span class="rk">3</span><span class="tn">Stuttgart</span><span class="rt">+0.15</span></li><li><span class="rk">4</span><span class="tn">Ein Frankfurt</span><span class="rt">+0.15</span></li></ol></div><div class="rating-card"><h4>Premier League</h4><ol><li><span class="rk">1</span><span class="tn">Liverpool</span><span class="rt">+0.15</span></li><li><span class="rk">2</span><span class="tn">Ipswich</span><span class="rt">+0.12</span></li><li><span class="rk">3</span><span class="tn">Luton</span><span class="rt">+0.11</span></li><li><span class="rk">4</span><span class="tn">Sheffield United</span><span class="rt">+0.11</span></li></ol></div><div class="rating-card"><h4>Championship</h4><ol><li><span class="rk">1</span><span class="tn">Southampton</span><span class="rt">+0.23</span></li><li><span class="rk">2</span><span class="tn">Coventry</span><span class="rt">+0.12</span></li><li><span class="rk">3</span><span class="tn">Wrexham</span><span class="rt">+0.11</span></li><li><span class="rk">4</span><span class="tn">Norwich</span><span class="rt">+0.11</span></li></ol></div><div class="rating-card"><h4>Ligue 1</h4><ol><li><span class="rk">1</span><span class="tn">Paris SG</span><span class="rt">+0.19</span></li><li><span class="rk">2</span><span class="tn">Monaco</span><span class="rt">+0.18</span></li><li><span class="rk">3</span><span class="tn">Marseille</span><span class="rt">+0.17</span></li><li><span class="rk">4</span><span class="tn">St Etienne</span><span class="rt">+0.16</span></li></ol></div><div class="rating-card"><h4>Super League</h4><ol><li><span class="rk">1</span><span class="tn">Levadeiakos</span><span class="rt">+0.28</span></li><li><span class="rk">2</span><span class="tn">OFI Crete</span><span class="rt">+0.17</span></li><li><span class="rk">3</span><span class="tn">PAOK</span><span class="rt">+0.16</span></li><li><span class="rk">4</span><span class="tn">Panserraikos</span><span class="rt">+0.07</span></li></ol></div><div class="rating-card"><h4>Serie A</h4><ol><li><span class="rk">1</span><span class="tn">Inter</span><span class="rt">+0.26</span></li><li><span class="rk">2</span><span class="tn">Salernitana</span><span class="rt">+0.10</span></li><li><span class="rk">3</span><span class="tn">Sassuolo</span><span class="rt">+0.10</span></li><li><span class="rk">4</span><span class="tn">Monza</span><span class="rt">+0.08</span></li></ol></div><div class="rating-card"><h4>Eredivisie</h4><ol><li><span class="rk">1</span><span class="tn">PSV Eindhoven</span><span class="rt">+0.40</span></li><li><span class="rk">2</span><span class="tn">Cambuur</span><span class="rt">+0.16</span></li><li><span class="rk">3</span><span class="tn">Nijmegen</span><span class="rt">+0.13</span></li><li><span class="rk">4</span><span class="tn">Feyenoord</span><span class="rt">+0.08</span></li></ol></div><div class="rating-card"><h4>Primeira Liga</h4><ol><li><span class="rk">1</span><span class="tn">Sp Lisbon</span><span class="rt">+0.30</span></li><li><span class="rk">2</span><span class="tn">Estoril</span><span class="rt">+0.22</span></li><li><span class="rk">3</span><span class="tn">Benfica</span><span class="rt">+0.20</span></li><li><span class="rk">4</span><span class="tn">Arouca</span><span class="rt">+0.15</span></li></ol></div><div class="rating-card"><h4>Premiership</h4><ol><li><span class="rk">1</span><span class="tn">Rangers</span><span class="rt">+0.18</span></li><li><span class="rk">2</span><span class="tn">Celtic</span><span class="rt">+0.18</span></li><li><span class="rk">3</span><span class="tn">Kilmarnock</span><span class="rt">+0.15</span></li><li><span class="rk">4</span><span class="tn">Dundee</span><span class="rt">+0.06</span></li></ol></div><div class="rating-card"><h4>LaLiga</h4><ol><li><span class="rk">1</span><span class="tn">Barcelona</span><span class="rt">+0.28</span></li><li><span class="rk">2</span><span class="tn">Villarreal</span><span class="rt">+0.24</span></li><li><span class="rk">3</span><span class="tn">Real Madrid</span><span class="rt">+0.14</span></li><li><span class="rk">4</span><span class="tn">Levante</span><span class="rt">+0.10</span></li></ol></div><div class="rating-card"><h4>Super Lig</h4><ol><li><span class="rk">1</span><span class="tn">Fenerbahce</span><span class="rt">+0.31</span></li><li><span class="rk">2</span><span class="tn">Ad. Demirspor</span><span class="rt">+0.21</span></li><li><span class="rk">3</span><span class="tn">Galatasaray</span><span class="rt">+0.17</span></li><li><span class="rk">4</span><span class="tn">Hatayspor</span><span class="rt">+0.12</span></li></ol></div></div>
+</section>
+
+<section>
+  <div class="sec-head"><h2>Méthodologie</h2></div>
+  <div class="method">
+    <div class="panel">
+      <h3>1 · Données</h3>
+      <p><b>football-data.co.uk</b> — résultats et cotes de clôture depuis 2016 (gratuit, sans clé).
+      <b>ESPN</b> — calendriers et scores. <b>Pinnacle</b> — cotes sharp de référence.
+      Tout est public et gratuit.</p>
+    </div>
+    <div class="panel">
+      <h3>2 · Modèles</h3>
+      <p><b>Dixon-Coles</b> (Poisson bivarié, décroissance temporelle, correction des scores faibles)
+      + <b>Elo</b> + <b>LightGBM</b> (forme, xG, calendrier). Mélange au niveau des matrices de scores,
+      poids choisi par validation temporelle, puis calibration de température.</p>
+    </div>
+    <div class="panel">
+      <h3>3 · Décision</h3>
+      <p>Les cotes sont dé-viggées (méthode <i>power</i>) pour estimer la probabilité de marché.
+      L'edge est calculé sur une probabilité <b>ancrée 70 % sur le marché</b>, plafonné, avec garde-fou
+      de divergence : un désaccord énorme est traité comme une erreur de modèle, pas comme une aubaine.</p>
+    </div>
+    <div class="panel">
+      <h3>4 · Mise</h3>
+      <p><b>Kelly fractionnaire</b> (22 %), plafond 2 % de bankroll par pari, 7 % d'exposition
+      journalière, 8 paris maximum. Deux métriques comptent : le ROI et surtout le <b>CLV</b>
+      (battre la cote de clôture), seul indicateur d'un edge réel.</p>
+    </div>
+  </div>
+  <div class="warnbox" style="border-color:#4d3c12">
+    <b>Avertissement.</b> Ce projet est un outil d'analyse et de paper trading à but éducatif.
+    Aucune méthode ne garantit un gain : le backtest est une reconstitution historique, pas une promesse.
+    Les paris sportifs comportent un risque de perte et d'addiction. Jouer comporte des risques :
+    endettement, isolement, dépendance. 18+.
+  </div>
+</section>
+
+<footer>
+  ATHENA · moteur open-source · données publiques gratuites · généré automatiquement par GitHub Actions.
+  Les probabilités affichées sont des estimations statistiques, pas des conseils d'investissement.
+</footer>
+
+</div>
+</body>
+</html>

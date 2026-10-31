@@ -1,0 +1,179 @@
+# =====================================================================
+#  Alias d'équipes : nom brut (ESPN / Pinnacle / presse) -> nom canonique
+#  Le nom canonique est celui de football-data.co.uk (référence historique).
+#  Les clés sont normalisées automatiquement (casse, accents, ponctuation).
+# =====================================================================
+
+# ---------- Angleterre ----------
+Manchester United: Man United
+Man Utd: Man United
+Manchester City: Man City
+Newcastle United: Newcastle
+Nottingham Forest: Nott'm Forest
+Nottm Forest: Nott'm Forest
+Tottenham Hotspur: Tottenham
+West Ham United: West Ham
+Wolverhampton Wanderers: Wolves
+Wolverhampton: Wolves
+Brighton and Hove Albion: Brighton
+Brighton & Hove Albion: Brighton
+AFC Bournemouth: Bournemouth
+Leeds United: Leeds
+Leicester City: Leicester
+Hull City: Hull
+Coventry City: Coventry
+Ipswich Town: Ipswich
+Luton Town: Luton
+Queens Park Rangers: QPR
+Sheffield Wednesday: Sheffield Weds
+West Bromwich Albion: West Brom
+Birmingham City: Birmingham
+Blackburn Rovers: Blackburn
+Bolton Wanderers: Bolton
+Cardiff City: Cardiff
+Charlton Athletic: Charlton
+Derby County: Derby
+Huddersfield Town: Huddersfield
+Lincoln City: Lincoln
+Norwich City: Norwich
+Oxford United: Oxford
+Plymouth Argyle: Plymouth
+Preston North End: Preston
+Rotherham United: Rotherham
+Stoke City: Stoke
+Swansea City: Swansea
+Wigan Athletic: Wigan
+Aston Villa: Aston Villa
+Crystal Palace: Crystal Palace
+
+# ---------- Espagne ----------
+Athletic Bilbao: Ath Bilbao
+Athletic Club: Ath Bilbao
+Atletico Madrid: Ath Madrid
+Atletico de Madrid: Ath Madrid
+FC Barcelona: Barcelona
+Real Betis: Betis
+Celta Vigo: Celta
+Celta de Vigo: Celta
+Espanyol: Espanol
+RCD Espanyol: Espanol
+Deportivo La Coruna: La Coruna
+Deportivo: La Coruna
+Real Sociedad: Sociedad
+Rayo Vallecano: Vallecano
+Real Oviedo: Oviedo
+Racing Santander: Santander
+Sevilla FC: Sevilla
+Valencia CF: Valencia
+Villarreal CF: Villarreal
+CA Osasuna: Osasuna
+Getafe CF: Getafe
+Girona FC: Girona
+RCD Mallorca: Mallorca
+UD Las Palmas: Las Palmas
+Deportivo Alaves: Alaves
+CD Leganes: Leganes
+Levante UD: Levante
+Malaga CF: Malaga
+Granada CF: Granada
+Elche CF: Elche
+Cadiz CF: Cadiz
+Real Valladolid: Valladolid
+Real Madrid: Real Madrid
+
+# ---------- Allemagne ----------
+Bayern Munich: Bayern Munich
+FC Bayern Munich: Bayern Munich
+Bayern Munchen: Bayern Munich
+Eintracht Frankfurt: Ein Frankfurt
+FC Cologne: FC Koln
+1. FC Koln: FC Koln
+Koln: FC Koln
+Borussia Dortmund: Dortmund
+Bayer Leverkusen: Leverkusen
+Borussia Monchengladbach: M'gladbach
+Borussia Mönchengladbach: M'gladbach
+Union Berlin: Union Berlin
+1. FC Union Berlin: Union Berlin
+SC Freiburg: Freiburg
+TSG Hoffenheim: Hoffenheim
+VfL Wolfsburg: Wolfsburg
+Mainz 05: Mainz
+FSV Mainz 05: Mainz
+FC Augsburg: Augsburg
+SV Werder Bremen: Werder Bremen
+VfB Stuttgart: Stuttgart
+VfL Bochum: Bochum
+1. FC Heidenheim: Heidenheim
+FC St. Pauli: St Pauli
+Hamburger SV: Hamburg
+Hertha BSC: Hertha
+Schalke 04: Schalke 04
+SC Paderborn: Paderborn
+SV Darmstadt 98: Darmstadt
+SV Elversberg: Elversberg
+
+# ---------- Belgique ----------
+OH Leuven: Oud-Heverlee Leuven
+Oud Leuven: Oud-Heverlee Leuven
+Sint-Truidense: St Truiden
+Sint Truidense: St Truiden
+STVV: St Truiden
+Union Saint-Gilloise: St. Gilloise
+Union SG: St. Gilloise
+Club Brugge KV: Club Brugge
+Cercle Brugge KSV: Cercle Brugge
+KV Mechelen: Mechelen
+KV Kortrijk: Kortrijk
+KAA Gent: Gent
+KRC Genk: Genk
+Standard Liege: Standard
+Royal Antwerp: Antwerp
+Beerschot: Beerschot VA
+Lommel: Lommel SK
+SV Zulte Waregem: Waregem
+Zulte Waregem: Waregem
+
+# ---------- Turquie ----------
+Istanbul Basaksehir: Buyuksehyr
+Basaksehir: Buyuksehyr
+Buyuksehir Belediye: Buyuksehyr
+Amed SFK: Amedspor
+Amed Sportif: Amedspor
+Adana Demirspor: Ad. Demirspor
+Goztepe: Goztep
+Caykur Rizespor: Rizespor
+Corendon Alanyaspor: Alanyaspor
+Fatih Karagumruk: Karagumruk
+
+# ---------- Portugal ----------
+Sporting CP: Sp Lisbon
+Sporting Lisbon: Sp Lisbon
+SC Braga: Sp Braga
+Sporting Braga: Sp Braga
+Vitoria Guimaraes: Guimaraes
+Vitoria de Guimaraes: Guimaraes
+FC Porto: Porto
+SL Benfica: Benfica
+Estrela Amadora: Estrela
+Estoril Praia: Estoril
+CD Nacional: Nacional
+Rio Ave FC: Rio Ave
+Gil Vicente FC: Gil Vicente
+Pacos de Ferreira: Pacos Ferreira
+
+# ---------- Grece ----------
+Olympiacos: Olympiakos
+AEK Athens: AEK
+Aris Thessaloniki: Aris
+Levadiakos: Levadeiakos
+Kallithea: Athens Kallithea
+PAS Giannina: Giannina
+OFI: OFI Crete
+
+# ---------- Ecosse ----------
+Heart of Midlothian: Hearts
+Hibs: Hibernian
+St. Johnstone: St Johnstone
+St. Mirren: St Mirren
+Ross County: Ross County

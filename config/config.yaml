@@ -1,0 +1,110 @@
+# ============================================================
+#  ATHENA - configuration du moteur de pronostics
+#  Aucune clé n'est stockée ici : tout passe par variables
+#  d'environnement (GEMINI_API_KEY, ODDS_API_KEY optionnels).
+# ============================================================
+version: "1.0"
+
+# ---------------------------------------------------------------
+# Ligues suivies.
+#   div      : code football-data.co.uk (historique + cotes fermeture)
+#   espn     : slug ESPN (calendrier / résultats, sans clé)
+#   pinnacle : id de ligue Pinnacle (cotes de référence, sans clé)
+#   sharp    : ligue considérée comme liquide/sharp (filtre qualité)
+# ---------------------------------------------------------------
+leagues:
+  - {code: E0,  name: "Premier League",      country: "Angleterre", div: E0,  espn: eng.1, pinnacle: 1980, sharp: true}
+  - {code: E1,  name: "Championship",        country: "Angleterre", div: E1,  espn: eng.2, pinnacle: 1977, sharp: false}
+  - {code: SP1, name: "LaLiga",              country: "Espagne",    div: SP1, espn: esp.1, pinnacle: 2196, sharp: true}
+  - {code: I1,  name: "Serie A",             country: "Italie",     div: I1,  espn: ita.1, pinnacle: 2436, sharp: true}
+  - {code: D1,  name: "Bundesliga",          country: "Allemagne",  div: D1,  espn: ger.1, pinnacle: 1842, sharp: true}
+  - {code: F1,  name: "Ligue 1",             country: "France",     div: F1,  espn: fra.1, pinnacle: 2036, sharp: true}
+  - {code: N1,  name: "Eredivisie",          country: "Pays-Bas",   div: N1,  espn: ned.1, pinnacle: 1928, sharp: false}
+  - {code: B1,  name: "Pro League",          country: "Belgique",   div: B1,  espn: bel.1, pinnacle: 1817, sharp: false}
+  - {code: P1,  name: "Primeira Liga",       country: "Portugal",   div: P1,  espn: por.1, pinnacle: 2386, sharp: false}
+  - {code: T1,  name: "Super Lig",           country: "Turquie",    div: T1,  espn: tur.1, pinnacle: 2592, sharp: false}
+  - {code: SC0, name: "Premiership",         country: "Ecosse",     div: SC0, espn: sco.1, pinnacle: 2421, sharp: false}
+  - {code: G1,  name: "Super League",        country: "Grece",      div: G1,  espn: gre.1, pinnacle: 2081, sharp: false}
+
+# ---------------------------------------------------------------
+# Historique utilisé pour l'entraînement
+# ---------------------------------------------------------------
+history:
+  seasons_from: 2016          # saison de départ (2016/17)
+  cache_dir: "data/cache"
+  refresh_hours: 12           # fraicheur du cache CSV
+
+# ---------------------------------------------------------------
+# Modèles
+# ---------------------------------------------------------------
+model:
+  xi_decay_per_day: 0.0019     # décroissance temporelle Dixon-Coles (demi-vie ~ 1 an)
+  ridge: 0.035                 # régularisation attaque/défense (protège les promus)
+  max_goals: 10                # taille de la matrice de scores
+  min_matches_team: 4          # nb mini de matchs pour un paramètre d'équipe
+  train_window_days: 1500      # fenêtre d'entraînement glissante
+  dc_weight_default: 0.55      # poids Dixon-Coles dans l'ensemble
+  gbm:
+    enabled: true
+    n_estimators: 450
+    learning_rate: 0.028
+    num_leaves: 24
+    min_child_samples: 45
+    subsample: 0.85
+    colsample_bytree: 0.8
+    reg_lambda: 1.0
+  calibration: true            # calibration (temperature scaling) sur validation
+  shrink_to_market: 0.70       # ancrage marché (validé par backtest : le modèle pèse 30 %)
+
+# ---------------------------------------------------------------
+# Moteur de paris
+# ---------------------------------------------------------------
+betting:
+  initial_bankroll: 1000.0     # unités (paper trading)
+  kelly_fraction: 0.22         # Kelly fractionnaire (robustesse)
+  max_stake_pct: 0.02          # 2 % de bankroll max par pari
+  min_stake_pct: 0.001
+  max_daily_exposure_pct: 0.07
+  max_bets_per_day: 8
+  max_bets_per_match: 1
+  min_edge: 0.03               # edge minimum (3 %)
+  min_edge_sharp: 0.05
+  max_edge: 0.10               # garde-fou : au-delà, c'est une erreur de modèle
+  max_divergence_low: 0.75     # p_modèle / p_sharp doit rester dans [0.75, 1.35]
+  max_divergence_high: 1.35
+  min_odds: 1.45
+  max_odds: 8.0
+  min_prob: 0.06
+  max_prob: 0.80
+  slippage: 0.015              # dégradation de cote simulée (backtest)
+  devig_method: "power"        # power | shin | multiplicative | additive
+  price_mode: "avg"            # avg = cote moyenne marché (réaliste) | max = line shopping
+  markets: ["1X2"]             # marchés mis en jeu (OU25/AH instables sur données gratuites)
+  # Quand une seule source de cotes est disponible (Pinnacle), l'edge compare
+  # le modèle au prix du même book : c'est moins fiable qu'un vrai écart
+  # multi-books. On exige donc plus d'edge et on réduit la mise.
+  single_source:
+    enabled: true
+    min_edge: 0.05
+    stake_scale: 0.5
+
+# ---------------------------------------------------------------
+# Publication
+# ---------------------------------------------------------------
+publish:
+  site_dir: "site"
+  horizon_days: 3              # fenêtre de matchs à pronostiquer
+  top_picks: 12
+  timezone: "Africa/Ouagadougou"
+
+# ---------------------------------------------------------------
+# LLM (Gemini, palier gratuit) - optionnel
+# ---------------------------------------------------------------
+llm:
+  enabled: true
+  provider: "gemini"
+  model: "gemini-2.5-flash"
+  fallback_models: ["gemini-2.0-flash", "gemini-flash-latest"]
+  max_calls_per_run: 8
+  max_output_tokens: 400
+  temperature: 0.4
