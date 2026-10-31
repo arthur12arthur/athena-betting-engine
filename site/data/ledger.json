@@ -38,7 +38,8 @@
    "bet_id": "7306232f462ce8",
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 4.75
   },
   {
    "league": "I1",
@@ -60,7 +61,8 @@
    "bet_id": "bf6d6bfccf1c6c",
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 3.41
   },
   {
    "league": "I1",
@@ -82,7 +84,8 @@
    "bet_id": "92efe254060073",
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 3.96
   },
   {
    "league": "P1",
@@ -104,7 +107,8 @@
    "bet_id": "dd0f04daee95f8",
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 5.32
   },
   {
    "league": "F1",
@@ -126,7 +130,8 @@
    "bet_id": "10c1b59c146465",
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 4.01
   },
   {
    "league": "I1",
@@ -148,7 +153,8 @@
    "bet_id": "bfcebc2305943c",
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 2.9
   },
   {
    "league": "E1",
@@ -170,7 +176,8 @@
    "bet_id": "ee0b27e70b51d4",
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 2.76
   },
   {
    "league": "P1",
@@ -192,7 +199,8 @@
    "bet_id": "8c4fd090fd4109",
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 4.26
   },
   {
    "league": "B1",
@@ -216,7 +224,8 @@
    "bet_id": "26d2f98ed12e6d",
    "created_at": "2026-10-31T22:43:27+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 4.85
   }
  ],
  "equity": [

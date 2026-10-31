@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-31T22:43:27+00:00",
+ "generated_at": "2026-10-31T22:46:42+00:00",
  "model": {
   "version": "athena-1.0-20261031",
-  "trained_at": "2026-10-31T22:43:08.772685",
+  "trained_at": "2026-10-31T22:46:35.429390",
   "w_dc": 0.1,
   "temperature": 0.962,
   "calibration": {
@@ -2816,30 +2816,5 @@
    }
   }
  ],
- "bets": [
-  {
-   "league": "B1",
-   "home": "Lommel SK",
-   "away": "Gent",
-   "kickoff": "2026-11-01",
-   "market": "1X2",
-   "selection": "home",
-   "label": "1 (domicile)",
-   "price": 4.85,
-   "p_model": 0.3048,
-   "p_fair": 0.2266,
-   "p_sharp": 0.1931,
-   "edge": 0.0992,
-   "book": "pinnacle",
-   "n_books": 0,
-   "multi_book": false,
-   "stake_scale": 0.5,
-   "stake": 2.83,
-   "kelly_full": 0.0257,
-   "bet_id": "26d2f98ed12e6d",
-   "created_at": "2026-10-31T22:43:27+00:00",
-   "status": "open",
-   "pnl": 0.0
-  }
- ]
+ "bets": []
 }
