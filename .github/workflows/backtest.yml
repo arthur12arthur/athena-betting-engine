@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: athena-backtest
+  group: athena-write
   cancel-in-progress: true
 
 permissions:
@@ -81,5 +81,6 @@ jobs:
             echo "Aucun changement."
           else
             git commit -m "chore(backtest): rapport $(date -u +'%Y-%m-%d')"
-            git push
+            git pull --rebase --autostash origin main
+            git push origin main
           fi

@@ -12,7 +12,7 @@ on:
         default: "3"
 
 concurrency:
-  group: athena-daily
+  group: athena-write
   cancel-in-progress: false
 
 permissions:
@@ -64,5 +64,6 @@ jobs:
             echo "Aucun changement à committer."
           else
             git commit -m "chore(daily): prédictions du $(date -u +'%Y-%m-%d %H:%M') UTC"
-            git push
+            git pull --rebase --autostash origin main
+            git push origin main
           fi

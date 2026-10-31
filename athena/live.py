@@ -442,6 +442,20 @@ def run_daily(cfg: Config, do_publish: bool = True, use_llm: bool | None = None)
     board = build_fixture_board(cfg, client, ctx.resolver, horizon)
     preds = predict_board(cfg, ctx, board)
 
+    # CLV : on mémorise la dernière cote sharp vue avant le coup d'envoi.
+    # Au règlement, CLV = cote jouée / cote de clôture - 1.
+    updated = 0
+    for b in ledger.open_bets():
+        for row in board.rows:
+            if (row["league"], row["home"], row["away"]) == (b["league"], b["home"], b["away"]):
+                price = (row.get("pinnacle_odds") or {}).get(b["selection"])
+                if price:
+                    b["closing_price"] = round(float(price), 3)
+                    updated += 1
+                break
+    if updated:
+        ledger.save()
+
     new_bets = select_bets(cfg, preds, board, ledger)
     for b in new_bets:
         ledger.add_bet(b)
