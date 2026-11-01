@@ -1,9 +1,9 @@
 name: Publier le dashboard (GitHub Pages)
 
+# Déploiement manuel / de secours.
+# Le déploiement automatique est assuré par daily.yml (le commit du bot est
+# poussé avec GITHUB_TOKEN et ne déclencherait donc pas ce workflow).
 on:
-  push:
-    branches: [main]
-    paths: ["site/**"]
   workflow_dispatch:
 
 permissions:

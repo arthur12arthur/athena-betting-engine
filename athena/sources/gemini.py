@@ -34,6 +34,10 @@ class GeminiClient:
         self.max_tokens = int(llm.get("max_output_tokens", 400))
         self.temperature = float(llm.get("temperature", 0.4))
         self.enabled = bool(self.key) and bool(llm.get("enabled", True))
+        self.timeout = float(llm.get("timeout_s", 12))
+        self._dead_models: set[str] = set()
+        self._failures = 0
+        self._max_failures = int(llm.get("max_failures_per_run", 3))
         self.http = client or HttpClient()
         self.cache_dir = Path(cfg.root) / "data" / "cache" / "llm"
         self.cache_dir.mkdir(parents=True, exist_ok=True)
@@ -67,26 +71,43 @@ class GeminiClient:
         }
         if system:
             payload["systemInstruction"] = {"parts": [{"text": system}]}
+        self.calls += 1
         for model in [self.model] + self.fallbacks:
+            if model in self._dead_models:
+                continue
             url = f"{BASE}/{model}:generateContent?key={self.key}"
-            self.calls += 1
             data = self._post(url, payload)
             text = self._extract(data)
             if text:
                 cached.write_text(json.dumps({"text": text, "model": model}), encoding="utf-8")
+                self._failures = 0
                 return text
+            self._failures += 1
+            if self._failures >= self._max_failures:
+                # inutile de continuer à attendre : le briefing est un bonus,
+                # pas une dépendance du pipeline.
+                log.warning("Gemini indisponible : désactivé pour cette exécution")
+                self.enabled = False
+                return None
         return None
 
     def _post(self, url: str, payload: dict):
         import requests
         try:
-            r = requests.post(url, json=payload, timeout=30,
+            r = requests.post(url, json=payload, timeout=self.timeout,
                               headers={"Content-Type": "application/json"})
             if r.status_code == 429:
                 log.warning("Gemini: quota atteint (429)")
                 return None
             if r.status_code >= 400:
                 log.warning("Gemini HTTP %s sur %s", r.status_code, url.split("?")[0])
+                if r.status_code in {400, 401, 403, 404}:
+                    # modèle inexistant ou clé refusée : ne plus le réessayer
+                    try:
+                        model = url.split("/models/")[1].split(":")[0]
+                        self._dead_models.add(model)
+                    except IndexError:
+                        pass
                 return None
             return r.json()
         except Exception as exc:  # noqa: BLE001

@@ -65,6 +65,7 @@ betting:
   max_stake_pct: 0.02          # 2 % de bankroll max par pari
   min_stake_pct: 0.001
   max_daily_exposure_pct: 0.07
+  max_open_exposure_pct: 0.20   # plafond global des mises ouvertes (toutes dates)
   max_bets_per_day: 8
   max_bets_per_match: 1
   min_edge: 0.03               # edge minimum (3 %)
@@ -117,6 +118,8 @@ llm:
   model: "gemini-2.5-flash"
   fallback_models: ["gemini-2.0-flash", "gemini-flash-latest"]
   max_calls_per_run: 8
+  timeout_s: 12                # coupe-circuit si l'API traîne
+  max_failures_per_run: 3
   max_output_tokens: 400
   temperature: 0.4
 

@@ -211,10 +211,10 @@ Aucune clé n'est jamais écrite dans le code ni dans un fichier du dépôt.
 
 | Workflow | Déclencheur | Effet |
 |---|---|---|
-| `daily.yml` | cron `05:20 / 11:20 / 17:20 UTC` | ingère les résultats, règle les paris, prédit les matchs à venir, publie `site/` |
+| `daily.yml` | cron `05:20 / 11:20 / 17:20 UTC` | ingère les résultats, règle les paris, prédit les matchs à venir, publie et **déploie** `site/` |
 | `backtest.yml` | lundi 03:00 UTC | réentraîne et rejoue 3 saisons, met à jour les métriques |
 | `ci.yml` | à chaque push/PR | ruff + 84 tests + diagnostic réseau |
-| `pages.yml` | push sur `site/**` | déploie le dashboard sur GitHub Pages |
+| `pages.yml` | manuel | redéploie le dashboard (secours) |
 
 Chaque exécution commite ses résultats (`site/`, `data/state/`) : l'historique
 du dépôt **est** l'historique du système. Aucune base de données à héberger.

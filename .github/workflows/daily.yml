@@ -17,13 +17,20 @@ concurrency:
 
 permissions:
   contents: write
+  pages: write          # le déploiement Pages est fait ici : un commit poussé
+  id-token: write       # par GITHUB_TOKEN ne déclenche pas d'autre workflow
 
 jobs:
   pipeline:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+
+      - uses: actions/configure-pages@v5
 
       - uses: actions/setup-python@v5
         with:
@@ -82,3 +89,18 @@ jobs:
             git pull --rebase --autostash origin main
             git push origin main
           fi
+
+      # Le commit ci-dessus est poussé avec GITHUB_TOKEN : il ne déclenche
+      # aucun autre workflow (anti-récursion GitHub). On déploie donc Pages
+      # directement ici, sinon le site resterait figé sur l'ancienne version.
+      - name: Préparer l'artefact Pages
+        if: success()
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Déployer le dashboard (GitHub Pages)
+        id: deploy
+        if: success()
+        uses: actions/deploy-pages@v4
+        continue-on-error: true

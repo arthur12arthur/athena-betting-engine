@@ -272,6 +272,13 @@ def select_bets(cfg: Config, preds: pd.DataFrame, board: FixtureBoard,
     day_bets = [b for b in ledger.bets if str(b.get("created_at", ""))[:10] == today]
     day_exposure = sum(float(b["stake"]) for b in day_bets)
     max_exp = float(bcfg.get("max_daily_exposure_pct", 0.07)) * bankroll
+    # plafond de prudence : total des mises ouvertes, toutes dates confondues
+    open_exposure = sum(float(b["stake"]) for b in ledger.open_bets())
+    max_open = float(bcfg.get("max_open_exposure_pct", 0.20)) * bankroll
+    if open_exposure >= max_open:
+        log.info("exposition ouverte %.2f u ≥ plafond %.2f u : aucun nouveau pari",
+                 open_exposure, max_open)
+        return []
     ss = bcfg.get("single_source", {}) or {}
 
     candidates: list[dict] = []
@@ -334,6 +341,7 @@ def select_bets(cfg: Config, preds: pd.DataFrame, board: FixtureBoard,
                     "stake_scale": stake_scale,
                 })
 
+    debug_skip = len(candidates) <= 40
     candidates.sort(key=lambda c: -c["edge"])
     chosen: list[dict] = []
     seen_matches: dict[str, int] = {}
@@ -346,10 +354,17 @@ def select_bets(cfg: Config, preds: pd.DataFrame, board: FixtureBoard,
             continue
         if ledger.has_bet(bet_id(c["league"], c["kickoff"], c["home"], c["away"],
                                  c["market"], c["selection"])):
+            if debug_skip:
+                log.info("skip (déjà parié) : %s–%s %s", c["home"], c["away"], c["label"])
             continue
-        remaining = max(0.0, max_exp - day_exposure)
+        remaining = max(0.0, min(max_exp - day_exposure, max_open - open_exposure))
+        if remaining <= 0:
+            break
         plan = plan_stake(c["p_fair"], c["price"], bankroll, bcfg, remaining_exposure=remaining)
         if plan.stake <= 0:
+            if debug_skip:
+                log.info("skip (mise nulle) : %s–%s %s edge %.3f reste %.2f",
+                         c["home"], c["away"], c["label"], c["edge"], remaining)
             continue
         scaled = round(plan.stake * float(c["stake_scale"]), 2)
         if scaled <= 0:
@@ -359,6 +374,7 @@ def select_bets(cfg: Config, preds: pd.DataFrame, board: FixtureBoard,
                                    c["market"], c["selection"]),
                   "created_at": datetime.now(UTC).isoformat(timespec="seconds")})
         day_exposure += scaled
+        open_exposure += scaled
         seen_matches[mkey] = seen_matches.get(mkey, 0) + 1
         chosen.append(c)
         if day_exposure >= max_exp:
