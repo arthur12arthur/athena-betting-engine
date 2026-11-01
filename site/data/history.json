@@ -4,7 +4,7 @@
   "hit_rate": null,
   "logloss": null,
   "brier": null,
-  "n_total": 57,
+  "n_total": 61,
   "by_league": []
  },
  "stats_30d": {
@@ -12,7 +12,7 @@
   "hit_rate": null,
   "logloss": null,
   "brier": null,
-  "n_total": 57,
+  "n_total": 61,
   "by_league": []
  },
  "recent": [],

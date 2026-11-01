@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-31T23:59:40+00:00",
+ "generated_at": "2026-11-01T00:03:59+00:00",
  "model": {
-  "version": "athena-1.0-20261031",
-  "trained_at": "2026-10-31T23:59:24.637696",
+  "version": "athena-1.0-20261101",
+  "trained_at": "2026-11-01T00:02:09.697506",
   "w_dc": 0.1,
   "temperature": 0.962,
   "calibration": {
@@ -35,62 +35,6 @@
   ]
  },
  "fixtures": [
-  {
-   "league": "N1",
-   "home": "Cambuur",
-   "away": "Go Ahead Eagles",
-   "kickoff": "2026-10-31",
-   "p": {
-    "home": 0.3158,
-    "draw": 0.3275,
-    "away": 0.3567
-   },
-   "xg": {
-    "home": 1.52,
-    "away": 1.94
-   },
-   "fair": {
-    "home": 3.17,
-    "draw": 3.05,
-    "away": 2.8
-   },
-   "ou25": {
-    "over": 0.5576,
-    "under": 0.4424,
-    "fair_over": 1.79,
-    "fair_under": 2.26
-   },
-   "btts": 0.6312,
-   "scores": [
-    [
-     "1-1",
-     0.1502
-    ],
-    [
-     "2-2",
-     0.0858
-    ],
-    [
-     "1-2",
-     0.0767
-    ]
-   ],
-   "elo": [
-    1407,
-    1487
-   ],
-   "form": [
-    2.2,
-    1.2
-   ],
-   "ah": {
-    "line": 0.0,
-    "home": 0.4796,
-    "away": 0.5204,
-    "fair_home": 2.09,
-    "fair_away": 1.92
-   }
-  },
   {
    "league": "T1",
    "home": "Amedspor",
@@ -141,17 +85,17 @@
    ],
    "sharp_odds": {
     "home": 1.25,
-    "away": 11.72,
-    "draw": 6.44
+    "away": 12.14,
+    "draw": 6.58
    },
    "sharp_totals": {
-    "over": 1.61,
-    "under": 2.4
+    "over": 1.6,
+    "under": 2.42
    },
    "sharp_handicap": {
     "line": -0.75,
     "home": 1.29,
-    "away": 3.78
+    "away": 3.86
    },
    "ah": {
     "line": -0.75,
@@ -210,19 +154,25 @@
     1.0
    ],
    "sharp_odds": {
-    "home": 2.35,
-    "away": 2.92,
-    "draw": 3.74
+    "home": 2.32,
+    "away": 2.98,
+    "draw": 3.78
    },
    "sharp_totals": {
     "over": 1.64,
-    "under": 2.33
+    "under": 2.34
    },
    "sharp_handicap": {
     "line": 0.0,
-    "home": 1.74,
-    "away": 2.17
+    "home": 1.73,
+    "away": 2.22
    },
+   "best_odds": {
+    "away": 3.2,
+    "home": 2.36,
+    "draw": 3.8
+   },
+   "n_books": 22,
    "ah": {
     "line": 0.0,
     "home": 0.6116,
@@ -281,18 +231,24 @@
    ],
    "sharp_odds": {
     "home": 1.3,
-    "away": 9.2,
-    "draw": 6.32
+    "away": 9.31,
+    "draw": 6.36
    },
    "sharp_totals": {
     "over": 1.38,
-    "under": 3.09
+    "under": 3.1
    },
    "sharp_handicap": {
     "line": -0.5,
     "home": 1.29,
-    "away": 3.82
+    "away": 3.85
    },
+   "best_odds": {
+    "home": 1.34,
+    "away": 11.0,
+    "draw": 6.6
+   },
+   "n_books": 23,
    "ah": {
     "line": -0.5,
     "home": 0.7874,
@@ -350,19 +306,25 @@
     0.6
    ],
    "sharp_odds": {
-    "home": 2.07,
-    "away": 3.35,
-    "draw": 3.91
+    "home": 2.06,
+    "away": 3.38,
+    "draw": 3.93
    },
    "sharp_totals": {
     "over": 1.58,
-    "under": 2.44
+    "under": 2.45
    },
    "sharp_handicap": {
     "line": 0.0,
-    "home": 1.56,
-    "away": 2.53
+    "home": 1.55,
+    "away": 2.56
    },
+   "best_odds": {
+    "home": 2.1,
+    "away": 3.43,
+    "draw": 3.93
+   },
+   "n_books": 20,
    "ah": {
     "line": 0.0,
     "home": 0.5264,
@@ -372,143 +334,79 @@
    }
   },
   {
-   "league": "SP1",
-   "home": "Getafe",
-   "away": "Sevilla",
+   "league": "T1",
+   "home": "Trabzonspor",
+   "away": "Gaziantep",
    "kickoff": "2026-11-01",
    "p": {
-    "home": 0.3477,
-    "draw": 0.3313,
-    "away": 0.321
+    "home": 0.7276,
+    "draw": 0.1821,
+    "away": 0.0903
    },
    "xg": {
-    "home": 1.29,
-    "away": 0.96
+    "home": 1.97,
+    "away": 1.03
    },
    "fair": {
-    "home": 2.88,
-    "draw": 3.02,
-    "away": 3.12
+    "home": 1.37,
+    "draw": 5.49,
+    "away": 11.08
    },
    "ou25": {
-    "over": 0.419,
-    "under": 0.581,
-    "fair_over": 2.39,
-    "fair_under": 1.72
+    "over": 0.6422,
+    "under": 0.3578,
+    "fair_over": 1.56,
+    "fair_under": 2.79
    },
-   "btts": 0.5073,
+   "btts": 0.5425,
    "scores": [
     [
-     "1-1",
-     0.1566
+     "2-0",
+     0.1086
     ],
     [
-     "0-0",
-     0.1065
+     "2-1",
+     0.0988
     ],
     [
      "1-0",
-     0.0998
+     0.0907
     ]
    ],
    "elo": [
-    1455,
-    1489
+    1646,
+    1433
    ],
    "form": [
-    0.8,
-    1.4
+    2.4,
+    0.2
    ],
    "sharp_odds": {
-    "home": 3.3,
-    "away": 2.49,
-    "draw": 3.04
+    "home": 1.28,
+    "away": 9.46,
+    "draw": 6.54
    },
    "sharp_totals": {
-    "over": 2.74,
-    "under": 1.47
+    "over": 1.37,
+    "under": 3.15
    },
    "sharp_handicap": {
-    "line": 0.0,
-    "home": 2.22,
-    "away": 1.67
+    "line": -0.75,
+    "home": 1.32,
+    "away": 3.54
    },
+   "best_odds": {
+    "away": 9.6,
+    "home": 1.32,
+    "draw": 7.0
+   },
+   "n_books": 21,
    "ah": {
-    "line": 0.0,
-    "home": 0.5134,
-    "away": 0.4866,
-    "fair_home": 1.95,
-    "fair_away": 2.05
-   }
-  },
-  {
-   "league": "SC0",
-   "home": "Falkirk",
-   "away": "Celtic",
-   "kickoff": "2026-11-01",
-   "p": {
-    "home": 0.1081,
-    "draw": 0.166,
-    "away": 0.7259
-   },
-   "xg": {
-    "home": 1.13,
-    "away": 2.01
-   },
-   "fair": {
-    "home": 9.25,
-    "draw": 6.02,
-    "away": 1.38
-   },
-   "ou25": {
-    "over": 0.6715,
-    "under": 0.3285,
-    "fair_over": 1.49,
-    "fair_under": 3.04
-   },
-   "btts": 0.5784,
-   "scores": [
-    [
-     "1-2",
-     0.1048
-    ],
-    [
-     "0-2",
-     0.1004
-    ],
-    [
-     "0-1",
-     0.085
-    ]
-   ],
-   "elo": [
-    1494,
-    1700
-   ],
-   "form": [
-    2.0,
-    2.0
-   ],
-   "sharp_odds": {
-    "home": 6.46,
-    "away": 1.46,
-    "draw": 5.0
-   },
-   "sharp_totals": {
-    "over": 1.49,
-    "under": 2.68
-   },
-   "sharp_handicap": {
-    "line": 0.25,
-    "home": 3.59,
-    "away": 1.31
-   },
-   "ah": {
-    "line": 0.25,
-    "home": 0.2326,
-    "away": 0.7674,
-    "fair_home": 4.3,
-    "fair_away": 1.3
+    "line": -0.75,
+    "home": 0.6694,
+    "away": 0.3306,
+    "fair_home": 1.49,
+    "fair_away": 3.03
    }
   },
   {
@@ -573,6 +471,12 @@
     "home": 1.36,
     "away": 3.26
    },
+   "best_odds": {
+    "home": 1.85,
+    "away": 4.3,
+    "draw": 4.2
+   },
+   "n_books": 21,
    "ah": {
     "line": 0.0,
     "home": 0.7571,
@@ -582,143 +486,155 @@
    }
   },
   {
-   "league": "T1",
-   "home": "Trabzonspor",
-   "away": "Gaziantep",
+   "league": "SC0",
+   "home": "Falkirk",
+   "away": "Celtic",
    "kickoff": "2026-11-01",
    "p": {
-    "home": 0.7276,
-    "draw": 0.1821,
-    "away": 0.0903
+    "home": 0.1081,
+    "draw": 0.166,
+    "away": 0.7259
    },
    "xg": {
-    "home": 1.97,
-    "away": 1.03
+    "home": 1.13,
+    "away": 2.01
    },
    "fair": {
-    "home": 1.37,
-    "draw": 5.49,
-    "away": 11.08
+    "home": 9.25,
+    "draw": 6.02,
+    "away": 1.38
    },
    "ou25": {
-    "over": 0.6422,
-    "under": 0.3578,
-    "fair_over": 1.56,
-    "fair_under": 2.79
+    "over": 0.6715,
+    "under": 0.3285,
+    "fair_over": 1.49,
+    "fair_under": 3.04
    },
-   "btts": 0.5425,
+   "btts": 0.5784,
    "scores": [
-    [
-     "2-0",
-     0.1086
-    ],
-    [
-     "2-1",
-     0.0988
-    ],
-    [
-     "1-0",
-     0.0907
-    ]
-   ],
-   "elo": [
-    1646,
-    1433
-   ],
-   "form": [
-    2.4,
-    0.2
-   ],
-   "sharp_odds": {
-    "home": 1.28,
-    "away": 9.39,
-    "draw": 6.49
-   },
-   "sharp_totals": {
-    "over": 1.37,
-    "under": 3.15
-   },
-   "sharp_handicap": {
-    "line": -0.75,
-    "home": 1.32,
-    "away": 3.51
-   },
-   "ah": {
-    "line": -0.75,
-    "home": 0.6694,
-    "away": 0.3306,
-    "fair_home": 1.49,
-    "fair_away": 3.03
-   }
-  },
-  {
-   "league": "N1",
-   "home": "Excelsior",
-   "away": "Twente",
-   "kickoff": "2026-11-01",
-   "p": {
-    "home": 0.1965,
-    "draw": 0.2729,
-    "away": 0.5307
-   },
-   "xg": {
-    "home": 1.34,
-    "away": 1.63
-   },
-   "fair": {
-    "home": 5.09,
-    "draw": 3.67,
-    "away": 1.88
-   },
-   "ou25": {
-    "over": 0.6083,
-    "under": 0.3917,
-    "fair_over": 1.64,
-    "fair_under": 2.55
-   },
-   "btts": 0.6219,
-   "scores": [
-    [
-     "1-1",
-     0.1232
-    ],
     [
      "1-2",
-     0.0907
+     0.1048
     ],
     [
      "0-2",
-     0.076
+     0.1004
+    ],
+    [
+     "0-1",
+     0.085
     ]
    ],
    "elo": [
-    1453,
-    1614
+    1494,
+    1700
    ],
    "form": [
-    0.2,
+    2.0,
     2.0
    ],
    "sharp_odds": {
-    "home": 5.45,
-    "away": 1.56,
-    "draw": 4.61
+    "home": 6.46,
+    "away": 1.46,
+    "draw": 5.0
    },
    "sharp_totals": {
-    "over": 1.5,
-    "under": 2.66
+    "over": 1.49,
+    "under": 2.68
+   },
+   "sharp_handicap": {
+    "line": 0.25,
+    "home": 3.59,
+    "away": 1.31
+   },
+   "best_odds": {
+    "away": 1.47,
+    "home": 7.4,
+    "draw": 5.3
+   },
+   "n_books": 17,
+   "ah": {
+    "line": 0.25,
+    "home": 0.2326,
+    "away": 0.7674,
+    "fair_home": 4.3,
+    "fair_away": 1.3
+   }
+  },
+  {
+   "league": "SP1",
+   "home": "Getafe",
+   "away": "Sevilla",
+   "kickoff": "2026-11-01",
+   "p": {
+    "home": 0.3477,
+    "draw": 0.3313,
+    "away": 0.321
+   },
+   "xg": {
+    "home": 1.29,
+    "away": 0.96
+   },
+   "fair": {
+    "home": 2.88,
+    "draw": 3.02,
+    "away": 3.12
+   },
+   "ou25": {
+    "over": 0.419,
+    "under": 0.581,
+    "fair_over": 2.39,
+    "fair_under": 1.72
+   },
+   "btts": 0.5073,
+   "scores": [
+    [
+     "1-1",
+     0.1566
+    ],
+    [
+     "0-0",
+     0.1065
+    ],
+    [
+     "1-0",
+     0.0998
+    ]
+   ],
+   "elo": [
+    1455,
+    1489
+   ],
+   "form": [
+    0.8,
+    1.4
+   ],
+   "sharp_odds": {
+    "home": 3.3,
+    "away": 2.49,
+    "draw": 3.04
+   },
+   "sharp_totals": {
+    "over": 2.74,
+    "under": 1.47
    },
    "sharp_handicap": {
     "line": 0.0,
-    "home": 4.31,
-    "away": 1.24
+    "home": 2.22,
+    "away": 1.67
    },
+   "best_odds": {
+    "home": 3.45,
+    "away": 2.56,
+    "draw": 3.13
+   },
+   "n_books": 20,
    "ah": {
     "line": 0.0,
-    "home": 0.3329,
-    "away": 0.6671,
-    "fair_home": 3.0,
-    "fair_away": 1.5
+    "home": 0.5134,
+    "away": 0.4866,
+    "fair_home": 1.95,
+    "fair_away": 2.05
    }
   },
   {
@@ -783,12 +699,94 @@
     "home": 2.19,
     "away": 1.74
    },
+   "best_odds": {
+    "away": 2.38,
+    "home": 3.05,
+    "draw": 3.92
+   },
+   "n_books": 22,
    "ah": {
     "line": 0.0,
     "home": 0.5266,
     "away": 0.4734,
     "fair_home": 1.9,
     "fair_away": 2.11
+   }
+  },
+  {
+   "league": "N1",
+   "home": "Excelsior",
+   "away": "Twente",
+   "kickoff": "2026-11-01",
+   "p": {
+    "home": 0.1965,
+    "draw": 0.2729,
+    "away": 0.5307
+   },
+   "xg": {
+    "home": 1.34,
+    "away": 1.63
+   },
+   "fair": {
+    "home": 5.09,
+    "draw": 3.67,
+    "away": 1.88
+   },
+   "ou25": {
+    "over": 0.6083,
+    "under": 0.3917,
+    "fair_over": 1.64,
+    "fair_under": 2.55
+   },
+   "btts": 0.6219,
+   "scores": [
+    [
+     "1-1",
+     0.1232
+    ],
+    [
+     "1-2",
+     0.0907
+    ],
+    [
+     "0-2",
+     0.076
+    ]
+   ],
+   "elo": [
+    1453,
+    1614
+   ],
+   "form": [
+    0.2,
+    2.0
+   ],
+   "sharp_odds": {
+    "home": 5.45,
+    "away": 1.56,
+    "draw": 4.61
+   },
+   "sharp_totals": {
+    "over": 1.5,
+    "under": 2.66
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 4.31,
+    "away": 1.24
+   },
+   "best_odds": {
+    "home": 5.7,
+    "away": 1.62,
+    "draw": 4.62
+   },
+   "n_books": 22,
+   "ah": {
+    "line": 0.0,
+    "home": 0.3329,
+    "away": 0.6671,
+    "fair_home": 3.0,
+    "fair_away": 1.5
    }
   },
   {
@@ -842,7 +840,7 @@
    "sharp_odds": {
     "home": 1.85,
     "away": 4.01,
-    "draw": 4.05
+    "draw": 4.04
    },
    "sharp_totals": {
     "over": 1.59,
@@ -853,6 +851,12 @@
     "home": 1.41,
     "away": 3.06
    },
+   "best_odds": {
+    "away": 4.5,
+    "home": 1.87,
+    "draw": 4.16
+   },
+   "n_books": 21,
    "ah": {
     "line": 0.0,
     "home": 0.54,
@@ -923,13 +927,20 @@
     "home": 1.65,
     "away": 2.36
    },
+   "best_odds": {
+    "home": 2.24,
+    "away": 3.35,
+    "draw": 4.01
+   },
+   "n_books": 23,
    "ah": {
     "line": 0.0,
     "home": 0.5446,
     "away": 0.4554,
     "fair_home": 1.84,
     "fair_away": 2.2
-   }
+   },
+   "briefing": "Frosinone reçoit le Torino dans un match de Serie A où chaque point"
   },
   {
    "league": "I1",
@@ -993,6 +1004,12 @@
     "home": 1.3,
     "away": 3.76
    },
+   "best_odds": {
+    "away": 8.6,
+    "home": 1.49,
+    "draw": 4.9
+   },
+   "n_books": 23,
    "ah": {
     "line": -0.25,
     "home": 0.7024,
@@ -1050,26 +1067,33 @@
     1.0
    ],
    "sharp_odds": {
-    "home": 2.79,
-    "away": 2.56,
-    "draw": 3.52
+    "home": 2.8,
+    "away": 2.55,
+    "draw": 3.53
    },
    "sharp_totals": {
     "over": 1.74,
-    "under": 2.17
+    "under": 2.18
    },
    "sharp_handicap": {
     "line": 0.0,
-    "home": 2.04,
-    "away": 1.87
+    "home": 2.05,
+    "away": 1.86
    },
+   "best_odds": {
+    "away": 2.65,
+    "home": 2.9,
+    "draw": 3.78
+   },
+   "n_books": 22,
    "ah": {
     "line": 0.0,
     "home": 0.5272,
     "away": 0.4728,
     "fair_home": 1.9,
     "fair_away": 2.12
-   }
+   },
+   "briefing": "Ce match de Bundesliga est crucial pour les deux équipes, souvent engagées dans"
   },
   {
    "league": "B1",
@@ -1133,6 +1157,12 @@
     "home": 1.29,
     "away": 3.74
    },
+   "best_odds": {
+    "away": 5.1,
+    "home": 1.71,
+    "draw": 4.3
+   },
+   "n_books": 21,
    "ah": {
     "line": 0.0,
     "home": 0.6629,
@@ -1203,6 +1233,12 @@
     "home": 2.86,
     "away": 1.45
    },
+   "best_odds": {
+    "away": 2.1,
+    "home": 4.1,
+    "draw": 3.45
+   },
+   "n_books": 19,
    "ah": {
     "line": 0.0,
     "home": 0.4363,
@@ -1262,13 +1298,19 @@
    "sharp_odds": {
     "home": 10.19,
     "away": 1.22,
-    "draw": 8.04
+    "draw": 8.0
    },
    "sharp_handicap": {
     "line": 1.0,
-    "home": 3.81,
+    "home": 3.78,
     "away": 1.27
    },
+   "best_odds": {
+    "away": 1.26,
+    "home": 13.0,
+    "draw": 9.2
+   },
+   "n_books": 20,
    "ah": {
     "line": 1.0,
     "home": 0.4155,
@@ -1326,9 +1368,9 @@
     0.6
    ],
    "sharp_odds": {
-    "home": 1.77,
-    "away": 4.64,
-    "draw": 3.88
+    "home": 1.76,
+    "away": 4.68,
+    "draw": 3.9
    },
    "sharp_totals": {
     "over": 1.85,
@@ -1336,9 +1378,15 @@
    },
    "sharp_handicap": {
     "line": 0.0,
-    "home": 1.33,
-    "away": 3.49
+    "home": 1.32,
+    "away": 3.53
    },
+   "best_odds": {
+    "home": 1.83,
+    "away": 5.1,
+    "draw": 4.0
+   },
+   "n_books": 20,
    "ah": {
     "line": 0.0,
     "home": 0.6712,
@@ -1396,19 +1444,25 @@
     0.8
    ],
    "sharp_odds": {
-    "home": 1.77,
-    "away": 4.16,
-    "draw": 4.29
+    "home": 1.78,
+    "away": 4.14,
+    "draw": 4.26
    },
    "sharp_totals": {
-    "over": 1.44,
-    "under": 2.86
+    "over": 1.43,
+    "under": 2.87
    },
    "sharp_handicap": {
     "line": 0.0,
     "home": 1.37,
-    "away": 3.23
+    "away": 3.2
    },
+   "best_odds": {
+    "home": 1.84,
+    "away": 4.3,
+    "draw": 4.3
+   },
+   "n_books": 22,
    "ah": {
     "line": 0.0,
     "home": 0.5687,
@@ -1479,6 +1533,12 @@
     "home": 4.43,
     "away": 1.23
    },
+   "best_odds": {
+    "away": 1.66,
+    "home": 5.8,
+    "draw": 4.5
+   },
+   "n_books": 21,
    "ah": {
     "line": 0.0,
     "home": 0.3412,
@@ -1549,82 +1609,18 @@
     "home": 2.18,
     "away": 1.72
    },
+   "best_odds": {
+    "away": 2.61,
+    "home": 3.28,
+    "draw": 3.15
+   },
+   "n_books": 19,
    "ah": {
     "line": 0.0,
     "home": 0.4555,
     "away": 0.5445,
     "fair_home": 2.2,
     "fair_away": 1.84
-   }
-  },
-  {
-   "league": "F1",
-   "home": "Paris FC",
-   "away": "Monaco",
-   "kickoff": "2026-11-01",
-   "p": {
-    "home": 0.4175,
-    "draw": 0.2771,
-    "away": 0.3053
-   },
-   "xg": {
-    "home": 1.51,
-    "away": 1.46
-   },
-   "fair": {
-    "home": 2.4,
-    "draw": 3.61,
-    "away": 3.28
-   },
-   "ou25": {
-    "over": 0.5218,
-    "under": 0.4782,
-    "fair_over": 1.92,
-    "fair_under": 2.09
-   },
-   "btts": 0.5703,
-   "scores": [
-    [
-     "1-1",
-     0.1307
-    ],
-    [
-     "1-0",
-     0.0899
-    ],
-    [
-     "2-1",
-     0.0872
-    ]
-   ],
-   "elo": [
-    1544,
-    1580
-   ],
-   "form": [
-    1.4,
-    1.2
-   ],
-   "sharp_odds": {
-    "home": 2.53,
-    "away": 2.82,
-    "draw": 3.53
-   },
-   "sharp_totals": {
-    "over": 1.85,
-    "under": 2.05
-   },
-   "sharp_handicap": {
-    "line": 0.0,
-    "home": 1.85,
-    "away": 2.06
-   },
-   "ah": {
-    "line": 0.0,
-    "home": 0.5561,
-    "away": 0.4439,
-    "fair_home": 1.8,
-    "fair_away": 2.25
    }
   },
   {
@@ -1689,12 +1685,170 @@
     "home": 1.27,
     "away": 4.02
    },
+   "best_odds": {
+    "away": 8.2,
+    "home": 1.44,
+    "draw": 5.3
+   },
+   "n_books": 21,
    "ah": {
     "line": -0.25,
     "home": 0.7496,
     "away": 0.2504,
     "fair_home": 1.33,
     "fair_away": 3.99
+   }
+  },
+  {
+   "league": "F1",
+   "home": "Paris FC",
+   "away": "Monaco",
+   "kickoff": "2026-11-01",
+   "p": {
+    "home": 0.4175,
+    "draw": 0.2771,
+    "away": 0.3053
+   },
+   "xg": {
+    "home": 1.51,
+    "away": 1.46
+   },
+   "fair": {
+    "home": 2.4,
+    "draw": 3.61,
+    "away": 3.28
+   },
+   "ou25": {
+    "over": 0.5218,
+    "under": 0.4782,
+    "fair_over": 1.92,
+    "fair_under": 2.09
+   },
+   "btts": 0.5703,
+   "scores": [
+    [
+     "1-1",
+     0.1307
+    ],
+    [
+     "1-0",
+     0.0899
+    ],
+    [
+     "2-1",
+     0.0872
+    ]
+   ],
+   "elo": [
+    1544,
+    1580
+   ],
+   "form": [
+    1.4,
+    1.2
+   ],
+   "sharp_odds": {
+    "home": 2.53,
+    "away": 2.82,
+    "draw": 3.53
+   },
+   "sharp_totals": {
+    "over": 1.85,
+    "under": 2.05
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.85,
+    "away": 2.06
+   },
+   "best_odds": {
+    "away": 3.05,
+    "home": 2.58,
+    "draw": 3.63
+   },
+   "n_books": 21,
+   "ah": {
+    "line": 0.0,
+    "home": 0.5561,
+    "away": 0.4439,
+    "fair_home": 1.8,
+    "fair_away": 2.25
+   }
+  },
+  {
+   "league": "E0",
+   "home": "Liverpool",
+   "away": "Arsenal",
+   "kickoff": "2026-11-01",
+   "p": {
+    "home": 0.2961,
+    "draw": 0.26,
+    "away": 0.4438
+   },
+   "xg": {
+    "home": 1.41,
+    "away": 1.52
+   },
+   "fair": {
+    "home": 3.38,
+    "draw": 3.85,
+    "away": 2.25
+   },
+   "ou25": {
+    "over": 0.4936,
+    "under": 0.5064,
+    "fair_over": 2.03,
+    "fair_under": 1.97
+   },
+   "btts": 0.5344,
+   "scores": [
+    [
+     "1-1",
+     0.1234
+    ],
+    [
+     "0-1",
+     0.1063
+    ],
+    [
+     "1-2",
+     0.092
+    ]
+   ],
+   "elo": [
+    1625,
+    1721
+   ],
+   "form": [
+    2.0,
+    2.4
+   ],
+   "sharp_odds": {
+    "home": 2.96,
+    "away": 2.47,
+    "draw": 3.43
+   },
+   "sharp_totals": {
+    "over": 1.89,
+    "under": 1.99
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.14,
+    "away": 1.78
+   },
+   "best_odds": {
+    "away": 2.53,
+    "home": 3.1,
+    "draw": 3.54
+   },
+   "n_books": 24,
+   "ah": {
+    "line": 0.0,
+    "home": 0.4262,
+    "away": 0.5738,
+    "fair_home": 2.35,
+    "fair_away": 1.74
    }
   },
   {
@@ -1759,82 +1913,18 @@
     "home": 1.24,
     "away": 4.41
    },
+   "best_odds": {
+    "home": 1.6,
+    "away": 5.9,
+    "draw": 4.93
+   },
+   "n_books": 22,
    "ah": {
     "line": 0.0,
     "home": 0.5563,
     "away": 0.4437,
     "fair_home": 1.8,
     "fair_away": 2.25
-   }
-  },
-  {
-   "league": "E0",
-   "home": "Liverpool",
-   "away": "Arsenal",
-   "kickoff": "2026-11-01",
-   "p": {
-    "home": 0.2961,
-    "draw": 0.26,
-    "away": 0.4438
-   },
-   "xg": {
-    "home": 1.41,
-    "away": 1.52
-   },
-   "fair": {
-    "home": 3.38,
-    "draw": 3.85,
-    "away": 2.25
-   },
-   "ou25": {
-    "over": 0.4936,
-    "under": 0.5064,
-    "fair_over": 2.03,
-    "fair_under": 1.97
-   },
-   "btts": 0.5344,
-   "scores": [
-    [
-     "1-1",
-     0.1234
-    ],
-    [
-     "0-1",
-     0.1063
-    ],
-    [
-     "1-2",
-     0.092
-    ]
-   ],
-   "elo": [
-    1625,
-    1721
-   ],
-   "form": [
-    2.0,
-    2.4
-   ],
-   "sharp_odds": {
-    "home": 2.93,
-    "away": 2.49,
-    "draw": 3.44
-   },
-   "sharp_totals": {
-    "over": 1.89,
-    "under": 2.0
-   },
-   "sharp_handicap": {
-    "line": 0.0,
-    "home": 2.12,
-    "away": 1.79
-   },
-   "ah": {
-    "line": 0.0,
-    "home": 0.4262,
-    "away": 0.5738,
-    "fair_home": 2.35,
-    "fair_away": 1.74
    }
   },
   {
@@ -1899,6 +1989,12 @@
     "home": 2.33,
     "away": 1.66
    },
+   "best_odds": {
+    "away": 2.48,
+    "home": 3.6,
+    "draw": 3.2
+   },
+   "n_books": 23,
    "ah": {
     "line": 0.0,
     "home": 0.5365,
@@ -1969,152 +2065,18 @@
     "home": 1.27,
     "away": 3.91
    },
+   "best_odds": {
+    "away": 11.0,
+    "home": 1.3,
+    "draw": 6.0
+   },
+   "n_books": 19,
    "ah": {
     "line": -0.5,
     "home": 0.7659,
     "away": 0.2341,
     "fair_home": 1.31,
     "fair_away": 4.27
-   }
-  },
-  {
-   "league": "B1",
-   "home": "Lommel SK",
-   "away": "Gent",
-   "kickoff": "2026-11-01",
-   "p": {
-    "home": 0.3048,
-    "draw": 0.2241,
-    "away": 0.4711
-   },
-   "xg": {
-    "home": 1.48,
-    "away": 1.15
-   },
-   "fair": {
-    "home": 3.28,
-    "draw": 4.46,
-    "away": 2.12
-   },
-   "ou25": {
-    "over": 0.5135,
-    "under": 0.4865,
-    "fair_over": 1.95,
-    "fair_under": 2.06
-   },
-   "btts": 0.5287,
-   "scores": [
-    [
-     "0-1",
-     0.1072
-    ],
-    [
-     "1-1",
-     0.1065
-    ],
-    [
-     "1-2",
-     0.0949
-    ]
-   ],
-   "elo": [
-    1516,
-    1599
-   ],
-   "form": [
-    1.0,
-    2.6
-   ],
-   "sharp_odds": {
-    "home": 4.85,
-    "away": 1.7,
-    "draw": 4.08
-   },
-   "sharp_totals": {
-    "over": 1.79,
-    "under": 2.08
-   },
-   "sharp_handicap": {
-    "line": 0.0,
-    "home": 3.71,
-    "away": 1.3
-   },
-   "ah": {
-    "line": 0.0,
-    "home": 0.4169,
-    "away": 0.5831,
-    "fair_home": 2.4,
-    "fair_away": 1.71
-   }
-  },
-  {
-   "league": "SP1",
-   "home": "Elche",
-   "away": "Valencia",
-   "kickoff": "2026-11-01",
-   "p": {
-    "home": 0.398,
-    "draw": 0.3118,
-    "away": 0.2902
-   },
-   "xg": {
-    "home": 1.43,
-    "away": 1.15
-   },
-   "fair": {
-    "home": 2.51,
-    "draw": 3.21,
-    "away": 3.45
-   },
-   "ou25": {
-    "over": 0.4293,
-    "under": 0.5707,
-    "fair_over": 2.33,
-    "fair_under": 1.75
-   },
-   "btts": 0.5037,
-   "scores": [
-    [
-     "1-1",
-     0.1475
-    ],
-    [
-     "1-0",
-     0.1086
-    ],
-    [
-     "0-0",
-     0.1
-    ]
-   ],
-   "elo": [
-    1477,
-    1460
-   ],
-   "form": [
-    1.6,
-    1.0
-   ],
-   "sharp_odds": {
-    "home": 2.35,
-    "away": 3.12,
-    "draw": 3.48
-   },
-   "sharp_totals": {
-    "over": 1.97,
-    "under": 1.92
-   },
-   "sharp_handicap": {
-    "line": 0.0,
-    "home": 1.67,
-    "away": 2.22
-   },
-   "ah": {
-    "line": 0.0,
-    "home": 0.5539,
-    "away": 0.4461,
-    "fair_home": 1.81,
-    "fair_away": 2.24
    }
   },
   {
@@ -2179,12 +2141,170 @@
     "home": 1.66,
     "away": 2.29
    },
+   "best_odds": {
+    "away": 3.25,
+    "home": 2.36,
+    "draw": 3.6
+   },
+   "n_books": 19,
    "ah": {
     "line": 0.0,
     "home": 0.5691,
     "away": 0.4309,
     "fair_home": 1.76,
     "fair_away": 2.32
+   }
+  },
+  {
+   "league": "B1",
+   "home": "Lommel SK",
+   "away": "Gent",
+   "kickoff": "2026-11-01",
+   "p": {
+    "home": 0.3048,
+    "draw": 0.2241,
+    "away": 0.4711
+   },
+   "xg": {
+    "home": 1.48,
+    "away": 1.15
+   },
+   "fair": {
+    "home": 3.28,
+    "draw": 4.46,
+    "away": 2.12
+   },
+   "ou25": {
+    "over": 0.5135,
+    "under": 0.4865,
+    "fair_over": 1.95,
+    "fair_under": 2.06
+   },
+   "btts": 0.5287,
+   "scores": [
+    [
+     "0-1",
+     0.1072
+    ],
+    [
+     "1-1",
+     0.1065
+    ],
+    [
+     "1-2",
+     0.0949
+    ]
+   ],
+   "elo": [
+    1516,
+    1599
+   ],
+   "form": [
+    1.0,
+    2.6
+   ],
+   "sharp_odds": {
+    "home": 4.85,
+    "away": 1.7,
+    "draw": 4.08
+   },
+   "sharp_totals": {
+    "over": 1.79,
+    "under": 2.08
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 3.71,
+    "away": 1.3
+   },
+   "best_odds": {
+    "away": 1.72,
+    "home": 5.2,
+    "draw": 4.1
+   },
+   "n_books": 21,
+   "ah": {
+    "line": 0.0,
+    "home": 0.4169,
+    "away": 0.5831,
+    "fair_home": 2.4,
+    "fair_away": 1.71
+   }
+  },
+  {
+   "league": "SP1",
+   "home": "Elche",
+   "away": "Valencia",
+   "kickoff": "2026-11-01",
+   "p": {
+    "home": 0.398,
+    "draw": 0.3118,
+    "away": 0.2902
+   },
+   "xg": {
+    "home": 1.43,
+    "away": 1.15
+   },
+   "fair": {
+    "home": 2.51,
+    "draw": 3.21,
+    "away": 3.45
+   },
+   "ou25": {
+    "over": 0.4293,
+    "under": 0.5707,
+    "fair_over": 2.33,
+    "fair_under": 1.75
+   },
+   "btts": 0.5037,
+   "scores": [
+    [
+     "1-1",
+     0.1475
+    ],
+    [
+     "1-0",
+     0.1086
+    ],
+    [
+     "0-0",
+     0.1
+    ]
+   ],
+   "elo": [
+    1477,
+    1460
+   ],
+   "form": [
+    1.6,
+    1.0
+   ],
+   "sharp_odds": {
+    "home": 2.35,
+    "away": 3.12,
+    "draw": 3.47
+   },
+   "sharp_totals": {
+    "over": 1.97,
+    "under": 1.92
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.67,
+    "away": 2.22
+   },
+   "best_odds": {
+    "home": 2.48,
+    "away": 3.35,
+    "draw": 3.5
+   },
+   "n_books": 20,
+   "ah": {
+    "line": 0.0,
+    "home": 0.5539,
+    "away": 0.4461,
+    "fair_home": 1.81,
+    "fair_away": 2.24
    }
   },
   {
@@ -2249,6 +2369,12 @@
     "home": 1.39,
     "away": 3.15
    },
+   "best_odds": {
+    "home": 1.91,
+    "away": 4.6,
+    "draw": 3.7
+   },
+   "n_books": 20,
    "ah": {
     "line": 0.0,
     "home": 0.5861,
@@ -2319,6 +2445,12 @@
     "home": 2.56,
     "away": 1.56
    },
+   "best_odds": {
+    "home": 3.8,
+    "away": 2.32,
+    "draw": 3.2
+   },
+   "n_books": 19,
    "ah": {
     "line": 0.0,
     "home": 0.378,
@@ -2389,6 +2521,12 @@
     "home": 1.19,
     "away": 5.06
    },
+   "best_odds": {
+    "home": 1.53,
+    "away": 6.8,
+    "draw": 4.5
+   },
+   "n_books": 21,
    "ah": {
     "line": 0.0,
     "home": 0.7442,
@@ -2459,6 +2597,12 @@
     "home": 1.68,
     "away": 2.31
    },
+   "best_odds": {
+    "home": 2.44,
+    "away": 3.4,
+    "draw": 3.46
+   },
+   "n_books": 23,
    "ah": {
     "line": 0.0,
     "home": 0.5529,
@@ -2516,19 +2660,25 @@
     1.8
    ],
    "sharp_odds": {
-    "home": 1.99,
-    "away": 3.54,
-    "draw": 4.0
+    "home": 1.98,
+    "away": 3.56,
+    "draw": 4.03
    },
    "sharp_totals": {
     "over": 1.55,
-    "under": 2.55
+    "under": 2.56
    },
    "sharp_handicap": {
     "line": 0.0,
     "home": 1.51,
-    "away": 2.7
+    "away": 2.72
    },
+   "best_odds": {
+    "home": 2.04,
+    "away": 3.75,
+    "draw": 4.1
+   },
+   "n_books": 21,
    "ah": {
     "line": 0.0,
     "home": 0.5671,
@@ -2588,7 +2738,7 @@
    "sharp_odds": {
     "home": 2.16,
     "away": 3.32,
-    "draw": 3.71
+    "draw": 3.7
    },
    "sharp_totals": {
     "over": 1.7,
@@ -2599,6 +2749,12 @@
     "home": 1.6,
     "away": 2.47
    },
+   "best_odds": {
+    "home": 2.25,
+    "away": 3.49,
+    "draw": 3.77
+   },
+   "n_books": 20,
    "ah": {
     "line": 0.0,
     "home": 0.5698,
@@ -2669,6 +2825,12 @@
     "home": 1.27,
     "away": 3.94
    },
+   "best_odds": {
+    "home": 1.81,
+    "away": 5.6,
+    "draw": 3.7
+   },
+   "n_books": 20,
    "ah": {
     "line": 0.0,
     "home": 0.6197,
@@ -2739,6 +2901,12 @@
     "home": 1.4,
     "away": 2.99
    },
+   "best_odds": {
+    "home": 1.91,
+    "away": 4.1,
+    "draw": 3.6
+   },
+   "n_books": 19,
    "ah": {
     "line": 0.0,
     "home": 0.6053,
@@ -2809,6 +2977,12 @@
     "home": 1.92,
     "away": 1.93
    },
+   "best_odds": {
+    "away": 2.8,
+    "home": 2.78,
+    "draw": 3.42
+   },
+   "n_books": 20,
    "ah": {
     "line": 0.0,
     "home": 0.4946,
@@ -2879,6 +3053,12 @@
     "home": 1.65,
     "away": 2.25
    },
+   "best_odds": {
+    "away": 3.4,
+    "home": 2.4,
+    "draw": 3.3
+   },
+   "n_books": 19,
    "ah": {
     "line": 0.0,
     "home": 0.5202,
@@ -2949,6 +3129,12 @@
     "home": 2.17,
     "away": 1.76
    },
+   "best_odds": {
+    "away": 2.43,
+    "home": 3.0,
+    "draw": 3.82
+   },
+   "n_books": 23,
    "ah": {
     "line": 0.0,
     "home": 0.5841,
@@ -3019,6 +3205,12 @@
     "home": 1.79,
     "away": 2.15
    },
+   "best_odds": {
+    "away": 3.15,
+    "home": 2.56,
+    "draw": 3.4
+   },
+   "n_books": 21,
    "ah": {
     "line": 0.0,
     "home": 0.5062,
@@ -3089,12 +3281,95 @@
     "home": 1.36,
     "away": 3.34
    },
+   "best_odds": {
+    "home": 1.56,
+    "away": 7.0,
+    "draw": 4.7
+   },
+   "n_books": 23,
    "ah": {
     "line": -0.25,
     "home": 0.6341,
     "away": 0.3659,
     "fair_home": 1.58,
     "fair_away": 2.73
+   },
+   "briefing": "L'Atalanta, visant les places européennes, accueille"
+  },
+  {
+   "league": "E0",
+   "home": "Newcastle",
+   "away": "Everton",
+   "kickoff": "2026-11-02",
+   "p": {
+    "home": 0.4346,
+    "draw": 0.2694,
+    "away": 0.296
+   },
+   "xg": {
+    "home": 1.59,
+    "away": 1.12
+   },
+   "fair": {
+    "home": 2.3,
+    "draw": 3.71,
+    "away": 3.38
+   },
+   "ou25": {
+    "over": 0.495,
+    "under": 0.505,
+    "fair_over": 2.02,
+    "fair_under": 1.98
+   },
+   "btts": 0.5413,
+   "scores": [
+    [
+     "1-1",
+     0.128
+    ],
+    [
+     "1-0",
+     0.1027
+    ],
+    [
+     "2-1",
+     0.0906
+    ]
+   ],
+   "elo": [
+    1543,
+    1528
+   ],
+   "form": [
+    1.2,
+    1.0
+   ],
+   "sharp_odds": {
+    "home": 2.43,
+    "away": 2.93,
+    "draw": 3.56
+   },
+   "sharp_totals": {
+    "over": 1.74,
+    "under": 2.19
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.78,
+    "away": 2.14
+   },
+   "best_odds": {
+    "away": 3.1,
+    "home": 2.46,
+    "draw": 3.75
+   },
+   "n_books": 24,
+   "ah": {
+    "line": 0.0,
+    "home": 0.5693,
+    "away": 0.4307,
+    "fair_home": 1.76,
+    "fair_away": 2.32
    }
   },
   {
@@ -3159,138 +3434,18 @@
     "home": 1.55,
     "away": 2.62
    },
+   "best_odds": {
+    "away": 3.85,
+    "home": 2.28,
+    "draw": 3.45
+   },
+   "n_books": 20,
    "ah": {
     "line": 0.0,
     "home": 0.5833,
     "away": 0.4167,
     "fair_home": 1.71,
     "fair_away": 2.4
-   }
-  },
-  {
-   "league": "E0",
-   "home": "Newcastle",
-   "away": "Everton",
-   "kickoff": "2026-11-02",
-   "p": {
-    "home": 0.4346,
-    "draw": 0.2694,
-    "away": 0.296
-   },
-   "xg": {
-    "home": 1.59,
-    "away": 1.12
-   },
-   "fair": {
-    "home": 2.3,
-    "draw": 3.71,
-    "away": 3.38
-   },
-   "ou25": {
-    "over": 0.495,
-    "under": 0.505,
-    "fair_over": 2.02,
-    "fair_under": 1.98
-   },
-   "btts": 0.5413,
-   "scores": [
-    [
-     "1-1",
-     0.128
-    ],
-    [
-     "1-0",
-     0.1027
-    ],
-    [
-     "2-1",
-     0.0906
-    ]
-   ],
-   "elo": [
-    1543,
-    1528
-   ],
-   "form": [
-    1.2,
-    1.0
-   ],
-   "sharp_odds": {
-    "home": 2.43,
-    "away": 2.93,
-    "draw": 3.56
-   },
-   "sharp_totals": {
-    "over": 1.74,
-    "under": 2.19
-   },
-   "sharp_handicap": {
-    "line": 0.0,
-    "home": 1.78,
-    "away": 2.14
-   },
-   "ah": {
-    "line": 0.0,
-    "home": 0.5693,
-    "away": 0.4307,
-    "fair_home": 1.76,
-    "fair_away": 2.32
-   }
-  },
-  {
-   "league": "P1",
-   "home": "Benfica",
-   "away": "Alverca",
-   "kickoff": "2026-11-02",
-   "p": {
-    "home": 0.7395,
-    "draw": 0.2115,
-    "away": 0.049
-   },
-   "xg": {
-    "home": 2.46,
-    "away": 0.78
-   },
-   "fair": {
-    "home": 1.35,
-    "draw": 4.73,
-    "away": 20.4
-   },
-   "ou25": {
-    "over": 0.5736,
-    "under": 0.4264,
-    "fair_over": 1.74,
-    "fair_under": 2.35
-   },
-   "btts": 0.4473,
-   "scores": [
-    [
-     "2-0",
-     0.1308
-    ],
-    [
-     "3-0",
-     0.1071
-    ],
-    [
-     "1-0",
-     0.1065
-    ]
-   ],
-   "elo": [
-    1724,
-    1493
-   ],
-   "form": [
-    2.4,
-    1.8
-   ],
-   "ah": {
-    "line": 0.0,
-    "home": 0.8453,
-    "away": 0.1547,
-    "fair_home": 1.18,
-    "fair_away": 6.46
    }
   },
   {
@@ -3364,6 +3519,68 @@
    }
   },
   {
+   "league": "P1",
+   "home": "Benfica",
+   "away": "Alverca",
+   "kickoff": "2026-11-02",
+   "p": {
+    "home": 0.7395,
+    "draw": 0.2115,
+    "away": 0.049
+   },
+   "xg": {
+    "home": 2.46,
+    "away": 0.78
+   },
+   "fair": {
+    "home": 1.35,
+    "draw": 4.73,
+    "away": 20.4
+   },
+   "ou25": {
+    "over": 0.5736,
+    "under": 0.4264,
+    "fair_over": 1.74,
+    "fair_under": 2.35
+   },
+   "btts": 0.4473,
+   "scores": [
+    [
+     "2-0",
+     0.1308
+    ],
+    [
+     "3-0",
+     0.1071
+    ],
+    [
+     "1-0",
+     0.1065
+    ]
+   ],
+   "elo": [
+    1724,
+    1493
+   ],
+   "form": [
+    2.4,
+    1.8
+   ],
+   "best_odds": {
+    "away": 18.0,
+    "home": 1.18,
+    "draw": 8.2
+   },
+   "n_books": 20,
+   "ah": {
+    "line": 0.0,
+    "home": 0.8453,
+    "away": 0.1547,
+    "fair_home": 1.18,
+    "fair_away": 6.46
+   }
+  },
+  {
    "league": "E1",
    "home": "Blackburn",
    "away": "Stoke",
@@ -3425,6 +3642,12 @@
     "home": 1.92,
     "away": 1.93
    },
+   "best_odds": {
+    "home": 2.7,
+    "away": 2.9,
+    "draw": 3.45
+   },
+   "n_books": 21,
    "ah": {
     "line": 0.0,
     "home": 0.582,
@@ -3495,6 +3718,12 @@
     "home": 1.66,
     "away": 2.27
    },
+   "best_odds": {
+    "away": 3.2,
+    "home": 2.42,
+    "draw": 3.65
+   },
+   "n_books": 21,
    "ah": {
     "line": 0.0,
     "home": 0.5736,
@@ -3565,13 +3794,20 @@
     "home": 2.48,
     "away": 1.56
    },
+   "best_odds": {
+    "home": 3.5,
+    "away": 2.12,
+    "draw": 3.81
+   },
+   "n_books": 21,
    "ah": {
     "line": 0.0,
     "home": 0.5214,
     "away": 0.4786,
     "fair_home": 1.92,
     "fair_away": 2.09
-   }
+   },
+   "briefing": "Ce derby de Championship représente un enjeu crucial pour la dynamique des deux"
   },
   {
    "league": "E1",
@@ -3635,6 +3871,12 @@
     "home": 1.92,
     "away": 1.93
    },
+   "best_odds": {
+    "home": 2.76,
+    "away": 2.85,
+    "draw": 3.5
+   },
+   "n_books": 21,
    "ah": {
     "line": 0.0,
     "home": 0.5072,
@@ -3705,6 +3947,12 @@
     "home": 2.4,
     "away": 1.6
    },
+   "best_odds": {
+    "home": 3.5,
+    "away": 2.3,
+    "draw": 3.82
+   },
+   "n_books": 21,
    "ah": {
     "line": 0.0,
     "home": 0.3994,
@@ -3775,6 +4023,12 @@
     "home": 1.5,
     "away": 2.65
    },
+   "best_odds": {
+    "away": 3.75,
+    "home": 2.1,
+    "draw": 3.86
+   },
+   "n_books": 21,
    "ah": {
     "line": 0.0,
     "home": 0.5572,
@@ -3845,6 +4099,12 @@
     "home": 1.66,
     "away": 2.27
    },
+   "best_odds": {
+    "away": 3.15,
+    "home": 2.48,
+    "draw": 3.5
+   },
+   "n_books": 20,
    "ah": {
     "line": 0.0,
     "home": 0.5207,
@@ -3915,6 +4175,12 @@
     "home": 1.45,
     "away": 2.8
    },
+   "best_odds": {
+    "home": 2.02,
+    "away": 3.85,
+    "draw": 3.75
+   },
+   "n_books": 21,
    "ah": {
     "line": 0.0,
     "home": 0.5539,
@@ -3985,6 +4251,12 @@
     "home": 1.81,
     "away": 2.05
    },
+   "best_odds": {
+    "away": 2.81,
+    "home": 2.55,
+    "draw": 3.75
+   },
+   "n_books": 21,
    "ah": {
     "line": 0.0,
     "home": 0.4112,
@@ -3992,81 +4264,454 @@
     "fair_home": 2.43,
     "fair_away": 1.7
    }
+  },
+  {
+   "league": "B1",
+   "home": "Kortrijk",
+   "away": "Mechelen",
+   "kickoff": "2026-11-04",
+   "p": {
+    "home": 0.3571,
+    "draw": 0.3003,
+    "away": 0.3426
+   },
+   "xg": {
+    "home": 1.4,
+    "away": 1.47
+   },
+   "fair": {
+    "home": 2.8,
+    "draw": 3.33,
+    "away": 2.92
+   },
+   "ou25": {
+    "over": 0.4656,
+    "under": 0.5344,
+    "fair_over": 2.15,
+    "fair_under": 1.87
+   },
+   "btts": 0.5346,
+   "scores": [
+    [
+     "1-1",
+     0.1426
+    ],
+    [
+     "1-0",
+     0.0957
+    ],
+    [
+     "0-1",
+     0.0901
+    ]
+   ],
+   "elo": [
+    1381,
+    1452
+   ],
+   "form": [
+    0.6,
+    1.0
+   ],
+   "best_odds": {
+    "home": 2.52,
+    "away": 2.78,
+    "draw": 3.53
+   },
+   "n_books": 12,
+   "ah": {
+    "line": 0.0,
+    "home": 0.5073,
+    "away": 0.4927,
+    "fair_home": 1.97,
+    "fair_away": 2.03
+   }
+  },
+  {
+   "league": "E1",
+   "home": "Wrexham",
+   "away": "Middlesbrough",
+   "kickoff": "2026-11-04",
+   "p": {
+    "home": 0.3308,
+    "draw": 0.2167,
+    "away": 0.4525
+   },
+   "xg": {
+    "home": 1.42,
+    "away": 1.36
+   },
+   "fair": {
+    "home": 3.02,
+    "draw": 4.62,
+    "away": 2.21
+   },
+   "ou25": {
+    "over": 0.5661,
+    "under": 0.4339,
+    "fair_over": 1.77,
+    "fair_under": 2.3
+   },
+   "btts": 0.5751,
+   "scores": [
+    [
+     "1-1",
+     0.1012
+    ],
+    [
+     "1-2",
+     0.0918
+    ],
+    [
+     "0-1",
+     0.0875
+    ]
+   ],
+   "elo": [
+    1480,
+    1567
+   ],
+   "form": [
+    1.4,
+    2.2
+   ],
+   "best_odds": {
+    "away": 1.94,
+    "home": 4.28,
+    "draw": 4.1
+   },
+   "n_books": 21,
+   "ah": {
+    "line": 0.0,
+    "home": 0.4392,
+    "away": 0.5608,
+    "fair_home": 2.28,
+    "fair_away": 1.78
+   }
+  },
+  {
+   "league": "E1",
+   "home": "Cardiff",
+   "away": "West Ham",
+   "kickoff": "2026-11-04",
+   "p": {
+    "home": 0.1779,
+    "draw": 0.237,
+    "away": 0.5851
+   },
+   "xg": {
+    "home": 1.34,
+    "away": 1.25
+   },
+   "fair": {
+    "home": 5.62,
+    "draw": 4.22,
+    "away": 1.71
+   },
+   "ou25": {
+    "over": 0.5874,
+    "under": 0.4126,
+    "fair_over": 1.7,
+    "fair_under": 2.42
+   },
+   "btts": 0.5869,
+   "scores": [
+    [
+     "1-1",
+     0.1094
+    ],
+    [
+     "1-2",
+     0.1077
+    ],
+    [
+     "0-1",
+     0.0971
+    ]
+   ],
+   "elo": [
+    1421,
+    1556
+   ],
+   "form": [
+    2.0,
+    1.6
+   ],
+   "best_odds": {
+    "home": 3.7,
+    "away": 1.99,
+    "draw": 4.3
+   },
+   "n_books": 21,
+   "ah": {
+    "line": 0.0,
+    "home": 0.2964,
+    "away": 0.7036,
+    "fair_home": 3.37,
+    "fair_away": 1.42
+   }
+  },
+  {
+   "league": "E1",
+   "home": "Bristol City",
+   "away": "Wolves",
+   "kickoff": "2026-11-04",
+   "p": {
+    "home": 0.4238,
+    "draw": 0.2613,
+    "away": 0.3149
+   },
+   "xg": {
+    "home": 1.4,
+    "away": 1.13
+   },
+   "fair": {
+    "home": 2.36,
+    "draw": 3.83,
+    "away": 3.18
+   },
+   "ou25": {
+    "over": 0.4558,
+    "under": 0.5442,
+    "fair_over": 2.19,
+    "fair_under": 1.84
+   },
+   "btts": 0.5025,
+   "scores": [
+    [
+     "1-1",
+     0.124
+    ],
+    [
+     "1-0",
+     0.1165
+    ],
+    [
+     "0-1",
+     0.0925
+    ]
+   ],
+   "elo": [
+    1446,
+    1460
+   ],
+   "form": [
+    1.0,
+    1.4
+   ],
+   "best_odds": {
+    "home": 3.55,
+    "away": 2.28,
+    "draw": 3.62
+   },
+   "n_books": 20,
+   "ah": {
+    "line": 0.0,
+    "home": 0.5544,
+    "away": 0.4456,
+    "fair_home": 1.8,
+    "fair_away": 2.24
+   }
   }
  ],
  "bets": [
   {
    "league": "D1",
-   "home": "Ein Frankfurt",
-   "away": "Hamburg",
+   "home": "Union Berlin",
+   "away": "FC Koln",
    "kickoff": "2026-11-01",
-   "market": "OU25",
-   "selection": "under",
-   "line": 2.5,
-   "label": "Moins",
-   "price": 2.93,
-   "p_model": 0.4634,
-   "p_fair": 0.358,
-   "p_sharp": 0.3128,
-   "edge": 0.0489,
-   "book": "pinnacle",
-   "n_books": 0,
-   "multi_book": false,
-   "stake_scale": 0.5,
-   "stake": 2.79,
-   "kelly_full": 0.0254,
-   "bet_id": "ab829f881ec174",
-   "created_at": "2026-10-31T23:59:40+00:00",
-   "status": "open",
-   "pnl": 0.0
-  },
-  {
-   "league": "SP1",
-   "home": "Ath Bilbao",
-   "away": "Sociedad",
-   "kickoff": "2026-11-01",
-   "market": "OU25",
-   "selection": "under",
-   "line": 2.5,
-   "label": "Moins",
-   "price": 2.24,
-   "p_model": 0.5591,
-   "p_fair": 0.4678,
-   "p_sharp": 0.4287,
-   "edge": 0.0479,
-   "book": "pinnacle",
-   "n_books": 0,
-   "multi_book": false,
-   "stake_scale": 0.5,
-   "stake": 4.25,
-   "kelly_full": 0.0386,
-   "bet_id": "8c38d5e10930b7",
-   "created_at": "2026-10-31T23:59:40+00:00",
+   "market": "1X2",
+   "selection": "draw",
+   "line": null,
+   "label": "X (nul)",
+   "price": 3.78,
+   "p_model": 0.3317,
+   "p_fair": 0.2904,
+   "p_sharp": 0.2727,
+   "edge": 0.0976,
+   "book": "1xBet",
+   "n_books": 22,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 7.73,
+   "kelly_full": 0.0351,
+   "bet_id": "a82490eac13126",
+   "created_at": "2026-11-01T00:02:22+00:00",
    "status": "open",
    "pnl": 0.0
   },
   {
    "league": "I1",
-   "home": "Sassuolo",
-   "away": "Fiorentina",
+   "home": "Atalanta",
+   "away": "Parma",
    "kickoff": "2026-11-02",
+   "market": "1X2",
+   "selection": "away",
+   "line": null,
+   "label": "2 (extérieur)",
+   "price": 7.0,
+   "p_model": 0.1679,
+   "p_fair": 0.1566,
+   "p_sharp": 0.1518,
+   "edge": 0.0962,
+   "book": "Unibet (SE)",
+   "n_books": 23,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 3.53,
+   "kelly_full": 0.016,
+   "bet_id": "5d150b72ca17a2",
+   "created_at": "2026-11-01T00:02:22+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "E1",
+   "home": "Derby",
+   "away": "Norwich",
+   "kickoff": "2026-11-03",
+   "market": "1X2",
+   "selection": "home",
+   "line": null,
+   "label": "1 (domicile)",
+   "price": 3.5,
+   "p_model": 0.3613,
+   "p_fair": 0.3099,
+   "p_sharp": 0.288,
+   "edge": 0.0848,
+   "book": "LeoVegas (SE)",
+   "n_books": 21,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 7.45,
+   "kelly_full": 0.0339,
+   "bet_id": "795856f84f2a75",
+   "created_at": "2026-11-01T00:02:22+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "I1",
+   "home": "Frosinone",
+   "away": "Torino",
+   "kickoff": "2026-11-01",
    "market": "OU25",
    "selection": "under",
    "line": 2.5,
-   "label": "Moins",
-   "price": 2.51,
-   "p_model": 0.5068,
-   "p_fair": 0.4168,
-   "p_sharp": 0.3783,
-   "edge": 0.0463,
-   "book": "pinnacle",
-   "n_books": 0,
-   "multi_book": false,
-   "stake_scale": 0.5,
-   "stake": 3.37,
-   "kelly_full": 0.0306,
-   "bet_id": "f4da4de075e6f2",
-   "created_at": "2026-10-31T23:59:40+00:00",
+   "label": "Moins de 2,5 buts",
+   "price": 2.95,
+   "p_model": 0.4948,
+   "p_fair": 0.3632,
+   "p_sharp": 0.3069,
+   "edge": 0.0715,
+   "book": "market",
+   "n_books": 23,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 8.06,
+   "kelly_full": 0.0366,
+   "bet_id": "b431a21eb2f08d",
+   "created_at": "2026-11-01T00:02:22+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "N1",
+   "home": "Groningen",
+   "away": "Sparta Rotterdam",
+   "kickoff": "2026-11-01",
+   "market": "1X2",
+   "selection": "away",
+   "line": null,
+   "label": "2 (extérieur)",
+   "price": 4.3,
+   "p_model": 0.295,
+   "p_fair": 0.2482,
+   "p_sharp": 0.2281,
+   "edge": 0.0672,
+   "book": "Betfair",
+   "n_books": 22,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 4.48,
+   "kelly_full": 0.0204,
+   "bet_id": "c8ab4fe2c102c9",
+   "created_at": "2026-11-01T00:02:22+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "SP1",
+   "home": "Getafe",
+   "away": "Sevilla",
+   "kickoff": "2026-11-01",
+   "market": "1X2",
+   "selection": "home",
+   "line": null,
+   "label": "1 (domicile)",
+   "price": 3.45,
+   "p_model": 0.3477,
+   "p_fair": 0.3087,
+   "p_sharp": 0.2919,
+   "edge": 0.0649,
+   "book": "Betfair",
+   "n_books": 20,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 5.84,
+   "kelly_full": 0.0265,
+   "bet_id": "69988da2933e82",
+   "created_at": "2026-11-01T00:02:22+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "T1",
+   "home": "Kasimpasa",
+   "away": "Besiktas",
+   "kickoff": "2026-11-01",
+   "market": "1X2",
+   "selection": "draw",
+   "line": null,
+   "label": "X (nul)",
+   "price": 4.5,
+   "p_model": 0.2822,
+   "p_fair": 0.2352,
+   "p_sharp": 0.2151,
+   "edge": 0.0586,
+   "book": "Betfair",
+   "n_books": 21,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 3.67,
+   "kelly_full": 0.0167,
+   "bet_id": "56d68275c548f3",
+   "created_at": "2026-11-01T00:02:22+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "E1",
+   "home": "Portsmouth",
+   "away": "Swansea",
+   "kickoff": "2026-11-03",
+   "market": "OU25",
+   "selection": "under",
+   "line": 2.5,
+   "label": "Moins de 2,5 buts",
+   "price": 1.96,
+   "p_model": 0.566,
+   "p_fair": 0.5401,
+   "p_sharp": 0.529,
+   "edge": 0.0586,
+   "book": "market",
+   "n_books": 21,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 13.43,
+   "kelly_full": 0.061,
+   "bet_id": "874b4fe2d846a1",
+   "created_at": "2026-11-01T00:02:22+00:00",
    "status": "open",
    "pnl": 0.0
   }
