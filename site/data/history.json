@@ -1,20 +1,396 @@
 {
  "stats": {
-  "n": 0,
-  "hit_rate": null,
-  "logloss": null,
-  "brier": null,
+  "n": 12,
+  "hit_rate": 0.5833,
+  "logloss": 0.96652,
+  "brier": 0.56911,
   "n_total": 61,
-  "by_league": []
+  "by_league": [
+   {
+    "league": "I1",
+    "n": 4,
+    "hit_rate": 0.75
+   },
+   {
+    "league": "SP1",
+    "n": 2,
+    "hit_rate": 0.5
+   },
+   {
+    "league": "SC0",
+    "n": 1,
+    "hit_rate": 0.0
+   },
+   {
+    "league": "T1",
+    "n": 1,
+    "hit_rate": 0.0
+   },
+   {
+    "league": "G1",
+    "n": 1,
+    "hit_rate": 0.0
+   },
+   {
+    "league": "F1",
+    "n": 1,
+    "hit_rate": 1.0
+   },
+   {
+    "league": "E0",
+    "n": 1,
+    "hit_rate": 1.0
+   },
+   {
+    "league": "P1",
+    "n": 1,
+    "hit_rate": 1.0
+   }
+  ]
  },
  "stats_30d": {
-  "n": 0,
-  "hit_rate": null,
-  "logloss": null,
-  "brier": null,
+  "n": 12,
+  "hit_rate": 0.5833,
+  "logloss": 0.96652,
+  "brier": 0.56911,
   "n_total": 61,
-  "by_league": []
+  "by_league": [
+   {
+    "league": "I1",
+    "n": 4,
+    "hit_rate": 0.75
+   },
+   {
+    "league": "SP1",
+    "n": 2,
+    "hit_rate": 0.5
+   },
+   {
+    "league": "SC0",
+    "n": 1,
+    "hit_rate": 0.0
+   },
+   {
+    "league": "T1",
+    "n": 1,
+    "hit_rate": 0.0
+   },
+   {
+    "league": "G1",
+    "n": 1,
+    "hit_rate": 0.0
+   },
+   {
+    "league": "F1",
+    "n": 1,
+    "hit_rate": 1.0
+   },
+   {
+    "league": "E0",
+    "n": 1,
+    "hit_rate": 1.0
+   },
+   {
+    "league": "P1",
+    "n": 1,
+    "hit_rate": 1.0
+   }
+  ]
  },
- "recent": [],
- "by_league": []
+ "recent": [
+  {
+   "pred_id": "1e019a5a0eb6ca",
+   "league": "P1",
+   "kickoff": "2026-11-01",
+   "home": "Maritimo",
+   "away": "Santa Clara",
+   "p": {
+    "home": 0.2186,
+    "draw": 0.3187,
+    "away": 0.4627
+   },
+   "xg": {
+    "home": 1.26,
+    "away": 1.04
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "0-2",
+   "outcome": "away",
+   "hit": true,
+   "settled_at": "2026-11-01T21:16:07+00:00"
+  },
+  {
+   "pred_id": "33b7326bc2a997",
+   "league": "SP1",
+   "kickoff": "2026-11-01",
+   "home": "Elche",
+   "away": "Valencia",
+   "p": {
+    "home": 0.398,
+    "draw": 0.3118,
+    "away": 0.2902
+   },
+   "xg": {
+    "home": 1.43,
+    "away": 1.15
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "0-1",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-01T21:16:07+00:00"
+  },
+  {
+   "pred_id": "7e04b8f58443fb",
+   "league": "I1",
+   "kickoff": "2026-11-01",
+   "home": "Lecce",
+   "away": "Genoa",
+   "p": {
+    "home": 0.3924,
+    "draw": 0.2883,
+    "away": 0.3194
+   },
+   "xg": {
+    "home": 1.03,
+    "away": 1.09
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "1-2",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-01T21:16:07+00:00"
+  },
+  {
+   "pred_id": "f69c5ef4a4ebc1",
+   "league": "E0",
+   "kickoff": "2026-11-01",
+   "home": "Liverpool",
+   "away": "Arsenal",
+   "p": {
+    "home": 0.2961,
+    "draw": 0.26,
+    "away": 0.4438
+   },
+   "xg": {
+    "home": 1.41,
+    "away": 1.52
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "0-1",
+   "outcome": "away",
+   "hit": true,
+   "settled_at": "2026-11-01T21:16:07+00:00"
+  },
+  {
+   "pred_id": "38cfa7883dcdfa",
+   "league": "F1",
+   "kickoff": "2026-11-01",
+   "home": "Lyon",
+   "away": "Angers",
+   "p": {
+    "home": 0.7009,
+    "draw": 0.1951,
+    "away": 0.104
+   },
+   "xg": {
+    "home": 1.81,
+    "away": 0.92
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "2-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-01T21:16:07+00:00"
+  },
+  {
+   "pred_id": "69da82229a092d",
+   "league": "G1",
+   "kickoff": "2026-11-01",
+   "home": "Panetolikos",
+   "away": "OFI Crete",
+   "p": {
+    "home": 0.2561,
+    "draw": 0.3987,
+    "away": 0.3452
+   },
+   "xg": {
+    "home": 1.32,
+    "away": 1.16
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "0-1",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-01T21:16:07+00:00"
+  },
+  {
+   "pred_id": "0558345ea92136",
+   "league": "T1",
+   "kickoff": "2026-11-01",
+   "home": "Kasimpasa",
+   "away": "Besiktas",
+   "p": {
+    "home": 0.2001,
+    "draw": 0.2822,
+    "away": 0.5177
+   },
+   "xg": {
+    "home": 1.27,
+    "away": 1.47
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "2-2",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-01T21:16:07+00:00"
+  },
+  {
+   "pred_id": "87bb524e48aab4",
+   "league": "I1",
+   "kickoff": "2026-11-01",
+   "home": "Lazio",
+   "away": "Cagliari",
+   "p": {
+    "home": 0.6454,
+    "draw": 0.228,
+    "away": 0.1267
+   },
+   "xg": {
+    "home": 1.42,
+    "away": 0.96
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "2-1",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-01T21:16:07+00:00"
+  },
+  {
+   "pred_id": "ef8c7c135db3c8",
+   "league": "I1",
+   "kickoff": "2026-11-01",
+   "home": "Frosinone",
+   "away": "Torino",
+   "p": {
+    "home": 0.3699,
+    "draw": 0.3493,
+    "away": 0.2808
+   },
+   "xg": {
+    "home": 1.39,
+    "away": 1.13
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "2-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-01T21:16:07+00:00"
+  },
+  {
+   "pred_id": "723ac9ade8420d",
+   "league": "SC0",
+   "kickoff": "2026-11-01",
+   "home": "Falkirk",
+   "away": "Celtic",
+   "p": {
+    "home": 0.1081,
+    "draw": 0.166,
+    "away": 0.7259
+   },
+   "xg": {
+    "home": 1.13,
+    "away": 2.01
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "2-0",
+   "outcome": "home",
+   "hit": false,
+   "settled_at": "2026-11-01T21:16:07+00:00"
+  },
+  {
+   "pred_id": "fd06f022b88943",
+   "league": "SP1",
+   "kickoff": "2026-11-01",
+   "home": "Getafe",
+   "away": "Sevilla",
+   "p": {
+    "home": 0.3477,
+    "draw": 0.3313,
+    "away": 0.321
+   },
+   "xg": {
+    "home": 1.29,
+    "away": 0.96
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "3-1",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-01T21:16:07+00:00"
+  },
+  {
+   "pred_id": "deb151c7daf6d3",
+   "league": "I1",
+   "kickoff": "2026-11-01",
+   "home": "Como",
+   "away": "Venezia",
+   "p": {
+    "home": 0.7874,
+    "draw": 0.1524,
+    "away": 0.0602
+   },
+   "xg": {
+    "home": 1.66,
+    "away": 0.87
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "1-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-01T21:16:07+00:00"
+  }
+ ],
+ "by_league": [
+  {
+   "league": "I1",
+   "n": 4,
+   "hit_rate": 0.75
+  },
+  {
+   "league": "SP1",
+   "n": 2,
+   "hit_rate": 0.5
+  },
+  {
+   "league": "SC0",
+   "n": 1,
+   "hit_rate": 0.0
+  },
+  {
+   "league": "T1",
+   "n": 1,
+   "hit_rate": 0.0
+  },
+  {
+   "league": "G1",
+   "n": 1,
+   "hit_rate": 0.0
+  },
+  {
+   "league": "F1",
+   "n": 1,
+   "hit_rate": 1.0
+  },
+  {
+   "league": "E0",
+   "n": 1,
+   "hit_rate": 1.0
+  },
+  {
+   "league": "P1",
+   "n": 1,
+   "hit_rate": 1.0
+  }
+ ]
 }
