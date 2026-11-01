@@ -24,7 +24,7 @@
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 4.75
+   "closing_price": 4.86
   },
   {
    "league": "I1",
@@ -47,7 +47,7 @@
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 3.53
+   "closing_price": 3.23
   },
   {
    "league": "I1",
@@ -70,7 +70,7 @@
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 3.96
+   "closing_price": 4.01
   },
   {
    "league": "P1",
@@ -93,7 +93,7 @@
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 5.36
+   "closing_price": 5.69
   },
   {
    "league": "F1",
@@ -116,7 +116,7 @@
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 4.06
+   "closing_price": 4.07
   },
   {
    "league": "I1",
@@ -162,7 +162,7 @@
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 2.76
+   "closing_price": 2.77
   },
   {
    "league": "P1",
@@ -185,7 +185,7 @@
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 4.26
+   "closing_price": 4.49
   },
   {
    "league": "B1",
@@ -210,7 +210,7 @@
    "created_at": "2026-10-31T22:43:27+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 4.85
+   "closing_price": 4.56
   },
   {
    "league": "N1",
@@ -236,7 +236,7 @@
    "created_at": "2026-10-31T23:58:01+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 3.74
+   "closing_price": 3.8
   },
   {
    "league": "F1",
@@ -262,7 +262,7 @@
    "created_at": "2026-10-31T23:58:01+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 4.03
+   "closing_price": 4.17
   },
   {
    "league": "G1",
@@ -314,7 +314,7 @@
    "created_at": "2026-10-31T23:58:01+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 4.47
+   "closing_price": 4.74
   },
   {
    "league": "D1",
@@ -340,7 +340,7 @@
    "created_at": "2026-10-31T23:59:40+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 2.93
+   "closing_price": 2.97
   },
   {
    "league": "SP1",
@@ -366,7 +366,7 @@
    "created_at": "2026-10-31T23:59:40+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 2.24
+   "closing_price": 2.05
   },
   {
    "league": "I1",
@@ -417,7 +417,8 @@
    "bet_id": "a82490eac13126",
    "created_at": "2026-11-01T00:10:04+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 3.58
   },
   {
    "league": "I1",
@@ -442,7 +443,8 @@
    "bet_id": "5d150b72ca17a2",
    "created_at": "2026-11-01T00:10:04+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 6.21
   },
   {
    "league": "E1",
@@ -467,7 +469,8 @@
    "bet_id": "795856f84f2a75",
    "created_at": "2026-11-01T00:10:04+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 3.29
   },
   {
    "league": "I1",
@@ -492,7 +495,8 @@
    "bet_id": "b431a21eb2f08d",
    "created_at": "2026-11-01T00:10:04+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 3.05
   },
   {
    "league": "N1",
@@ -517,7 +521,8 @@
    "bet_id": "c8ab4fe2c102c9",
    "created_at": "2026-11-01T00:10:04+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 4.29
   },
   {
    "league": "SP1",
@@ -542,7 +547,8 @@
    "bet_id": "69988da2933e82",
    "created_at": "2026-11-01T00:10:04+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 3.5
   },
   {
    "league": "T1",
@@ -567,7 +573,8 @@
    "bet_id": "56d68275c548f3",
    "created_at": "2026-11-01T00:10:04+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 4.58
   },
   {
    "league": "E1",
@@ -591,6 +598,107 @@
    "kelly_full": 0.061,
    "bet_id": "874b4fe2d846a1",
    "created_at": "2026-11-01T00:10:04+00:00",
+   "status": "open",
+   "pnl": 0.0,
+   "closing_price": 1.82
+  },
+  {
+   "league": "N1",
+   "home": "Excelsior",
+   "away": "Twente",
+   "kickoff": "2026-11-01",
+   "market": "1X2",
+   "selection": "home",
+   "line": null,
+   "label": "1 (domicile)",
+   "price": 6.75,
+   "p_model": 0.1965,
+   "p_fair": 0.1627,
+   "p_sharp": 0.1482,
+   "edge": 0.098,
+   "book": "Unibet (NL)",
+   "n_books": 22,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 3.76,
+   "kelly_full": 0.0171,
+   "bet_id": "8c12bf2317d882",
+   "created_at": "2026-11-01T11:56:04+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "T1",
+   "home": "Kasimpasa",
+   "away": "Besiktas",
+   "kickoff": "2026-11-01",
+   "market": "1X2",
+   "selection": "home",
+   "line": null,
+   "label": "1 (domicile)",
+   "price": 6.0,
+   "p_model": 0.2001,
+   "p_fair": 0.1817,
+   "p_sharp": 0.1738,
+   "edge": 0.0899,
+   "book": "Unibet (NL)",
+   "n_books": 21,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 3.97,
+   "kelly_full": 0.018,
+   "bet_id": "0fb192161eb21a",
+   "created_at": "2026-11-01T11:56:04+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "P1",
+   "home": "Arouca",
+   "away": "Nacional",
+   "kickoff": "2026-11-01",
+   "market": "1X2",
+   "selection": "away",
+   "line": null,
+   "label": "2 (extérieur)",
+   "price": 6.0,
+   "p_model": 0.2029,
+   "p_fair": 0.1778,
+   "p_sharp": 0.167,
+   "edge": 0.0668,
+   "book": "Betfair",
+   "n_books": 20,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 2.94,
+   "kelly_full": 0.0134,
+   "bet_id": "ec5055b05795e6",
+   "created_at": "2026-11-01T11:56:04+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "I1",
+   "home": "Atalanta",
+   "away": "Parma",
+   "kickoff": "2026-11-02",
+   "market": "OU25",
+   "selection": "under",
+   "line": 2.5,
+   "label": "Moins de 2,5 buts",
+   "price": 2.44,
+   "p_model": 0.4894,
+   "p_fair": 0.435,
+   "p_sharp": 0.4117,
+   "edge": 0.0613,
+   "book": "market",
+   "n_books": 24,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 5.54,
+   "kelly_full": 0.0426,
+   "bet_id": "d0ca4c3c568215",
+   "created_at": "2026-11-01T11:56:04+00:00",
    "status": "open",
    "pnl": 0.0
   }
@@ -662,6 +770,14 @@
    "settled": 0,
    "telegram": false,
    "duration_s": 42.9
+  },
+  {
+   "ts": "2026-11-01T11:56:14+00:00",
+   "fixtures": 57,
+   "bets": 4,
+   "settled": 0,
+   "telegram": false,
+   "duration_s": 85.0
   }
  ]
 }
