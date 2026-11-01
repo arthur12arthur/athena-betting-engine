@@ -7,7 +7,7 @@
 | Matchs analysés | 60 |
 | Value bets placés | 0 |
 | Paris réglés ce run | 0 |
-| Exposition ouverte | 60.01 u |
+| Exposition ouverte | 114.20 u |
 | CLV moyen (cumulé) | n/a |
 | Telegram | non configuré / désactivé |
 
