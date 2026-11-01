@@ -11,7 +11,7 @@ from __future__ import annotations
 
 import html
 import json
-from datetime import datetime
+from datetime import UTC, datetime, timedelta
 from pathlib import Path
 
 from ..logging_conf import get_logger
@@ -117,6 +117,26 @@ def _svg_calibration(rows: list[dict]) -> str:
 
 
 # ---------------------------------------------------------------- sections
+def _ou_cell(p: dict) -> str:
+    ou = p.get("ou25") or {}
+    if not ou:
+        return "—"
+    sharp = p.get("sharp_totals") or {}
+    tail = (f'<br><span class="muted">marché {sharp["over"]:.2f}/{sharp["under"]:.2f}</span>'
+            if sharp else "")
+    return f'+{ou["fair_over"]:.2f} · −{ou["fair_under"]:.2f}{tail}'
+
+
+def _ah_cell(p: dict) -> str:
+    ah = p.get("ah") or {}
+    if not ah:
+        return "—"
+    line = ah["line"]
+    sign = f"{line:+.2f}".rstrip("0").rstrip(".")
+    return (f'<span class="muted">dom {sign}</span><br>'
+            f'{ah["fair_home"]:.2f} · {ah["fair_away"]:.2f}')
+
+
 def _kpi(label: str, value: str, sub: str = "", tone: str = "") -> str:
     return (f'<div class="kpi {tone}"><div class="kpi-l">{_esc(label)}</div>'
             f'<div class="kpi-v">{_esc(value)}</div>'
@@ -143,6 +163,44 @@ def _bet_card(b: dict) -> str:
     </article>"""
 
 
+STATUS_FR = {"won": ("gagné", "green"), "lost": ("perdu", "red"),
+             "push": ("remboursé", "blue"), "half_won": ("demi-gain", "green"),
+             "half_lost": ("demi-perte", "warn")}
+
+
+def _pnl_span(v: float) -> str:
+    cls = "pos" if v > 0 else ("neg" if v < 0 else "neutral")
+    return f'<span class="{cls}">{v:+.2f} u</span>'
+
+
+def _result_row(b: dict) -> str:
+    label, tone = STATUS_FR.get(b.get("status", ""), ("—", "warn"))
+    return (
+        f'<tr><td class="lg">{_esc(str(b.get("kickoff", ""))[:10])}</td>'
+        f'<td class="teams"><b>{_esc(b["home"])}</b><span class="muted"> — </span>{_esc(b["away"])}</td>'
+        f'<td class="score">{_esc(b.get("result", "—"))}</td>'
+        f'<td>{_esc(b.get("label", b.get("selection", "")))}</td>'
+        f'<td class="num">{float(b.get("price", 0)):.2f}</td>'
+        f'<td class="num">{float(b.get("stake", 0)):.2f} u</td>'
+        f'<td class="num">{_pnl_span(float(b.get("pnl") or 0))}</td>'
+        f'<td><span class="tag {tone}">{label}</span></td></tr>')
+
+
+def _hist_row(e: dict) -> str:
+    p = e["p"]
+    outcome_fr = {"home": "1", "draw": "X", "away": "2"}.get(e.get("outcome"), "—")
+    pick = max(p, key=p.get)
+    ok = bool(e.get("hit"))
+    tag = ('<span class="tag green">bon</span>' if ok
+           else '<span class="tag red">manqué</span>')
+    return (
+        f'<tr><td class="lg">{_esc(e["kickoff"])}</td>'
+        f'<td class="teams"><b>{_esc(e["home"])}</b><span class="muted"> — </span>{_esc(e["away"])}</td>'
+        f'<td class="num">{p["home"]*100:.0f} / {p["draw"]*100:.0f} / {p["away"]*100:.0f}</td>'
+        f'<td class="score">{_esc(e.get("result", ""))}</td>'
+        f'<td>{outcome_fr}</td><td>{tag} <span class="muted">{SEL_FR.get(pick, "")}</span></td></tr>')
+
+
 def _pred_row(p: dict) -> str:
     pr = p["p"]
     value_tag = ""
@@ -160,6 +218,8 @@ def _pred_row(p: dict) -> str:
         <td class="probcell">{_prob_bar(pr['home'], pr['draw'], pr['away'])}</td>
         <td class="num">{p['fair']['home']:.2f} · {p['fair']['draw']:.2f} · {p['fair']['away']:.2f}</td>
         <td class="num">{f"{sharp.get('home',0):.2f} · {sharp.get('draw',0):.2f} · {sharp.get('away',0):.2f}" if sharp else "—"}</td>
+        <td class="num">{_ou_cell(p)}</td>
+        <td class="num">{_ah_cell(p)}</td>
         <td class="num">{p['xg']['home']:.2f} - {p['xg']['away']:.2f}</td>
         <td class="num">{_esc(p['scores'][0][0]) if p.get('scores') else "—"}</td>
         <td>{value_tag}</td>
@@ -183,6 +243,7 @@ def render(cfg, site: Path | None = None) -> Path:
     ledger = load("ledger.json", {})
     backtest = load("backtest.json", {})
     ratings = load("ratings.json", {})
+    history = load("history.json", {})
     stats = ledger.get("stats", {})
     fixtures = preds.get("fixtures", [])
     bets = preds.get("bets", [])
@@ -214,6 +275,50 @@ def render(cfg, site: Path | None = None) -> Path:
         _kpi("ROI backtest", _pct(perf.get("roi")), f"{perf.get('n_bets', 0)} paris"),
         _kpi("Drawdown max", _pct(-(perf.get("max_drawdown") or 0)), tone=""),
     ])
+
+    # ----- résultats réglés (les plus récents d'abord)
+    all_bets = ledger.get("bets", [])
+    settled_bets = [b for b in all_bets if b.get("status") in ("won", "lost", "push",
+                                                               "half_won", "half_lost")]
+    settled_bets.sort(key=lambda b: (str(b.get("settled_at") or b.get("kickoff") or ""),
+                                     str(b.get("bet_id"))), reverse=True)
+    results_rows = "".join(_result_row(b) for b in settled_bets[:25]) or (
+        '<tr><td colspan="8" class="muted">Aucun pari réglé pour le moment — les premiers '
+        'résultats apparaîtront dès la fin des matchs engagés.</td></tr>')
+    last7 = [b for b in settled_bets if str(b.get("settled_at", ""))[:10] >=
+             (datetime.now(UTC).date() - timedelta(days=7)).isoformat()]
+    pnl7 = sum(float(b.get("pnl") or 0) for b in last7)
+    n_win7 = sum(1 for b in last7 if b.get("status") in ("won", "half_won"))
+    results_kpi = "".join([
+        _kpi("Paris réglés", str(len(settled_bets)), f"{len(last7)} sur 7 jours"),
+        _kpi("P&L 7 jours", f"{pnl7:+.2f} u", tone="accent" if pnl7 > 0 else ""),
+        _kpi("Gagnants 7 j", f"{n_win7}/{len(last7)}" if last7 else "—"),
+        _kpi("Meilleur pari", f"{max((float(b.get('pnl') or 0) for b in settled_bets), default=0):+.2f} u"),
+        _kpi("Pire pari", f"{min((float(b.get('pnl') or 0) for b in settled_bets), default=0):+.2f} u"),
+    ])
+
+    # ----- historique des pronostics
+    hstats = history.get("stats", {}) or {}
+    hstats30 = history.get("stats_30d", {}) or {}
+    hist_kpi = "".join([
+        _kpi("Pronostics vérifiés", str(hstats.get("n", 0)),
+             f"{hstats.get('n_total', 0)} archivés au total"),
+        _kpi("Taux de réussite", f"{(hstats.get('hit_rate') or 0)*100:.1f} %"
+             if hstats.get("n") else "—", "issue la plus probable"),
+        _kpi("30 derniers jours", f"{(hstats30.get('hit_rate') or 0)*100:.1f} %"
+             if hstats30.get("n") else "—", f"{hstats30.get('n', 0)} matchs"),
+        _kpi("Log loss", _num(hstats.get("logloss"), 4),
+             "marché ≈ 0,97 — plus bas = mieux"),
+        _kpi("Brier", _num(hstats.get("brier"), 4)),
+    ])
+    hist_rows = "".join(_hist_row(e) for e in history.get("recent", [])[:25]) or (
+        '<tr><td colspan="6" class="muted">Les pronostics s\'archivent à chaque exécution ; '
+        'ils seront vérifiés dès que les matchs seront joués.</td></tr>')
+    hist_league_rows = "".join(
+        f'<tr><td>{_esc(LEAGUE_LABEL.get(r["league"], r["league"]))}</td>'
+        f'<td class="num">{r["n"]}</td><td class="num">{r["hit_rate"]*100:.1f} %</td></tr>'
+        for r in history.get("by_league", [])[:14]) or (
+        '<tr><td colspan="3" class="muted">—</td></tr>')
 
     bet_cards = "".join(_bet_card(b) for b in bets) or (
         '<p class="muted empty">Aucun value bet retenu sur la fenêtre courante — '
@@ -265,6 +370,11 @@ def render(cfg, site: Path | None = None) -> Path:
            .replace("__BT_KPI__", bt_kpis)
            .replace("__BETS__", bet_cards)
            .replace("__ROWS__", rows)
+           .replace("__RESULTS_KPI__", results_kpi)
+           .replace("__RESULTS_ROWS__", results_rows)
+           .replace("__HIST_KPI__", hist_kpi)
+           .replace("__HIST_ROWS__", hist_rows)
+           .replace("__HIST_LEAGUE_ROWS__", hist_league_rows)
            .replace("__EQUITY__", _svg_equity(bt_equity, baseline=backtest.get("initial_bankroll")))
            .replace("__LEDGER_EQUITY__", _svg_equity(equity, h=120,
                                                      baseline=stats.get("initial_bankroll")))

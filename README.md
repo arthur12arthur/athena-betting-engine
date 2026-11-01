@@ -40,8 +40,21 @@ l'espérance est positive **et** l'écart crédible.
   cohérents entre eux) : 1X2, double chance, over/under, BTTS, handicap
 - **Value betting** : comparaison prix proposé / prix juste, garde-fous
   anti-erreur de modèle, Kelly fractionnaire
+- **Marchés joués** : `1X2` et **over/under 2,5 buts** ; le **handicap
+  asiatique** (lignes entières, demi et **quart** : −0,25, −0,75…) est
+  implémenté de bout en bout (modèle, prix, règlement) mais **désactivé par
+  défaut** — voir §3, son edge est négatif sur les données gratuites
+- **Règlement exact** de tous les marchés, demi-gains et remboursements
+  inclus (handicap quart, push sur ligne entière)
 - **Bankroll papier** persistante, règlement automatique des paris
-- **Dashboard statique** régénéré à chaque exécution
+- **Historique vérifiable** : chaque pronostic est archivé puis confronté au
+  score réel (taux de réussite, log loss, Brier) — pas seulement les paris
+- **Rapport Telegram automatique** à chaque exécution (bankroll, résultats
+  réglés avec P&L, value bets du jour)
+- **Résumé de run lisible** : le P&L et les résultats s'affichent directement
+  dans l'onglet *Summary* de chaque exécution GitHub Actions
+- **Dashboard statique** régénéré à chaque exécution, avec sections
+  « Derniers résultats » et « Historique des pronostics »
 - **Zéro coût** : données et cotes de clôture gratuites, calcul sur les
   runners GitHub publics
 
@@ -65,6 +78,22 @@ slippage :
 | ROI | **−0,7 %** | ≈ point mort, honnête |
 | **CLV moyen** | **+6,1 %** | on bat la cote de clôture : signal réel |
 | Drawdown max | 23,6 % | la variance est réelle, le Kelly fractionnaire la contient |
+
+Par marché, sur les deux dernières saisons complètes (mêmes règles de mise,
+ancrage marché 0,70) :
+
+| Marché | Paris | ROI | CLV | Décision |
+|---|---|---|---|---|
+| 1X2 | 685 | **+2,0 %** | +7,0 % | actif |
+| Over/Under 2,5 | 281 | **+12,4 %** | +10,1 % | actif |
+| Handicap asiatique | 246 | **−8,7 %** | −0,9 % | implémenté, **désactivé** |
+
+Le handicap asiatique est le marché où le prix est le plus efficient : le
+modèle n'y trouve aucun edge (CLV négatif, résultat stable sur toutes les
+tranches testées — lignes pleines, quarts, domicile/extérieur, tranches de
+cotes). Il reste dans le code, activable en une ligne
+(`betting.markets: ["1X2","OU25","AH"]`), mais parier dessus serait de la
+croyance, pas de la mesure.
 
 **À lire sans se raconter d'histoires.** Le marché des paris est très
 efficace : un modèle statistique alimenté par des données publiques arrive
@@ -145,6 +174,33 @@ open site/index.html
 |---|---|---|
 | `ODDS_API_KEY` | cotes multi-bookmakers ([the-odds-api.com](https://the-odds-api.com), palier gratuit) | le système fonctionne avec Pinnacle seul, edges plafonnés, mises divisées par 2 |
 | `GEMINI_API_KEY` | commentaire de match ([AI Studio](https://aistudio.google.com/apikey), palier gratuit) | aucun commentaire, prédictions inchangées |
+| `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` | rapport quotidien sur Telegram | pas d'envoi, tout le reste fonctionne |
+| `ATHENA_SITE_URL` (variable) | lien du dashboard dans le message | lien omis |
+
+### Brancher Telegram en 4 minutes (gratuit)
+
+1. Dans Telegram, écrire à **@BotFather** → `/newbot` → choisir un nom →
+   BotFather renvoie un **token** (`123456:ABC-DEF…`).
+2. Envoyer n'importe quel message à votre nouveau bot (ou l'ajouter à un
+   groupe, puis `/start`).
+3. Récupérer l'identifiant du destinataire :
+   `curl "https://api.telegram.org/bot<TOKEN>/getUpdates"` → champ
+   `message.chat.id`.
+4. Dans GitHub : `Settings → Secrets and variables → Actions` →
+   ajouter `TELEGRAM_BOT_TOKEN` et `TELEGRAM_CHAT_ID`
+   (et la variable `ATHENA_SITE_URL` = l'URL GitHub Pages).
+
+Test immédiat, sans attendre le cron :
+
+```bash
+TELEGRAM_BOT_TOKEN=... TELEGRAM_CHAT_ID=... python -m athena.cli telegram
+```
+
+Le message contient : bankroll et P&L, paris réglés du jour avec score et
+P&L, value bets à venir, pronostics les plus tranchés, taux de réussite de
+l'historique et lien du dashboard. Il est envoyé en HTML, découpé si > 3 900
+caractères, et **n'est jamais bloquant** : une panne Telegram n'interrompt
+pas le pipeline.
 
 Ajout : `Settings → Secrets and variables → Actions → New repository secret`.
 Aucune clé n'est jamais écrite dans le code ni dans un fichier du dépôt.
@@ -157,7 +213,7 @@ Aucune clé n'est jamais écrite dans le code ni dans un fichier du dépôt.
 |---|---|---|
 | `daily.yml` | cron `05:20 / 11:20 / 17:20 UTC` | ingère les résultats, règle les paris, prédit les matchs à venir, publie `site/` |
 | `backtest.yml` | lundi 03:00 UTC | réentraîne et rejoue 3 saisons, met à jour les métriques |
-| `ci.yml` | à chaque push/PR | ruff + 55 tests + diagnostic réseau |
+| `ci.yml` | à chaque push/PR | ruff + 84 tests + diagnostic réseau |
 | `pages.yml` | push sur `site/**` | déploie le dashboard sur GitHub Pages |
 
 Chaque exécution commite ses résultats (`site/`, `data/state/`) : l'historique
@@ -171,12 +227,24 @@ du dépôt **est** l'historique du système. Aucune base de données à héberge
 athena doctor          # diagnostic des sources
 athena ingest          # historique + couverture des données
 athena backtest        # walk-forward (options --seasons, --render)
-athena daily           # pipeline complet (--no-llm, --no-publish)
+athena daily           # pipeline complet (--no-llm, --no-publish, --no-notify)
 athena publish         # régénère uniquement le dashboard
 athena ratings         # classements internes par ligue
+athena history         # historique des pronostics + paris réglés (--last N)
+athena telegram        # envoie le rapport Telegram courant (test)
 athena audit-aliases   # noms d'équipes non résolus entre sources
 make test              # tests
 ```
+
+Où voir les résultats :
+
+| Support | Contenu |
+|---|---|
+| onglet **Summary** d'un run Actions | tableau des paris réglés (score, cote, mise, **P&L**, statut), value bets du jour, historique |
+| **Telegram** | même informations, poussées automatiquement 3×/jour |
+| `site/index.html` | sections « Derniers résultats », « Historique des pronostics », cotes justes over/under et handicap par match |
+| `data/state/ledger.json` | source de vérité des paris (statuts `won`/`lost`/`push`/`half_won`/`half_lost`) |
+| `data/state/predictions_history.json` | archive de tous les pronostics, vérifiés dès que le match est joué |
 
 ---
 

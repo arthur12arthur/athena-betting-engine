@@ -22,11 +22,13 @@ import numpy as np
 import pandas as pd
 
 from ..betting.devig import blend_with_market
-from ..betting.markets_offers import Offer, build_offers
-from ..betting.staking import plan_stake, settle_bet
+from ..betting.offers import Offer, offers_from_history
+from ..betting.settlement import settle_pnl
+from ..betting.staking import plan_stake
 from ..betting.value import label
 from ..logging_conf import get_logger
 from ..models.ensemble import train
+from ..models.markets import parse_market
 from . import metrics
 
 log = get_logger("backtest")
@@ -87,8 +89,8 @@ def prepare_season(cfg, history: pd.DataFrame, feats: pd.DataFrame, season: int,
     ens = train(cfg, hist, tr, va)
     mats = ens.predict_frame(te)
     markets = list(cfg.betting.get("markets", ["1X2"]))
-    price_mode = str(cfg.betting.get("price_mode", "max"))
-    offers = [build_offers(r, markets, price_mode) for _, r in te.iterrows()]
+    price_mode = str(cfg.betting.get("price_mode", "avg"))
+    offers = [offers_from_history(r, markets, price_mode) for _, r in te.iterrows()]
     return SeasonBundle(
         season=season, rows=te, matrices=mats, offers=offers,
         ensemble_info={"w_dc": ens.w_dc, "temperature": ens.temperature,
@@ -100,44 +102,47 @@ def prepare_season(cfg, history: pd.DataFrame, feats: pd.DataFrame, season: int,
 # --------------------------------------------------------------------------
 # Simulation des paris
 # --------------------------------------------------------------------------
+def _market_params(bcfg: dict, market: str) -> dict:
+    family, _ = parse_market(market)
+    overrides = (bcfg.get("market_params") or {}).get(market) or \
+                (bcfg.get("market_params") or {}).get(family) or {}
+    return {**bcfg, **overrides}
+
+
 def simulate(bundle: SeasonBundle, betting_cfg: dict, initial_bankroll: float,
              lambda_market: float = 0.35) -> tuple[pd.DataFrame, list[dict], list[float]]:
-    """Rejoue la saison avec les règles de mise fournies."""
+    """Rejoue la saison avec les règles de mise fournies (multi-marchés)."""
     bankroll = float(initial_bankroll)
     bets: list[dict] = []
     day_pnl: list[dict] = []
-    preds: list[float] = []
 
     max_day = int(betting_cfg.get("max_bets_per_day", 8))
-    active_markets = set(betting_cfg.get("markets", ["1X2"]))
-    max_edge = float(betting_cfg.get("max_edge", 0.12))
-    div_min = float(betting_cfg.get("max_divergence_low", 0.6))
-    div_max = float(betting_cfg.get("max_divergence_high", 1.7))
     max_match = int(betting_cfg.get("max_bets_per_match", 1))
     max_exp_pct = float(betting_cfg.get("max_daily_exposure_pct", 0.07))
     slippage = float(betting_cfg.get("slippage", 0.015))
+    active = set(betting_cfg.get("markets", ["1X2"]))
 
     df = bundle.rows.copy()
     df["_day"] = pd.to_datetime(df["date"]).dt.strftime("%Y-%m-%d")
 
     for day, group in df.groupby("_day", sort=True):
         exposure = 0.0
-        n_day = 0
         candidates: list[tuple[float, int, Offer, float, dict]] = []
 
         for idx in group.index:
             row = df.loc[idx]
             mat = bundle.matrices[idx]
             hg, ag = int(row["home_goals"]), int(row["away_goals"])
-            # pools d'offres par (marché, ligne)
             pools: dict[tuple[str, float | None], list[Offer]] = {}
             for o in bundle.offers[idx]:
+                if o.market not in active and parse_market(o.market)[0] not in active:
+                    continue
                 pools.setdefault((o.market, o.line), []).append(o)
             for (market, line), group_offers in pools.items():
-                if market not in active_markets:
-                    continue
+                params = _market_params(betting_cfg, market)
+                family, ln = parse_market(market, line)
                 try:
-                    p_model = mat.market(market, line)
+                    p_model = mat.market(family, ln)
                 except Exception:  # noqa: BLE001
                     continue
                 p_sharp = {o.selection: o.p_sharp for o in group_offers if o.p_sharp}
@@ -148,61 +153,61 @@ def simulate(bundle: SeasonBundle, betting_cfg: dict, initial_bankroll: float,
                     p = p_fair.get(o.selection)
                     if p is None:
                         continue
-                    if not (float(betting_cfg.get("min_prob", 0.05)) <= p <= float(betting_cfg.get("max_prob", 0.85))):
+                    price = float(o.price_bet)
+                    edge = p * price - 1.0
+                    if edge < float(params.get("min_edge", 0.03)):
                         continue
-                    if not (float(betting_cfg.get("min_odds", 1.45)) <= o.price_bet <= float(betting_cfg.get("max_odds", 8.0))):
+                    if edge > float(params.get("max_edge", 0.10)):
                         continue
-                    edge = p * o.price_bet - 1.0
-                    if edge < float(betting_cfg.get("min_edge", 0.025)):
+                    ratio = p / o.p_sharp if o.p_sharp else 1.0
+                    if not (float(betting_cfg.get("max_divergence_low", 0.75)) <= ratio
+                            <= float(betting_cfg.get("max_divergence_high", 1.35))):
                         continue
-                    # garde-fou anti-erreur de modèle : un edge énorme contre un
-                    # marché sharp signale presque toujours un bug de modèle, pas
-                    # une opportunité. On plafonne l'edge et la divergence.
-                    if edge > max_edge:
+                    if not (float(params.get("min_odds", 1.45)) <= price
+                            <= float(params.get("max_odds", 8.0))):
                         continue
-                    if o.p_sharp and o.p_sharp > 0:
-                        ratio = p / o.p_sharp
-                        if not (div_min <= ratio <= div_max):
-                            continue
-                    candidates.append((float(edge), idx, o, float(p), {"hg": hg, "ag": ag, "row": row}))
+                    if not (float(params.get("min_prob", 0.06)) <= p
+                            <= float(params.get("max_prob", 0.80))):
+                        continue
+                    candidates.append((float(edge), idx, o, float(p), {"hg": hg, "ag": ag,
+                                                                      "row": row,
+                                                                      "p_model": p_model}))
 
         candidates.sort(key=lambda c: -c[0])
-        used_matches: set[int] = set()
+        per_match: dict[int, int] = {}
+        n_day = 0
         for edge, idx, o, p_fair, ctx in candidates:
             if n_day >= max_day:
                 break
-            if sum(1 for b in bets if b["match_index"] == idx) >= max_match:
+            if per_match.get(idx, 0) >= max_match:
                 continue
-            if idx in used_matches and max_match <= 1:
-                continue
-            max_exp = max_exp_pct * bankroll
-            remaining = max(0.0, max_exp - exposure)
+            remaining = max(0.0, max_exp_pct * bankroll - exposure)
             price = round(o.price_bet * (1.0 - slippage), 3)
             plan = plan_stake(p_fair, price, bankroll, betting_cfg, remaining_exposure=remaining)
             if plan.stake <= 0:
                 continue
-            won, push = settle(o.market, o.selection, o.line, int(ctx["hg"]), int(ctx["ag"]))
-            pnl = settle_bet(plan.stake, price, won, push)
+            hg, ag = int(ctx["hg"]), int(ctx["ag"])
+            pnl, status = settle_pnl(o.market, o.selection, o.line, plan.stake, price, hg, ag)
             bankroll += pnl
             exposure += plan.stake
             n_day += 1
-            used_matches.add(idx)
+            per_match[idx] = per_match.get(idx, 0) + 1
             row = ctx["row"]
+            family, ln = parse_market(o.market, o.line)
             bets.append({
                 "season": bundle.season, "kickoff": day, "league": row["league"],
                 "home": row["home"], "away": row["away"], "match_index": int(idx),
-                "market": o.market, "selection": o.selection, "line": o.line,
-                "label": label(o.market, o.selection, o.line),
-                "price": price, "p_model": round(float(mat.market(o.market, o.line).get(o.selection, 0.0)), 4),
+                "market": o.market, "selection": o.selection, "line": ln,
+                "label": label(family, o.selection, ln),
+                "price": price, "p_model": round(float(ctx["p_model"].get(o.selection, 0.0)), 4),
                 "p_fair": round(p_fair, 4), "p_sharp": round(float(o.p_sharp or 0.0), 4),
-                "edge": round(edge, 4), "stake": plan.stake, "pnl": pnl,
-                "status": "push" if push else ("won" if won else "lost"),
-                "result": f"{ctx['hg']}-{ctx['ag']}", "clv": o.clv(),
+                "edge": round(edge, 4), "stake": plan.stake, "pnl": pnl, "status": status,
+                "result": f"{hg}-{ag}", "clv": o.clv(),
                 "bankroll_after": round(bankroll, 2),
             })
         day_pnl.append({"date": day, "bankroll": round(bankroll, 2), "n": n_day})
 
-    return pd.DataFrame(bets), day_pnl, preds
+    return pd.DataFrame(bets), day_pnl, []
 
 
 # --------------------------------------------------------------------------

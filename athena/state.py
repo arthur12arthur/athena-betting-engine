@@ -20,7 +20,12 @@ STATUS_OPEN = "open"
 STATUS_WON = "won"
 STATUS_LOST = "lost"
 STATUS_PUSH = "push"
+STATUS_HALF_WON = "half_won"
+STATUS_HALF_LOST = "half_lost"
 STATUS_VOID = "void"
+
+SETTLED = {STATUS_WON, STATUS_LOST, STATUS_PUSH, STATUS_HALF_WON, STATUS_HALF_LOST}
+WINNING = {STATUS_WON, STATUS_HALF_WON}
 
 
 def _now() -> str:
@@ -79,7 +84,7 @@ class Ledger:
         return [b for b in self.bets if b.get("status") == STATUS_OPEN]
 
     def settled_bets(self) -> list[dict]:
-        return [b for b in self.bets if b.get("status") in {STATUS_WON, STATUS_LOST, STATUS_PUSH}]
+        return [b for b in self.bets if b.get("status") in SETTLED]
 
     def has_bet(self, bet_id: str) -> bool:
         return any(b.get("bet_id") == bet_id for b in self.bets)
@@ -129,7 +134,7 @@ class Ledger:
         settled = self.settled_bets()
         staked = sum(float(b["stake"]) for b in settled)
         pnl = sum(float(b.get("pnl", 0.0)) for b in settled)
-        wins = sum(1 for b in settled if b["status"] == STATUS_WON)
+        wins = sum(1 for b in settled if b["status"] in WINNING)
         clv = [float(b["clv"]) for b in settled if b.get("clv") is not None]
         eq = [float(x["bankroll"]) for x in self.data.get("equity", [])]
         peak, dd = -1e18, 0.0

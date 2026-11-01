@@ -44,7 +44,21 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          ATHENA_SITE_URL: ${{ vars.ATHENA_SITE_URL }}
         run: python -m athena.cli daily
+
+      # Le rapport du run (résultats réglés, P&L, value bets) est affiché
+      # directement dans l'onglet Summary du run : bien visible, sans clic.
+      - name: Résumé du run (résultats & P&L)
+        if: always()
+        run: |
+          FILE=site/data/run_summary.md
+          if [ -f "$FILE" ]; then cat "$FILE" >> "$GITHUB_STEP_SUMMARY"; else
+            echo "## ATHENA — exécution sans rapport" >> "$GITHUB_STEP_SUMMARY"
+            echo "Le pipeline n'a pas produit de résumé (voir les logs ci-dessus)." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Publier les artefacts du jour
         uses: actions/upload-artifact@v4
@@ -53,6 +67,7 @@ jobs:
           path: |
             site/
             data/state/ledger.json
+            data/state/predictions_history.json
           retention-days: 14
 
       - name: Committer les résultats

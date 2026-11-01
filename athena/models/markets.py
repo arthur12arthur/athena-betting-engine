@@ -21,6 +21,56 @@ from scipy.stats import poisson
 EPS = 1e-12
 
 
+def is_integer_line(line: float) -> bool:
+    """Ligne entière -> remboursement (push) possible."""
+    return abs(float(line) - round(float(line))) < 1e-9
+
+
+def _is_quarter_line(line: float) -> bool:
+    """Ligne quart : 2*line est un demi-entier (ex. -0,75 -> -1,5)."""
+    x = float(line) * 2.0
+    return abs(x - round(x)) > 1e-9
+
+
+def is_quarter_line(line: float) -> bool:
+    return _is_quarter_line(line)
+
+
+def ou_line_from_market(market: str) -> float | None:
+    """Déduit la ligne d'un libellé de marché.
+
+    'OU25' -> 2,5 (notation historique condensée) · 'OU2.5' -> 2,5 · 'OU3' -> 3,0
+    """
+    if not market:
+        return None
+    m = market.upper()
+    if not m.startswith("OU") or len(m) <= 2:
+        return None
+    suffix = m[2:]
+    try:
+        if "." in suffix:
+            return float(suffix)
+        if len(suffix) == 2:
+            return float(f"{suffix[0]}.{suffix[1]}")
+        if len(suffix) == 1:
+            return float(suffix)
+        return float(suffix)
+    except ValueError:
+        return None
+
+
+def parse_market(market: str, line: float | None = None) -> tuple[str, float | None]:
+    """'OU2.5' -> ('OU', 2.5) ; 'AH' -> ('AH', line) ; '1X2' -> ('1X2', None)."""
+    m = (market or "").upper()
+    if m.startswith("OU"):
+        # une ligne explicite prime sur le libellé (ex. marché "OU25" coté à 2,25)
+        return "OU", (float(line) if line is not None
+                      else ScoreMatrix._ou_line(market, None))
+    if m == "AH":
+        return "AH", line
+    return m, line
+
+
 def _tau(hg: np.ndarray, ag: np.ndarray, lh: np.ndarray, la: np.ndarray, rho: float) -> np.ndarray:
     """Correction Dixon-Coles des scores faibles (0-0, 1-0, 0-1, 1-1)."""
     t = np.ones_like(lh, dtype=float)
@@ -138,20 +188,15 @@ class ScoreMatrix:
         if market == "BTTS":
             p_no = float(m[II == 0].sum() + m[JJ == 0].sum() - m[(II == 0) & (JJ == 0)].sum())
             return {"yes": 1.0 - p_no, "no": p_no}
-        if market == "OU":
-            ln = 2.5 if line is None else float(line)
+        if market.startswith("OU"):
+            ln = self._ou_line(market, line)
             over = float(m[(II + JJ) > ln].sum())
-            return {"over": over, "under": 1.0 - over}
-        if market == "OU25":
-            return self.market("OU", 2.5)
-        if market == "AH":  # handicap asiatique, ligne côté domicile
-            ln = -0.5 if line is None else float(line)
-            diff = (II - JJ) + ln
-            win_home = float(m[diff > 0].sum())
-            push = float(m[np.abs(diff) < 1e-9].sum())
-            p_home = win_home + 0.5 * push
-            return {"home": p_home, "away": 1.0 - p_home,
-                    "push": push, "win_home": win_home, "win_away": float(m[diff < 0].sum())}
+            draw = float(m[np.abs((II + JJ) - ln) < 1e-9].sum())
+            # ligne entière = remboursement possible -> probabilité "équitable"
+            return {"over": over, "under": 1.0 - over - draw, "push": draw,
+                    "p_over": over + 0.5 * draw, "p_under": 1.0 - over - 0.5 * draw}
+        if market == "AH":  # handicap asiatique, ligne exprimée côté domicile
+            return self.handicap(-0.5 if line is None else float(line))
         if market == "CS":
             out: dict[str, float] = {}
             for i in range(min(5, self.mat.shape[0])):
@@ -159,6 +204,51 @@ class ScoreMatrix:
                     out[f"{i}-{j}"] = float(m[i, j])
             return out
         raise ValueError(f"marché inconnu: {market}")
+
+
+    # ------------------------------------------------------- lignes & handicap
+    @staticmethod
+    def _ou_line(market: str, line: float | None) -> float:
+        """'OU25' -> 2,5 ; 'OU1.5' -> 1,5 ; 'OU' -> paramètre ``line``."""
+        ln = ou_line_from_market(market)
+        if ln is not None:
+            return ln
+        return 2.5 if line is None else float(line)
+
+    def handicap(self, line: float) -> dict[str, float]:
+        """Probabilités d'un handicap asiatique, lignes entières, demi et **quart**.
+
+        Une ligne quart (ex. -0,75) est la moyenne de deux demi-lignes (-1,0
+        et -0,5) : une moitié de mise est poussée, l'autre gagnée/perdue.
+        On renvoie donc les probabilités "ajustées du push" (`p_home`, `p_away`),
+        la probabilité de push (`push`) et les probabilités de gain pur.
+        """
+        idx = np.arange(self.mat.shape[0])
+        i, j = np.meshgrid(idx, idx, indexing="ij")
+        m = self.mat
+        margin = i - j
+
+        def one(ln: float) -> tuple[float, float, float]:
+            d = margin + ln
+            win = float(m[d > 1e-9].sum())
+            push = float(m[np.abs(d) < 1e-9].sum())
+            lose = float(m[d < -1e-9].sum())
+            return win, push, lose
+
+        if _is_quarter_line(line):
+            w1, p1, l1 = one(line - 0.25)
+            w2, p2, l2 = one(line + 0.25)
+            win_home = 0.5 * (w1 + w2)
+            push = 0.5 * (p1 + p2)
+            lose_home = 0.5 * (l1 + l2)
+        else:
+            win_home, push, lose_home = one(line)
+        p_home = win_home + 0.5 * push
+        return {
+            "home": p_home, "away": 1.0 - p_home,
+            "push": push, "win_home": win_home, "win_away": lose_home,
+            "p_home": p_home, "p_away": 1.0 - p_home,
+        }
 
     # --------------------------------------------------------------- utilitaires
     def top_scores(self, n: int = 3) -> list[tuple[str, float]]:

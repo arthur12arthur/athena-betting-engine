@@ -79,7 +79,18 @@ betting:
   slippage: 0.015              # dégradation de cote simulée (backtest)
   devig_method: "power"        # power | shin | multiplicative | additive
   price_mode: "avg"            # avg = cote moyenne marché (réaliste) | max = line shopping
-  markets: ["1X2"]             # marchés mis en jeu (OU25/AH instables sur données gratuites)
+  # Marchés joués. Backtest 2025+2026 (walk-forward, cotes avg, λ=0,70) :
+  #   1X2  : ROI  +2,0 %  CLV  +7,0 %  (n=685)
+  #   OU2.5: ROI +12,4 %  CLV +10,1 %  (n=281)
+  #   AH   : ROI  -8,7 %  CLV  -0,9 %  (n=246) -> implémenté mais DÉSACTIVÉ par défaut
+  # Activez-le en ajoutant "AH" à la liste si vous voulez suivre ce marché à titre d'observation.
+  markets: ["1X2", "OU25"]
+  min_books_multi: 3           # nb de books mini pour parler de "multi-books"
+  # Surcharges par marché : les marchés de buts/handicaps sont plus volatils,
+  # on exige donc un edge un peu plus élevé et des cotes plus courtes.
+  market_params:
+    OU25: {min_edge: 0.035, max_edge: 0.08, min_odds: 1.5, max_odds: 4.0}
+    AH:   {min_edge: 0.04,  max_edge: 0.08, min_odds: 1.6, max_odds: 3.2}
   # Quand une seule source de cotes est disponible (Pinnacle), l'edge compare
   # le modèle au prix du même book : c'est moins fiable qu'un vrai écart
   # multi-books. On exige donc plus d'edge et on réduit la mise.
@@ -108,3 +119,11 @@ llm:
   max_calls_per_run: 8
   max_output_tokens: 400
   temperature: 0.4
+
+# ---------------------------------------------------------------
+# Telegram (gratuit : BotFather) - secrets recommandés
+# ---------------------------------------------------------------
+telegram:
+  enabled: true
+  chat_id: ""                  # ou secret TELEGRAM_CHAT_ID
+  site_url: "https://arthur12arthur.github.io/athena-betting-engine/"

@@ -14,6 +14,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 
 from ..logging_conf import get_logger
+from ..models.markets import ou_line_from_market
 from .devig import blend_with_market
 
 log = get_logger("betting.value")
@@ -52,12 +53,26 @@ SELECTION_LABELS = {
 }
 
 
+def _fr(v: float) -> str:
+    """2.25 -> '2,25' (notation française)."""
+    return f"{v:g}".replace(".", ",")
+
+
 def label(market: str, selection: str, line: float | None = None) -> str:
-    if (market, selection) in SELECTION_LABELS:
-        return SELECTION_LABELS[(market, selection)]
-    if market == "AH":
-        return f"Handicap {selection} {line:+g}"
-    return f"{market} {selection}"
+    """Libellé lisible et sans ambiguïté pour le dashboard, Telegram et les logs."""
+    m = (market or "").upper()
+    if m.startswith("OU"):
+        ln = line if line is not None else ou_line_from_market(m)
+        if ln is not None:
+            return (f"Plus de {_fr(ln)} buts" if selection == "over"
+                    else f"Moins de {_fr(ln)} buts")
+    if m == "AH" and line is not None:
+        side = {"home": "Dom.", "away": "Ext."}.get(selection, selection)
+        sign = "+" if line >= 0 else "−"
+        return f"Handicap {side} {sign}{_fr(abs(line))}"
+    if (m, selection) in SELECTION_LABELS:
+        return SELECTION_LABELS[(m, selection)]
+    return f"{m} {selection}"
 
 
 def evaluate_market(market: str, p_model: dict[str, float], p_market: dict[str, float],

@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-10-31T22:46:42+00:00",
+ "generated_at": "2026-10-31T23:59:40+00:00",
  "model": {
   "version": "athena-1.0-20261031",
-  "trained_at": "2026-10-31T22:46:35.429390",
+  "trained_at": "2026-10-31T23:59:24.637696",
   "w_dc": 0.1,
   "temperature": 0.962,
   "calibration": {
@@ -15,7 +15,10 @@
   },
   "n_matches_train": 41323,
   "n_leagues": 12,
-  "features": 57,
+  "markets": [
+   "1X2",
+   "OU25"
+  ],
   "leagues": [
    "E0",
    "E1",
@@ -51,7 +54,12 @@
     "draw": 3.05,
     "away": 2.8
    },
-   "ou25": 0.5576,
+   "ou25": {
+    "over": 0.5576,
+    "under": 0.4424,
+    "fair_over": 1.79,
+    "fair_under": 2.26
+   },
    "btts": 0.6312,
    "scores": [
     [
@@ -74,7 +82,14 @@
    "form": [
     2.2,
     1.2
-   ]
+   ],
+   "ah": {
+    "line": 0.0,
+    "home": 0.4796,
+    "away": 0.5204,
+    "fair_home": 2.09,
+    "fair_away": 1.92
+   }
   },
   {
    "league": "T1",
@@ -95,7 +110,12 @@
     "draw": 5.7,
     "away": 11.09
    },
-   "ou25": 0.6236,
+   "ou25": {
+    "over": 0.6236,
+    "under": 0.3764,
+    "fair_over": 1.6,
+    "fair_under": 2.66
+   },
    "btts": 0.506,
    "scores": [
     [
@@ -121,8 +141,24 @@
    ],
    "sharp_odds": {
     "home": 1.25,
-    "away": 12.14,
-    "draw": 6.58
+    "away": 11.72,
+    "draw": 6.44
+   },
+   "sharp_totals": {
+    "over": 1.61,
+    "under": 2.4
+   },
+   "sharp_handicap": {
+    "line": -0.75,
+    "home": 1.29,
+    "away": 3.78
+   },
+   "ah": {
+    "line": -0.75,
+    "home": 0.6775,
+    "away": 0.3225,
+    "fair_home": 1.48,
+    "fair_away": 3.1
    }
   },
   {
@@ -144,7 +180,12 @@
     "draw": 4.23,
     "away": 3.7
    },
-   "ou25": 0.6117,
+   "ou25": {
+    "over": 0.6117,
+    "under": 0.3883,
+    "fair_over": 1.63,
+    "fair_under": 2.58
+   },
    "btts": 0.6197,
    "scores": [
     [
@@ -172,6 +213,22 @@
     "home": 2.35,
     "away": 2.92,
     "draw": 3.74
+   },
+   "sharp_totals": {
+    "over": 1.64,
+    "under": 2.33
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.74,
+    "away": 2.17
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.6116,
+    "away": 0.3884,
+    "fair_home": 1.64,
+    "fair_away": 2.57
    }
   },
   {
@@ -193,7 +250,12 @@
     "draw": 6.56,
     "away": 16.6
    },
-   "ou25": 0.602,
+   "ou25": {
+    "over": 0.602,
+    "under": 0.398,
+    "fair_over": 1.66,
+    "fair_under": 2.51
+   },
    "btts": 0.4668,
    "scores": [
     [
@@ -219,8 +281,24 @@
    ],
    "sharp_odds": {
     "home": 1.3,
-    "away": 9.29,
-    "draw": 6.36
+    "away": 9.2,
+    "draw": 6.32
+   },
+   "sharp_totals": {
+    "over": 1.38,
+    "under": 3.09
+   },
+   "sharp_handicap": {
+    "line": -0.5,
+    "home": 1.29,
+    "away": 3.82
+   },
+   "ah": {
+    "line": -0.5,
+    "home": 0.7874,
+    "away": 0.2126,
+    "fair_home": 1.27,
+    "fair_away": 4.7
    }
   },
   {
@@ -242,7 +320,12 @@
     "draw": 3.31,
     "away": 3.1
    },
-   "ou25": 0.5602,
+   "ou25": {
+    "over": 0.5602,
+    "under": 0.4398,
+    "fair_over": 1.79,
+    "fair_under": 2.27
+   },
    "btts": 0.6198,
    "scores": [
     [
@@ -270,6 +353,22 @@
     "home": 2.07,
     "away": 3.35,
     "draw": 3.91
+   },
+   "sharp_totals": {
+    "over": 1.58,
+    "under": 2.44
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.56,
+    "away": 2.53
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5264,
+    "away": 0.4736,
+    "fair_home": 1.9,
+    "fair_away": 2.11
    }
   },
   {
@@ -291,7 +390,12 @@
     "draw": 3.02,
     "away": 3.12
    },
-   "ou25": 0.419,
+   "ou25": {
+    "over": 0.419,
+    "under": 0.581,
+    "fair_over": 2.39,
+    "fair_under": 1.72
+   },
    "btts": 0.5073,
    "scores": [
     [
@@ -319,6 +423,22 @@
     "home": 3.3,
     "away": 2.49,
     "draw": 3.04
+   },
+   "sharp_totals": {
+    "over": 2.74,
+    "under": 1.47
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.22,
+    "away": 1.67
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5134,
+    "away": 0.4866,
+    "fair_home": 1.95,
+    "fair_away": 2.05
    }
   },
   {
@@ -340,7 +460,12 @@
     "draw": 6.02,
     "away": 1.38
    },
-   "ou25": 0.6715,
+   "ou25": {
+    "over": 0.6715,
+    "under": 0.3285,
+    "fair_over": 1.49,
+    "fair_under": 3.04
+   },
    "btts": 0.5784,
    "scores": [
     [
@@ -368,6 +493,22 @@
     "home": 6.46,
     "away": 1.46,
     "draw": 5.0
+   },
+   "sharp_totals": {
+    "over": 1.49,
+    "under": 2.68
+   },
+   "sharp_handicap": {
+    "line": 0.25,
+    "home": 3.59,
+    "away": 1.31
+   },
+   "ah": {
+    "line": 0.25,
+    "home": 0.2326,
+    "away": 0.7674,
+    "fair_home": 4.3,
+    "fair_away": 1.3
    }
   },
   {
@@ -389,7 +530,12 @@
     "draw": 3.45,
     "away": 10.21
    },
-   "ou25": 0.5104,
+   "ou25": {
+    "over": 0.5104,
+    "under": 0.4896,
+    "fair_over": 1.96,
+    "fair_under": 2.04
+   },
    "btts": 0.5236,
    "scores": [
     [
@@ -417,6 +563,22 @@
     "home": 1.79,
     "away": 4.26,
     "draw": 4.08
+   },
+   "sharp_totals": {
+    "over": 1.61,
+    "under": 2.4
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.36,
+    "away": 3.26
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.7571,
+    "away": 0.2429,
+    "fair_home": 1.32,
+    "fair_away": 4.12
    }
   },
   {
@@ -438,7 +600,12 @@
     "draw": 5.49,
     "away": 11.08
    },
-   "ou25": 0.6422,
+   "ou25": {
+    "over": 0.6422,
+    "under": 0.3578,
+    "fair_over": 1.56,
+    "fair_under": 2.79
+   },
    "btts": 0.5425,
    "scores": [
     [
@@ -466,6 +633,22 @@
     "home": 1.28,
     "away": 9.39,
     "draw": 6.49
+   },
+   "sharp_totals": {
+    "over": 1.37,
+    "under": 3.15
+   },
+   "sharp_handicap": {
+    "line": -0.75,
+    "home": 1.32,
+    "away": 3.51
+   },
+   "ah": {
+    "line": -0.75,
+    "home": 0.6694,
+    "away": 0.3306,
+    "fair_home": 1.49,
+    "fair_away": 3.03
    }
   },
   {
@@ -487,7 +670,12 @@
     "draw": 3.67,
     "away": 1.88
    },
-   "ou25": 0.6083,
+   "ou25": {
+    "over": 0.6083,
+    "under": 0.3917,
+    "fair_over": 1.64,
+    "fair_under": 2.55
+   },
    "btts": 0.6219,
    "scores": [
     [
@@ -515,6 +703,22 @@
     "home": 5.45,
     "away": 1.56,
     "draw": 4.61
+   },
+   "sharp_totals": {
+    "over": 1.5,
+    "under": 2.66
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 4.31,
+    "away": 1.24
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.3329,
+    "away": 0.6671,
+    "fair_home": 3.0,
+    "fair_away": 1.5
    }
   },
   {
@@ -536,7 +740,12 @@
     "draw": 2.98,
     "away": 3.27
    },
-   "ou25": 0.5534,
+   "ou25": {
+    "over": 0.5534,
+    "under": 0.4466,
+    "fair_over": 1.81,
+    "fair_under": 2.24
+   },
    "btts": 0.6328,
    "scores": [
     [
@@ -564,6 +773,22 @@
     "home": 2.94,
     "away": 2.33,
     "draw": 3.74
+   },
+   "sharp_totals": {
+    "over": 1.54,
+    "under": 2.56
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.19,
+    "away": 1.74
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5266,
+    "away": 0.4734,
+    "fair_home": 1.9,
+    "fair_away": 2.11
    }
   },
   {
@@ -585,7 +810,12 @@
     "draw": 3.62,
     "away": 3.11
    },
-   "ou25": 0.5599,
+   "ou25": {
+    "over": 0.5599,
+    "under": 0.4401,
+    "fair_over": 1.79,
+    "fair_under": 2.27
+   },
    "btts": 0.6048,
    "scores": [
     [
@@ -612,7 +842,23 @@
    "sharp_odds": {
     "home": 1.85,
     "away": 4.01,
-    "draw": 4.04
+    "draw": 4.05
+   },
+   "sharp_totals": {
+    "over": 1.59,
+    "under": 2.46
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.41,
+    "away": 3.06
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.54,
+    "away": 0.46,
+    "fair_home": 1.85,
+    "fair_away": 2.17
    }
   },
   {
@@ -634,7 +880,12 @@
     "draw": 2.86,
     "away": 3.56
    },
-   "ou25": 0.5052,
+   "ou25": {
+    "over": 0.5052,
+    "under": 0.4948,
+    "fair_over": 1.98,
+    "fair_under": 2.02
+   },
    "btts": 0.5957,
    "scores": [
     [
@@ -662,6 +913,22 @@
     "home": 2.18,
     "away": 3.13,
     "draw": 3.96
+   },
+   "sharp_totals": {
+    "over": 1.4,
+    "under": 2.98
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.65,
+    "away": 2.36
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5446,
+    "away": 0.4554,
+    "fair_home": 1.84,
+    "fair_away": 2.2
    }
   },
   {
@@ -683,7 +950,12 @@
     "draw": 4.39,
     "away": 7.89
    },
-   "ou25": 0.5295,
+   "ou25": {
+    "over": 0.5295,
+    "under": 0.4705,
+    "fair_over": 1.89,
+    "fair_under": 2.13
+   },
    "btts": 0.4821,
    "scores": [
     [
@@ -711,6 +983,22 @@
     "home": 1.45,
     "away": 7.35,
     "draw": 4.74
+   },
+   "sharp_totals": {
+    "over": 1.81,
+    "under": 2.09
+   },
+   "sharp_handicap": {
+    "line": -0.25,
+    "home": 1.3,
+    "away": 3.76
+   },
+   "ah": {
+    "line": -0.25,
+    "home": 0.7024,
+    "away": 0.2976,
+    "fair_home": 1.42,
+    "fair_away": 3.36
    }
   },
   {
@@ -732,7 +1020,12 @@
     "draw": 3.01,
     "away": 3.26
    },
-   "ou25": 0.553,
+   "ou25": {
+    "over": 0.553,
+    "under": 0.447,
+    "fair_over": 1.81,
+    "fair_under": 2.24
+   },
    "btts": 0.6284,
    "scores": [
     [
@@ -760,6 +1053,22 @@
     "home": 2.79,
     "away": 2.56,
     "draw": 3.52
+   },
+   "sharp_totals": {
+    "over": 1.74,
+    "under": 2.17
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.04,
+    "away": 1.87
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5272,
+    "away": 0.4728,
+    "fair_home": 1.9,
+    "fair_away": 2.12
    }
   },
   {
@@ -781,7 +1090,12 @@
     "draw": 3.89,
     "away": 4.79
    },
-   "ou25": 0.4903,
+   "ou25": {
+    "over": 0.4903,
+    "under": 0.5097,
+    "fair_over": 2.04,
+    "fair_under": 1.96
+   },
    "btts": 0.5107,
    "scores": [
     [
@@ -809,6 +1123,22 @@
     "home": 1.68,
     "away": 4.85,
     "draw": 4.2
+   },
+   "sharp_totals": {
+    "over": 1.61,
+    "under": 2.4
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.29,
+    "away": 3.74
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.6629,
+    "away": 0.3371,
+    "fair_home": 1.51,
+    "fair_away": 2.97
    }
   },
   {
@@ -830,7 +1160,12 @@
     "draw": 3.09,
     "away": 2.49
    },
-   "ou25": 0.4404,
+   "ou25": {
+    "over": 0.4404,
+    "under": 0.5596,
+    "fair_over": 2.27,
+    "fair_under": 1.79
+   },
    "btts": 0.5184,
    "scores": [
     [
@@ -858,6 +1193,22 @@
     "home": 3.96,
     "away": 2.02,
     "draw": 3.38
+   },
+   "sharp_totals": {
+    "over": 2.17,
+    "under": 1.71
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.86,
+    "away": 1.45
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.4363,
+    "away": 0.5637,
+    "fair_home": 2.29,
+    "fair_away": 1.77
    }
   },
   {
@@ -879,7 +1230,12 @@
     "draw": 7.0,
     "away": 1.38
    },
-   "ou25": 0.6203,
+   "ou25": {
+    "over": 0.6203,
+    "under": 0.3797,
+    "fair_over": 1.61,
+    "fair_under": 2.63
+   },
    "btts": 0.5364,
    "scores": [
     [
@@ -907,6 +1263,18 @@
     "home": 10.29,
     "away": 1.22,
     "draw": 8.04
+   },
+   "sharp_handicap": {
+    "line": 1.0,
+    "home": 3.81,
+    "away": 1.27
+   },
+   "ah": {
+    "line": 1.0,
+    "home": 0.4155,
+    "away": 0.5845,
+    "fair_home": 2.41,
+    "fair_away": 1.71
    }
   },
   {
@@ -928,7 +1296,12 @@
     "draw": 3.97,
     "away": 4.93
    },
-   "ou25": 0.4765,
+   "ou25": {
+    "over": 0.4765,
+    "under": 0.5235,
+    "fair_over": 2.1,
+    "fair_under": 1.91
+   },
    "btts": 0.4941,
    "scores": [
     [
@@ -956,6 +1329,22 @@
     "home": 1.77,
     "away": 4.64,
     "draw": 3.88
+   },
+   "sharp_totals": {
+    "over": 1.85,
+    "under": 2.02
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.33,
+    "away": 3.49
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.6712,
+    "away": 0.3288,
+    "fair_home": 1.49,
+    "fair_away": 3.04
    }
   },
   {
@@ -977,7 +1366,12 @@
     "draw": 3.67,
     "away": 3.39
    },
-   "ou25": 0.6237,
+   "ou25": {
+    "over": 0.6237,
+    "under": 0.3763,
+    "fair_over": 1.6,
+    "fair_under": 2.66
+   },
    "btts": 0.6536,
    "scores": [
     [
@@ -1005,6 +1399,22 @@
     "home": 1.77,
     "away": 4.16,
     "draw": 4.29
+   },
+   "sharp_totals": {
+    "over": 1.44,
+    "under": 2.86
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.37,
+    "away": 3.23
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5687,
+    "away": 0.4313,
+    "fair_home": 1.76,
+    "fair_away": 2.32
    }
   },
   {
@@ -1026,7 +1436,12 @@
     "draw": 3.54,
     "away": 1.93
    },
-   "ou25": 0.5171,
+   "ou25": {
+    "over": 0.5171,
+    "under": 0.4829,
+    "fair_over": 1.93,
+    "fair_under": 2.07
+   },
    "btts": 0.5592,
    "scores": [
     [
@@ -1054,6 +1469,22 @@
     "home": 5.68,
     "away": 1.57,
     "draw": 4.35
+   },
+   "sharp_totals": {
+    "over": 1.68,
+    "under": 2.25
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 4.43,
+    "away": 1.23
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.3412,
+    "away": 0.6588,
+    "fair_home": 2.93,
+    "fair_away": 1.52
    }
   },
   {
@@ -1075,7 +1506,12 @@
     "draw": 2.51,
     "away": 2.9
    },
-   "ou25": 0.3994,
+   "ou25": {
+    "over": 0.3994,
+    "under": 0.6006,
+    "fair_over": 2.5,
+    "fair_under": 1.66
+   },
    "btts": 0.5243,
    "scores": [
     [
@@ -1103,6 +1539,22 @@
     "home": 3.28,
     "away": 2.61,
     "draw": 2.84
+   },
+   "sharp_totals": {
+    "over": 2.17,
+    "under": 1.72
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.18,
+    "away": 1.72
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.4555,
+    "away": 0.5445,
+    "fair_home": 2.2,
+    "fair_away": 1.84
    }
   },
   {
@@ -1124,7 +1576,12 @@
     "draw": 3.61,
     "away": 3.28
    },
-   "ou25": 0.5218,
+   "ou25": {
+    "over": 0.5218,
+    "under": 0.4782,
+    "fair_over": 1.92,
+    "fair_under": 2.09
+   },
    "btts": 0.5703,
    "scores": [
     [
@@ -1152,6 +1609,22 @@
     "home": 2.53,
     "away": 2.82,
     "draw": 3.53
+   },
+   "sharp_totals": {
+    "over": 1.85,
+    "under": 2.05
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.85,
+    "away": 2.06
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5561,
+    "away": 0.4439,
+    "fair_home": 1.8,
+    "fair_away": 2.25
    }
   },
   {
@@ -1173,7 +1646,12 @@
     "draw": 5.13,
     "away": 9.61
    },
-   "ou25": 0.5703,
+   "ou25": {
+    "over": 0.5703,
+    "under": 0.4297,
+    "fair_over": 1.75,
+    "fair_under": 2.33
+   },
    "btts": 0.4845,
    "scores": [
     [
@@ -1201,6 +1679,22 @@
     "home": 1.4,
     "away": 7.48,
     "draw": 5.27
+   },
+   "sharp_totals": {
+    "over": 1.56,
+    "under": 2.52
+   },
+   "sharp_handicap": {
+    "line": -0.25,
+    "home": 1.27,
+    "away": 4.02
+   },
+   "ah": {
+    "line": -0.25,
+    "home": 0.7496,
+    "away": 0.2504,
+    "fair_home": 1.33,
+    "fair_away": 3.99
    }
   },
   {
@@ -1222,7 +1716,12 @@
     "draw": 3.09,
     "away": 3.55
    },
-   "ou25": 0.5366,
+   "ou25": {
+    "over": 0.5366,
+    "under": 0.4634,
+    "fair_over": 1.86,
+    "fair_under": 2.16
+   },
    "btts": 0.6067,
    "scores": [
     [
@@ -1250,6 +1749,22 @@
     "home": 1.55,
     "away": 5.52,
     "draw": 4.75
+   },
+   "sharp_totals": {
+    "over": 1.41,
+    "under": 2.93
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.24,
+    "away": 4.41
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5563,
+    "away": 0.4437,
+    "fair_home": 1.8,
+    "fair_away": 2.25
    }
   },
   {
@@ -1271,7 +1786,12 @@
     "draw": 3.85,
     "away": 2.25
    },
-   "ou25": 0.4936,
+   "ou25": {
+    "over": 0.4936,
+    "under": 0.5064,
+    "fair_over": 2.03,
+    "fair_under": 1.97
+   },
    "btts": 0.5344,
    "scores": [
     [
@@ -1296,9 +1816,25 @@
     2.4
    ],
    "sharp_odds": {
-    "home": 2.96,
-    "away": 2.47,
+    "home": 2.93,
+    "away": 2.49,
     "draw": 3.44
+   },
+   "sharp_totals": {
+    "over": 1.89,
+    "under": 2.0
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.12,
+    "away": 1.79
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.4262,
+    "away": 0.5738,
+    "fair_home": 2.35,
+    "fair_away": 1.74
    }
   },
   {
@@ -1320,7 +1856,12 @@
     "draw": 3.47,
     "away": 3.13
    },
-   "ou25": 0.4321,
+   "ou25": {
+    "over": 0.4321,
+    "under": 0.5679,
+    "fair_over": 2.31,
+    "fair_under": 1.76
+   },
    "btts": 0.4946,
    "scores": [
     [
@@ -1348,6 +1889,22 @@
     "home": 3.41,
     "away": 2.44,
     "draw": 3.05
+   },
+   "sharp_totals": {
+    "over": 2.45,
+    "under": 1.57
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.33,
+    "away": 1.66
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5365,
+    "away": 0.4635,
+    "fair_home": 1.86,
+    "fair_away": 2.16
    }
   },
   {
@@ -1369,7 +1926,12 @@
     "draw": 6.49,
     "away": 12.48
    },
-   "ou25": 0.5527,
+   "ou25": {
+    "over": 0.5527,
+    "under": 0.4473,
+    "fair_over": 1.81,
+    "fair_under": 2.24
+   },
    "btts": 0.4143,
    "scores": [
     [
@@ -1397,6 +1959,22 @@
     "home": 1.28,
     "away": 10.37,
     "draw": 5.95
+   },
+   "sharp_totals": {
+    "over": 1.62,
+    "under": 2.34
+   },
+   "sharp_handicap": {
+    "line": -0.5,
+    "home": 1.27,
+    "away": 3.91
+   },
+   "ah": {
+    "line": -0.5,
+    "home": 0.7659,
+    "away": 0.2341,
+    "fair_home": 1.31,
+    "fair_away": 4.27
    }
   },
   {
@@ -1418,7 +1996,12 @@
     "draw": 4.46,
     "away": 2.12
    },
-   "ou25": 0.5135,
+   "ou25": {
+    "over": 0.5135,
+    "under": 0.4865,
+    "fair_over": 1.95,
+    "fair_under": 2.06
+   },
    "btts": 0.5287,
    "scores": [
     [
@@ -1446,6 +2029,22 @@
     "home": 4.85,
     "away": 1.7,
     "draw": 4.08
+   },
+   "sharp_totals": {
+    "over": 1.79,
+    "under": 2.08
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 3.71,
+    "away": 1.3
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.4169,
+    "away": 0.5831,
+    "fair_home": 2.4,
+    "fair_away": 1.71
    }
   },
   {
@@ -1467,7 +2066,12 @@
     "draw": 3.21,
     "away": 3.45
    },
-   "ou25": 0.4293,
+   "ou25": {
+    "over": 0.4293,
+    "under": 0.5707,
+    "fair_over": 2.33,
+    "fair_under": 1.75
+   },
    "btts": 0.5037,
    "scores": [
     [
@@ -1495,6 +2099,22 @@
     "home": 2.35,
     "away": 3.12,
     "draw": 3.48
+   },
+   "sharp_totals": {
+    "over": 1.97,
+    "under": 1.92
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.67,
+    "away": 2.22
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5539,
+    "away": 0.4461,
+    "fair_home": 1.81,
+    "fair_away": 2.24
    }
   },
   {
@@ -1516,7 +2136,12 @@
     "draw": 3.4,
     "away": 3.52
    },
-   "ou25": 0.4604,
+   "ou25": {
+    "over": 0.4604,
+    "under": 0.5396,
+    "fair_over": 2.17,
+    "fair_under": 1.85
+   },
    "btts": 0.5232,
    "scores": [
     [
@@ -1544,6 +2169,22 @@
     "home": 2.3,
     "away": 3.15,
     "draw": 3.45
+   },
+   "sharp_totals": {
+    "over": 1.79,
+    "under": 2.07
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.66,
+    "away": 2.29
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5691,
+    "away": 0.4309,
+    "fair_home": 1.76,
+    "fair_away": 2.32
    }
   },
   {
@@ -1565,7 +2206,12 @@
     "draw": 4.08,
     "away": 3.43
    },
-   "ou25": 0.4405,
+   "ou25": {
+    "over": 0.4405,
+    "under": 0.5595,
+    "fair_over": 2.27,
+    "fair_under": 1.79
+   },
    "btts": 0.4718,
    "scores": [
     [
@@ -1593,6 +2239,22 @@
     "home": 1.89,
     "away": 4.26,
     "draw": 3.65
+   },
+   "sharp_totals": {
+    "over": 1.87,
+    "under": 2.0
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.39,
+    "away": 3.15
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5861,
+    "away": 0.4139,
+    "fair_home": 1.71,
+    "fair_away": 2.42
    }
   },
   {
@@ -1614,7 +2276,12 @@
     "draw": 3.14,
     "away": 2.16
    },
-   "ou25": 0.4118,
+   "ou25": {
+    "over": 0.4118,
+    "under": 0.5882,
+    "fair_over": 2.43,
+    "fair_under": 1.7
+   },
    "btts": 0.4779,
    "scores": [
     [
@@ -1642,6 +2309,22 @@
     "home": 3.71,
     "away": 2.27,
     "draw": 3.06
+   },
+   "sharp_totals": {
+    "over": 2.54,
+    "under": 1.55
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.56,
+    "away": 1.56
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.378,
+    "away": 0.622,
+    "fair_home": 2.65,
+    "fair_away": 1.61
    }
   },
   {
@@ -1663,7 +2346,12 @@
     "draw": 4.76,
     "away": 6.63
    },
-   "ou25": 0.5825,
+   "ou25": {
+    "over": 0.5825,
+    "under": 0.4175,
+    "fair_over": 1.72,
+    "fair_under": 2.4
+   },
    "btts": 0.5366,
    "scores": [
     [
@@ -1691,6 +2379,22 @@
     "home": 1.52,
     "away": 6.46,
     "draw": 4.42
+   },
+   "sharp_totals": {
+    "over": 1.78,
+    "under": 2.1
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.19,
+    "away": 5.06
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.7442,
+    "away": 0.2558,
+    "fair_home": 1.34,
+    "fair_away": 3.91
    }
   },
   {
@@ -1712,7 +2416,12 @@
     "draw": 3.4,
     "away": 3.33
    },
-   "ou25": 0.478,
+   "ou25": {
+    "over": 0.478,
+    "under": 0.522,
+    "fair_over": 2.09,
+    "fair_under": 1.92
+   },
    "btts": 0.5405,
    "scores": [
     [
@@ -1740,6 +2449,22 @@
     "home": 2.38,
     "away": 3.27,
     "draw": 3.29
+   },
+   "sharp_totals": {
+    "over": 2.03,
+    "under": 1.86
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.68,
+    "away": 2.31
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5529,
+    "away": 0.4471,
+    "fair_home": 1.81,
+    "fair_away": 2.24
    }
   },
   {
@@ -1761,7 +2486,12 @@
     "draw": 3.26,
     "away": 3.58
    },
-   "ou25": 0.5665,
+   "ou25": {
+    "over": 0.5665,
+    "under": 0.4335,
+    "fair_over": 1.77,
+    "fair_under": 2.31
+   },
    "btts": 0.6243,
    "scores": [
     [
@@ -1789,6 +2519,22 @@
     "home": 1.99,
     "away": 3.54,
     "draw": 4.0
+   },
+   "sharp_totals": {
+    "over": 1.55,
+    "under": 2.55
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.51,
+    "away": 2.7
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5671,
+    "away": 0.4329,
+    "fair_home": 1.76,
+    "fair_away": 2.31
    }
   },
   {
@@ -1810,7 +2556,12 @@
     "draw": 3.25,
     "away": 3.62
    },
-   "ou25": 0.4409,
+   "ou25": {
+    "over": 0.4409,
+    "under": 0.5591,
+    "fair_over": 2.27,
+    "fair_under": 1.79
+   },
    "btts": 0.5105,
    "scores": [
     [
@@ -1837,7 +2588,23 @@
    "sharp_odds": {
     "home": 2.16,
     "away": 3.32,
-    "draw": 3.7
+    "draw": 3.71
+   },
+   "sharp_totals": {
+    "over": 1.7,
+    "under": 2.24
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.6,
+    "away": 2.47
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5698,
+    "away": 0.4302,
+    "fair_home": 1.76,
+    "fair_away": 2.32
    }
   },
   {
@@ -1859,7 +2626,12 @@
     "draw": 3.77,
     "away": 4.04
    },
-   "ou25": 0.4676,
+   "ou25": {
+    "over": 0.4676,
+    "under": 0.5324,
+    "fair_over": 2.14,
+    "fair_under": 1.88
+   },
    "btts": 0.5063,
    "scores": [
     [
@@ -1887,6 +2659,22 @@
     "home": 1.72,
     "away": 5.32,
     "draw": 3.67
+   },
+   "sharp_totals": {
+    "over": 2.12,
+    "under": 1.77
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.27,
+    "away": 3.94
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.6197,
+    "away": 0.3803,
+    "fair_home": 1.61,
+    "fair_away": 2.63
    }
   },
   {
@@ -1908,7 +2696,12 @@
     "draw": 2.78,
     "away": 4.65
    },
-   "ou25": 0.4559,
+   "ou25": {
+    "over": 0.4559,
+    "under": 0.5441,
+    "fair_over": 2.19,
+    "fair_under": 1.84
+   },
    "btts": 0.5429,
    "scores": [
     [
@@ -1936,6 +2729,22 @@
     "home": 1.91,
     "away": 4.05,
     "draw": 3.52
+   },
+   "sharp_totals": {
+    "over": 2.01,
+    "under": 1.82
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.4,
+    "away": 2.99
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.6053,
+    "away": 0.3947,
+    "fair_home": 1.65,
+    "fair_away": 2.53
    }
   },
   {
@@ -1957,7 +2766,12 @@
     "draw": 2.89,
     "away": 3.01
    },
-   "ou25": 0.4467,
+   "ou25": {
+    "over": 0.4467,
+    "under": 0.5533,
+    "fair_over": 2.24,
+    "fair_under": 1.81
+   },
    "btts": 0.5425,
    "scores": [
     [
@@ -1985,6 +2799,22 @@
     "home": 2.68,
     "away": 2.7,
     "draw": 3.31
+   },
+   "sharp_totals": {
+    "over": 2.03,
+    "under": 1.82
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.92,
+    "away": 1.93
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.4946,
+    "away": 0.5054,
+    "fair_home": 2.02,
+    "fair_away": 1.98
    }
   },
   {
@@ -2006,7 +2836,12 @@
     "draw": 3.15,
     "away": 3.12
    },
-   "ou25": 0.465,
+   "ou25": {
+    "over": 0.465,
+    "under": 0.535,
+    "fair_over": 2.15,
+    "fair_under": 1.87
+   },
    "btts": 0.5408,
    "scores": [
     [
@@ -2034,6 +2869,22 @@
     "home": 2.38,
     "away": 3.21,
     "draw": 3.12
+   },
+   "sharp_totals": {
+    "over": 2.22,
+    "under": 1.66
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.65,
+    "away": 2.25
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5202,
+    "away": 0.4798,
+    "fair_home": 1.92,
+    "fair_away": 2.08
    }
   },
   {
@@ -2055,7 +2906,12 @@
     "draw": 3.22,
     "away": 3.84
    },
-   "ou25": 0.4932,
+   "ou25": {
+    "over": 0.4932,
+    "under": 0.5068,
+    "fair_over": 2.03,
+    "fair_under": 1.97
+   },
    "btts": 0.5615,
    "scores": [
     [
@@ -2083,6 +2939,22 @@
     "home": 2.9,
     "away": 2.36,
     "draw": 3.82
+   },
+   "sharp_totals": {
+    "over": 1.57,
+    "under": 2.51
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.17,
+    "away": 1.76
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5841,
+    "away": 0.4159,
+    "fair_home": 1.71,
+    "fair_away": 2.4
    }
   },
   {
@@ -2104,7 +2976,12 @@
     "draw": 3.65,
     "away": 2.8
    },
-   "ou25": 0.4621,
+   "ou25": {
+    "over": 0.4621,
+    "under": 0.5379,
+    "fair_over": 2.16,
+    "fair_under": 1.86
+   },
    "btts": 0.5163,
    "scores": [
     [
@@ -2132,6 +3009,22 @@
     "home": 2.52,
     "away": 3.01,
     "draw": 3.31
+   },
+   "sharp_totals": {
+    "over": 2.13,
+    "under": 1.79
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.79,
+    "away": 2.15
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5062,
+    "away": 0.4938,
+    "fair_home": 1.98,
+    "fair_away": 2.02
    }
   },
   {
@@ -2153,7 +3046,12 @@
     "draw": 3.79,
     "away": 5.96
    },
-   "ou25": 0.5106,
+   "ou25": {
+    "over": 0.5106,
+    "under": 0.4894,
+    "fair_over": 1.96,
+    "fair_under": 2.04
+   },
    "btts": 0.5076,
    "scores": [
     [
@@ -2181,6 +3079,22 @@
     "home": 1.52,
     "away": 6.14,
     "draw": 4.65
+   },
+   "sharp_totals": {
+    "over": 1.65,
+    "under": 2.32
+   },
+   "sharp_handicap": {
+    "line": -0.25,
+    "home": 1.36,
+    "away": 3.34
+   },
+   "ah": {
+    "line": -0.25,
+    "home": 0.6341,
+    "away": 0.3659,
+    "fair_home": 1.58,
+    "fair_away": 2.73
    }
   },
   {
@@ -2202,7 +3116,12 @@
     "draw": 2.97,
     "away": 4.03
    },
-   "ou25": 0.4393,
+   "ou25": {
+    "over": 0.4393,
+    "under": 0.5607,
+    "fair_over": 2.28,
+    "fair_under": 1.78
+   },
    "btts": 0.5218,
    "scores": [
     [
@@ -2230,6 +3149,22 @@
     "home": 2.18,
     "away": 3.67,
     "draw": 3.3
+   },
+   "sharp_totals": {
+    "over": 2.25,
+    "under": 1.7
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.55,
+    "away": 2.62
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5833,
+    "away": 0.4167,
+    "fair_home": 1.71,
+    "fair_away": 2.4
    }
   },
   {
@@ -2251,7 +3186,12 @@
     "draw": 3.71,
     "away": 3.38
    },
-   "ou25": 0.495,
+   "ou25": {
+    "over": 0.495,
+    "under": 0.505,
+    "fair_over": 2.02,
+    "fair_under": 1.98
+   },
    "btts": 0.5413,
    "scores": [
     [
@@ -2279,6 +3219,22 @@
     "home": 2.43,
     "away": 2.93,
     "draw": 3.56
+   },
+   "sharp_totals": {
+    "over": 1.74,
+    "under": 2.19
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.78,
+    "away": 2.14
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5693,
+    "away": 0.4307,
+    "fair_home": 1.76,
+    "fair_away": 2.32
    }
   },
   {
@@ -2300,7 +3256,12 @@
     "draw": 4.73,
     "away": 20.4
    },
-   "ou25": 0.5736,
+   "ou25": {
+    "over": 0.5736,
+    "under": 0.4264,
+    "fair_over": 1.74,
+    "fair_under": 2.35
+   },
    "btts": 0.4473,
    "scores": [
     [
@@ -2323,7 +3284,14 @@
    "form": [
     2.4,
     1.8
-   ]
+   ],
+   "ah": {
+    "line": 0.0,
+    "home": 0.8453,
+    "away": 0.1547,
+    "fair_home": 1.18,
+    "fair_away": 6.46
+   }
   },
   {
    "league": "P1",
@@ -2344,7 +3312,12 @@
     "draw": 3.2,
     "away": 2.81
    },
-   "ou25": 0.4316,
+   "ou25": {
+    "over": 0.4316,
+    "under": 0.5684,
+    "fair_over": 2.32,
+    "fair_under": 1.76
+   },
    "btts": 0.5094,
    "scores": [
     [
@@ -2372,6 +3345,22 @@
     "home": 2.89,
     "away": 2.69,
     "draw": 3.05
+   },
+   "sharp_totals": {
+    "over": 2.24,
+    "under": 1.67
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.0,
+    "away": 1.85
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.4875,
+    "away": 0.5125,
+    "fair_home": 2.05,
+    "fair_away": 1.95
    }
   },
   {
@@ -2393,7 +3382,12 @@
     "draw": 3.68,
     "away": 3.54
    },
-   "ou25": 0.4561,
+   "ou25": {
+    "over": 0.4561,
+    "under": 0.5439,
+    "fair_over": 2.19,
+    "fair_under": 1.84
+   },
    "btts": 0.5035,
    "scores": [
     [
@@ -2421,6 +3415,22 @@
     "home": 2.67,
     "away": 2.7,
     "draw": 3.31
+   },
+   "sharp_totals": {
+    "over": 2.07,
+    "under": 1.77
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.92,
+    "away": 1.93
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.582,
+    "away": 0.418,
+    "fair_home": 1.72,
+    "fair_away": 2.39
    }
   },
   {
@@ -2442,7 +3452,12 @@
     "draw": 3.33,
     "away": 3.62
    },
-   "ou25": 0.4743,
+   "ou25": {
+    "over": 0.4743,
+    "under": 0.5257,
+    "fair_over": 2.11,
+    "fair_under": 1.9
+   },
    "btts": 0.5393,
    "scores": [
     [
@@ -2470,6 +3485,22 @@
     "home": 2.26,
     "away": 3.07,
     "draw": 3.59
+   },
+   "sharp_totals": {
+    "over": 1.74,
+    "under": 2.12
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.66,
+    "away": 2.27
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5736,
+    "away": 0.4264,
+    "fair_home": 1.74,
+    "fair_away": 2.35
    }
   },
   {
@@ -2491,7 +3522,12 @@
     "draw": 3.12,
     "away": 3.14
    },
-   "ou25": 0.4958,
+   "ou25": {
+    "over": 0.4958,
+    "under": 0.5042,
+    "fair_over": 2.02,
+    "fair_under": 1.98
+   },
    "btts": 0.573,
    "scores": [
     [
@@ -2519,6 +3555,22 @@
     "home": 3.29,
     "away": 2.08,
     "draw": 3.81
+   },
+   "sharp_totals": {
+    "over": 1.71,
+    "under": 2.16
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.48,
+    "away": 1.56
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5214,
+    "away": 0.4786,
+    "fair_home": 1.92,
+    "fair_away": 2.09
    }
   },
   {
@@ -2540,7 +3592,12 @@
     "draw": 3.03,
     "away": 3.05
    },
-   "ou25": 0.434,
+   "ou25": {
+    "over": 0.434,
+    "under": 0.566,
+    "fair_over": 2.3,
+    "fair_under": 1.77
+   },
    "btts": 0.5213,
    "scores": [
     [
@@ -2568,6 +3625,22 @@
     "home": 2.66,
     "away": 2.69,
     "draw": 3.35
+   },
+   "sharp_totals": {
+    "over": 2.03,
+    "under": 1.82
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.92,
+    "away": 1.93
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5072,
+    "away": 0.4928,
+    "fair_home": 1.97,
+    "fair_away": 2.03
    }
   },
   {
@@ -2589,7 +3662,12 @@
     "draw": 3.31,
     "away": 2.22
    },
-   "ou25": 0.4991,
+   "ou25": {
+    "over": 0.4991,
+    "under": 0.5009,
+    "fair_over": 2.0,
+    "fair_under": 2.0
+   },
    "btts": 0.5578,
    "scores": [
     [
@@ -2617,6 +3695,22 @@
     "home": 3.18,
     "away": 2.12,
     "draw": 3.82
+   },
+   "sharp_totals": {
+    "over": 1.75,
+    "under": 2.11
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.4,
+    "away": 1.6
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.3994,
+    "away": 0.6006,
+    "fair_home": 2.5,
+    "fair_away": 1.66
    }
   },
   {
@@ -2638,7 +3732,12 @@
     "draw": 3.9,
     "away": 3.18
    },
-   "ou25": 0.5374,
+   "ou25": {
+    "over": 0.5374,
+    "under": 0.4626,
+    "fair_over": 1.86,
+    "fair_under": 2.16
+   },
    "btts": 0.5665,
    "scores": [
     [
@@ -2666,6 +3765,22 @@
     "home": 2.0,
     "away": 3.51,
     "draw": 3.78
+   },
+   "sharp_totals": {
+    "over": 1.69,
+    "under": 2.19
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.5,
+    "away": 2.65
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5572,
+    "away": 0.4428,
+    "fair_home": 1.79,
+    "fair_away": 2.26
    }
   },
   {
@@ -2687,7 +3802,12 @@
     "draw": 3.21,
     "away": 3.09
    },
-   "ou25": 0.4443,
+   "ou25": {
+    "over": 0.4443,
+    "under": 0.5557,
+    "fair_over": 2.25,
+    "fair_under": 1.8
+   },
    "btts": 0.5209,
    "scores": [
     [
@@ -2715,6 +3835,22 @@
     "home": 2.29,
     "away": 3.11,
     "draw": 3.47
+   },
+   "sharp_totals": {
+    "over": 1.92,
+    "under": 1.92
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.66,
+    "away": 2.27
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5207,
+    "away": 0.4793,
+    "fair_home": 1.92,
+    "fair_away": 2.09
    }
   },
   {
@@ -2736,7 +3872,12 @@
     "draw": 3.44,
     "away": 3.33
    },
-   "ou25": 0.4841,
+   "ou25": {
+    "over": 0.4841,
+    "under": 0.5159,
+    "fair_over": 2.07,
+    "fair_under": 1.94
+   },
    "btts": 0.5428,
    "scores": [
     [
@@ -2764,6 +3905,22 @@
     "home": 1.96,
     "away": 3.74,
     "draw": 3.69
+   },
+   "sharp_totals": {
+    "over": 1.78,
+    "under": 2.06
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.45,
+    "away": 2.8
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.5539,
+    "away": 0.4461,
+    "fair_home": 1.81,
+    "fair_away": 2.24
    }
   },
   {
@@ -2785,7 +3942,12 @@
     "draw": 4.05,
     "away": 2.15
    },
-   "ou25": 0.527,
+   "ou25": {
+    "over": 0.527,
+    "under": 0.473,
+    "fair_over": 1.9,
+    "fair_under": 2.11
+   },
    "btts": 0.5557,
    "scores": [
     [
@@ -2813,8 +3975,100 @@
     "home": 2.44,
     "away": 2.76,
     "draw": 3.65
+   },
+   "sharp_totals": {
+    "over": 1.65,
+    "under": 2.27
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.81,
+    "away": 2.05
+   },
+   "ah": {
+    "line": 0.0,
+    "home": 0.4112,
+    "away": 0.5888,
+    "fair_home": 2.43,
+    "fair_away": 1.7
    }
   }
  ],
- "bets": []
+ "bets": [
+  {
+   "league": "D1",
+   "home": "Ein Frankfurt",
+   "away": "Hamburg",
+   "kickoff": "2026-11-01",
+   "market": "OU25",
+   "selection": "under",
+   "line": 2.5,
+   "label": "Moins",
+   "price": 2.93,
+   "p_model": 0.4634,
+   "p_fair": 0.358,
+   "p_sharp": 0.3128,
+   "edge": 0.0489,
+   "book": "pinnacle",
+   "n_books": 0,
+   "multi_book": false,
+   "stake_scale": 0.5,
+   "stake": 2.79,
+   "kelly_full": 0.0254,
+   "bet_id": "ab829f881ec174",
+   "created_at": "2026-10-31T23:59:40+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "SP1",
+   "home": "Ath Bilbao",
+   "away": "Sociedad",
+   "kickoff": "2026-11-01",
+   "market": "OU25",
+   "selection": "under",
+   "line": 2.5,
+   "label": "Moins",
+   "price": 2.24,
+   "p_model": 0.5591,
+   "p_fair": 0.4678,
+   "p_sharp": 0.4287,
+   "edge": 0.0479,
+   "book": "pinnacle",
+   "n_books": 0,
+   "multi_book": false,
+   "stake_scale": 0.5,
+   "stake": 4.25,
+   "kelly_full": 0.0386,
+   "bet_id": "8c38d5e10930b7",
+   "created_at": "2026-10-31T23:59:40+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "I1",
+   "home": "Sassuolo",
+   "away": "Fiorentina",
+   "kickoff": "2026-11-02",
+   "market": "OU25",
+   "selection": "under",
+   "line": 2.5,
+   "label": "Moins",
+   "price": 2.51,
+   "p_model": 0.5068,
+   "p_fair": 0.4168,
+   "p_sharp": 0.3783,
+   "edge": 0.0463,
+   "book": "pinnacle",
+   "n_books": 0,
+   "multi_book": false,
+   "stake_scale": 0.5,
+   "stake": 3.37,
+   "kelly_full": 0.0306,
+   "bet_id": "f4da4de075e6f2",
+   "created_at": "2026-10-31T23:59:40+00:00",
+   "status": "open",
+   "pnl": 0.0
+  }
+ ]
 }

@@ -138,7 +138,8 @@ def cmd_daily(args) -> int:
     from .live import run_daily
     from .report.dashboard import render
     out = run_daily(cfg, do_publish=not args.no_publish,
-                    use_llm=False if args.no_llm else None)
+                    use_llm=False if args.no_llm else None,
+                    notify=not args.no_notify)
     if not args.no_publish:
         render(cfg)
     print(json.dumps(out, indent=1, default=float))
@@ -212,6 +213,49 @@ def cmd_audit_aliases(args) -> int:
     return 0
 
 
+def cmd_history(args) -> int:
+    """Historique : pronostics archivés et paris réglés."""
+    cfg = _cfg(args)
+    from .history import PredictionArchive
+    from .state import Ledger
+    arch = PredictionArchive.load(cfg.root / "data" / "state" / "predictions_history.json")
+    st = arch.stats()
+    print(f"Pronostics : {st['n_total']} archivés, {st['n']} vérifiés")
+    if st["n"]:
+        print(f"  réussite {st['hit_rate']*100:.1f} % · log loss {st['logloss']:.4f} "
+              f"· Brier {st['brier']:.4f}")
+        for row in st["by_league"]:
+            print(f"  {row['league']:4s} {row['n']:4d} matchs  {row['hit_rate']*100:5.1f} %")
+    ledger = Ledger.load(cfg.root / "data" / "state" / "ledger.json",
+                         float(cfg.betting.get("initial_bankroll", 1000.0)))
+    ls = ledger.stats()
+    print(f"\nParis : {ls['n_settled']} réglés · {ls['n_open']} ouverts · "
+          f"P&L {ls['pnl_total']:+.2f} u · ROI {ls['roi']*100:+.2f} % · "
+          f"bankroll {ls['bankroll']:.2f} u")
+    if args.last:
+        for b in ledger.settled_bets()[-args.last:]:
+            print(f"  {str(b.get('kickoff'))[:10]} {b['home']}–{b['away']} "
+                  f"{b.get('result', '')} | {b['label']} @{b['price']:.2f} -> "
+                  f"{b['pnl']:+:6.2f} u ({b['status']})")
+    return 0
+
+
+def cmd_telegram(args) -> int:
+    """Envoie le rapport courant sur Telegram (test manuel)."""
+    cfg = _cfg(args)
+    from .live import build_run_message
+    from .sources.telegram import TelegramNotifier
+    tg = TelegramNotifier.from_config(cfg)
+    if not tg.enabled:
+        print("Telegram non configuré : renseignez TELEGRAM_BOT_TOKEN et TELEGRAM_CHAT_ID "
+              "(ou telegram.chat_id dans config.yaml).")
+        return 1
+    msg = build_run_message(cfg)
+    ok = tg.send(msg)
+    print("Message envoyé." if ok else "Échec de l'envoi (voir les logs).")
+    return 0 if ok else 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="athena", description="ATHENA — moteur de pronostics football")
     p.add_argument("--config", help="chemin d'un config.yaml alternatif")
@@ -226,6 +270,8 @@ def build_parser() -> argparse.ArgumentParser:
         ("publish", cmd_publish, "régénère le dashboard"),
         ("ratings", cmd_ratings, "classements internes"),
         ("audit-aliases", cmd_audit_aliases, "noms d'équipes non résolus"),
+        ("history", cmd_history, "historique des pronostics et paris réglés"),
+        ("telegram", cmd_telegram, "envoie le rapport Telegram (test)"),
     ]:
         sp = sub.add_parser(name, help=help_)
         sp.set_defaults(func=fn)
@@ -238,6 +284,11 @@ def build_parser() -> argparse.ArgumentParser:
         if name == "daily":
             sp.add_argument("--no-publish", action="store_true")
             sp.add_argument("--no-llm", action="store_true")
+            sp.add_argument("--no-notify", action="store_true",
+                            help="n'envoie pas le rapport Telegram")
+        if name == "history":
+            sp.add_argument("--last", type=int, default=10,
+                            help="affiche les N derniers paris réglés")
         if name == "ratings":
             sp.add_argument("--top", type=int, default=8)
     return p

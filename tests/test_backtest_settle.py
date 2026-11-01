@@ -1,7 +1,7 @@
 import pytest
 
 from athena.backtest.engine import settle
-from athena.live import _settle_market
+from athena.betting.settlement import settle_bool as _settle_market
 
 
 @pytest.mark.parametrize("market,sel,line,hg,ag,expected", [

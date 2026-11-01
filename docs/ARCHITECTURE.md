@@ -83,7 +83,11 @@ anomalie de prix. C'est ce qui rend le CLV positif.
 | `models/dixon_coles.py` | Poisson bivarié pondéré | `xi`, `ridge`, `train_window_days` |
 | `models/gbm.py` | LightGBM 1X2 + Poisson buts | `config.model.gbm` |
 | `models/ensemble.py` | mélange + calibration | `optimize_blend`, `optimize_temperature` |
+| `betting/offers.py` | offres de marché unifiées (historique + live) | `offers_from_history`, `offers_from_live` |
+| `betting/settlement.py` | règlement exact de tous les marchés (demi-gains, push) | `settle_pnl` |
 | `betting/*` | dé-vig, edge, Kelly | `devig.METHODS`, `staking.plan_stake` |
+| `history.py` | archive des pronostics + vérification au score réel | `PredictionArchive` |
+| `sources/telegram.py` | rapport Telegram (HTML, non bloquant) | `daily_message`, `from_config` |
 | `backtest/*` | walk-forward + métriques | `simulate()` pour tester une stratégie |
 | `live.py` | orchestration quotidienne | `run_daily()` |
 | `report/*` | dashboard HTML autonome | `template.html` |
@@ -95,9 +99,36 @@ Pas de base de données à héberger :
 - `data/state/ledger.json` — bankroll, paris, courbe de capital (écriture
   atomique : fichier temporaire puis `os.replace`). Idempotent : un pari déjà
   présent n'est jamais dupliqué (identifiant = hash de match + marché + sélection).
-- `site/data/*.json` — publication (prédictions, ledger, backtest, ratings).
+- `data/state/predictions_history.json` — archive des pronostics, complétée
+  a posteriori avec le score réel (réussite, log loss, Brier). Séparée du
+  ledger : elle mesure le **modèle**, pas la chance aux paris.
+- `site/data/*.json` — publication (prédictions, ledger, historique,
+  backtest, ratings, `run_summary.md`).
 - `site/index.html` — rendu serveur complet : aucun `fetch`, aucune
   dépendance externe, fonctionne hors-ligne et sur GitHub Pages.
+
+### 3.1 Un seul règlement pour deux mondes
+
+`betting/settlement.py::settle_pnl(market, selection, line, stake, price, hg, ag)`
+renvoie `(pnl, statut)` et gère 1X2, DC, BTTS, over/under et handicap, y
+compris les lignes **quart** (le pari est coupé en deux moitiés). Le backtest
+et le pipeline quotidien appellent la même fonction : aucun risque qu'un
+`half_won` du live soit compté comme une perte dans les statistiques.
+
+De la même manière, `betting/offers.py` produit un objet `Offer` unique
+(`price_bet`, `price_sharp`, `p_sharp`, `line`) que le backtest remplisse
+depuis football-data et le live depuis Pinnacle + multi-books : la stratégie
+de sélection est écrite une seule fois (`select_bets` / `simulate`).
+
+### 3.2 Rapport de run et notifications
+
+`live.run_daily()` produit `site/data/run_summary.md`, affiché dans l'onglet
+*Summary* de GitHub Actions (étape `$GITHUB_STEP_SUMMARY`) : résultats réglés
+avec score, cote, mise et **P&L**, value bets du jour, statistiques
+d'historique. Le même contenu est poussé sur Telegram
+(`sources/telegram.py`) si `TELEGRAM_BOT_TOKEN`/`TELEGRAM_CHAT_ID` existent.
+Toute erreur d'envoi est avalée et journalisée : la publication ne dépend
+jamais d'un service tiers.
 
 ## 5. Coût d'exécution
 

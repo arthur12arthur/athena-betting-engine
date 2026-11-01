@@ -69,6 +69,12 @@
   .tag{font-size:10.5px;padding:3px 8px;border-radius:999px;border:1px solid transparent;letter-spacing:.04em}
   .tag.green{background:#0c2a22;color:var(--green);border-color:#17503f}
   .tag.warn{background:#2a2210;color:var(--amber);border-color:#4d3c12}
+  .tag.red{background:#2d1416;color:var(--red);border-color:#5a2226}
+  .tag.blue{background:#0c2436;color:var(--blue);border-color:#1b4a68}
+  .pos{color:var(--green);font-weight:600;font-variant-numeric:tabular-nums}
+  .neg{color:var(--red);font-weight:600;font-variant-numeric:tabular-nums}
+  .neutral{color:var(--muted);font-weight:600;font-variant-numeric:tabular-nums}
+  .score{font-variant-numeric:tabular-nums;font-weight:700;letter-spacing:.02em}
   .empty{padding:18px;border:1px dashed var(--line2);border-radius:14px;text-align:center}
 
   /* ---------- tables ---------- */
@@ -167,6 +173,53 @@
 
 <section>
   <div class="sec-head">
+    <h2>Derniers résultats</h2>
+    <span class="sec-sub">paris réglés automatiquement au score final — demi-gains et remboursements inclus</span>
+  </div>
+  <div class="kpis">__RESULTS_KPI__</div>
+  <div class="tablewrap" style="margin-top:14px">
+    <table>
+      <thead><tr>
+        <th>Date</th><th>Match</th><th>Score</th><th>Pari</th><th>Cote</th>
+        <th>Mise</th><th>P&amp;L</th><th>Statut</th>
+      </tr></thead>
+      <tbody>__RESULTS_ROWS__</tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>Historique des pronostics</h2>
+    <span class="sec-sub">chaque pronostic 1X2 est archivé, puis vérifié au score réel : c'est la mesure honnête du modèle</span>
+  </div>
+  <div class="kpis">__HIST_KPI__</div>
+  <div class="two" style="margin-top:14px">
+    <div class="panel">
+      <h3>Derniers pronostics vérifiés</h3>
+      <div class="sub">« bon » = l'issue la plus probable selon ATHENA est celle qui s'est produite.</div>
+      <div class="tablewrap" style="border:none">
+        <table>
+          <thead><tr><th>Date</th><th>Match</th><th>Proba (1/X/2)</th><th>Score</th><th>Issue</th><th>Pronostic</th></tr></thead>
+          <tbody>__HIST_ROWS__</tbody>
+        </table>
+      </div>
+    </div>
+    <div class="panel">
+      <h3>Réussite par compétition</h3>
+      <div class="sub">Taux de bons pronostics sur les matchs déjà joués.</div>
+      <div class="tablewrap" style="border:none">
+        <table>
+          <thead><tr><th>Ligue</th><th>Matchs</th><th>Réussite</th></tr></thead>
+          <tbody>__HIST_LEAGUE_ROWS__</tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
     <h2>Value bets du jour</h2>
     <span class="sec-sub">edge = probabilité juste × cote − 1, après ancrage sur le marché sharp</span>
   </div>
@@ -187,7 +240,8 @@
     <table>
       <thead><tr>
         <th>Ligue</th><th>Match</th><th>1 / X / 2 (modèle)</th>
-        <th>Cote juste</th><th>Cote Pinnacle</th><th>xG</th><th>Score</th><th>Value</th>
+        <th>Cote juste</th><th>Cote Pinnacle</th><th>+/- 2,5 buts</th><th>Handicap</th>
+        <th>xG</th><th>Score</th><th>Value</th>
       </tr></thead>
       <tbody>__ROWS__</tbody>
     </table>

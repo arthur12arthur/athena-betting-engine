@@ -29,7 +29,9 @@ def test_reconcile_exact():
 
 def test_marches_coherents():
     m = ScoreMatrix.from_lambdas(1.7, 1.2, 10)
-    assert sum(m.market("OU25").values()) == pytest.approx(1.0)
+    ou = m.market("OU25")
+    assert ou["over"] + ou["under"] + ou["push"] == pytest.approx(1.0)
+    assert sum(m.market("BTTS").values()) == pytest.approx(1.0)
     assert sum(m.market("BTTS").values()) == pytest.approx(1.0)
     dc = m.market("DC")
     p = m.probs_1x2()
@@ -39,6 +41,19 @@ def test_marches_coherents():
     assert ah["home"] == pytest.approx(p["home"])
     ah0 = m.market("AH", 0.0)
     assert ah0["push"] == pytest.approx(p["draw"])
+    assert ah0["win_home"] + ah0["win_away"] + ah0["push"] == pytest.approx(1.0)
+    assert ah0["home"] + ah0["away"] == pytest.approx(1.0)
+
+
+def test_handicap_lignes_quart():
+    m = ScoreMatrix.from_lambdas(1.6, 1.1, 10)
+    # une ligne quart = moyenne de deux demi-lignes
+    q = m.handicap(-0.75)
+    a, b = m.handicap(-1.0), m.handicap(-0.5)
+    assert q["home"] == pytest.approx(0.5 * (a["home"] + b["home"]), abs=1e-9)
+    # la probabilité domicile croît avec la ligne
+    vals = [m.handicap(x)["home"] for x in (-1.5, -0.75, -0.5, 0.0, 0.5)]
+    assert vals == sorted(vals)
 
 
 def test_blend_convexe():

@@ -47,15 +47,23 @@ def american_to_decimal(price: float | str | None) -> float | None:
 
 
 def _line_key(key: str) -> tuple[str, float | None]:
-    """'s;0;ou;2.5' -> ('ou', 2.5) ; 's;0;m' -> ('ml', None)."""
+    """Décompose une clé de marché Pinnacle.
+
+    Formats observés sur l'API invitée :
+      's;0;m'          -> ('ml', None)          résultat du match
+      's;0;ou;2.25'    -> ('ou', 2.25)          total de buts
+      's;0;s;-0.25'    -> ('sp', -0.25)         handicap (spread) — quarts inclus
+      's;0;tt;1.5;home'-> ('tt', 1.5)           total d'équipe (ignoré)
+    """
     parts = (key or "").split(";")
     if len(parts) >= 3 and parts[2] == "m":
         return "ml", None
-    if len(parts) >= 4 and parts[2] in {"ou", "sp"}:
+    if len(parts) >= 4 and parts[2] in {"ou", "s", "sp", "tt"}:
+        kind = {"ou": "ou", "s": "sp", "sp": "sp", "tt": "tt"}[parts[2]]
         try:
-            return ("ou" if parts[2] == "ou" else "sp"), float(parts[3])
+            return kind, float(parts[3])
         except ValueError:
-            return parts[2], None
+            return kind, None
     return (parts[2] if len(parts) > 2 else ""), None
 
 
@@ -118,25 +126,29 @@ class PinnacleClient:
             # liés : on ne garde que ceux de CE match.
             if mk.get("matchupId") != matchup_id:
                 continue
-            if mk.get("period") not in (0, None) or mk.get("isAlternate"):
+            if mk.get("period") not in (0, None):
                 continue
             if any(p.get("designation") is None for p in mk.get("prices", [])):
                 continue
             kind, line = _line_key(mk.get("key", ""))
             prices = mk.get("prices", [])
+            # les lignes alternatives (isAlternate) sont utiles pour les totaux et
+            # les handicaps (Pinnacle ne cote que la ligne « principale » du moment).
+            if mk.get("isAlternate") and kind not in {"ou", "sp"}:
+                continue
             if kind == "ml":
                 for p in prices:
                     des = (p.get("designation") or "").lower()
                     dec = american_to_decimal(p.get("price"))
                     if dec and des in {"home", "away", "draw"}:
                         snap.one_x_two[des] = dec
-            elif kind == "ou" and line in {1.5, 2.5, 3.5}:
+            elif kind == "ou" and line is not None:
                 for p in prices:
                     des = (p.get("designation") or "").lower()
                     dec = american_to_decimal(p.get("price"))
                     if dec and des in {"over", "under"}:
                         snap.totals.setdefault(line, {})[des] = dec
-            elif kind == "sp" and line is not None:
+            elif kind == "sp" and line is not None and abs(line) <= 4.0:
                 for p in prices:
                     des = (p.get("designation") or "").lower()
                     dec = american_to_decimal(p.get("price"))

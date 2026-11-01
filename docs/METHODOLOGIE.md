@@ -109,6 +109,34 @@ mise = f* · 0,22 · bankroll   (bornée à 2 % de bankroll)
 ```
 
 Plafonds : 7 % d'exposition par jour, 8 paris par jour, 1 pari par match.
+Des seuils plus stricts s'appliquent aux marchés de buts
+(`market_params` : edge 3,5 %, cotes entre 1,50 et 4,00).
+
+### 6.1 Over / Under et handicap asiatique
+
+La matrice de scores donne directement la loi du nombre total de buts
+`T ~ Σ p(i,j)·δ(i+j)` :
+
+```
+P(plus de L buts) = P(T > L)          ligne demi (.5)  -> jamais de push
+P(moins de L buts) = P(T < L)
+ligne entière     : P(push) = P(T = L) et les deux côtés sont ajustés
+ligne quart       : moyenne des deux demi-lignes voisines (L − 0,25, L + 0,25)
+```
+
+Le handicap asiatique suit la même logique sur la différence
+`D = buts_domicile − buts_extérieur + ligne`. Une ligne **quart** (−0,25,
+−0,75…) est la moyenne d'une ligne entière et d'une demi-ligne : le pari est
+coupé en deux moitiés, d'où les statuts `half_won` / `half_lost` et un P&L de
+± 50 % de la mise sur la moitié concernée. Le règlement est centralisé dans
+`betting/settlement.py::settle_pnl`, utilisé **à l'identique** par le
+backtest et par le pipeline live — c'est ce qui garantit qu'un chiffre du
+backtest et un chiffre du ledger parlent de la même chose.
+
+Résultat mesuré (2 saisons, 281 paris OU / 246 paris AH) : l'over/under 2,5
+ajoute un edge net (+12,4 % ROI, CLV +10,1 %), le handicap asiatique n'en a
+aucun (−8,7 %, CLV −0,9 %) parce que c'est le marché le plus efficient des
+books. Le code le gère, la stratégie ne le joue pas par défaut.
 
 ## 7. Backtest walk-forward
 
@@ -125,9 +153,24 @@ Hypothèses **pessimistes** :
 - référence « prix juste » = clôture Pinnacle dé-viggée ;
 - pas de pari si aucune cote exploitable.
 
+Le backtest et le live partagent les mêmes briques : `betting/offers.py`
+construit les prix (référence sharp + prix jouable), `betting/settlement.py`
+règle les paris, `betting/staking.py` dimensionne les mises. Un chiffre du
+backtest et un chiffre du ledger sont donc commensurables.
+
 Métriques : log loss, Brier, RPS, précision, ROI, yield, drawdown max,
 Sharpe par pari, facteur de profit, plus longue série perdante et **CLV**
 (`cote jouée / cote de clôture − 1`).
+
+## 7.1 Historique des pronostics (hors paris)
+
+Le ledger ne mesure que les paris. Pour juger le **modèle**, chaque pronostic
+publié est archivé dans `data/state/predictions_history.json` puis complété
+au score réel (`history.py`) : issue observée, pronostic juste ou non, log
+loss et Brier recalculés sur les seuls matchs déjà joués, par ligue et sur
+30 jours. C'est la seule mesure qui ne dépend ni des cotes disponibles ni des
+filtres de mise — et donc la seule qui ne peut pas être embellie par le
+hasard d'un bookmaker.
 
 ## 8. Limites connues
 
