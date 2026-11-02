@@ -1,20 +1,25 @@
 {
  "stats": {
-  "n": 12,
-  "hit_rate": 0.5833,
-  "logloss": 0.96652,
-  "brier": 0.56911,
+  "n": 14,
+  "hit_rate": 0.6429,
+  "logloss": 0.95591,
+  "brier": 0.5625,
   "n_total": 61,
   "by_league": [
    {
     "league": "I1",
-    "n": 4,
-    "hit_rate": 0.75
+    "n": 5,
+    "hit_rate": 0.8
    },
    {
     "league": "SP1",
     "n": 2,
     "hit_rate": 0.5
+   },
+   {
+    "league": "F1",
+    "n": 2,
+    "hit_rate": 1.0
    },
    {
     "league": "SC0",
@@ -30,11 +35,6 @@
     "league": "G1",
     "n": 1,
     "hit_rate": 0.0
-   },
-   {
-    "league": "F1",
-    "n": 1,
-    "hit_rate": 1.0
    },
    {
     "league": "E0",
@@ -49,21 +49,26 @@
   ]
  },
  "stats_30d": {
-  "n": 12,
-  "hit_rate": 0.5833,
-  "logloss": 0.96652,
-  "brier": 0.56911,
+  "n": 14,
+  "hit_rate": 0.6429,
+  "logloss": 0.95591,
+  "brier": 0.5625,
   "n_total": 61,
   "by_league": [
    {
     "league": "I1",
-    "n": 4,
-    "hit_rate": 0.75
+    "n": 5,
+    "hit_rate": 0.8
    },
    {
     "league": "SP1",
     "n": 2,
     "hit_rate": 0.5
+   },
+   {
+    "league": "F1",
+    "n": 2,
+    "hit_rate": 1.0
    },
    {
     "league": "SC0",
@@ -81,11 +86,6 @@
     "hit_rate": 0.0
    },
    {
-    "league": "F1",
-    "n": 1,
-    "hit_rate": 1.0
-   },
-   {
     "league": "E0",
     "n": 1,
     "hit_rate": 1.0
@@ -98,6 +98,48 @@
   ]
  },
  "recent": [
+  {
+   "pred_id": "5fcf24dd0014bf",
+   "league": "F1",
+   "kickoff": "2026-11-01",
+   "home": "Marseille",
+   "away": "Toulouse",
+   "p": {
+    "home": 0.4136,
+    "draw": 0.3069,
+    "away": 0.2795
+   },
+   "xg": {
+    "home": 1.84,
+    "away": 1.16
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "2-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-02T13:39:14+00:00"
+  },
+  {
+   "pred_id": "b3f48753e7e63a",
+   "league": "I1",
+   "kickoff": "2026-11-01",
+   "home": "Juventus",
+   "away": "Napoli",
+   "p": {
+    "home": 0.4059,
+    "draw": 0.2941,
+    "away": 0.3001
+   },
+   "xg": {
+    "home": 1.26,
+    "away": 1.1
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "2-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-02T13:39:14+00:00"
+  },
   {
    "pred_id": "1e019a5a0eb6ca",
    "league": "P1",
@@ -354,13 +396,18 @@
  "by_league": [
   {
    "league": "I1",
-   "n": 4,
-   "hit_rate": 0.75
+   "n": 5,
+   "hit_rate": 0.8
   },
   {
    "league": "SP1",
    "n": 2,
    "hit_rate": 0.5
+  },
+  {
+   "league": "F1",
+   "n": 2,
+   "hit_rate": 1.0
   },
   {
    "league": "SC0",
@@ -376,11 +423,6 @@
    "league": "G1",
    "n": 1,
    "hit_rate": 0.0
-  },
-  {
-   "league": "F1",
-   "n": 1,
-   "hit_rate": 1.0
   },
   {
    "league": "E0",
