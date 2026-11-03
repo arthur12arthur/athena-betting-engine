@@ -1,31 +1,21 @@
-## 🏛️ ATHENA — exécution du 03/11/2026 12:54 UTC
+## 🏛️ ATHENA — exécution du 03/11/2026 15:55 UTC
 
-**Bankroll papier : 1034.77 u** (+34.77 u · ROI +27.52 %) · 30 paris réglés · 17 en cours · modèle `athena-1.0-20261103`
+**Bankroll papier : 1034.77 u** (+34.77 u · ROI +27.52 %) · 30 paris réglés · 18 en cours · modèle `athena-1.0-20261103`
 
 | Indicateur | Valeur |
 |---|---|
 | Matchs analysés | 23 |
-| Value bets placés | 5 |
-| Paris réglés ce run | 1 |
-| Exposition ouverte | 113.35 u |
+| Value bets placés | 1 |
+| Paris réglés ce run | 0 |
+| Exposition ouverte | 116.60 u |
 | CLV moyen (cumulé) | -0.02 % |
 | Telegram | non configuré / désactivé |
-
-### ✅ Résultats réglés
-
-| Match | Score | Pari | Cote | Mise | P&L | Statut |
-|---|---|---|---|---|---|---|
-| La Coruna – Osasuna | **2-1** | X (nul) | 3.40 | 4.37 u | -4.37 u | ❌ lost |
 
 ### 🎯 Value bets du jour
 
 | Match | Coup d'envoi | Marché | Cote | Edge | Mise | Source |
 |---|---|---|---|---|---|---|
-| Charlton – Bolton | 2026-11-03 | Moins de 2,5 buts | **2.16** | +7.0 % | 13.67 u | multi-books |
-| Wrexham – Middlesbrough | 2026-11-04 | X (nul) | **4.30** | +5.7 % | 3.93 u | multi-books |
-| Cardiff – West Ham | 2026-11-04 | Moins de 2,5 buts | **2.98** | +4.9 % | 5.63 u | multi-books |
-| Watford – Lincoln | 2026-11-03 | X (nul) | **3.55** | +4.9 % | 4.34 u | multi-books |
-| West Brom – Southampton | 2026-11-03 | Moins de 2,5 buts | **2.10** | +3.7 % | 7.57 u | multi-books |
+| Portsmouth – Swansea | 2026-11-03 | X (nul) | **3.40** | +3.4 % | 3.25 u | multi-books |
 
 ### 📈 Historique des pronostics
 
@@ -37,4 +27,4 @@
   - T1 : 5 matchs, 60.0 % de bons pronostics
   - SP1 : 5 matchs, 80.0 % de bons pronostics
 
-_durée 88 s · aucune mise réelle · 18+_
+_durée 50 s · aucune mise réelle · 18+_
