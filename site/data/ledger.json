@@ -1,21 +1,21 @@
 {
  "stats": {
-  "bankroll": 1039.14,
+  "bankroll": 1034.77,
   "initial_bankroll": 1000.0,
-  "pnl_total": 39.14,
-  "n_bets": 42,
-  "n_open": 13,
-  "n_settled": 29,
+  "pnl_total": 34.77,
+  "n_bets": 47,
+  "n_open": 17,
+  "n_settled": 30,
   "n_won": 8,
-  "win_rate": 0.2759,
-  "staked": 121.97,
-  "roi": 0.3209,
-  "pnl_realized": 39.14,
-  "avg_odds": 4.142,
-  "avg_edge": 0.0645,
+  "win_rate": 0.2667,
+  "staked": 126.34,
+  "roi": 0.2752,
+  "pnl_realized": 34.77,
+  "avg_odds": 4.117,
+  "avg_edge": 0.0639,
   "clv_avg": -0.0002,
   "max_drawdown": 0.0307,
-  "exposure": 82.58
+  "exposure": 113.35
  },
  "bets": [
   {
@@ -201,7 +201,7 @@
    "created_at": "2026-10-31T22:35:35+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 2.75
+   "closing_price": 3.13
   },
   {
    "league": "P1",
@@ -553,7 +553,7 @@
    "created_at": "2026-11-01T00:10:04+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 3.52
+   "closing_price": 3.64
   },
   {
    "league": "I1",
@@ -699,7 +699,7 @@
    "created_at": "2026-11-01T00:10:04+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 1.752
+   "closing_price": 1.714
   },
   {
    "league": "N1",
@@ -865,7 +865,7 @@
    "created_at": "2026-11-02T13:39:45+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 2.69
+   "closing_price": 2.79
   },
   {
    "league": "T1",
@@ -947,7 +947,7 @@
    "created_at": "2026-11-02T13:39:45+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 3.67
+   "closing_price": 3.72
   },
   {
    "league": "I1",
@@ -1001,7 +1001,7 @@
    "created_at": "2026-11-02T13:39:45+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 3.57
+   "closing_price": 3.69
   },
   {
    "league": "P1",
@@ -1053,8 +1053,11 @@
    "kelly_full": 0.0194,
    "bet_id": "952a3e46b04d8a",
    "created_at": "2026-11-02T13:39:45+00:00",
-   "status": "open",
-   "pnl": 0.0
+   "status": "lost",
+   "pnl": -4.37,
+   "settled_at": "2026-11-03T12:53:28+00:00",
+   "bankroll_after": 1034.77,
+   "result": "2-1"
   },
   {
    "league": "E1",
@@ -1079,7 +1082,8 @@
    "bet_id": "5e14bbb39b606e",
    "created_at": "2026-11-02T23:57:46+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 2.71
   },
   {
    "league": "E1",
@@ -1104,7 +1108,8 @@
    "bet_id": "67b8d55fc6fc75",
    "created_at": "2026-11-02T23:57:46+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 4.15
   },
   {
    "league": "E1",
@@ -1129,7 +1134,8 @@
    "bet_id": "b8fec5233c3670",
    "created_at": "2026-11-02T23:57:46+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 3.84
   },
   {
    "league": "E1",
@@ -1154,7 +1160,8 @@
    "bet_id": "ef42eca887ee99",
    "created_at": "2026-11-02T23:57:46+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 3.71
   },
   {
    "league": "B1",
@@ -1178,6 +1185,132 @@
    "kelly_full": 0.0197,
    "bet_id": "d1bcd0b45c4f7c",
    "created_at": "2026-11-02T23:57:46+00:00",
+   "status": "open",
+   "pnl": 0.0,
+   "closing_price": 2.66
+  },
+  {
+   "league": "E1",
+   "home": "Charlton",
+   "away": "Bolton",
+   "kickoff": "2026-11-03",
+   "market": "OU25",
+   "selection": "under",
+   "line": 2.5,
+   "label": "Moins de 2,5 buts",
+   "price": 2.16,
+   "p_model": 0.5753,
+   "p_fair": 0.4952,
+   "p_sharp": 0.4608,
+   "edge": 0.0696,
+   "book": "market",
+   "n_books": 22,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 13.67,
+   "kelly_full": 0.06,
+   "bet_id": "0f3d3e771791b9",
+   "created_at": "2026-11-03T12:53:52+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "E1",
+   "home": "Wrexham",
+   "away": "Middlesbrough",
+   "kickoff": "2026-11-04",
+   "market": "1X2",
+   "selection": "draw",
+   "line": null,
+   "label": "X (nul)",
+   "price": 4.3,
+   "p_model": 0.3009,
+   "p_fair": 0.2458,
+   "p_sharp": 0.2222,
+   "edge": 0.0569,
+   "book": "Betfair",
+   "n_books": 22,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 3.93,
+   "kelly_full": 0.0173,
+   "bet_id": "14c90958043511",
+   "created_at": "2026-11-03T12:53:52+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "E1",
+   "home": "Cardiff",
+   "away": "West Ham",
+   "kickoff": "2026-11-04",
+   "market": "OU25",
+   "selection": "under",
+   "line": 2.5,
+   "label": "Moins de 2,5 buts",
+   "price": 2.98,
+   "p_model": 0.4913,
+   "p_fair": 0.352,
+   "p_sharp": 0.2923,
+   "edge": 0.0491,
+   "book": "market",
+   "n_books": 22,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 5.63,
+   "kelly_full": 0.0247,
+   "bet_id": "e6c7dc9c3e6c7c",
+   "created_at": "2026-11-03T12:53:52+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "E1",
+   "home": "Watford",
+   "away": "Lincoln",
+   "kickoff": "2026-11-03",
+   "market": "1X2",
+   "selection": "draw",
+   "line": null,
+   "label": "X (nul)",
+   "price": 3.55,
+   "p_model": 0.3318,
+   "p_fair": 0.2954,
+   "p_sharp": 0.2798,
+   "edge": 0.0488,
+   "book": "Matchbook",
+   "n_books": 21,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 4.34,
+   "kelly_full": 0.0191,
+   "bet_id": "ce7dadf81c4928",
+   "created_at": "2026-11-03T12:53:52+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "E1",
+   "home": "West Brom",
+   "away": "Southampton",
+   "kickoff": "2026-11-03",
+   "market": "OU25",
+   "selection": "under",
+   "line": 2.5,
+   "label": "Moins de 2,5 buts",
+   "price": 2.1,
+   "p_model": 0.5177,
+   "p_fair": 0.4936,
+   "p_sharp": 0.4833,
+   "edge": 0.0366,
+   "book": "market",
+   "n_books": 22,
+   "multi_book": true,
+   "stake_scale": 1.0,
+   "stake": 7.57,
+   "kelly_full": 0.0332,
+   "bet_id": "eb6b83a44d3394",
+   "created_at": "2026-11-03T12:53:52+00:00",
    "status": "open",
    "pnl": 0.0
   }
@@ -1302,6 +1435,10 @@
   {
    "ts": "2026-11-02T23:57:00+00:00",
    "bankroll": 1039.14
+  },
+  {
+   "ts": "2026-11-03T12:53:28+00:00",
+   "bankroll": 1034.77
   }
  ]
 }
