@@ -1,21 +1,21 @@
 {
  "stats": {
-  "bankroll": 1034.77,
+  "bankroll": 1042.71,
   "initial_bankroll": 1000.0,
-  "pnl_total": 34.77,
+  "pnl_total": 42.71,
   "n_bets": 48,
-  "n_open": 18,
-  "n_settled": 30,
-  "n_won": 8,
-  "win_rate": 0.2667,
-  "staked": 126.34,
-  "roi": 0.2752,
-  "pnl_realized": 34.77,
-  "avg_odds": 4.117,
-  "avg_edge": 0.0639,
-  "clv_avg": -0.0002,
-  "max_drawdown": 0.0307,
-  "exposure": 116.6
+  "n_open": 0,
+  "n_settled": 48,
+  "n_won": 13,
+  "win_rate": 0.2708,
+  "staked": 242.94,
+  "roi": 0.1758,
+  "pnl_realized": 42.71,
+  "avg_odds": 3.752,
+  "avg_edge": 0.0627,
+  "clv_avg": 0.0068,
+  "max_drawdown": 0.0667,
+  "exposure": 0
  },
  "bets": [
   {
@@ -199,9 +199,13 @@
    "kelly_full": 0.029,
    "bet_id": "ee0b27e70b51d4",
    "created_at": "2026-10-31T22:35:35+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 3.07
+   "status": "lost",
+   "pnl": -6.38,
+   "closing_price": 3.07,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 1028.39,
+   "result": "1-1",
+   "clv": -0.10098
   },
   {
    "league": "P1",
@@ -551,9 +555,13 @@
    "kelly_full": 0.0339,
    "bet_id": "795856f84f2a75",
    "created_at": "2026-11-01T00:10:04+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 3.7
+   "status": "lost",
+   "pnl": -7.45,
+   "closing_price": 3.7,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 1020.94,
+   "result": "0-4",
+   "clv": -0.05405
   },
   {
    "league": "I1",
@@ -697,9 +705,13 @@
    "kelly_full": 0.061,
    "bet_id": "874b4fe2d846a1",
    "created_at": "2026-11-01T00:10:04+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 1.709
+   "status": "lost",
+   "pnl": -13.43,
+   "closing_price": 1.709,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 1007.51,
+   "result": "3-1",
+   "clv": 0.14687
   },
   {
    "league": "N1",
@@ -837,9 +849,13 @@
    "kelly_full": 0.0734,
    "bet_id": "4db6723254fc0b",
    "created_at": "2026-11-01T21:16:48+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 2.06
+   "status": "lost",
+   "pnl": -1.8,
+   "closing_price": 2.06,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 1005.71,
+   "result": "3-3",
+   "clv": -0.00971
   },
   {
    "league": "E1",
@@ -863,9 +879,13 @@
    "kelly_full": 0.0488,
    "bet_id": "43eca316da7890",
    "created_at": "2026-11-02T13:39:45+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 2.86
+   "status": "lost",
+   "pnl": -11.0,
+   "closing_price": 2.86,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 994.71,
+   "result": "1-2",
+   "clv": -0.01399
   },
   {
    "league": "T1",
@@ -945,9 +965,13 @@
    "kelly_full": 0.0218,
    "bet_id": "3e7ed335fdb91f",
    "created_at": "2026-11-02T13:39:45+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 3.77
+   "status": "lost",
+   "pnl": -4.91,
+   "closing_price": 3.77,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 989.8,
+   "result": "0-4",
+   "clv": 0.00796
   },
   {
    "league": "I1",
@@ -999,9 +1023,13 @@
    "kelly_full": 0.021,
    "bet_id": "9817fc4c27e78f",
    "created_at": "2026-11-02T13:39:45+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 3.85
+   "status": "lost",
+   "pnl": -4.74,
+   "closing_price": 3.85,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 985.06,
+   "result": "1-1",
+   "clv": -0.02597
   },
   {
    "league": "P1",
@@ -1081,9 +1109,13 @@
    "kelly_full": 0.0514,
    "bet_id": "5e14bbb39b606e",
    "created_at": "2026-11-02T23:57:46+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 2.77
+   "status": "won",
+   "pnl": 19.25,
+   "closing_price": 2.77,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 1004.31,
+   "result": "1-0",
+   "clv": -0.04693
   },
   {
    "league": "E1",
@@ -1107,9 +1139,13 @@
    "kelly_full": 0.0251,
    "bet_id": "67b8d55fc6fc75",
    "created_at": "2026-11-02T23:57:46+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 4.08
+   "status": "won",
+   "pnl": 18.91,
+   "closing_price": 4.08,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 1023.22,
+   "result": "3-3",
+   "clv": 0.05392
   },
   {
    "league": "E1",
@@ -1133,9 +1169,13 @@
    "kelly_full": 0.0263,
    "bet_id": "b8fec5233c3670",
    "created_at": "2026-11-02T23:57:46+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 3.75
+   "status": "won",
+   "pnl": 17.46,
+   "closing_price": 3.75,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 1040.68,
+   "result": "1-1",
+   "clv": 0.04
   },
   {
    "league": "E1",
@@ -1159,9 +1199,13 @@
    "kelly_full": 0.0133,
    "bet_id": "ef42eca887ee99",
    "created_at": "2026-11-02T23:57:46+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 3.68
+   "status": "lost",
+   "pnl": -3.03,
+   "closing_price": 3.68,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 1037.65,
+   "result": "2-3",
+   "clv": 0.04891
   },
   {
    "league": "B1",
@@ -1185,9 +1229,13 @@
    "kelly_full": 0.0197,
    "bet_id": "d1bcd0b45c4f7c",
    "created_at": "2026-11-02T23:57:46+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 2.66
+   "status": "lost",
+   "pnl": -1.98,
+   "closing_price": 2.66,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 1035.67,
+   "result": "1-3",
+   "clv": 0.03759
   },
   {
    "league": "E1",
@@ -1211,9 +1259,13 @@
    "kelly_full": 0.06,
    "bet_id": "0f3d3e771791b9",
    "created_at": "2026-11-03T12:53:52+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 2.07
+   "status": "won",
+   "pnl": 15.86,
+   "closing_price": 2.07,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 1051.53,
+   "result": "0-1",
+   "clv": 0.04348
   },
   {
    "league": "E1",
@@ -1237,9 +1289,13 @@
    "kelly_full": 0.0173,
    "bet_id": "14c90958043511",
    "created_at": "2026-11-03T12:53:52+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 4.2
+   "status": "lost",
+   "pnl": -3.93,
+   "closing_price": 4.2,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 1047.6,
+   "result": "2-0",
+   "clv": 0.02381
   },
   {
    "league": "E1",
@@ -1263,9 +1319,13 @@
    "kelly_full": 0.0247,
    "bet_id": "e6c7dc9c3e6c7c",
    "created_at": "2026-11-03T12:53:52+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 3.0
+   "status": "lost",
+   "pnl": -5.63,
+   "closing_price": 3.0,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 1041.97,
+   "result": "3-3",
+   "clv": -0.00667
   },
   {
    "league": "E1",
@@ -1289,9 +1349,13 @@
    "kelly_full": 0.0191,
    "bet_id": "ce7dadf81c4928",
    "created_at": "2026-11-03T12:53:52+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 3.4
+   "status": "lost",
+   "pnl": -4.34,
+   "closing_price": 3.4,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 1037.63,
+   "result": "1-0",
+   "clv": 0.04412
   },
   {
    "league": "E1",
@@ -1315,9 +1379,13 @@
    "kelly_full": 0.0332,
    "bet_id": "eb6b83a44d3394",
    "created_at": "2026-11-03T12:53:52+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 1.943
+   "status": "won",
+   "pnl": 8.33,
+   "closing_price": 1.943,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 1045.96,
+   "result": "1-1",
+   "clv": 0.0808
   },
   {
    "league": "E1",
@@ -1341,8 +1409,11 @@
    "kelly_full": 0.0143,
    "bet_id": "043847bf054f3f",
    "created_at": "2026-11-03T15:55:10+00:00",
-   "status": "open",
-   "pnl": 0.0
+   "status": "lost",
+   "pnl": -3.25,
+   "settled_at": "2026-11-08T21:15:35+00:00",
+   "bankroll_after": 1042.71,
+   "result": "3-1"
   }
  ],
  "equity": [
@@ -1469,6 +1540,78 @@
   {
    "ts": "2026-11-03T12:53:28+00:00",
    "bankroll": 1034.77
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 1028.39
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 1020.94
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 1007.51
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 1005.71
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 994.71
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 989.8
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 985.06
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 1004.31
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 1023.22
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 1040.68
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 1037.65
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 1035.67
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 1051.53
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 1047.6
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 1041.97
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 1037.63
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 1045.96
+  },
+  {
+   "ts": "2026-11-08T21:15:35+00:00",
+   "bankroll": 1042.71
   }
  ]
 }

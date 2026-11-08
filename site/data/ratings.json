@@ -3,312 +3,312 @@
   {
    "team": "St. Gilloise",
    "rating": 0.646,
-   "attack": 0.23,
-   "defense": 0.416
+   "attack": 0.245,
+   "defense": 0.402
   },
   {
    "team": "Club Brugge",
-   "rating": 0.625,
-   "attack": 0.406,
-   "defense": 0.22
+   "rating": 0.633,
+   "attack": 0.4,
+   "defense": 0.234
   },
   {
    "team": "Genk",
-   "rating": 0.228,
-   "attack": 0.151,
-   "defense": 0.077
+   "rating": 0.23,
+   "attack": 0.152,
+   "defense": 0.078
   },
   {
    "team": "Anderlecht",
-   "rating": 0.13,
-   "attack": 0.078,
+   "rating": 0.129,
+   "attack": 0.077,
    "defense": 0.052
   }
  ],
  "D1": [
   {
    "team": "Bayern Munich",
-   "rating": 0.842,
-   "attack": 0.612,
-   "defense": 0.23
+   "rating": 0.836,
+   "attack": 0.592,
+   "defense": 0.244
   },
   {
    "team": "Dortmund",
-   "rating": 0.454,
-   "attack": 0.235,
-   "defense": 0.219
+   "rating": 0.455,
+   "attack": 0.245,
+   "defense": 0.21
   },
   {
    "team": "Leverkusen",
-   "rating": 0.393,
-   "attack": 0.224,
-   "defense": 0.169
+   "rating": 0.417,
+   "attack": 0.24,
+   "defense": 0.178
   },
   {
-   "team": "RB Leipzig",
-   "rating": 0.285,
-   "attack": 0.154,
-   "defense": 0.131
+   "team": "Stuttgart",
+   "rating": 0.281,
+   "attack": 0.225,
+   "defense": 0.057
   }
  ],
  "E0": [
   {
    "team": "Arsenal",
-   "rating": 0.572,
-   "attack": 0.221,
-   "defense": 0.351
+   "rating": 0.57,
+   "attack": 0.222,
+   "defense": 0.348
   },
   {
    "team": "Man City",
-   "rating": 0.548,
+   "rating": 0.547,
    "attack": 0.301,
-   "defense": 0.247
+   "defense": 0.245
   },
   {
    "team": "Liverpool",
-   "rating": 0.303,
-   "attack": 0.229,
-   "defense": 0.074
+   "rating": 0.315,
+   "attack": 0.23,
+   "defense": 0.085
   },
   {
    "team": "Newcastle",
-   "rating": 0.172,
-   "attack": 0.124,
-   "defense": 0.048
+   "rating": 0.167,
+   "attack": 0.128,
+   "defense": 0.039
   }
  ],
  "E1": [
   {
    "team": "Leeds",
-   "rating": 0.341,
-   "attack": 0.187,
-   "defense": 0.155
+   "rating": 0.339,
+   "attack": 0.186,
+   "defense": 0.153
   },
   {
    "team": "Coventry",
-   "rating": 0.297,
-   "attack": 0.204,
+   "rating": 0.296,
+   "attack": 0.203,
    "defense": 0.093
   },
   {
    "team": "Ipswich",
-   "rating": 0.27,
+   "rating": 0.269,
    "attack": 0.18,
    "defense": 0.089
   },
   {
    "team": "Southampton",
    "rating": 0.255,
-   "attack": 0.234,
-   "defense": 0.021
+   "attack": 0.23,
+   "defense": 0.025
   }
  ],
  "F1": [
   {
    "team": "Paris SG",
-   "rating": 0.632,
-   "attack": 0.411,
-   "defense": 0.221
+   "rating": 0.611,
+   "attack": 0.4,
+   "defense": 0.211
   },
   {
    "team": "Lens",
-   "rating": 0.331,
-   "attack": 0.172,
+   "rating": 0.312,
+   "attack": 0.153,
    "defense": 0.159
   },
   {
    "team": "Lille",
-   "rating": 0.292,
-   "attack": 0.074,
-   "defense": 0.218
+   "rating": 0.29,
+   "attack": 0.073,
+   "defense": 0.217
   },
   {
    "team": "Marseille",
-   "rating": 0.283,
+   "rating": 0.282,
    "attack": 0.227,
-   "defense": 0.056
+   "defense": 0.055
   }
  ],
  "G1": [
   {
-   "team": "Olympiakos",
-   "rating": 0.724,
-   "attack": 0.264,
-   "defense": 0.459
+   "team": "AEK",
+   "rating": 0.722,
+   "attack": 0.342,
+   "defense": 0.38
   },
   {
-   "team": "AEK",
-   "rating": 0.675,
-   "attack": 0.306,
-   "defense": 0.369
+   "team": "Olympiakos",
+   "rating": 0.712,
+   "attack": 0.254,
+   "defense": 0.458
   },
   {
    "team": "PAOK",
    "rating": 0.657,
-   "attack": 0.408,
-   "defense": 0.249
+   "attack": 0.406,
+   "defense": 0.251
   },
   {
    "team": "Panathinaikos",
-   "rating": 0.438,
-   "attack": 0.202,
-   "defense": 0.236
+   "rating": 0.439,
+   "attack": 0.2,
+   "defense": 0.239
   }
  ],
  "I1": [
   {
    "team": "Inter",
-   "rating": 0.654,
-   "attack": 0.457,
-   "defense": 0.197
+   "rating": 0.651,
+   "attack": 0.463,
+   "defense": 0.188
   },
   {
    "team": "Roma",
-   "rating": 0.433,
-   "attack": 0.227,
-   "defense": 0.205
+   "rating": 0.438,
+   "attack": 0.229,
+   "defense": 0.209
   },
   {
    "team": "Juventus",
-   "rating": 0.375,
-   "attack": 0.163,
-   "defense": 0.213
+   "rating": 0.374,
+   "attack": 0.159,
+   "defense": 0.214
   },
   {
-   "team": "Atalanta",
-   "rating": 0.353,
-   "attack": 0.203,
-   "defense": 0.151
+   "team": "Como",
+   "rating": 0.364,
+   "attack": 0.208,
+   "defense": 0.156
   }
  ],
  "N1": [
   {
    "team": "PSV Eindhoven",
-   "rating": 0.757,
-   "attack": 0.576,
-   "defense": 0.181
+   "rating": 0.771,
+   "attack": 0.581,
+   "defense": 0.19
   },
   {
    "team": "Feyenoord",
-   "rating": 0.489,
-   "attack": 0.283,
-   "defense": 0.206
+   "rating": 0.506,
+   "attack": 0.292,
+   "defense": 0.214
   },
   {
    "team": "Ajax",
-   "rating": 0.415,
-   "attack": 0.2,
-   "defense": 0.215
+   "rating": 0.398,
+   "attack": 0.193,
+   "defense": 0.205
   },
   {
    "team": "Twente",
    "rating": 0.344,
-   "attack": 0.147,
+   "attack": 0.146,
    "defense": 0.198
   }
  ],
  "P1": [
   {
    "team": "Sp Lisbon",
-   "rating": 0.838,
-   "attack": 0.572,
-   "defense": 0.266
+   "rating": 0.844,
+   "attack": 0.566,
+   "defense": 0.278
   },
   {
    "team": "Benfica",
-   "rating": 0.77,
-   "attack": 0.483,
-   "defense": 0.287
+   "rating": 0.791,
+   "attack": 0.49,
+   "defense": 0.301
   },
   {
    "team": "Porto",
-   "rating": 0.695,
+   "rating": 0.69,
    "attack": 0.302,
-   "defense": 0.393
+   "defense": 0.388
   },
   {
    "team": "Sp Braga",
-   "rating": 0.409,
-   "attack": 0.267,
-   "defense": 0.142
+   "rating": 0.414,
+   "attack": 0.27,
+   "defense": 0.144
   }
  ],
  "SC0": [
   {
    "team": "Celtic",
-   "rating": 0.737,
-   "attack": 0.455,
-   "defense": 0.282
+   "rating": 0.736,
+   "attack": 0.46,
+   "defense": 0.276
   },
   {
    "team": "Rangers",
-   "rating": 0.527,
-   "attack": 0.353,
-   "defense": 0.174
+   "rating": 0.532,
+   "attack": 0.349,
+   "defense": 0.183
   },
   {
    "team": "Hearts",
    "rating": 0.374,
-   "attack": 0.149,
-   "defense": 0.225
+   "attack": 0.154,
+   "defense": 0.22
   },
   {
    "team": "Hibernian",
-   "rating": 0.188,
-   "attack": 0.1,
-   "defense": 0.088
+   "rating": 0.187,
+   "attack": 0.104,
+   "defense": 0.083
   }
  ],
  "SP1": [
   {
    "team": "Barcelona",
-   "rating": 0.703,
-   "attack": 0.509,
-   "defense": 0.194
+   "rating": 0.696,
+   "attack": 0.499,
+   "defense": 0.197
   },
   {
    "team": "Real Madrid",
-   "rating": 0.565,
-   "attack": 0.352,
-   "defense": 0.213
+   "rating": 0.551,
+   "attack": 0.331,
+   "defense": 0.22
   },
   {
    "team": "Ath Madrid",
-   "rating": 0.347,
-   "attack": 0.213,
-   "defense": 0.134
+   "rating": 0.313,
+   "attack": 0.194,
+   "defense": 0.119
   },
   {
    "team": "Villarreal",
-   "rating": 0.274,
-   "attack": 0.256,
-   "defense": 0.018
+   "rating": 0.252,
+   "attack": 0.252,
+   "defense": -0.0
   }
  ],
  "T1": [
   {
    "team": "Galatasaray",
-   "rating": 0.698,
-   "attack": 0.437,
-   "defense": 0.261
+   "rating": 0.73,
+   "attack": 0.464,
+   "defense": 0.265
   },
   {
    "team": "Fenerbahce",
-   "rating": 0.592,
-   "attack": 0.452,
-   "defense": 0.14
+   "rating": 0.576,
+   "attack": 0.445,
+   "defense": 0.131
   },
   {
    "team": "Besiktas",
-   "rating": 0.3,
-   "attack": 0.141,
-   "defense": 0.159
+   "rating": 0.32,
+   "attack": 0.15,
+   "defense": 0.171
   },
   {
    "team": "Trabzonspor",
-   "rating": 0.274,
-   "attack": 0.191,
-   "defense": 0.083
+   "rating": 0.276,
+   "attack": 0.192,
+   "defense": 0.084
   }
  ]
 }

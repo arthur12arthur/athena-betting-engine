@@ -1,15 +1,25 @@
 {
  "stats": {
-  "n": 48,
-  "hit_rate": 0.625,
-  "logloss": 0.91273,
-  "brier": 0.53331,
+  "n": 63,
+  "hit_rate": 0.5714,
+  "logloss": 0.96029,
+  "brier": 0.56843,
   "n_total": 71,
   "by_league": [
    {
+    "league": "E1",
+    "n": 12,
+    "hit_rate": 0.3333
+   },
+   {
     "league": "I1",
-    "n": 7,
-    "hit_rate": 0.5714
+    "n": 8,
+    "hit_rate": 0.625
+   },
+   {
+    "league": "F1",
+    "n": 6,
+    "hit_rate": 0.8333
    },
    {
     "league": "G1",
@@ -32,19 +42,14 @@
     "hit_rate": 0.6
    },
    {
+    "league": "B1",
+    "n": 5,
+    "hit_rate": 0.4
+   },
+   {
     "league": "SP1",
     "n": 5,
     "hit_rate": 0.8
-   },
-   {
-    "league": "F1",
-    "n": 5,
-    "hit_rate": 0.8
-   },
-   {
-    "league": "B1",
-    "n": 4,
-    "hit_rate": 0.5
    },
    {
     "league": "D1",
@@ -64,16 +69,26 @@
   ]
  },
  "stats_30d": {
-  "n": 48,
-  "hit_rate": 0.625,
-  "logloss": 0.91273,
-  "brier": 0.53331,
+  "n": 63,
+  "hit_rate": 0.5714,
+  "logloss": 0.96029,
+  "brier": 0.56843,
   "n_total": 71,
   "by_league": [
    {
+    "league": "E1",
+    "n": 12,
+    "hit_rate": 0.3333
+   },
+   {
     "league": "I1",
-    "n": 7,
-    "hit_rate": 0.5714
+    "n": 8,
+    "hit_rate": 0.625
+   },
+   {
+    "league": "F1",
+    "n": 6,
+    "hit_rate": 0.8333
    },
    {
     "league": "G1",
@@ -96,19 +111,14 @@
     "hit_rate": 0.6
    },
    {
+    "league": "B1",
+    "n": 5,
+    "hit_rate": 0.4
+   },
+   {
     "league": "SP1",
     "n": 5,
     "hit_rate": 0.8
-   },
-   {
-    "league": "F1",
-    "n": 5,
-    "hit_rate": 0.8
-   },
-   {
-    "league": "B1",
-    "n": 4,
-    "hit_rate": 0.5
    },
    {
     "league": "D1",
@@ -128,6 +138,321 @@
   ]
  },
  "recent": [
+  {
+   "pred_id": "9536ed2ad1cd64",
+   "league": "I1",
+   "kickoff": "2026-11-06",
+   "home": "Venezia",
+   "away": "Udinese",
+   "p": {
+    "home": 0.4108,
+    "draw": 0.269,
+    "away": 0.3203
+   },
+   "xg": {
+    "home": 1.15,
+    "away": 1.22
+   },
+   "created_at": "2026-11-03T12:53:52+00:00",
+   "result": "2-1",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-08T21:15:35+00:00"
+  },
+  {
+   "pred_id": "f390ce00cf1bfe",
+   "league": "F1",
+   "kickoff": "2026-11-06",
+   "home": "Toulouse",
+   "away": "Strasbourg",
+   "p": {
+    "home": 0.4514,
+    "draw": 0.2583,
+    "away": 0.2903
+   },
+   "xg": {
+    "home": 1.46,
+    "away": 1.34
+   },
+   "created_at": "2026-11-03T12:53:52+00:00",
+   "result": "3-1",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-08T21:15:35+00:00"
+  },
+  {
+   "pred_id": "63b8ea9c52627e",
+   "league": "E1",
+   "kickoff": "2026-11-04",
+   "home": "Bristol City",
+   "away": "Wolves",
+   "p": {
+    "home": 0.4238,
+    "draw": 0.2613,
+    "away": 0.3149
+   },
+   "xg": {
+    "home": 1.4,
+    "away": 1.13
+   },
+   "created_at": "2026-11-01T00:07:40+00:00",
+   "result": "1-2",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-08T21:15:35+00:00"
+  },
+  {
+   "pred_id": "68f766fdc89684",
+   "league": "E1",
+   "kickoff": "2026-11-04",
+   "home": "Cardiff",
+   "away": "West Ham",
+   "p": {
+    "home": 0.1779,
+    "draw": 0.237,
+    "away": 0.5851
+   },
+   "xg": {
+    "home": 1.34,
+    "away": 1.25
+   },
+   "created_at": "2026-11-01T00:07:40+00:00",
+   "result": "3-3",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-08T21:15:35+00:00"
+  },
+  {
+   "pred_id": "429e0166d9c670",
+   "league": "E1",
+   "kickoff": "2026-11-04",
+   "home": "Wrexham",
+   "away": "Middlesbrough",
+   "p": {
+    "home": 0.3308,
+    "draw": 0.2167,
+    "away": 0.4525
+   },
+   "xg": {
+    "home": 1.42,
+    "away": 1.36
+   },
+   "created_at": "2026-11-01T00:07:40+00:00",
+   "result": "2-0",
+   "outcome": "home",
+   "hit": false,
+   "settled_at": "2026-11-08T21:15:35+00:00"
+  },
+  {
+   "pred_id": "47483369436bc2",
+   "league": "B1",
+   "kickoff": "2026-11-04",
+   "home": "Kortrijk",
+   "away": "Mechelen",
+   "p": {
+    "home": 0.3571,
+    "draw": 0.3003,
+    "away": 0.3426
+   },
+   "xg": {
+    "home": 1.4,
+    "away": 1.47
+   },
+   "created_at": "2026-11-01T00:07:40+00:00",
+   "result": "1-3",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-08T21:15:35+00:00"
+  },
+  {
+   "pred_id": "6d465ef43b9ed2",
+   "league": "E1",
+   "kickoff": "2026-11-03",
+   "home": "West Brom",
+   "away": "Southampton",
+   "p": {
+    "home": 0.2877,
+    "draw": 0.2469,
+    "away": 0.4654
+   },
+   "xg": {
+    "home": 1.36,
+    "away": 1.39
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "1-1",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-08T21:15:35+00:00"
+  },
+  {
+   "pred_id": "e8f3c8069116d8",
+   "league": "E1",
+   "kickoff": "2026-11-03",
+   "home": "Birmingham",
+   "away": "Millwall",
+   "p": {
+    "home": 0.4083,
+    "draw": 0.2911,
+    "away": 0.3006
+   },
+   "xg": {
+    "home": 1.24,
+    "away": 1.11
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "3-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-08T21:15:35+00:00"
+  },
+  {
+   "pred_id": "6558648a41806d",
+   "league": "E1",
+   "kickoff": "2026-11-03",
+   "home": "Watford",
+   "away": "Lincoln",
+   "p": {
+    "home": 0.3651,
+    "draw": 0.3112,
+    "away": 0.3237
+   },
+   "xg": {
+    "home": 1.34,
+    "away": 1.18
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "1-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-08T21:15:35+00:00"
+  },
+  {
+   "pred_id": "885c3dacab336b",
+   "league": "E1",
+   "kickoff": "2026-11-03",
+   "home": "QPR",
+   "away": "Burnley",
+   "p": {
+    "home": 0.429,
+    "draw": 0.2564,
+    "away": 0.3146
+   },
+   "xg": {
+    "home": 1.2,
+    "away": 1.34
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "1-1",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-08T21:15:35+00:00"
+  },
+  {
+   "pred_id": "1f6fd4f67fb50a",
+   "league": "E1",
+   "kickoff": "2026-11-03",
+   "home": "Preston",
+   "away": "Sheffield United",
+   "p": {
+    "home": 0.2484,
+    "draw": 0.3019,
+    "away": 0.4497
+   },
+   "xg": {
+    "home": 1.24,
+    "away": 1.25
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "2-3",
+   "outcome": "away",
+   "hit": true,
+   "settled_at": "2026-11-08T21:15:35+00:00"
+  },
+  {
+   "pred_id": "efd822f38c52da",
+   "league": "E1",
+   "kickoff": "2026-11-03",
+   "home": "Portsmouth",
+   "away": "Swansea",
+   "p": {
+    "home": 0.3424,
+    "draw": 0.3296,
+    "away": 0.328
+   },
+   "xg": {
+    "home": 1.31,
+    "away": 1.24
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "3-1",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-08T21:15:35+00:00"
+  },
+  {
+   "pred_id": "e43235dfdbbbb1",
+   "league": "E1",
+   "kickoff": "2026-11-03",
+   "home": "Derby",
+   "away": "Norwich",
+   "p": {
+    "home": 0.3613,
+    "draw": 0.3202,
+    "away": 0.3185
+   },
+   "xg": {
+    "home": 1.46,
+    "away": 1.27
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "0-4",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-08T21:15:35+00:00"
+  },
+  {
+   "pred_id": "9edc568e15e4e0",
+   "league": "E1",
+   "kickoff": "2026-11-03",
+   "home": "Charlton",
+   "away": "Bolton",
+   "p": {
+    "home": 0.4236,
+    "draw": 0.3,
+    "away": 0.2764
+   },
+   "xg": {
+    "home": 1.27,
+    "away": 1.12
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "0-1",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-08T21:15:35+00:00"
+  },
+  {
+   "pred_id": "ebee91415aaf58",
+   "league": "E1",
+   "kickoff": "2026-11-03",
+   "home": "Blackburn",
+   "away": "Stoke",
+   "p": {
+    "home": 0.4462,
+    "draw": 0.2716,
+    "away": 0.2822
+   },
+   "xg": {
+    "home": 1.28,
+    "away": 0.99
+   },
+   "created_at": "2026-10-31T23:58:01+00:00",
+   "result": "1-2",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-08T21:15:35+00:00"
+  },
   {
    "pred_id": "28eef6eea5bac2",
    "league": "P1",
@@ -1139,9 +1464,19 @@
  ],
  "by_league": [
   {
+   "league": "E1",
+   "n": 12,
+   "hit_rate": 0.3333
+  },
+  {
    "league": "I1",
-   "n": 7,
-   "hit_rate": 0.5714
+   "n": 8,
+   "hit_rate": 0.625
+  },
+  {
+   "league": "F1",
+   "n": 6,
+   "hit_rate": 0.8333
   },
   {
    "league": "G1",
@@ -1164,19 +1499,14 @@
    "hit_rate": 0.6
   },
   {
+   "league": "B1",
+   "n": 5,
+   "hit_rate": 0.4
+  },
+  {
    "league": "SP1",
    "n": 5,
    "hit_rate": 0.8
-  },
-  {
-   "league": "F1",
-   "n": 5,
-   "hit_rate": 0.8
-  },
-  {
-   "league": "B1",
-   "n": 4,
-   "hit_rate": 0.5
   },
   {
    "league": "D1",
