@@ -1,19 +1,19 @@
 {
- "generated_at": "2026-11-08T21:15:57+00:00",
+ "generated_at": "2026-11-09T14:03:17+00:00",
  "model": {
-  "version": "athena-1.0-20261108",
-  "trained_at": "2026-11-08T21:15:50.906060",
-  "w_dc": 0.1,
-  "temperature": 0.941,
+  "version": "athena-1.0-20261109",
+  "trained_at": "2026-11-09T14:03:08.850961",
+  "w_dc": 0.2,
+  "temperature": 0.86,
   "calibration": {
-   "val_logloss_blend": 0.97852,
-   "val_logloss_calibrated": 0.97817
+   "val_logloss_blend": 0.96788,
+   "val_logloss_calibrated": 0.96567
   },
   "gbm_val": {
-   "val_logloss": 0.9789853647802679,
-   "val_acc": 0.5295698924731183
+   "val_logloss": 0.9693606502287211,
+   "val_acc": 0.5416666666666666
   },
-  "n_matches_train": 41442,
+  "n_matches_train": 41550,
   "n_leagues": 12,
   "markets": [
    "1X2",

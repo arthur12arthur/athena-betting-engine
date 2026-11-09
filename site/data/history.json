@@ -1,20 +1,40 @@
 {
  "stats": {
-  "n": 63,
-  "hit_rate": 0.5714,
-  "logloss": 0.96029,
-  "brier": 0.56843,
+  "n": 70,
+  "hit_rate": 0.5857,
+  "logloss": 0.9611,
+  "brier": 0.56953,
   "n_total": 71,
   "by_league": [
    {
     "league": "E1",
-    "n": 12,
-    "hit_rate": 0.3333
+    "n": 13,
+    "hit_rate": 0.3846
    },
    {
     "league": "I1",
     "n": 8,
     "hit_rate": 0.625
+   },
+   {
+    "league": "P1",
+    "n": 7,
+    "hit_rate": 0.8571
+   },
+   {
+    "league": "N1",
+    "n": 6,
+    "hit_rate": 0.5
+   },
+   {
+    "league": "T1",
+    "n": 6,
+    "hit_rate": 0.6667
+   },
+   {
+    "league": "SP1",
+    "n": 6,
+    "hit_rate": 0.6667
    },
    {
     "league": "F1",
@@ -27,39 +47,19 @@
     "hit_rate": 0.5
    },
    {
-    "league": "P1",
-    "n": 6,
-    "hit_rate": 0.8333
-   },
-   {
-    "league": "N1",
-    "n": 5,
-    "hit_rate": 0.6
-   },
-   {
-    "league": "T1",
-    "n": 5,
-    "hit_rate": 0.6
-   },
-   {
     "league": "B1",
     "n": 5,
     "hit_rate": 0.4
    },
    {
-    "league": "SP1",
-    "n": 5,
-    "hit_rate": 0.8
-   },
-   {
     "league": "D1",
-    "n": 2,
-    "hit_rate": 0.5
+    "n": 3,
+    "hit_rate": 0.6667
    },
    {
     "league": "E0",
-    "n": 2,
-    "hit_rate": 0.5
+    "n": 3,
+    "hit_rate": 0.6667
    },
    {
     "league": "SC0",
@@ -69,21 +69,41 @@
   ]
  },
  "stats_30d": {
-  "n": 63,
-  "hit_rate": 0.5714,
-  "logloss": 0.96029,
-  "brier": 0.56843,
+  "n": 70,
+  "hit_rate": 0.5857,
+  "logloss": 0.9611,
+  "brier": 0.56953,
   "n_total": 71,
   "by_league": [
    {
     "league": "E1",
-    "n": 12,
-    "hit_rate": 0.3333
+    "n": 13,
+    "hit_rate": 0.3846
    },
    {
     "league": "I1",
     "n": 8,
     "hit_rate": 0.625
+   },
+   {
+    "league": "P1",
+    "n": 7,
+    "hit_rate": 0.8571
+   },
+   {
+    "league": "N1",
+    "n": 6,
+    "hit_rate": 0.5
+   },
+   {
+    "league": "T1",
+    "n": 6,
+    "hit_rate": 0.6667
+   },
+   {
+    "league": "SP1",
+    "n": 6,
+    "hit_rate": 0.6667
    },
    {
     "league": "F1",
@@ -96,39 +116,19 @@
     "hit_rate": 0.5
    },
    {
-    "league": "P1",
-    "n": 6,
-    "hit_rate": 0.8333
-   },
-   {
-    "league": "N1",
-    "n": 5,
-    "hit_rate": 0.6
-   },
-   {
-    "league": "T1",
-    "n": 5,
-    "hit_rate": 0.6
-   },
-   {
     "league": "B1",
     "n": 5,
     "hit_rate": 0.4
    },
    {
-    "league": "SP1",
-    "n": 5,
-    "hit_rate": 0.8
-   },
-   {
     "league": "D1",
-    "n": 2,
-    "hit_rate": 0.5
+    "n": 3,
+    "hit_rate": 0.6667
    },
    {
     "league": "E0",
-    "n": 2,
-    "hit_rate": 0.5
+    "n": 3,
+    "hit_rate": 0.6667
    },
    {
     "league": "SC0",
@@ -138,6 +138,90 @@
   ]
  },
  "recent": [
+  {
+   "pred_id": "2cf08d0abaa11b",
+   "league": "P1",
+   "kickoff": "2026-11-06",
+   "home": "Famalicao",
+   "away": "Arouca",
+   "p": {
+    "home": 0.3828,
+    "draw": 0.2556,
+    "away": 0.3615
+   },
+   "xg": {
+    "home": 1.46,
+    "away": 1.03
+   },
+   "created_at": "2026-11-03T12:53:52+00:00",
+   "result": "1-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-09T14:02:45+00:00"
+  },
+  {
+   "pred_id": "c791ea4e8ce2bb",
+   "league": "E1",
+   "kickoff": "2026-11-06",
+   "home": "Derby",
+   "away": "Bolton",
+   "p": {
+    "home": 0.503,
+    "draw": 0.2874,
+    "away": 0.2095
+   },
+   "xg": {
+    "home": 1.44,
+    "away": 1.13
+   },
+   "created_at": "2026-11-03T12:53:52+00:00",
+   "result": "3-1",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-09T14:02:45+00:00"
+  },
+  {
+   "pred_id": "f866c571f241cb",
+   "league": "E0",
+   "kickoff": "2026-11-06",
+   "home": "Everton",
+   "away": "Coventry",
+   "p": {
+    "home": 0.3998,
+    "draw": 0.2393,
+    "away": 0.3609
+   },
+   "xg": {
+    "home": 1.41,
+    "away": 1.17
+   },
+   "created_at": "2026-11-03T12:53:52+00:00",
+   "result": "3-1",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-09T14:02:45+00:00"
+  },
+  {
+   "pred_id": "fdeaabd4cac1ed",
+   "league": "SP1",
+   "kickoff": "2026-11-06",
+   "home": "Sevilla",
+   "away": "Alaves",
+   "p": {
+    "home": 0.4627,
+    "draw": 0.2742,
+    "away": 0.2631
+   },
+   "xg": {
+    "home": 1.43,
+    "away": 1.12
+   },
+   "created_at": "2026-11-03T12:53:52+00:00",
+   "result": "0-0",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-09T14:02:45+00:00"
+  },
   {
    "pred_id": "9536ed2ad1cd64",
    "league": "I1",
@@ -179,6 +263,69 @@
    "outcome": "home",
    "hit": true,
    "settled_at": "2026-11-08T21:15:35+00:00"
+  },
+  {
+   "pred_id": "0ce236aa700457",
+   "league": "D1",
+   "kickoff": "2026-11-06",
+   "home": "Hamburg",
+   "away": "M'gladbach",
+   "p": {
+    "home": 0.4567,
+    "draw": 0.2572,
+    "away": 0.2862
+   },
+   "xg": {
+    "home": 1.51,
+    "away": 1.29
+   },
+   "created_at": "2026-11-03T12:53:52+00:00",
+   "result": "3-1",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-09T14:02:45+00:00"
+  },
+  {
+   "pred_id": "1f39573ef6a2e7",
+   "league": "N1",
+   "kickoff": "2026-11-06",
+   "home": "Willem II",
+   "away": "Zwolle",
+   "p": {
+    "home": 0.254,
+    "draw": 0.3422,
+    "away": 0.4037
+   },
+   "xg": {
+    "home": 1.66,
+    "away": 1.4
+   },
+   "created_at": "2026-11-03T12:53:52+00:00",
+   "result": "1-1",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-09T14:02:45+00:00"
+  },
+  {
+   "pred_id": "8e83981a700ff0",
+   "league": "T1",
+   "kickoff": "2026-11-06",
+   "home": "Gaziantep",
+   "away": "Kasimpasa",
+   "p": {
+    "home": 0.3208,
+    "draw": 0.3343,
+    "away": 0.3449
+   },
+   "xg": {
+    "home": 1.5,
+    "away": 1.28
+   },
+   "created_at": "2026-11-03T12:53:52+00:00",
+   "result": "0-2",
+   "outcome": "away",
+   "hit": true,
+   "settled_at": "2026-11-09T14:02:45+00:00"
   },
   {
    "pred_id": "63b8ea9c52627e",
@@ -1465,13 +1612,33 @@
  "by_league": [
   {
    "league": "E1",
-   "n": 12,
-   "hit_rate": 0.3333
+   "n": 13,
+   "hit_rate": 0.3846
   },
   {
    "league": "I1",
    "n": 8,
    "hit_rate": 0.625
+  },
+  {
+   "league": "P1",
+   "n": 7,
+   "hit_rate": 0.8571
+  },
+  {
+   "league": "N1",
+   "n": 6,
+   "hit_rate": 0.5
+  },
+  {
+   "league": "T1",
+   "n": 6,
+   "hit_rate": 0.6667
+  },
+  {
+   "league": "SP1",
+   "n": 6,
+   "hit_rate": 0.6667
   },
   {
    "league": "F1",
@@ -1484,39 +1651,19 @@
    "hit_rate": 0.5
   },
   {
-   "league": "P1",
-   "n": 6,
-   "hit_rate": 0.8333
-  },
-  {
-   "league": "N1",
-   "n": 5,
-   "hit_rate": 0.6
-  },
-  {
-   "league": "T1",
-   "n": 5,
-   "hit_rate": 0.6
-  },
-  {
    "league": "B1",
    "n": 5,
    "hit_rate": 0.4
   },
   {
-   "league": "SP1",
-   "n": 5,
-   "hit_rate": 0.8
-  },
-  {
    "league": "D1",
-   "n": 2,
-   "hit_rate": 0.5
+   "n": 3,
+   "hit_rate": 0.6667
   },
   {
    "league": "E0",
-   "n": 2,
-   "hit_rate": 0.5
+   "n": 3,
+   "hit_rate": 0.6667
   },
   {
    "league": "SC0",
