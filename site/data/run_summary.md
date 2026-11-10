@@ -1,4 +1,4 @@
-## 🏛️ ATHENA — exécution du 10/11/2026 00:46 UTC
+## 🏛️ ATHENA — exécution du 10/11/2026 22:27 UTC
 
 **Bankroll papier : 1042.71 u** (+42.71 u · ROI +17.58 %) · 48 paris réglés · 0 en cours · modèle `athena-1.0-20261110`
 
@@ -21,4 +21,4 @@
   - T1 : 6 matchs, 66.7 % de bons pronostics
   - SP1 : 6 matchs, 66.7 % de bons pronostics
 
-_durée 80 s · aucune mise réelle · 18+_
+_durée 92 s · aucune mise réelle · 18+_
