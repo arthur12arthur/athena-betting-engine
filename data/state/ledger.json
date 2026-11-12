@@ -1756,6 +1756,14 @@
    "settled": 0,
    "telegram": false,
    "duration_s": 97.3
+  },
+  {
+   "ts": "2026-11-12T13:53:36+00:00",
+   "fixtures": 0,
+   "bets": 0,
+   "settled": 0,
+   "telegram": false,
+   "duration_s": 125.7
   }
  ]
 }
