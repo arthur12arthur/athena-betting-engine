@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-12T22:48:02+00:00",
+ "generated_at": "2026-11-13T13:16:24+00:00",
  "model": {
-  "version": "athena-1.0-20261112",
-  "trained_at": "2026-11-12T22:46:57.180735",
+  "version": "athena-1.0-20261113",
+  "trained_at": "2026-11-13T13:15:19.610451",
   "w_dc": 0.2,
   "temperature": 0.86,
   "calibration": {
