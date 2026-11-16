@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-09T10:53:09+00:00",
+ "generated_at": "2026-11-16T10:36:06+00:00",
  "seasons": [
   2024,
   2025,
@@ -66,8 +66,8 @@
  },
  "performance": {
   "n_bets": 1681,
-  "staked": 10335.36,
-  "pnl": 274.69,
+  "staked": 10335.3,
+  "pnl": 274.68,
   "roi": 0.0266,
   "yield": 0.0266,
   "win_rate": 0.3754,
@@ -76,7 +76,7 @@
   "avg_stake": 6.15,
   "max_drawdown": 0.3078,
   "sharpe": -0.702,
-  "bankroll": 1274.69,
+  "bankroll": 1274.68,
   "profit_factor": 1.049,
   "longest_losing_streak": 16,
   "clv_avg": 0.0688,
@@ -131,7 +131,7 @@
    },
    {
     "date": "2026-03-08",
-    "bankroll": 1007.43
+    "bankroll": 1007.42
    },
    {
     "date": "2026-03-08",
@@ -155,39 +155,39 @@
    },
    {
     "date": "2026-03-11",
-    "bankroll": 1009.34
+    "bankroll": 1009.33
    },
    {
     "date": "2026-03-11",
-    "bankroll": 999.63
+    "bankroll": 999.62
    },
    {
     "date": "2026-03-13",
-    "bankroll": 995.59
+    "bankroll": 995.58
    },
    {
     "date": "2026-03-14",
-    "bankroll": 992.32
+    "bankroll": 992.31
    },
    {
     "date": "2026-03-14",
-    "bankroll": 983.19
+    "bankroll": 983.18
    },
    {
     "date": "2026-03-14",
-    "bankroll": 973.22
+    "bankroll": 973.21
    },
    {
     "date": "2026-03-14",
-    "bankroll": 979.31
+    "bankroll": 979.3
    },
    {
     "date": "2026-03-14",
-    "bankroll": 972.91
+    "bankroll": 972.9
    },
    {
     "date": "2026-03-14",
-    "bankroll": 967.43
+    "bankroll": 967.42
    },
    {
     "date": "2026-03-14",
@@ -195,27 +195,27 @@
    },
    {
     "date": "2026-03-15",
-    "bankroll": 974.87
+    "bankroll": 974.86
    },
    {
     "date": "2026-03-15",
-    "bankroll": 970.26
+    "bankroll": 970.25
    },
    {
     "date": "2026-03-15",
-    "bankroll": 963.63
+    "bankroll": 963.62
    },
    {
     "date": "2026-03-15",
-    "bankroll": 956.14
+    "bankroll": 956.13
    },
    {
     "date": "2026-03-15",
-    "bankroll": 951.39
+    "bankroll": 951.38
    },
    {
     "date": "2026-03-15",
-    "bankroll": 947.77
+    "bankroll": 947.76
    },
    {
     "date": "2026-03-15",
@@ -243,7 +243,7 @@
    },
    {
     "date": "2026-03-21",
-    "bankroll": 952.81
+    "bankroll": 952.8
    },
    {
     "date": "2026-03-21",
@@ -259,23 +259,23 @@
    },
    {
     "date": "2026-03-21",
-    "bankroll": 965.72
+    "bankroll": 965.71
    },
    {
     "date": "2026-03-21",
-    "bankroll": 963.13
+    "bankroll": 963.12
    },
    {
     "date": "2026-03-22",
-    "bankroll": 975.29
+    "bankroll": 975.28
    },
    {
     "date": "2026-03-22",
-    "bankroll": 971.76
+    "bankroll": 971.75
    },
    {
     "date": "2026-03-22",
-    "bankroll": 968.6
+    "bankroll": 968.59
    },
    {
     "date": "2026-03-22",
@@ -283,27 +283,27 @@
    },
    {
     "date": "2026-03-22",
-    "bankroll": 979.26
+    "bankroll": 979.25
    },
    {
     "date": "2026-03-22",
-    "bankroll": 977.83
+    "bankroll": 977.82
    },
    {
     "date": "2026-04-03",
-    "bankroll": 969.28
+    "bankroll": 969.27
    },
    {
     "date": "2026-04-03",
-    "bankroll": 962.76
+    "bankroll": 962.75
    },
    {
     "date": "2026-04-04",
-    "bankroll": 961.51
+    "bankroll": 961.5
    },
    {
     "date": "2026-04-04",
-    "bankroll": 958.96
+    "bankroll": 958.95
    },
    {
     "date": "2026-04-04",
@@ -311,7 +311,7 @@
    },
    {
     "date": "2026-04-04",
-    "bankroll": 969.13
+    "bankroll": 969.12
    },
    {
     "date": "2026-04-04",
@@ -319,27 +319,27 @@
    },
    {
     "date": "2026-04-04",
-    "bankroll": 987.37
+    "bankroll": 987.36
    },
    {
     "date": "2026-04-05",
-    "bankroll": 981.52
+    "bankroll": 981.51
    },
    {
     "date": "2026-04-05",
-    "bankroll": 972.87
+    "bankroll": 972.86
    },
    {
     "date": "2026-04-05",
-    "bankroll": 967.6
+    "bankroll": 967.59
    },
    {
     "date": "2026-04-06",
-    "bankroll": 955.73
+    "bankroll": 955.72
    },
    {
     "date": "2026-04-06",
-    "bankroll": 951.61
+    "bankroll": 951.6
    },
    {
     "date": "2026-04-06",
@@ -387,11 +387,11 @@
    },
    {
     "date": "2026-04-12",
-    "bankroll": 934.1
+    "bankroll": 934.09
    },
    {
     "date": "2026-04-12",
-    "bankroll": 932.58
+    "bankroll": 932.57
    },
    {
     "date": "2026-04-12",
@@ -399,19 +399,19 @@
    },
    {
     "date": "2026-04-14",
-    "bankroll": 943.19
+    "bankroll": 943.18
    },
    {
     "date": "2026-04-18",
-    "bankroll": 937.11
+    "bankroll": 937.1
    },
    {
     "date": "2026-04-18",
-    "bankroll": 944.75
+    "bankroll": 944.74
    },
    {
     "date": "2026-04-18",
-    "bankroll": 942.43
+    "bankroll": 942.42
    },
    {
     "date": "2026-04-18",
@@ -459,7 +459,7 @@
    },
    {
     "date": "2026-04-21",
-    "bankroll": 926.3
+    "bankroll": 926.29
    },
    {
     "date": "2026-04-22",
@@ -479,55 +479,55 @@
    },
    {
     "date": "2026-04-23",
-    "bankroll": 981.48
+    "bankroll": 981.47
    },
    {
     "date": "2026-04-23",
-    "bankroll": 978.59
+    "bankroll": 978.58
    },
    {
     "date": "2026-04-25",
-    "bankroll": 976.22
+    "bankroll": 976.21
    },
    {
     "date": "2026-04-25",
-    "bankroll": 972.82
+    "bankroll": 972.81
    },
    {
     "date": "2026-04-25",
-    "bankroll": 969.12
+    "bankroll": 969.11
    },
    {
     "date": "2026-04-25",
-    "bankroll": 972.85
+    "bankroll": 972.84
    },
    {
     "date": "2026-04-25",
-    "bankroll": 970.48
+    "bankroll": 970.47
    },
    {
     "date": "2026-04-25",
-    "bankroll": 957.75
+    "bankroll": 957.74
    },
    {
     "date": "2026-04-25",
-    "bankroll": 955.53
+    "bankroll": 955.52
    },
    {
     "date": "2026-04-25",
-    "bankroll": 950.13
+    "bankroll": 950.12
    },
    {
     "date": "2026-04-26",
-    "bankroll": 948.43
+    "bankroll": 948.42
    },
    {
     "date": "2026-04-26",
-    "bankroll": 942.01
+    "bankroll": 942.0
    },
    {
     "date": "2026-04-26",
-    "bankroll": 950.09
+    "bankroll": 950.08
    },
    {
     "date": "2026-04-26",
@@ -547,19 +547,19 @@
    },
    {
     "date": "2026-04-26",
-    "bankroll": 982.44
+    "bankroll": 982.43
    },
    {
     "date": "2026-04-27",
-    "bankroll": 992.81
+    "bankroll": 992.8
    },
    {
     "date": "2026-05-01",
-    "bankroll": 989.67
+    "bankroll": 989.66
    },
    {
     "date": "2026-05-01",
-    "bankroll": 983.26
+    "bankroll": 983.25
    },
    {
     "date": "2026-05-02",
@@ -571,11 +571,11 @@
    },
    {
     "date": "2026-05-02",
-    "bankroll": 1004.77
+    "bankroll": 1004.76
    },
    {
     "date": "2026-05-02",
-    "bankroll": 998.3
+    "bankroll": 998.29
    },
    {
     "date": "2026-05-02",
@@ -611,7 +611,7 @@
    },
    {
     "date": "2026-05-03",
-    "bankroll": 991.72
+    "bankroll": 991.71
    },
    {
     "date": "2026-05-04",
@@ -623,11 +623,11 @@
    },
    {
     "date": "2026-05-09",
-    "bankroll": 991.37
+    "bankroll": 991.36
    },
    {
     "date": "2026-05-09",
-    "bankroll": 981.81
+    "bankroll": 981.8
    },
    {
     "date": "2026-05-09",
@@ -655,7 +655,7 @@
    },
    {
     "date": "2026-05-10",
-    "bankroll": 984.66
+    "bankroll": 984.65
    },
    {
     "date": "2026-05-10",
@@ -663,31 +663,31 @@
    },
    {
     "date": "2026-05-10",
-    "bankroll": 1003.0
+    "bankroll": 1002.99
    },
    {
     "date": "2026-05-10",
-    "bankroll": 1014.33
+    "bankroll": 1014.32
    },
    {
     "date": "2026-05-10",
-    "bankroll": 1007.54
+    "bankroll": 1007.53
    },
    {
     "date": "2026-05-10",
-    "bankroll": 1000.16
+    "bankroll": 1000.15
    },
    {
     "date": "2026-05-10",
-    "bankroll": 997.51
+    "bankroll": 997.5
    },
    {
     "date": "2026-05-11",
-    "bankroll": 995.14
+    "bankroll": 995.13
    },
    {
     "date": "2026-05-11",
-    "bankroll": 993.1
+    "bankroll": 993.09
    },
    {
     "date": "2026-05-12",
@@ -695,11 +695,11 @@
    },
    {
     "date": "2026-05-12",
-    "bankroll": 1003.08
+    "bankroll": 1003.07
    },
    {
     "date": "2026-05-13",
-    "bankroll": 995.5
+    "bankroll": 995.49
    },
    {
     "date": "2026-05-13",
@@ -711,43 +711,43 @@
    },
    {
     "date": "2026-05-16",
-    "bankroll": 1020.85
+    "bankroll": 1020.84
    },
    {
     "date": "2026-05-16",
-    "bankroll": 1015.03
+    "bankroll": 1015.02
    },
    {
     "date": "2026-05-16",
-    "bankroll": 1008.5
+    "bankroll": 1008.49
    },
    {
     "date": "2026-05-16",
-    "bankroll": 1003.54
+    "bankroll": 1003.53
    },
    {
     "date": "2026-05-16",
-    "bankroll": 997.83
+    "bankroll": 997.82
    },
    {
     "date": "2026-05-16",
-    "bankroll": 1010.97
+    "bankroll": 1010.96
    },
    {
     "date": "2026-05-16",
-    "bankroll": 1000.6
+    "bankroll": 1000.59
    },
    {
     "date": "2026-05-16",
-    "bankroll": 997.95
+    "bankroll": 997.94
    },
    {
     "date": "2026-05-17",
-    "bankroll": 1004.75
+    "bankroll": 1004.74
    },
    {
     "date": "2026-05-17",
-    "bankroll": 1002.34
+    "bankroll": 1002.33
    },
    {
     "date": "2026-05-17",
@@ -783,7 +783,7 @@
    },
    {
     "date": "2026-05-21",
-    "bankroll": 976.83
+    "bankroll": 976.82
    },
    {
     "date": "2026-05-21",
@@ -811,43 +811,43 @@
    },
    {
     "date": "2026-05-23",
-    "bankroll": 991.98
+    "bankroll": 991.97
    },
    {
     "date": "2026-05-24",
-    "bankroll": 989.29
+    "bankroll": 989.28
    },
    {
     "date": "2026-05-24",
-    "bankroll": 987.29
+    "bankroll": 987.28
    },
    {
     "date": "2026-05-24",
-    "bankroll": 985.11
+    "bankroll": 985.1
    },
    {
     "date": "2026-05-24",
-    "bankroll": 994.15
+    "bankroll": 994.14
    },
    {
     "date": "2026-07-31",
-    "bankroll": 1007.12
+    "bankroll": 1007.11
    },
    {
     "date": "2026-08-01",
-    "bankroll": 1016.51
+    "bankroll": 1016.5
    },
    {
     "date": "2026-08-02",
-    "bankroll": 1006.93
+    "bankroll": 1006.92
    },
    {
     "date": "2026-08-08",
-    "bankroll": 1021.31
+    "bankroll": 1021.3
    },
    {
     "date": "2026-08-08",
-    "bankroll": 1017.09
+    "bankroll": 1017.08
    },
    {
     "date": "2026-08-08",
@@ -879,71 +879,71 @@
    },
    {
     "date": "2026-08-15",
-    "bankroll": 989.0
+    "bankroll": 988.99
    },
    {
     "date": "2026-08-15",
-    "bankroll": 981.97
+    "bankroll": 981.96
    },
    {
     "date": "2026-08-15",
-    "bankroll": 972.67
+    "bankroll": 972.66
    },
    {
     "date": "2026-08-15",
-    "bankroll": 984.87
+    "bankroll": 984.86
    },
    {
     "date": "2026-08-15",
-    "bankroll": 995.66
+    "bankroll": 995.65
    },
    {
     "date": "2026-08-16",
-    "bankroll": 994.24
+    "bankroll": 994.23
    },
    {
     "date": "2026-08-16",
-    "bankroll": 978.8
+    "bankroll": 978.79
    },
    {
     "date": "2026-08-16",
-    "bankroll": 985.65
+    "bankroll": 985.64
    },
    {
     "date": "2026-08-20",
-    "bankroll": 981.91
+    "bankroll": 981.9
    },
    {
     "date": "2026-08-21",
-    "bankroll": 980.9
+    "bankroll": 980.89
    },
    {
     "date": "2026-08-22",
-    "bankroll": 974.19
+    "bankroll": 974.18
    },
    {
     "date": "2026-08-22",
-    "bankroll": 971.87
+    "bankroll": 971.86
    },
    {
     "date": "2026-08-22",
-    "bankroll": 966.9
+    "bankroll": 966.89
    },
    {
     "date": "2026-08-22",
-    "bankroll": 960.33
+    "bankroll": 960.32
    },
    {
     "date": "2026-08-22",
-    "bankroll": 968.83
+    "bankroll": 968.82
    },
    {
     "date": "2026-08-22",
-    "bankroll": 959.73
+    "bankroll": 959.72
    },
    {
     "date": "2026-08-22",
-    "bankroll": 952.8
+    "bankroll": 952.79
    },
    {
     "date": "2026-08-22",
@@ -951,23 +951,23 @@
    },
    {
     "date": "2026-08-23",
-    "bankroll": 969.01
+    "bankroll": 969.0
    },
    {
     "date": "2026-08-23",
-    "bankroll": 958.5
+    "bankroll": 958.49
    },
    {
     "date": "2026-08-23",
-    "bankroll": 956.5
+    "bankroll": 956.49
    },
    {
     "date": "2026-08-23",
-    "bankroll": 944.73
+    "bankroll": 944.72
    },
    {
     "date": "2026-08-23",
-    "bankroll": 961.31
+    "bankroll": 961.3
    },
    {
     "date": "2026-08-23",
@@ -983,35 +983,35 @@
    },
    {
     "date": "2026-08-24",
-    "bankroll": 990.88
+    "bankroll": 990.87
    },
    {
     "date": "2026-08-24",
-    "bankroll": 988.93
+    "bankroll": 988.92
    },
    {
     "date": "2026-08-28",
-    "bankroll": 1000.71
+    "bankroll": 1000.7
    },
    {
     "date": "2026-08-29",
-    "bankroll": 1008.81
+    "bankroll": 1008.8
    },
    {
     "date": "2026-08-29",
-    "bankroll": 1006.08
+    "bankroll": 1006.07
    },
    {
     "date": "2026-08-29",
-    "bankroll": 1000.34
+    "bankroll": 1000.33
    },
    {
     "date": "2026-08-29",
-    "bankroll": 991.18
+    "bankroll": 991.17
    },
    {
     "date": "2026-08-29",
-    "bankroll": 986.24
+    "bankroll": 986.23
    },
    {
     "date": "2026-08-29",
@@ -1043,19 +1043,19 @@
    },
    {
     "date": "2026-08-30",
-    "bankroll": 977.72
+    "bankroll": 977.71
    },
    {
     "date": "2026-08-30",
-    "bankroll": 962.43
+    "bankroll": 962.42
    },
    {
     "date": "2026-08-30",
-    "bankroll": 973.93
+    "bankroll": 973.92
    },
    {
     "date": "2026-08-31",
-    "bankroll": 972.95
+    "bankroll": 972.94
    },
    {
     "date": "2026-08-31",
@@ -1079,7 +1079,7 @@
    },
    {
     "date": "2026-09-04",
-    "bankroll": 981.04
+    "bankroll": 981.03
    },
    {
     "date": "2026-09-04",
@@ -1103,23 +1103,23 @@
    },
    {
     "date": "2026-09-05",
-    "bankroll": 1017.73
+    "bankroll": 1017.72
    },
    {
     "date": "2026-09-05",
-    "bankroll": 1028.05
+    "bankroll": 1028.04
    },
    {
     "date": "2026-09-05",
-    "bankroll": 1038.3
+    "bankroll": 1038.29
    },
    {
     "date": "2026-09-05",
-    "bankroll": 1031.17
+    "bankroll": 1031.16
    },
    {
     "date": "2026-09-05",
-    "bankroll": 1026.75
+    "bankroll": 1026.74
    },
    {
     "date": "2026-09-05",
@@ -1211,19 +1211,19 @@
    },
    {
     "date": "2026-09-12",
-    "bankroll": 1031.17
+    "bankroll": 1031.16
    },
    {
     "date": "2026-09-13",
-    "bankroll": 1029.85
+    "bankroll": 1029.84
    },
    {
     "date": "2026-09-13",
-    "bankroll": 1027.64
+    "bankroll": 1027.63
    },
    {
     "date": "2026-09-13",
-    "bankroll": 1021.35
+    "bankroll": 1021.34
    },
    {
     "date": "2026-09-13",
@@ -1251,7 +1251,7 @@
    },
    {
     "date": "2026-09-19",
-    "bankroll": 1058.88
+    "bankroll": 1058.87
    },
    {
     "date": "2026-09-19",
@@ -1307,23 +1307,23 @@
    },
    {
     "date": "2026-10-10",
-    "bankroll": 1064.85
+    "bankroll": 1064.84
    },
    {
     "date": "2026-10-10",
-    "bankroll": 1062.77
+    "bankroll": 1062.76
    },
    {
     "date": "2026-10-10",
-    "bankroll": 1060.63
+    "bankroll": 1060.62
    },
    {
     "date": "2026-10-10",
-    "bankroll": 1072.01
+    "bankroll": 1072.0
    },
    {
     "date": "2026-10-10",
-    "bankroll": 1065.55
+    "bankroll": 1065.54
    },
    {
     "date": "2026-10-10",
@@ -1355,11 +1355,11 @@
    },
    {
     "date": "2026-10-11",
-    "bankroll": 1084.83
+    "bankroll": 1084.82
    },
    {
     "date": "2026-10-13",
-    "bankroll": 1078.55
+    "bankroll": 1078.54
    },
    {
     "date": "2026-10-13",
@@ -1379,43 +1379,43 @@
    },
    {
     "date": "2026-10-16",
-    "bankroll": 1082.26
+    "bankroll": 1082.25
    },
    {
     "date": "2026-10-17",
-    "bankroll": 1087.05
+    "bankroll": 1087.04
    },
    {
     "date": "2026-10-17",
-    "bankroll": 1084.78
+    "bankroll": 1084.77
    },
    {
     "date": "2026-10-17",
-    "bankroll": 1079.13
+    "bankroll": 1079.12
    },
    {
     "date": "2026-10-17",
-    "bankroll": 1077.0
+    "bankroll": 1076.99
    },
    {
     "date": "2026-10-17",
-    "bankroll": 1075.21
+    "bankroll": 1075.2
    },
    {
     "date": "2026-10-17",
-    "bankroll": 1068.77
+    "bankroll": 1068.76
    },
    {
     "date": "2026-10-17",
-    "bankroll": 1085.29
+    "bankroll": 1085.28
    },
    {
     "date": "2026-10-17",
-    "bankroll": 1081.31
+    "bankroll": 1081.3
    },
    {
     "date": "2026-10-18",
-    "bankroll": 1078.6
+    "bankroll": 1078.59
    },
    {
     "date": "2026-10-18",
@@ -1427,15 +1427,15 @@
    },
    {
     "date": "2026-10-18",
-    "bankroll": 1100.42
+    "bankroll": 1100.41
    },
    {
     "date": "2026-10-18",
-    "bankroll": 1096.61
+    "bankroll": 1096.6
    },
    {
     "date": "2026-10-19",
-    "bankroll": 1093.31
+    "bankroll": 1093.3
    },
    {
     "date": "2026-10-19",
@@ -1451,23 +1451,23 @@
    },
    {
     "date": "2026-10-24",
-    "bankroll": 1133.94
+    "bankroll": 1133.93
    },
    {
     "date": "2026-10-24",
-    "bankroll": 1131.95
+    "bankroll": 1131.94
    },
    {
     "date": "2026-10-24",
-    "bankroll": 1127.77
+    "bankroll": 1127.76
    },
    {
     "date": "2026-10-24",
-    "bankroll": 1122.83
+    "bankroll": 1122.82
    },
    {
     "date": "2026-10-24",
-    "bankroll": 1121.39
+    "bankroll": 1121.38
    },
    {
     "date": "2026-10-24",
@@ -1487,35 +1487,35 @@
    },
    {
     "date": "2026-10-25",
-    "bankroll": 1132.37
+    "bankroll": 1132.36
    },
    {
     "date": "2026-10-25",
-    "bankroll": 1125.23
+    "bankroll": 1125.22
    },
    {
     "date": "2026-10-25",
-    "bankroll": 1116.2
+    "bankroll": 1116.19
    },
    {
     "date": "2026-10-25",
-    "bankroll": 1113.1
+    "bankroll": 1113.09
    },
    {
     "date": "2026-10-25",
-    "bankroll": 1097.01
+    "bankroll": 1097.0
    },
    {
     "date": "2026-10-25",
-    "bankroll": 1084.33
+    "bankroll": 1084.32
    },
    {
     "date": "2026-10-26",
-    "bankroll": 1092.82
+    "bankroll": 1092.81
    },
    {
     "date": "2026-10-26",
-    "bankroll": 1100.11
+    "bankroll": 1100.1
    },
    {
     "date": "2026-10-28",
@@ -1535,7 +1535,7 @@
    },
    {
     "date": "2026-10-30",
-    "bankroll": 1102.29
+    "bankroll": 1102.28
    },
    {
     "date": "2026-10-30",
@@ -1543,23 +1543,23 @@
    },
    {
     "date": "2026-10-31",
-    "bankroll": 1134.37
+    "bankroll": 1134.36
    },
    {
     "date": "2026-10-31",
-    "bankroll": 1121.66
+    "bankroll": 1121.65
    },
    {
     "date": "2026-10-31",
-    "bankroll": 1134.54
+    "bankroll": 1134.53
    },
    {
     "date": "2026-10-31",
-    "bankroll": 1147.13
+    "bankroll": 1147.12
    },
    {
     "date": "2026-10-31",
-    "bankroll": 1159.26
+    "bankroll": 1159.25
    },
    {
     "date": "2026-10-31",
@@ -1579,11 +1579,11 @@
    },
    {
     "date": "2026-11-01",
-    "bankroll": 1179.97
+    "bankroll": 1179.96
    },
    {
     "date": "2026-11-01",
-    "bankroll": 1189.56
+    "bankroll": 1189.55
    },
    {
     "date": "2026-11-01",
@@ -1611,11 +1611,11 @@
    },
    {
     "date": "2026-11-04",
-    "bankroll": 1221.84
+    "bankroll": 1221.83
    },
    {
     "date": "2026-11-06",
-    "bankroll": 1215.98
+    "bankroll": 1215.97
    },
    {
     "date": "2026-11-06",
@@ -1651,7 +1651,7 @@
    },
    {
     "date": "2026-11-08",
-    "bankroll": 1256.97
+    "bankroll": 1256.96
    },
    {
     "date": "2026-11-08",
@@ -1667,19 +1667,19 @@
    },
    {
     "date": "2026-11-08",
-    "bankroll": 1270.65
+    "bankroll": 1270.64
    },
    {
     "date": "2026-11-08",
-    "bankroll": 1264.4
+    "bankroll": 1264.39
    },
    {
     "date": "2026-11-08",
-    "bankroll": 1276.83
+    "bankroll": 1276.82
    },
    {
     "date": "2026-11-08",
-    "bankroll": 1274.69
+    "bankroll": 1274.68
    }
   ]
  },
@@ -1687,12 +1687,12 @@
   {
    "season": 2024,
    "n_bets": 835,
-   "pnl": -38.74,
+   "pnl": -38.73,
    "roi": -0.0074,
-   "bankroll_final": 961.26,
+   "bankroll_final": 961.27,
    "w_dc": 0.15000000000000002,
-   "temperature": 0.9820543714172668,
-   "version": "athena-1.0-20261109",
+   "temperature": 0.982054412166039,
+   "version": "athena-1.0-20261116",
    "metrics": {
     "val_logloss_blend": 0.97383,
     "val_logloss_calibrated": 0.9738
@@ -1705,12 +1705,12 @@
   {
    "season": 2025,
    "n_bets": 633,
-   "pnl": 32.89,
+   "pnl": 32.88,
    "roi": 0.009,
-   "bankroll_final": 1032.89,
+   "bankroll_final": 1032.88,
    "w_dc": 0.30000000000000004,
-   "temperature": 0.981181858553205,
-   "version": "athena-1.0-20261109",
+   "temperature": 0.9811822801714285,
+   "version": "athena-1.0-20261116",
    "metrics": {
     "val_logloss_blend": 0.98654,
     "val_logloss_calibrated": 0.98651
@@ -1727,8 +1727,8 @@
    "roi": 0.1948,
    "bankroll_final": 1280.54,
    "w_dc": 0.30000000000000004,
-   "temperature": 0.9767813661581305,
-   "version": "athena-1.0-20261109",
+   "temperature": 0.9767817222415077,
+   "version": "athena-1.0-20261116",
    "metrics": {
     "val_logloss_blend": 0.99795,
     "val_logloss_calibrated": 0.9979
@@ -1743,25 +1743,25 @@
   {
    "group": "E1",
    "n": 250,
-   "roi": 0.0894,
-   "pnl": 115.8,
-   "staked": 1295.94,
+   "roi": 0.0893,
+   "pnl": 115.79,
+   "staked": 1295.93,
    "win_rate": 0.356
   },
   {
    "group": "E0",
    "n": 207,
    "roi": 0.0425,
-   "pnl": 51.7,
-   "staked": 1217.2,
+   "pnl": 51.71,
+   "staked": 1217.19,
    "win_rate": 0.372
   },
   {
    "group": "I1",
    "n": 169,
    "roi": -0.1482,
-   "pnl": -155.11,
-   "staked": 1046.43,
+   "pnl": -155.1,
+   "staked": 1046.42,
    "win_rate": 0.3254
   },
   {
@@ -1775,17 +1775,17 @@
   {
    "group": "F1",
    "n": 133,
-   "roi": 0.0487,
-   "pnl": 39.24,
-   "staked": 804.88,
+   "roi": 0.0488,
+   "pnl": 39.25,
+   "staked": 804.87,
    "win_rate": 0.391
   },
   {
    "group": "T1",
    "n": 128,
    "roi": 0.1341,
-   "pnl": 111.48,
-   "staked": 831.12,
+   "pnl": 111.47,
+   "staked": 831.11,
    "win_rate": 0.3984
   },
   {
@@ -1800,24 +1800,24 @@
    "group": "D1",
    "n": 117,
    "roi": -0.072,
-   "pnl": -48.9,
-   "staked": 679.65,
+   "pnl": -48.92,
+   "staked": 679.64,
    "win_rate": 0.3333
   },
   {
    "group": "N1",
    "n": 115,
    "roi": 0.0132,
-   "pnl": 10.72,
-   "staked": 809.84,
+   "pnl": 10.71,
+   "staked": 809.85,
    "win_rate": 0.3826
   },
   {
    "group": "P1",
    "n": 105,
    "roi": -0.0474,
-   "pnl": -34.01,
-   "staked": 717.56,
+   "pnl": -34.0,
+   "staked": 717.55,
    "win_rate": 0.4095
   },
   {
@@ -1842,16 +1842,16 @@
    "group": "1X2",
    "n": 1310,
    "roi": 0.0097,
-   "pnl": 72.46,
-   "staked": 7482.92,
+   "pnl": 72.45,
+   "staked": 7482.87,
    "win_rate": 0.3435
   },
   {
    "group": "OU25",
    "n": 371,
    "roi": 0.0709,
-   "pnl": 202.22,
-   "staked": 2852.44,
+   "pnl": 202.23,
+   "staked": 2852.43,
    "win_rate": 0.4879
   }
  ],
@@ -10056,7 +10056,7 @@
    "line": 2.5,
    "label": "Moins de 2,5 buts",
    "price": 2.709,
-   "p_model": 0.4243,
+   "p_model": 0.4242,
    "p_fair": 0.3846,
    "p_sharp": 0.3676,
    "edge": 0.0576,
@@ -11108,7 +11108,7 @@
   },
   {
    "date": "2026-03-08",
-   "bankroll": 1007.43
+   "bankroll": 1007.42
   },
   {
    "date": "2026-03-08",
@@ -11132,39 +11132,39 @@
   },
   {
    "date": "2026-03-11",
-   "bankroll": 1009.34
+   "bankroll": 1009.33
   },
   {
    "date": "2026-03-11",
-   "bankroll": 999.63
+   "bankroll": 999.62
   },
   {
    "date": "2026-03-13",
-   "bankroll": 995.59
+   "bankroll": 995.58
   },
   {
    "date": "2026-03-14",
-   "bankroll": 992.32
+   "bankroll": 992.31
   },
   {
    "date": "2026-03-14",
-   "bankroll": 983.19
+   "bankroll": 983.18
   },
   {
    "date": "2026-03-14",
-   "bankroll": 973.22
+   "bankroll": 973.21
   },
   {
    "date": "2026-03-14",
-   "bankroll": 979.31
+   "bankroll": 979.3
   },
   {
    "date": "2026-03-14",
-   "bankroll": 972.91
+   "bankroll": 972.9
   },
   {
    "date": "2026-03-14",
-   "bankroll": 967.43
+   "bankroll": 967.42
   },
   {
    "date": "2026-03-14",
@@ -11172,27 +11172,27 @@
   },
   {
    "date": "2026-03-15",
-   "bankroll": 974.87
+   "bankroll": 974.86
   },
   {
    "date": "2026-03-15",
-   "bankroll": 970.26
+   "bankroll": 970.25
   },
   {
    "date": "2026-03-15",
-   "bankroll": 963.63
+   "bankroll": 963.62
   },
   {
    "date": "2026-03-15",
-   "bankroll": 956.14
+   "bankroll": 956.13
   },
   {
    "date": "2026-03-15",
-   "bankroll": 951.39
+   "bankroll": 951.38
   },
   {
    "date": "2026-03-15",
-   "bankroll": 947.77
+   "bankroll": 947.76
   },
   {
    "date": "2026-03-15",
@@ -11220,7 +11220,7 @@
   },
   {
    "date": "2026-03-21",
-   "bankroll": 952.81
+   "bankroll": 952.8
   },
   {
    "date": "2026-03-21",
@@ -11236,23 +11236,23 @@
   },
   {
    "date": "2026-03-21",
-   "bankroll": 965.72
+   "bankroll": 965.71
   },
   {
    "date": "2026-03-21",
-   "bankroll": 963.13
+   "bankroll": 963.12
   },
   {
    "date": "2026-03-22",
-   "bankroll": 975.29
+   "bankroll": 975.28
   },
   {
    "date": "2026-03-22",
-   "bankroll": 971.76
+   "bankroll": 971.75
   },
   {
    "date": "2026-03-22",
-   "bankroll": 968.6
+   "bankroll": 968.59
   },
   {
    "date": "2026-03-22",
@@ -11260,27 +11260,27 @@
   },
   {
    "date": "2026-03-22",
-   "bankroll": 979.26
+   "bankroll": 979.25
   },
   {
    "date": "2026-03-22",
-   "bankroll": 977.83
+   "bankroll": 977.82
   },
   {
    "date": "2026-04-03",
-   "bankroll": 969.28
+   "bankroll": 969.27
   },
   {
    "date": "2026-04-03",
-   "bankroll": 962.76
+   "bankroll": 962.75
   },
   {
    "date": "2026-04-04",
-   "bankroll": 961.51
+   "bankroll": 961.5
   },
   {
    "date": "2026-04-04",
-   "bankroll": 958.96
+   "bankroll": 958.95
   },
   {
    "date": "2026-04-04",
@@ -11288,7 +11288,7 @@
   },
   {
    "date": "2026-04-04",
-   "bankroll": 969.13
+   "bankroll": 969.12
   },
   {
    "date": "2026-04-04",
@@ -11296,27 +11296,27 @@
   },
   {
    "date": "2026-04-04",
-   "bankroll": 987.37
+   "bankroll": 987.36
   },
   {
    "date": "2026-04-05",
-   "bankroll": 981.52
+   "bankroll": 981.51
   },
   {
    "date": "2026-04-05",
-   "bankroll": 972.87
+   "bankroll": 972.86
   },
   {
    "date": "2026-04-05",
-   "bankroll": 967.6
+   "bankroll": 967.59
   },
   {
    "date": "2026-04-06",
-   "bankroll": 955.73
+   "bankroll": 955.72
   },
   {
    "date": "2026-04-06",
-   "bankroll": 951.61
+   "bankroll": 951.6
   },
   {
    "date": "2026-04-06",
@@ -11364,11 +11364,11 @@
   },
   {
    "date": "2026-04-12",
-   "bankroll": 934.1
+   "bankroll": 934.09
   },
   {
    "date": "2026-04-12",
-   "bankroll": 932.58
+   "bankroll": 932.57
   },
   {
    "date": "2026-04-12",
@@ -11376,19 +11376,19 @@
   },
   {
    "date": "2026-04-14",
-   "bankroll": 943.19
+   "bankroll": 943.18
   },
   {
    "date": "2026-04-18",
-   "bankroll": 937.11
+   "bankroll": 937.1
   },
   {
    "date": "2026-04-18",
-   "bankroll": 944.75
+   "bankroll": 944.74
   },
   {
    "date": "2026-04-18",
-   "bankroll": 942.43
+   "bankroll": 942.42
   },
   {
    "date": "2026-04-18",
@@ -11436,7 +11436,7 @@
   },
   {
    "date": "2026-04-21",
-   "bankroll": 926.3
+   "bankroll": 926.29
   },
   {
    "date": "2026-04-22",
@@ -11456,55 +11456,55 @@
   },
   {
    "date": "2026-04-23",
-   "bankroll": 981.48
+   "bankroll": 981.47
   },
   {
    "date": "2026-04-23",
-   "bankroll": 978.59
+   "bankroll": 978.58
   },
   {
    "date": "2026-04-25",
-   "bankroll": 976.22
+   "bankroll": 976.21
   },
   {
    "date": "2026-04-25",
-   "bankroll": 972.82
+   "bankroll": 972.81
   },
   {
    "date": "2026-04-25",
-   "bankroll": 969.12
+   "bankroll": 969.11
   },
   {
    "date": "2026-04-25",
-   "bankroll": 972.85
+   "bankroll": 972.84
   },
   {
    "date": "2026-04-25",
-   "bankroll": 970.48
+   "bankroll": 970.47
   },
   {
    "date": "2026-04-25",
-   "bankroll": 957.75
+   "bankroll": 957.74
   },
   {
    "date": "2026-04-25",
-   "bankroll": 955.53
+   "bankroll": 955.52
   },
   {
    "date": "2026-04-25",
-   "bankroll": 950.13
+   "bankroll": 950.12
   },
   {
    "date": "2026-04-26",
-   "bankroll": 948.43
+   "bankroll": 948.42
   },
   {
    "date": "2026-04-26",
-   "bankroll": 942.01
+   "bankroll": 942.0
   },
   {
    "date": "2026-04-26",
-   "bankroll": 950.09
+   "bankroll": 950.08
   },
   {
    "date": "2026-04-26",
@@ -11524,19 +11524,19 @@
   },
   {
    "date": "2026-04-26",
-   "bankroll": 982.44
+   "bankroll": 982.43
   },
   {
    "date": "2026-04-27",
-   "bankroll": 992.81
+   "bankroll": 992.8
   },
   {
    "date": "2026-05-01",
-   "bankroll": 989.67
+   "bankroll": 989.66
   },
   {
    "date": "2026-05-01",
-   "bankroll": 983.26
+   "bankroll": 983.25
   },
   {
    "date": "2026-05-02",
@@ -11548,11 +11548,11 @@
   },
   {
    "date": "2026-05-02",
-   "bankroll": 1004.77
+   "bankroll": 1004.76
   },
   {
    "date": "2026-05-02",
-   "bankroll": 998.3
+   "bankroll": 998.29
   },
   {
    "date": "2026-05-02",
@@ -11588,7 +11588,7 @@
   },
   {
    "date": "2026-05-03",
-   "bankroll": 991.72
+   "bankroll": 991.71
   },
   {
    "date": "2026-05-04",
@@ -11600,11 +11600,11 @@
   },
   {
    "date": "2026-05-09",
-   "bankroll": 991.37
+   "bankroll": 991.36
   },
   {
    "date": "2026-05-09",
-   "bankroll": 981.81
+   "bankroll": 981.8
   },
   {
    "date": "2026-05-09",
@@ -11632,7 +11632,7 @@
   },
   {
    "date": "2026-05-10",
-   "bankroll": 984.66
+   "bankroll": 984.65
   },
   {
    "date": "2026-05-10",
@@ -11640,31 +11640,31 @@
   },
   {
    "date": "2026-05-10",
-   "bankroll": 1003.0
+   "bankroll": 1002.99
   },
   {
    "date": "2026-05-10",
-   "bankroll": 1014.33
+   "bankroll": 1014.32
   },
   {
    "date": "2026-05-10",
-   "bankroll": 1007.54
+   "bankroll": 1007.53
   },
   {
    "date": "2026-05-10",
-   "bankroll": 1000.16
+   "bankroll": 1000.15
   },
   {
    "date": "2026-05-10",
-   "bankroll": 997.51
+   "bankroll": 997.5
   },
   {
    "date": "2026-05-11",
-   "bankroll": 995.14
+   "bankroll": 995.13
   },
   {
    "date": "2026-05-11",
-   "bankroll": 993.1
+   "bankroll": 993.09
   },
   {
    "date": "2026-05-12",
@@ -11672,11 +11672,11 @@
   },
   {
    "date": "2026-05-12",
-   "bankroll": 1003.08
+   "bankroll": 1003.07
   },
   {
    "date": "2026-05-13",
-   "bankroll": 995.5
+   "bankroll": 995.49
   },
   {
    "date": "2026-05-13",
@@ -11688,43 +11688,43 @@
   },
   {
    "date": "2026-05-16",
-   "bankroll": 1020.85
+   "bankroll": 1020.84
   },
   {
    "date": "2026-05-16",
-   "bankroll": 1015.03
+   "bankroll": 1015.02
   },
   {
    "date": "2026-05-16",
-   "bankroll": 1008.5
+   "bankroll": 1008.49
   },
   {
    "date": "2026-05-16",
-   "bankroll": 1003.54
+   "bankroll": 1003.53
   },
   {
    "date": "2026-05-16",
-   "bankroll": 997.83
+   "bankroll": 997.82
   },
   {
    "date": "2026-05-16",
-   "bankroll": 1010.97
+   "bankroll": 1010.96
   },
   {
    "date": "2026-05-16",
-   "bankroll": 1000.6
+   "bankroll": 1000.59
   },
   {
    "date": "2026-05-16",
-   "bankroll": 997.95
+   "bankroll": 997.94
   },
   {
    "date": "2026-05-17",
-   "bankroll": 1004.75
+   "bankroll": 1004.74
   },
   {
    "date": "2026-05-17",
-   "bankroll": 1002.34
+   "bankroll": 1002.33
   },
   {
    "date": "2026-05-17",
@@ -11760,7 +11760,7 @@
   },
   {
    "date": "2026-05-21",
-   "bankroll": 976.83
+   "bankroll": 976.82
   },
   {
    "date": "2026-05-21",
@@ -11788,43 +11788,43 @@
   },
   {
    "date": "2026-05-23",
-   "bankroll": 991.98
+   "bankroll": 991.97
   },
   {
    "date": "2026-05-24",
-   "bankroll": 989.29
+   "bankroll": 989.28
   },
   {
    "date": "2026-05-24",
-   "bankroll": 987.29
+   "bankroll": 987.28
   },
   {
    "date": "2026-05-24",
-   "bankroll": 985.11
+   "bankroll": 985.1
   },
   {
    "date": "2026-05-24",
-   "bankroll": 994.15
+   "bankroll": 994.14
   },
   {
    "date": "2026-07-31",
-   "bankroll": 1007.12
+   "bankroll": 1007.11
   },
   {
    "date": "2026-08-01",
-   "bankroll": 1016.51
+   "bankroll": 1016.5
   },
   {
    "date": "2026-08-02",
-   "bankroll": 1006.93
+   "bankroll": 1006.92
   },
   {
    "date": "2026-08-08",
-   "bankroll": 1021.31
+   "bankroll": 1021.3
   },
   {
    "date": "2026-08-08",
-   "bankroll": 1017.09
+   "bankroll": 1017.08
   },
   {
    "date": "2026-08-08",
@@ -11856,71 +11856,71 @@
   },
   {
    "date": "2026-08-15",
-   "bankroll": 989.0
+   "bankroll": 988.99
   },
   {
    "date": "2026-08-15",
-   "bankroll": 981.97
+   "bankroll": 981.96
   },
   {
    "date": "2026-08-15",
-   "bankroll": 972.67
+   "bankroll": 972.66
   },
   {
    "date": "2026-08-15",
-   "bankroll": 984.87
+   "bankroll": 984.86
   },
   {
    "date": "2026-08-15",
-   "bankroll": 995.66
+   "bankroll": 995.65
   },
   {
    "date": "2026-08-16",
-   "bankroll": 994.24
+   "bankroll": 994.23
   },
   {
    "date": "2026-08-16",
-   "bankroll": 978.8
+   "bankroll": 978.79
   },
   {
    "date": "2026-08-16",
-   "bankroll": 985.65
+   "bankroll": 985.64
   },
   {
    "date": "2026-08-20",
-   "bankroll": 981.91
+   "bankroll": 981.9
   },
   {
    "date": "2026-08-21",
-   "bankroll": 980.9
+   "bankroll": 980.89
   },
   {
    "date": "2026-08-22",
-   "bankroll": 974.19
+   "bankroll": 974.18
   },
   {
    "date": "2026-08-22",
-   "bankroll": 971.87
+   "bankroll": 971.86
   },
   {
    "date": "2026-08-22",
-   "bankroll": 966.9
+   "bankroll": 966.89
   },
   {
    "date": "2026-08-22",
-   "bankroll": 960.33
+   "bankroll": 960.32
   },
   {
    "date": "2026-08-22",
-   "bankroll": 968.83
+   "bankroll": 968.82
   },
   {
    "date": "2026-08-22",
-   "bankroll": 959.73
+   "bankroll": 959.72
   },
   {
    "date": "2026-08-22",
-   "bankroll": 952.8
+   "bankroll": 952.79
   },
   {
    "date": "2026-08-22",
@@ -11928,23 +11928,23 @@
   },
   {
    "date": "2026-08-23",
-   "bankroll": 969.01
+   "bankroll": 969.0
   },
   {
    "date": "2026-08-23",
-   "bankroll": 958.5
+   "bankroll": 958.49
   },
   {
    "date": "2026-08-23",
-   "bankroll": 956.5
+   "bankroll": 956.49
   },
   {
    "date": "2026-08-23",
-   "bankroll": 944.73
+   "bankroll": 944.72
   },
   {
    "date": "2026-08-23",
-   "bankroll": 961.31
+   "bankroll": 961.3
   },
   {
    "date": "2026-08-23",
@@ -11960,35 +11960,35 @@
   },
   {
    "date": "2026-08-24",
-   "bankroll": 990.88
+   "bankroll": 990.87
   },
   {
    "date": "2026-08-24",
-   "bankroll": 988.93
+   "bankroll": 988.92
   },
   {
    "date": "2026-08-28",
-   "bankroll": 1000.71
+   "bankroll": 1000.7
   },
   {
    "date": "2026-08-29",
-   "bankroll": 1008.81
+   "bankroll": 1008.8
   },
   {
    "date": "2026-08-29",
-   "bankroll": 1006.08
+   "bankroll": 1006.07
   },
   {
    "date": "2026-08-29",
-   "bankroll": 1000.34
+   "bankroll": 1000.33
   },
   {
    "date": "2026-08-29",
-   "bankroll": 991.18
+   "bankroll": 991.17
   },
   {
    "date": "2026-08-29",
-   "bankroll": 986.24
+   "bankroll": 986.23
   },
   {
    "date": "2026-08-29",
@@ -12020,19 +12020,19 @@
   },
   {
    "date": "2026-08-30",
-   "bankroll": 977.72
+   "bankroll": 977.71
   },
   {
    "date": "2026-08-30",
-   "bankroll": 962.43
+   "bankroll": 962.42
   },
   {
    "date": "2026-08-30",
-   "bankroll": 973.93
+   "bankroll": 973.92
   },
   {
    "date": "2026-08-31",
-   "bankroll": 972.95
+   "bankroll": 972.94
   },
   {
    "date": "2026-08-31",
@@ -12056,7 +12056,7 @@
   },
   {
    "date": "2026-09-04",
-   "bankroll": 981.04
+   "bankroll": 981.03
   },
   {
    "date": "2026-09-04",
@@ -12080,23 +12080,23 @@
   },
   {
    "date": "2026-09-05",
-   "bankroll": 1017.73
+   "bankroll": 1017.72
   },
   {
    "date": "2026-09-05",
-   "bankroll": 1028.05
+   "bankroll": 1028.04
   },
   {
    "date": "2026-09-05",
-   "bankroll": 1038.3
+   "bankroll": 1038.29
   },
   {
    "date": "2026-09-05",
-   "bankroll": 1031.17
+   "bankroll": 1031.16
   },
   {
    "date": "2026-09-05",
-   "bankroll": 1026.75
+   "bankroll": 1026.74
   },
   {
    "date": "2026-09-05",
@@ -12188,19 +12188,19 @@
   },
   {
    "date": "2026-09-12",
-   "bankroll": 1031.17
+   "bankroll": 1031.16
   },
   {
    "date": "2026-09-13",
-   "bankroll": 1029.85
+   "bankroll": 1029.84
   },
   {
    "date": "2026-09-13",
-   "bankroll": 1027.64
+   "bankroll": 1027.63
   },
   {
    "date": "2026-09-13",
-   "bankroll": 1021.35
+   "bankroll": 1021.34
   },
   {
    "date": "2026-09-13",
@@ -12228,7 +12228,7 @@
   },
   {
    "date": "2026-09-19",
-   "bankroll": 1058.88
+   "bankroll": 1058.87
   },
   {
    "date": "2026-09-19",
@@ -12284,23 +12284,23 @@
   },
   {
    "date": "2026-10-10",
-   "bankroll": 1064.85
+   "bankroll": 1064.84
   },
   {
    "date": "2026-10-10",
-   "bankroll": 1062.77
+   "bankroll": 1062.76
   },
   {
    "date": "2026-10-10",
-   "bankroll": 1060.63
+   "bankroll": 1060.62
   },
   {
    "date": "2026-10-10",
-   "bankroll": 1072.01
+   "bankroll": 1072.0
   },
   {
    "date": "2026-10-10",
-   "bankroll": 1065.55
+   "bankroll": 1065.54
   },
   {
    "date": "2026-10-10",
@@ -12332,11 +12332,11 @@
   },
   {
    "date": "2026-10-11",
-   "bankroll": 1084.83
+   "bankroll": 1084.82
   },
   {
    "date": "2026-10-13",
-   "bankroll": 1078.55
+   "bankroll": 1078.54
   },
   {
    "date": "2026-10-13",
@@ -12356,43 +12356,43 @@
   },
   {
    "date": "2026-10-16",
-   "bankroll": 1082.26
+   "bankroll": 1082.25
   },
   {
    "date": "2026-10-17",
-   "bankroll": 1087.05
+   "bankroll": 1087.04
   },
   {
    "date": "2026-10-17",
-   "bankroll": 1084.78
+   "bankroll": 1084.77
   },
   {
    "date": "2026-10-17",
-   "bankroll": 1079.13
+   "bankroll": 1079.12
   },
   {
    "date": "2026-10-17",
-   "bankroll": 1077.0
+   "bankroll": 1076.99
   },
   {
    "date": "2026-10-17",
-   "bankroll": 1075.21
+   "bankroll": 1075.2
   },
   {
    "date": "2026-10-17",
-   "bankroll": 1068.77
+   "bankroll": 1068.76
   },
   {
    "date": "2026-10-17",
-   "bankroll": 1085.29
+   "bankroll": 1085.28
   },
   {
    "date": "2026-10-17",
-   "bankroll": 1081.31
+   "bankroll": 1081.3
   },
   {
    "date": "2026-10-18",
-   "bankroll": 1078.6
+   "bankroll": 1078.59
   },
   {
    "date": "2026-10-18",
@@ -12404,15 +12404,15 @@
   },
   {
    "date": "2026-10-18",
-   "bankroll": 1100.42
+   "bankroll": 1100.41
   },
   {
    "date": "2026-10-18",
-   "bankroll": 1096.61
+   "bankroll": 1096.6
   },
   {
    "date": "2026-10-19",
-   "bankroll": 1093.31
+   "bankroll": 1093.3
   },
   {
    "date": "2026-10-19",
@@ -12428,23 +12428,23 @@
   },
   {
    "date": "2026-10-24",
-   "bankroll": 1133.94
+   "bankroll": 1133.93
   },
   {
    "date": "2026-10-24",
-   "bankroll": 1131.95
+   "bankroll": 1131.94
   },
   {
    "date": "2026-10-24",
-   "bankroll": 1127.77
+   "bankroll": 1127.76
   },
   {
    "date": "2026-10-24",
-   "bankroll": 1122.83
+   "bankroll": 1122.82
   },
   {
    "date": "2026-10-24",
-   "bankroll": 1121.39
+   "bankroll": 1121.38
   },
   {
    "date": "2026-10-24",
@@ -12464,35 +12464,35 @@
   },
   {
    "date": "2026-10-25",
-   "bankroll": 1132.37
+   "bankroll": 1132.36
   },
   {
    "date": "2026-10-25",
-   "bankroll": 1125.23
+   "bankroll": 1125.22
   },
   {
    "date": "2026-10-25",
-   "bankroll": 1116.2
+   "bankroll": 1116.19
   },
   {
    "date": "2026-10-25",
-   "bankroll": 1113.1
+   "bankroll": 1113.09
   },
   {
    "date": "2026-10-25",
-   "bankroll": 1097.01
+   "bankroll": 1097.0
   },
   {
    "date": "2026-10-25",
-   "bankroll": 1084.33
+   "bankroll": 1084.32
   },
   {
    "date": "2026-10-26",
-   "bankroll": 1092.82
+   "bankroll": 1092.81
   },
   {
    "date": "2026-10-26",
-   "bankroll": 1100.11
+   "bankroll": 1100.1
   },
   {
    "date": "2026-10-28",
@@ -12512,7 +12512,7 @@
   },
   {
    "date": "2026-10-30",
-   "bankroll": 1102.29
+   "bankroll": 1102.28
   },
   {
    "date": "2026-10-30",
@@ -12520,23 +12520,23 @@
   },
   {
    "date": "2026-10-31",
-   "bankroll": 1134.37
+   "bankroll": 1134.36
   },
   {
    "date": "2026-10-31",
-   "bankroll": 1121.66
+   "bankroll": 1121.65
   },
   {
    "date": "2026-10-31",
-   "bankroll": 1134.54
+   "bankroll": 1134.53
   },
   {
    "date": "2026-10-31",
-   "bankroll": 1147.13
+   "bankroll": 1147.12
   },
   {
    "date": "2026-10-31",
-   "bankroll": 1159.26
+   "bankroll": 1159.25
   },
   {
    "date": "2026-10-31",
@@ -12556,11 +12556,11 @@
   },
   {
    "date": "2026-11-01",
-   "bankroll": 1179.97
+   "bankroll": 1179.96
   },
   {
    "date": "2026-11-01",
-   "bankroll": 1189.56
+   "bankroll": 1189.55
   },
   {
    "date": "2026-11-01",
@@ -12588,11 +12588,11 @@
   },
   {
    "date": "2026-11-04",
-   "bankroll": 1221.84
+   "bankroll": 1221.83
   },
   {
    "date": "2026-11-06",
-   "bankroll": 1215.98
+   "bankroll": 1215.97
   },
   {
    "date": "2026-11-06",
@@ -12628,7 +12628,7 @@
   },
   {
    "date": "2026-11-08",
-   "bankroll": 1256.97
+   "bankroll": 1256.96
   },
   {
    "date": "2026-11-08",
@@ -12644,19 +12644,19 @@
   },
   {
    "date": "2026-11-08",
-   "bankroll": 1270.65
+   "bankroll": 1270.64
   },
   {
    "date": "2026-11-08",
-   "bankroll": 1264.4
+   "bankroll": 1264.39
   },
   {
    "date": "2026-11-08",
-   "bankroll": 1276.83
+   "bankroll": 1276.82
   },
   {
    "date": "2026-11-08",
-   "bankroll": 1274.69
+   "bankroll": 1274.68
   }
  ]
 }
