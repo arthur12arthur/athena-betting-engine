@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-17T14:41:42+00:00",
+ "generated_at": "2026-11-17T23:54:32+00:00",
  "model": {
   "version": "athena-1.0-20261117",
-  "trained_at": "2026-11-17T14:40:35.333181",
+  "trained_at": "2026-11-17T23:53:21.305280",
   "w_dc": 0.2,
   "temperature": 0.86,
   "calibration": {
@@ -83,12 +83,22 @@
     2.2,
     1.0
    ],
+   "sharp_odds": {
+    "home": 1.09,
+    "away": 20.38,
+    "draw": 13.98
+   },
+   "sharp_handicap": {
+    "line": -1.75,
+    "home": 1.3,
+    "away": 3.43
+   },
    "ah": {
-    "line": 0.0,
-    "home": 0.9156,
-    "away": 0.0844,
-    "fair_home": 1.09,
-    "fair_away": 11.85
+    "line": -1.75,
+    "home": 0.6407,
+    "away": 0.3593,
+    "fair_home": 1.56,
+    "fair_away": 2.78
    }
   },
   {
@@ -139,6 +149,20 @@
     1.2,
     1.4
    ],
+   "sharp_odds": {
+    "home": 2.05,
+    "away": 3.23,
+    "draw": 4.0
+   },
+   "sharp_totals": {
+    "over": 1.47,
+    "under": 2.69
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.56,
+    "away": 2.47
+   },
    "ah": {
     "line": 0.0,
     "home": 0.5427,
@@ -195,13 +219,28 @@
     0.8,
     0.0
    ],
+   "sharp_odds": {
+    "home": 2.16,
+    "away": 3.49,
+    "draw": 3.56
+   },
+   "sharp_totals": {
+    "over": 1.89,
+    "under": 2.0
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.56,
+    "away": 2.54
+   },
    "ah": {
     "line": 0.0,
     "home": 0.5508,
     "away": 0.4492,
     "fair_home": 1.82,
     "fair_away": 2.23
-   }
+   },
+   "briefing": "Ce derby régional de Ligue 1 est crucial pour les deux équipes dans leur qu"
   },
   {
    "league": "SP1",
@@ -251,6 +290,20 @@
     1.6,
     1.0
    ],
+   "sharp_odds": {
+    "home": 1.48,
+    "away": 7.0,
+    "draw": 4.59
+   },
+   "sharp_totals": {
+    "over": 1.82,
+    "under": 2.08
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.17,
+    "away": 5.5
+   },
    "ah": {
     "line": 0.0,
     "home": 0.6724,
@@ -260,5 +313,31 @@
    }
   }
  ],
- "bets": []
+ "bets": [
+  {
+   "league": "F1",
+   "home": "Troyes",
+   "away": "Le Havre",
+   "kickoff": "2026-11-20",
+   "market": "OU25",
+   "selection": "under",
+   "line": 2.5,
+   "label": "Moins de 2,5 buts",
+   "price": 2.0,
+   "p_model": 0.6232,
+   "p_fair": 0.5261,
+   "p_sharp": 0.4845,
+   "edge": 0.0522,
+   "book": "pinnacle",
+   "n_books": 0,
+   "multi_book": false,
+   "stake_scale": 0.5,
+   "stake": 5.99,
+   "kelly_full": 0.0522,
+   "bet_id": "d4cdb711b87cf1",
+   "created_at": "2026-11-17T23:54:29+00:00",
+   "status": "open",
+   "pnl": 0.0
+  }
+ ]
 }

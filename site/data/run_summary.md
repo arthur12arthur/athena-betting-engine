@@ -1,15 +1,21 @@
-## 🏛️ ATHENA — exécution du 17/11/2026 14:41 UTC
+## 🏛️ ATHENA — exécution du 17/11/2026 23:54 UTC
 
-**Bankroll papier : 1042.71 u** (+42.71 u · ROI +17.58 %) · 48 paris réglés · 0 en cours · modèle `athena-1.0-20261117`
+**Bankroll papier : 1042.71 u** (+42.71 u · ROI +17.58 %) · 48 paris réglés · 1 en cours · modèle `athena-1.0-20261117`
 
 | Indicateur | Valeur |
 |---|---|
 | Matchs analysés | 4 |
-| Value bets placés | 0 |
+| Value bets placés | 1 |
 | Paris réglés ce run | 0 |
-| Exposition ouverte | 0.00 u |
+| Exposition ouverte | 5.99 u |
 | CLV moyen (cumulé) | +0.68 % |
 | Telegram | non configuré / désactivé |
+
+### 🎯 Value bets du jour
+
+| Match | Coup d'envoi | Marché | Cote | Edge | Mise | Source |
+|---|---|---|---|---|---|---|
+| Troyes – Le Havre | 2026-11-20 | Moins de 2,5 buts | **2.00** | +5.2 % | 5.99 u | sharp seul |
 
 ### 📈 Historique des pronostics
 
@@ -21,4 +27,4 @@
   - T1 : 6 matchs, 66.7 % de bons pronostics
   - SP1 : 6 matchs, 66.7 % de bons pronostics
 
-_durée 128 s · aucune mise réelle · 18+_
+_durée 90 s · aucune mise réelle · 18+_
