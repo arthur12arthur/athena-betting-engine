@@ -4,7 +4,7 @@
   "hit_rate": 0.5857,
   "logloss": 0.9611,
   "brier": 0.56953,
-  "n_total": 71,
+  "n_total": 75,
   "by_league": [
    {
     "league": "E1",
@@ -73,7 +73,7 @@
   "hit_rate": 0.5857,
   "logloss": 0.9611,
   "brier": 0.56953,
-  "n_total": 71,
+  "n_total": 75,
   "by_league": [
    {
     "league": "E1",
