@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-18T14:18:50+00:00",
+ "generated_at": "2026-11-18T23:28:15+00:00",
  "model": {
   "version": "athena-1.0-20261118",
-  "trained_at": "2026-11-18T14:17:30.429021",
+  "trained_at": "2026-11-18T23:26:43.799233",
   "w_dc": 0.2,
   "temperature": 0.86,
   "calibration": {
@@ -84,21 +84,21 @@
     1.0
    ],
    "sharp_odds": {
-    "home": 1.09,
-    "away": 21.18,
-    "draw": 14.3
+    "home": 1.08,
+    "away": 21.68,
+    "draw": 14.53
    },
    "sharp_handicap": {
-    "line": -1.75,
-    "home": 1.28,
-    "away": 3.59
+    "line": -2.0,
+    "home": 1.32,
+    "away": 3.32
    },
    "ah": {
-    "line": -1.75,
-    "home": 0.6407,
-    "away": 0.3593,
-    "fair_home": 1.56,
-    "fair_away": 2.78
+    "line": -2.0,
+    "home": 0.5892,
+    "away": 0.4108,
+    "fair_home": 1.7,
+    "fair_away": 2.43
    }
   },
   {
@@ -220,18 +220,18 @@
     0.0
    ],
    "sharp_odds": {
-    "home": 2.19,
-    "away": 3.44,
-    "draw": 3.53
+    "home": 2.24,
+    "away": 3.4,
+    "draw": 3.45
    },
    "sharp_totals": {
-    "over": 1.91,
-    "under": 1.98
+    "over": 1.93,
+    "under": 1.96
    },
    "sharp_handicap": {
     "line": 0.0,
-    "home": 1.59,
-    "away": 2.51
+    "home": 1.61,
+    "away": 2.45
    },
    "ah": {
     "line": 0.0,
@@ -379,8 +379,7 @@
     "away": 0.4027,
     "fair_home": 1.67,
     "fair_away": 2.48
-   },
-   "briefing": "Ce match de Süper Lig turque est crucial pour les deux équipes"
+   }
   },
   {
    "league": "E1",
@@ -450,8 +449,7 @@
     "away": 0.4332,
     "fair_home": 1.76,
     "fair_away": 2.31
-   },
-   "briefing": "Ce derby londonien en Championship s'annonce disputé, avec"
+   }
   },
   {
    "league": "E1",
@@ -521,8 +519,7 @@
     "away": 0.2878,
     "fair_home": 1.4,
     "fair_away": 3.48
-   },
-   "briefing": "Ce match de Championship est crucial pour les ambitions de Norwich à domicile et pour"
+   }
   },
   {
    "league": "E0",
@@ -574,17 +571,17 @@
    ],
    "sharp_odds": {
     "home": 1.42,
-    "away": 6.98,
-    "draw": 5.37
+    "away": 7.0,
+    "draw": 5.32
    },
    "sharp_totals": {
     "over": 1.48,
-    "under": 2.69
+    "under": 2.68
    },
    "sharp_handicap": {
     "line": -0.25,
-    "home": 1.28,
-    "away": 3.89
+    "home": 1.29,
+    "away": 3.88
    },
    "ah": {
     "line": -0.25,
@@ -713,25 +710,25 @@
     0.6
    ],
    "sharp_odds": {
-    "home": 1.22,
-    "away": 10.38,
-    "draw": 6.87
+    "home": 1.23,
+    "away": 10.0,
+    "draw": 6.7
    },
    "sharp_totals": {
-    "over": 1.33,
-    "under": 3.24
+    "over": 1.34,
+    "under": 3.18
    },
    "sharp_handicap": {
-    "line": -1.0,
-    "home": 1.29,
-    "away": 3.52
+    "line": -0.75,
+    "home": 1.26,
+    "away": 3.8
    },
    "ah": {
-    "line": -1.0,
-    "home": 0.7272,
-    "away": 0.2728,
-    "fair_home": 1.38,
-    "fair_away": 3.67
+    "line": -0.75,
+    "home": 0.7871,
+    "away": 0.2129,
+    "fair_home": 1.27,
+    "fair_away": 4.7
    }
   },
   {
@@ -802,8 +799,7 @@
     "away": 0.4163,
     "fair_home": 1.71,
     "fair_away": 2.4
-   },
-   "briefing": "Ce match de LaLiga représente une opportunité importante pour les deux équipes de gl"
+   }
   },
   {
    "league": "T1",
@@ -873,8 +869,7 @@
     "away": 0.3334,
     "fair_home": 1.5,
     "fair_away": 3.0
-   },
-   "briefing": "Amedspor reçoit Rizespor pour un match de Süper"
+   }
   },
   {
    "league": "I1",
@@ -1064,6 +1059,20 @@
     0.8,
     1.8
    ],
+   "sharp_odds": {
+    "home": 5.23,
+    "away": 1.6,
+    "draw": 4.57
+   },
+   "sharp_totals": {
+    "over": 1.49,
+    "under": 2.66
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 4.12,
+    "away": 1.26
+   },
    "ah": {
     "line": 0.0,
     "home": 0.2629,
@@ -1120,6 +1129,20 @@
     1.4,
     1.8
    ],
+   "sharp_odds": {
+    "home": 2.42,
+    "away": 2.71,
+    "draw": 4.04
+   },
+   "sharp_totals": {
+    "over": 1.35,
+    "under": 3.23
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.83,
+    "away": 2.06
+   },
    "ah": {
     "line": 0.0,
     "home": 0.5646,
@@ -1176,6 +1199,20 @@
     1.2,
     1.8
    ],
+   "sharp_odds": {
+    "home": 3.66,
+    "away": 2.04,
+    "draw": 3.75
+   },
+   "sharp_totals": {
+    "over": 1.6,
+    "under": 2.44
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.72,
+    "away": 1.51
+   },
    "ah": {
     "line": 0.0,
     "home": 0.4535,
@@ -1232,6 +1269,20 @@
     1.2,
     2.4
    ],
+   "sharp_odds": {
+    "home": 5.57,
+    "away": 1.55,
+    "draw": 4.77
+   },
+   "sharp_totals": {
+    "over": 1.44,
+    "under": 2.82
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 4.43,
+    "away": 1.24
+   },
    "ah": {
     "line": 0.0,
     "home": 0.3837,
@@ -1288,13 +1339,28 @@
     1.8,
     1.2
    ],
+   "sharp_odds": {
+    "home": 1.3,
+    "away": 7.99,
+    "draw": 6.76
+   },
+   "sharp_totals": {
+    "over": 1.35,
+    "under": 3.23
+   },
+   "sharp_handicap": {
+    "line": -0.75,
+    "home": 1.34,
+    "away": 3.37
+   },
    "ah": {
-    "line": 0.0,
-    "home": 0.7961,
-    "away": 0.2039,
-    "fair_home": 1.26,
-    "fair_away": 4.9
-   }
+    "line": -0.75,
+    "home": 0.6258,
+    "away": 0.3742,
+    "fair_home": 1.6,
+    "fair_away": 2.67
+   },
+   "briefing": "Leverkusen cherchera à consolider sa position en tête de classement face"
   },
   {
    "league": "E1",
@@ -1344,6 +1410,20 @@
     0.6,
     2.2
    ],
+   "sharp_odds": {
+    "home": 2.6,
+    "away": 2.78,
+    "draw": 3.31
+   },
+   "sharp_totals": {
+    "over": 2.03,
+    "under": 1.81
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.86,
+    "away": 1.99
+   },
    "ah": {
     "line": 0.0,
     "home": 0.5623,
@@ -1400,6 +1480,20 @@
     0.8,
     1.8
    ],
+   "sharp_odds": {
+    "home": 1.94,
+    "away": 3.64,
+    "draw": 3.87
+   },
+   "sharp_totals": {
+    "over": 1.61,
+    "under": 2.34
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.46,
+    "away": 2.76
+   },
    "ah": {
     "line": 0.0,
     "home": 0.5654,
@@ -1456,12 +1550,26 @@
     2.0,
     0.8
    ],
+   "sharp_odds": {
+    "home": 1.17,
+    "away": 12.42,
+    "draw": 8.05
+   },
+   "sharp_totals": {
+    "over": 1.25,
+    "under": 3.75
+   },
+   "sharp_handicap": {
+    "line": -1.25,
+    "home": 1.33,
+    "away": 3.22
+   },
    "ah": {
-    "line": 0.0,
-    "home": 0.9167,
-    "away": 0.0833,
-    "fair_home": 1.09,
-    "fair_away": 12.0
+    "line": -1.25,
+    "home": 0.6952,
+    "away": 0.3048,
+    "fair_home": 1.44,
+    "fair_away": 3.28
    }
   },
   {
@@ -1512,6 +1620,20 @@
     3.0,
     1.2
    ],
+   "sharp_odds": {
+    "home": 1.82,
+    "away": 4.32,
+    "draw": 3.72
+   },
+   "sharp_totals": {
+    "over": 1.75,
+    "under": 2.11
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.36,
+    "away": 3.25
+   },
    "ah": {
     "line": 0.0,
     "home": 0.6801,
@@ -1568,6 +1690,20 @@
     2.6,
     2.4
    ],
+   "sharp_odds": {
+    "home": 2.95,
+    "away": 2.49,
+    "draw": 3.27
+   },
+   "sharp_totals": {
+    "over": 2.08,
+    "under": 1.77
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.11,
+    "away": 1.78
+   },
    "ah": {
     "line": 0.0,
     "home": 0.5216,
@@ -1624,6 +1760,20 @@
     0.8,
     0.6
    ],
+   "sharp_odds": {
+    "home": 2.69,
+    "away": 2.54,
+    "draw": 3.56
+   },
+   "sharp_totals": {
+    "over": 1.65,
+    "under": 2.27
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.99,
+    "away": 1.87
+   },
    "ah": {
     "line": 0.0,
     "home": 0.5466,
@@ -1680,12 +1830,26 @@
     2.2,
     0.6
    ],
+   "sharp_odds": {
+    "home": 1.32,
+    "away": 8.79,
+    "draw": 5.49
+   },
+   "sharp_totals": {
+    "over": 1.6,
+    "under": 2.35
+   },
+   "sharp_handicap": {
+    "line": -0.5,
+    "home": 1.31,
+    "away": 3.5
+   },
    "ah": {
-    "line": 0.0,
-    "home": 0.6412,
-    "away": 0.3588,
-    "fair_home": 1.56,
-    "fair_away": 2.79
+    "line": -0.5,
+    "home": 0.4771,
+    "away": 0.5229,
+    "fair_home": 2.1,
+    "fair_away": 1.91
    }
   },
   {
@@ -1736,6 +1900,20 @@
     2.0,
     1.4
    ],
+   "sharp_odds": {
+    "home": 1.63,
+    "away": 5.19,
+    "draw": 4.08
+   },
+   "sharp_totals": {
+    "over": 1.8,
+    "under": 2.03
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.25,
+    "away": 4.0
+   },
    "ah": {
     "line": 0.0,
     "home": 0.6728,
@@ -1792,12 +1970,26 @@
     0.8,
     0.8
    ],
+   "sharp_odds": {
+    "home": 1.2,
+    "away": 11.77,
+    "draw": 7.32
+   },
+   "sharp_totals": {
+    "over": 1.35,
+    "under": 3.12
+   },
+   "sharp_handicap": {
+    "line": -1.0,
+    "home": 1.26,
+    "away": 3.87
+   },
    "ah": {
-    "line": 0.0,
-    "home": 0.8094,
-    "away": 0.1906,
-    "fair_home": 1.24,
-    "fair_away": 5.25
+    "line": -1.0,
+    "home": 0.6091,
+    "away": 0.3909,
+    "fair_home": 1.64,
+    "fair_away": 2.56
    }
   },
   {
@@ -1848,6 +2040,20 @@
     0.8,
     1.4
    ],
+   "sharp_odds": {
+    "home": 2.84,
+    "away": 2.61,
+    "draw": 3.21
+   },
+   "sharp_totals": {
+    "over": 2.1,
+    "under": 1.75
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.01,
+    "away": 1.85
+   },
    "ah": {
     "line": 0.0,
     "home": 0.5649,
@@ -1904,6 +2110,20 @@
     0.8,
     1.6
    ],
+   "sharp_odds": {
+    "home": 2.77,
+    "away": 2.58,
+    "draw": 3.37
+   },
+   "sharp_totals": {
+    "over": 1.86,
+    "under": 1.98
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.0,
+    "away": 1.85
+   },
    "ah": {
     "line": 0.0,
     "home": 0.4324,
@@ -1960,13 +2180,28 @@
     2.4,
     0.6
    ],
+   "sharp_odds": {
+    "home": 2.03,
+    "away": 3.37,
+    "draw": 3.85
+   },
+   "sharp_totals": {
+    "over": 1.53,
+    "under": 2.52
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.53,
+    "away": 2.55
+   },
    "ah": {
     "line": 0.0,
     "home": 0.7484,
     "away": 0.2516,
     "fair_home": 1.34,
     "fair_away": 3.98
-   }
+   },
+   "briefing": "Ce match de Pro League représente une opportunité cruciale pour Charleroi"
   },
   {
    "league": "E0",
@@ -2016,13 +2251,28 @@
     2.0,
     1.0
    ],
+   "sharp_odds": {
+    "home": 1.56,
+    "away": 5.79,
+    "draw": 4.54
+   },
+   "sharp_totals": {
+    "over": 1.61,
+    "under": 2.42
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.23,
+    "away": 4.54
+   },
    "ah": {
     "line": 0.0,
     "home": 0.5493,
     "away": 0.4507,
     "fair_home": 1.82,
     "fair_away": 2.22
-   }
+   },
+   "briefing": "Tottenham visera à consolider sa place européenne face à un Ipswich qui lutte pour"
   },
   {
    "league": "E0",
@@ -2072,6 +2322,20 @@
     2.4,
     0.8
    ],
+   "sharp_odds": {
+    "home": 1.95,
+    "away": 4.05,
+    "draw": 3.68
+   },
+   "sharp_totals": {
+    "over": 1.89,
+    "under": 2.01
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.43,
+    "away": 3.0
+   },
    "ah": {
     "line": 0.0,
     "home": 0.629,
@@ -2128,6 +2392,20 @@
     1.8,
     0.8
    ],
+   "sharp_odds": {
+    "home": 1.85,
+    "away": 4.35,
+    "draw": 3.81
+   },
+   "sharp_totals": {
+    "over": 1.78,
+    "under": 2.12
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.37,
+    "away": 3.24
+   },
    "ah": {
     "line": 0.0,
     "home": 0.7007,
@@ -2184,12 +2462,26 @@
     1.6,
     0.8
    ],
+   "sharp_odds": {
+    "home": 1.39,
+    "away": 7.16,
+    "draw": 5.14
+   },
+   "sharp_totals": {
+    "over": 1.53,
+    "under": 2.51
+   },
+   "sharp_handicap": {
+    "line": -0.25,
+    "home": 1.26,
+    "away": 3.93
+   },
    "ah": {
-    "line": 0.0,
-    "home": 0.8064,
-    "away": 0.1936,
-    "fair_home": 1.24,
-    "fair_away": 5.17
+    "line": -0.25,
+    "home": 0.7611,
+    "away": 0.2389,
+    "fair_home": 1.31,
+    "fair_away": 4.19
    }
   },
   {
@@ -2240,6 +2532,20 @@
     1.8,
     1.0
    ],
+   "sharp_odds": {
+    "home": 1.91,
+    "away": 4.05,
+    "draw": 3.82
+   },
+   "sharp_totals": {
+    "over": 1.79,
+    "under": 2.1
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.43,
+    "away": 3.03
+   },
    "ah": {
     "line": 0.0,
     "home": 0.6018,
@@ -2296,13 +2602,28 @@
     1.2,
     0.6
    ],
+   "sharp_odds": {
+    "home": 2.52,
+    "away": 2.8,
+    "draw": 3.62
+   },
+   "sharp_totals": {
+    "over": 1.72,
+    "under": 2.21
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.85,
+    "away": 2.06
+   },
    "ah": {
     "line": 0.0,
     "home": 0.6259,
     "away": 0.3741,
     "fair_home": 1.6,
     "fair_away": 2.67
-   }
+   },
+   "briefing": "Coventry et Crystal Palace s'affrontent pour des points cruciaux en"
   },
   {
    "league": "SP1",
@@ -2352,6 +2673,20 @@
     1.0,
     1.0
    ],
+   "sharp_odds": {
+    "home": 1.95,
+    "away": 4.16,
+    "draw": 3.58
+   },
+   "sharp_totals": {
+    "over": 2.04,
+    "under": 1.83
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.42,
+    "away": 3.04
+   },
    "ah": {
     "line": 0.0,
     "home": 0.6422,
@@ -2408,6 +2743,20 @@
     1.2,
     2.0
    ],
+   "sharp_odds": {
+    "home": 3.95,
+    "away": 1.75,
+    "draw": 4.4
+   },
+   "sharp_totals": {
+    "over": 1.31,
+    "under": 3.42
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 3.11,
+    "away": 1.37
+   },
    "ah": {
     "line": 0.0,
     "home": 0.278,
@@ -2464,6 +2813,20 @@
     1.4,
     1.8
    ],
+   "sharp_odds": {
+    "home": 5.77,
+    "away": 1.53,
+    "draw": 4.38
+   },
+   "sharp_totals": {
+    "over": 1.7,
+    "under": 2.18
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 4.54,
+    "away": 1.21
+   },
    "ah": {
     "line": 0.0,
     "home": 0.3072,
@@ -2520,12 +2883,26 @@
     2.4,
     1.8
    ],
+   "sharp_odds": {
+    "home": 6.09,
+    "away": 1.47,
+    "draw": 5.21
+   },
+   "sharp_totals": {
+    "over": 1.4,
+    "under": 2.98
+   },
+   "sharp_handicap": {
+    "line": 0.25,
+    "home": 3.52,
+    "away": 1.33
+   },
    "ah": {
-    "line": 0.0,
-    "home": 0.4062,
-    "away": 0.5938,
-    "fair_home": 2.46,
-    "fair_away": 1.68
+    "line": 0.25,
+    "home": 0.4811,
+    "away": 0.5189,
+    "fair_home": 2.08,
+    "fair_away": 1.93
    }
   },
   {
@@ -2576,12 +2953,26 @@
     0.8,
     2.6
    ],
+   "sharp_odds": {
+    "home": 9.85,
+    "away": 1.31,
+    "draw": 5.91
+   },
+   "sharp_totals": {
+    "over": 1.55,
+    "under": 2.55
+   },
+   "sharp_handicap": {
+    "line": 0.5,
+    "home": 3.77,
+    "away": 1.3
+   },
    "ah": {
-    "line": 0.0,
-    "home": 0.2008,
-    "away": 0.7992,
-    "fair_home": 4.98,
-    "fair_away": 1.25
+    "line": 0.5,
+    "home": 0.2967,
+    "away": 0.7033,
+    "fair_home": 3.37,
+    "fair_away": 1.42
    }
   },
   {
@@ -2632,12 +3023,26 @@
     1.2,
     0.6
    ],
+   "sharp_odds": {
+    "home": 1.46,
+    "away": 6.24,
+    "draw": 4.78
+   },
+   "sharp_totals": {
+    "over": 1.57,
+    "under": 2.42
+   },
+   "sharp_handicap": {
+    "line": -0.25,
+    "home": 1.31,
+    "away": 3.48
+   },
    "ah": {
-    "line": 0.0,
-    "home": 0.7451,
-    "away": 0.2549,
-    "fair_home": 1.34,
-    "fair_away": 3.92
+    "line": -0.25,
+    "home": 0.6777,
+    "away": 0.3223,
+    "fair_home": 1.48,
+    "fair_away": 3.1
    }
   },
   {
@@ -2688,6 +3093,20 @@
     0.8,
     3.0
    ],
+   "sharp_odds": {
+    "home": 5.8,
+    "away": 1.58,
+    "draw": 4.32
+   },
+   "sharp_totals": {
+    "over": 1.74,
+    "under": 2.18
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 4.49,
+    "away": 1.23
+   },
    "ah": {
     "line": 0.0,
     "home": 0.265,
@@ -2744,6 +3163,20 @@
     1.0,
     2.0
    ],
+   "sharp_odds": {
+    "home": 2.99,
+    "away": 2.4,
+    "draw": 3.57
+   },
+   "sharp_totals": {
+    "over": 1.8,
+    "under": 2.09
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.18,
+    "away": 1.75
+   },
    "ah": {
     "line": 0.0,
     "home": 0.4471,
@@ -2800,12 +3233,26 @@
     1.6,
     2.4
    ],
+   "sharp_odds": {
+    "home": 7.6,
+    "away": 1.35,
+    "draw": 5.31
+   },
+   "sharp_totals": {
+    "over": 1.5,
+    "under": 2.37
+   },
+   "sharp_handicap": {
+    "line": 0.25,
+    "home": 4.16,
+    "away": 1.23
+   },
    "ah": {
-    "line": 0.0,
-    "home": 0.235,
-    "away": 0.765,
-    "fair_home": 4.26,
-    "fair_away": 1.31
+    "line": 0.25,
+    "home": 0.2783,
+    "away": 0.7217,
+    "fair_home": 3.59,
+    "fair_away": 1.39
    }
   },
   {
@@ -2856,6 +3303,20 @@
     0.2,
     1.8
    ],
+   "sharp_odds": {
+    "home": 4.08,
+    "away": 1.82,
+    "draw": 4.22
+   },
+   "sharp_totals": {
+    "over": 1.47,
+    "under": 2.72
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 3.13,
+    "away": 1.39
+   },
    "ah": {
     "line": 0.0,
     "home": 0.4068,
@@ -2912,6 +3373,20 @@
     1.4,
     1.4
    ],
+   "sharp_odds": {
+    "home": 3.44,
+    "away": 2.03,
+    "draw": 3.78
+   },
+   "sharp_totals": {
+    "over": 1.63,
+    "under": 2.3
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 2.59,
+    "away": 1.52
+   },
    "ah": {
     "line": 0.0,
     "home": 0.4143,
@@ -2968,12 +3443,26 @@
     1.6,
     0.0
    ],
+   "sharp_odds": {
+    "home": 1.19,
+    "away": 10.63,
+    "draw": 7.96
+   },
+   "sharp_totals": {
+    "over": 1.31,
+    "under": 3.37
+   },
+   "sharp_handicap": {
+    "line": -1.0,
+    "home": 1.25,
+    "away": 3.89
+   },
    "ah": {
-    "line": 0.0,
-    "home": 0.8647,
-    "away": 0.1353,
-    "fair_home": 1.16,
-    "fair_away": 7.39
+    "line": -1.0,
+    "home": 0.6864,
+    "away": 0.3136,
+    "fair_home": 1.46,
+    "fair_away": 3.19
    }
   },
   {
@@ -3024,6 +3513,20 @@
     1.4,
     2.0
    ],
+   "sharp_odds": {
+    "home": 1.92,
+    "away": 3.52,
+    "draw": 4.09
+   },
+   "sharp_totals": {
+    "over": 1.43,
+    "under": 2.81
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.47,
+    "away": 2.72
+   },
    "ah": {
     "line": 0.0,
     "home": 0.6552,
@@ -3080,6 +3583,20 @@
     1.8,
     1.6
    ],
+   "sharp_odds": {
+    "home": 1.86,
+    "away": 3.94,
+    "draw": 4.14
+   },
+   "sharp_totals": {
+    "over": 1.67,
+    "under": 2.3
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.43,
+    "away": 3.03
+   },
    "ah": {
     "line": 0.0,
     "home": 0.5817,
@@ -3136,12 +3653,26 @@
     2.0,
     2.6
    ],
+   "sharp_odds": {
+    "home": 6.9,
+    "away": 1.38,
+    "draw": 5.43
+   },
+   "sharp_totals": {
+    "over": 1.38,
+    "under": 3.02
+   },
+   "sharp_handicap": {
+    "line": 0.5,
+    "home": 3.13,
+    "away": 1.37
+   },
    "ah": {
-    "line": 0.0,
-    "home": 0.1792,
-    "away": 0.8208,
-    "fair_home": 5.58,
-    "fair_away": 1.22
+    "line": 0.5,
+    "home": 0.2637,
+    "away": 0.7363,
+    "fair_home": 3.79,
+    "fair_away": 1.36
    }
   },
   {
@@ -3192,6 +3723,20 @@
     2.2,
     1.2
    ],
+   "sharp_odds": {
+    "home": 2.36,
+    "away": 3.27,
+    "draw": 3.33
+   },
+   "sharp_totals": {
+    "over": 2.07,
+    "under": 1.83
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.67,
+    "away": 2.32
+   },
    "ah": {
     "line": 0.0,
     "home": 0.6109,
@@ -3248,6 +3793,20 @@
     0.6,
     2.0
    ],
+   "sharp_odds": {
+    "home": 2.26,
+    "away": 3.1,
+    "draw": 3.78
+   },
+   "sharp_totals": {
+    "over": 1.69,
+    "under": 2.26
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.68,
+    "away": 2.31
+   },
    "ah": {
     "line": 0.0,
     "home": 0.6219,
@@ -3304,12 +3863,26 @@
     1.0,
     1.4
    ],
+   "sharp_odds": {
+    "home": 1.49,
+    "away": 6.57,
+    "draw": 4.71
+   },
+   "sharp_totals": {
+    "over": 1.7,
+    "under": 2.23
+   },
+   "sharp_handicap": {
+    "line": -0.25,
+    "home": 1.33,
+    "away": 3.51
+   },
    "ah": {
-    "line": 0.0,
-    "home": 0.7743,
-    "away": 0.2257,
-    "fair_home": 1.29,
-    "fair_away": 4.43
+    "line": -0.25,
+    "home": 0.7139,
+    "away": 0.2861,
+    "fair_home": 1.4,
+    "fair_away": 3.5
    }
   },
   {
@@ -3360,12 +3933,26 @@
     0.6,
     0.8
    ],
+   "sharp_odds": {
+    "home": 1.42,
+    "away": 7.22,
+    "draw": 5.21
+   },
+   "sharp_totals": {
+    "over": 1.54,
+    "under": 2.6
+   },
+   "sharp_handicap": {
+    "line": -0.25,
+    "home": 1.28,
+    "away": 3.91
+   },
    "ah": {
-    "line": 0.0,
-    "home": 0.7063,
-    "away": 0.2937,
-    "fair_home": 1.42,
-    "fair_away": 3.41
+    "line": -0.25,
+    "home": 0.6211,
+    "away": 0.3789,
+    "fair_home": 1.61,
+    "fair_away": 2.64
    }
   },
   {
@@ -3416,6 +4003,20 @@
     0.0,
     0.8
    ],
+   "sharp_odds": {
+    "home": 2.19,
+    "away": 3.19,
+    "draw": 3.6
+   },
+   "sharp_totals": {
+    "over": 1.74,
+    "under": 2.12
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.61,
+    "away": 2.36
+   },
    "ah": {
     "line": 0.0,
     "home": 0.5229,
@@ -3472,6 +4073,20 @@
     1.0,
     1.6
    ],
+   "sharp_odds": {
+    "home": 2.07,
+    "away": 3.43,
+    "draw": 3.65
+   },
+   "sharp_totals": {
+    "over": 1.66,
+    "under": 2.24
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.53,
+    "away": 2.56
+   },
    "ah": {
     "line": 0.0,
     "home": 0.5355,
@@ -3528,13 +4143,28 @@
     0.8,
     2.4
    ],
+   "sharp_odds": {
+    "home": 2.4,
+    "away": 2.72,
+    "draw": 3.82
+   },
+   "sharp_totals": {
+    "over": 1.41,
+    "under": 2.89
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 1.81,
+    "away": 2.06
+   },
    "ah": {
     "line": 0.0,
     "home": 0.4299,
     "away": 0.5701,
     "fair_home": 2.33,
     "fair_away": 1.75
-   }
+   },
+   "briefing": "Ce derby du Nord en Eredivisie promet une bataille intense pour"
   },
   {
    "league": "SC0",
@@ -3584,13 +4214,28 @@
     1.0,
     2.2
    ],
+   "sharp_odds": {
+    "home": 5.09,
+    "away": 1.56,
+    "draw": 4.67
+   },
+   "sharp_totals": {
+    "over": 1.55,
+    "under": 2.48
+   },
+   "sharp_handicap": {
+    "line": 0.0,
+    "home": 4.07,
+    "away": 1.25
+   },
    "ah": {
     "line": 0.0,
     "home": 0.4054,
     "away": 0.5946,
     "fair_home": 2.47,
     "fair_away": 1.68
-   }
+   },
+   "briefing": "Les Rangers chercheront à consolider leur position en tête de classement,"
   },
   {
    "league": "SP1",
@@ -3640,138 +4285,227 @@
     3.0,
     1.2
    ],
+   "sharp_odds": {
+    "home": 1.18,
+    "away": 16.28,
+    "draw": 7.52
+   },
+   "sharp_totals": {
+    "over": 1.37,
+    "under": 3.02
+   },
+   "sharp_handicap": {
+    "line": -1.0,
+    "home": 1.22,
+    "away": 4.2
+   },
    "ah": {
-    "line": 0.0,
-    "home": 0.9323,
-    "away": 0.0677,
-    "fair_home": 1.07,
-    "fair_away": 14.77
+    "line": -1.0,
+    "home": 0.7835,
+    "away": 0.2165,
+    "fair_home": 1.28,
+    "fair_away": 4.62
    }
   }
  ],
  "bets": [
   {
-   "league": "E1",
-   "home": "Millwall",
-   "away": "QPR",
+   "league": "D1",
+   "home": "Leverkusen",
+   "away": "Paderborn",
    "kickoff": "2026-11-21",
    "market": "1X2",
    "selection": "draw",
    "line": null,
    "label": "X (nul)",
-   "price": 3.52,
-   "p_model": 0.4018,
-   "p_fair": 0.3089,
-   "p_sharp": 0.2691,
-   "edge": 0.0874,
+   "price": 6.76,
+   "p_model": 0.2319,
+   "p_fair": 0.1622,
+   "p_sharp": 0.1323,
+   "edge": 0.0964,
    "book": "pinnacle",
    "n_books": 0,
    "multi_book": false,
    "stake_scale": 0.5,
-   "stake": 3.98,
-   "kelly_full": 0.0347,
-   "bet_id": "7b465ac1e19102",
-   "created_at": "2026-11-18T14:18:38+00:00",
+   "stake": 1.92,
+   "kelly_full": 0.0167,
+   "bet_id": "d35d42e988b3bf",
+   "created_at": "2026-11-18T23:27:59+00:00",
    "status": "open",
    "pnl": 0.0
   },
   {
-   "league": "T1",
-   "home": "Amedspor",
-   "away": "Rizespor",
+   "league": "SC0",
+   "home": "Motherwell",
+   "away": "Rangers",
    "kickoff": "2026-11-21",
    "market": "1X2",
    "selection": "draw",
    "line": null,
    "label": "X (nul)",
-   "price": 4.23,
-   "p_model": 0.336,
-   "p_fair": 0.254,
-   "p_sharp": 0.2189,
-   "edge": 0.0745,
+   "price": 4.67,
+   "p_model": 0.3118,
+   "p_fair": 0.2303,
+   "p_sharp": 0.1954,
+   "edge": 0.0757,
    "book": "pinnacle",
    "n_books": 0,
    "multi_book": false,
    "stake_scale": 0.5,
-   "stake": 2.65,
-   "kelly_full": 0.023,
-   "bet_id": "97d49e5da8788c",
-   "created_at": "2026-11-18T14:18:38+00:00",
+   "stake": 2.36,
+   "kelly_full": 0.0206,
+   "bet_id": "c3b0fe7658a904",
+   "created_at": "2026-11-18T23:27:59+00:00",
    "status": "open",
    "pnl": 0.0
   },
   {
-   "league": "SP1",
-   "home": "Alaves",
-   "away": "La Coruna",
+   "league": "B1",
+   "home": "Charleroi",
+   "away": "St Truiden",
    "kickoff": "2026-11-21",
    "market": "1X2",
-   "selection": "draw",
+   "selection": "home",
    "line": null,
-   "label": "X (nul)",
-   "price": 3.42,
-   "p_model": 0.382,
-   "p_fair": 0.312,
-   "p_sharp": 0.2821,
-   "edge": 0.0672,
+   "label": "1 (domicile)",
+   "price": 2.03,
+   "p_model": 0.6399,
+   "p_fair": 0.5254,
+   "p_sharp": 0.4763,
+   "edge": 0.0665,
    "book": "pinnacle",
    "n_books": 0,
    "multi_book": false,
    "stake_scale": 0.5,
-   "stake": 3.17,
-   "kelly_full": 0.0277,
-   "bet_id": "22c86373a9fc9f",
-   "created_at": "2026-11-18T14:18:38+00:00",
+   "stake": 7.41,
+   "kelly_full": 0.0646,
+   "bet_id": "2edf7811fe63cb",
+   "created_at": "2026-11-18T23:27:59+00:00",
    "status": "open",
    "pnl": 0.0
   },
   {
-   "league": "T1",
-   "home": "Genclerbirligi",
-   "away": "Gaziantep",
+   "league": "E0",
+   "home": "Tottenham",
+   "away": "Ipswich",
+   "kickoff": "2026-11-21",
+   "market": "OU25",
+   "selection": "under",
+   "line": 2.5,
+   "label": "Moins de 2,5 buts",
+   "price": 2.42,
+   "p_model": 0.536,
+   "p_fair": 0.4363,
+   "p_sharp": 0.3935,
+   "edge": 0.0557,
+   "book": "pinnacle",
+   "n_books": 0,
+   "multi_book": false,
+   "stake_scale": 0.5,
+   "stake": 4.51,
+   "kelly_full": 0.0393,
+   "bet_id": "d2d353570e7e07",
+   "created_at": "2026-11-18T23:27:59+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "E0",
+   "home": "Coventry",
+   "away": "Crystal Palace",
    "kickoff": "2026-11-21",
    "market": "1X2",
    "selection": "draw",
    "line": null,
    "label": "X (nul)",
-   "price": 3.54,
-   "p_model": 0.3675,
-   "p_fair": 0.2972,
-   "p_sharp": 0.2671,
-   "edge": 0.0522,
+   "price": 3.62,
+   "p_model": 0.3487,
+   "p_fair": 0.2911,
+   "p_sharp": 0.2664,
+   "edge": 0.0537,
    "book": "pinnacle",
    "n_books": 0,
    "multi_book": false,
    "stake_scale": 0.5,
    "stake": 2.35,
    "kelly_full": 0.0205,
-   "bet_id": "dd7a5dc3cbd6e7",
-   "created_at": "2026-11-18T14:18:38+00:00",
+   "bet_id": "fa37a69960677b",
+   "created_at": "2026-11-18T23:27:59+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "N1",
+   "home": "Groningen",
+   "away": "Heerenveen",
+   "kickoff": "2026-11-21",
+   "market": "1X2",
+   "selection": "draw",
+   "line": null,
+   "label": "X (nul)",
+   "price": 3.82,
+   "p_model": 0.3429,
+   "p_fair": 0.2757,
+   "p_sharp": 0.2469,
+   "edge": 0.0532,
+   "book": "pinnacle",
+   "n_books": 0,
+   "multi_book": false,
+   "stake_scale": 0.5,
+   "stake": 2.17,
+   "kelly_full": 0.0189,
+   "bet_id": "27f1d7c93d31c9",
+   "created_at": "2026-11-18T23:27:59+00:00",
    "status": "open",
    "pnl": 0.0
   },
   {
    "league": "E1",
-   "home": "Norwich",
-   "away": "Cardiff",
+   "home": "Wolves",
+   "away": "Charlton",
    "kickoff": "2026-11-21",
    "market": "OU25",
    "selection": "under",
    "line": 2.5,
    "label": "Moins de 2,5 buts",
-   "price": 3.1,
-   "p_model": 0.4553,
-   "p_fair": 0.3393,
-   "p_sharp": 0.2896,
-   "edge": 0.0518,
+   "price": 2.35,
+   "p_model": 0.561,
+   "p_fair": 0.4471,
+   "p_sharp": 0.3983,
+   "edge": 0.0507,
    "book": "pinnacle",
    "n_books": 0,
    "multi_book": false,
    "stake_scale": 0.5,
-   "stake": 2.83,
-   "kelly_full": 0.0247,
-   "bet_id": "0fdb3ce569c779",
-   "created_at": "2026-11-18T14:18:38+00:00",
+   "stake": 4.3,
+   "kelly_full": 0.0375,
+   "bet_id": "3a513b08a4af2d",
+   "created_at": "2026-11-18T23:27:59+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "B1",
+   "home": "Waregem",
+   "away": "Antwerp",
+   "kickoff": "2026-11-21",
+   "market": "1X2",
+   "selection": "draw",
+   "line": null,
+   "label": "X (nul)",
+   "price": 3.6,
+   "p_model": 0.3604,
+   "p_fair": 0.2915,
+   "p_sharp": 0.262,
+   "edge": 0.0495,
+   "book": "pinnacle",
+   "n_books": 0,
+   "multi_book": false,
+   "stake_scale": 0.5,
+   "stake": 2.18,
+   "kelly_full": 0.019,
+   "bet_id": "578848b7e85833",
+   "created_at": "2026-11-18T23:27:59+00:00",
    "status": "open",
    "pnl": 0.0
   }
