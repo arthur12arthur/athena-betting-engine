@@ -1,18 +1,28 @@
 {
  "stats": {
-  "n": 70,
-  "hit_rate": 0.5857,
-  "logloss": 0.9611,
-  "brier": 0.56953,
-  "n_total": 132,
+  "n": 86,
+  "hit_rate": 0.5814,
+  "logloss": 0.94188,
+  "brier": 0.55664,
+  "n_total": 151,
   "by_league": [
    {
     "league": "E1",
-    "n": 13,
-    "hit_rate": 0.3846
+    "n": 15,
+    "hit_rate": 0.4667
    },
    {
     "league": "I1",
+    "n": 11,
+    "hit_rate": 0.7273
+   },
+   {
+    "league": "F1",
+    "n": 9,
+    "hit_rate": 0.5556
+   },
+   {
+    "league": "T1",
     "n": 8,
     "hit_rate": 0.625
    },
@@ -27,19 +37,14 @@
     "hit_rate": 0.5
    },
    {
-    "league": "T1",
-    "n": 6,
-    "hit_rate": 0.6667
-   },
-   {
     "league": "SP1",
     "n": 6,
     "hit_rate": 0.6667
    },
    {
-    "league": "F1",
+    "league": "SC0",
     "n": 6,
-    "hit_rate": 0.8333
+    "hit_rate": 0.5
    },
    {
     "league": "G1",
@@ -52,36 +57,41 @@
     "hit_rate": 0.4
    },
    {
+    "league": "E0",
+    "n": 4,
+    "hit_rate": 0.5
+   },
+   {
     "league": "D1",
     "n": 3,
     "hit_rate": 0.6667
-   },
-   {
-    "league": "E0",
-    "n": 3,
-    "hit_rate": 0.6667
-   },
-   {
-    "league": "SC0",
-    "n": 1,
-    "hit_rate": 0.0
    }
   ]
  },
  "stats_30d": {
-  "n": 70,
-  "hit_rate": 0.5857,
-  "logloss": 0.9611,
-  "brier": 0.56953,
-  "n_total": 132,
+  "n": 86,
+  "hit_rate": 0.5814,
+  "logloss": 0.94188,
+  "brier": 0.55664,
+  "n_total": 151,
   "by_league": [
    {
     "league": "E1",
-    "n": 13,
-    "hit_rate": 0.3846
+    "n": 15,
+    "hit_rate": 0.4667
    },
    {
     "league": "I1",
+    "n": 11,
+    "hit_rate": 0.7273
+   },
+   {
+    "league": "F1",
+    "n": 9,
+    "hit_rate": 0.5556
+   },
+   {
+    "league": "T1",
     "n": 8,
     "hit_rate": 0.625
    },
@@ -96,19 +106,14 @@
     "hit_rate": 0.5
    },
    {
-    "league": "T1",
-    "n": 6,
-    "hit_rate": 0.6667
-   },
-   {
     "league": "SP1",
     "n": 6,
     "hit_rate": 0.6667
    },
    {
-    "league": "F1",
+    "league": "SC0",
     "n": 6,
-    "hit_rate": 0.8333
+    "hit_rate": 0.5
    },
    {
     "league": "G1",
@@ -121,23 +126,354 @@
     "hit_rate": 0.4
    },
    {
+    "league": "E0",
+    "n": 4,
+    "hit_rate": 0.5
+   },
+   {
     "league": "D1",
     "n": 3,
     "hit_rate": 0.6667
-   },
-   {
-    "league": "E0",
-    "n": 3,
-    "hit_rate": 0.6667
-   },
-   {
-    "league": "SC0",
-    "n": 1,
-    "hit_rate": 0.0
    }
   ]
  },
  "recent": [
+  {
+   "pred_id": "8d5f8c6d10d149",
+   "league": "SC0",
+   "kickoff": "2026-11-21",
+   "home": "Motherwell",
+   "away": "Rangers",
+   "p": {
+    "home": 0.2494,
+    "draw": 0.3118,
+    "away": 0.4387
+   },
+   "xg": {
+    "home": 1.35,
+    "away": 1.49
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-2",
+   "outcome": "away",
+   "hit": true,
+   "settled_at": "2026-11-22T22:35:02+00:00"
+  },
+  {
+   "pred_id": "6a2b4a0e173d9d",
+   "league": "I1",
+   "kickoff": "2026-11-21",
+   "home": "Napoli",
+   "away": "Torino",
+   "p": {
+    "home": 0.6535,
+    "draw": 0.2416,
+    "away": 0.1049
+   },
+   "xg": {
+    "home": 1.62,
+    "away": 0.94
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-22T22:35:02+00:00"
+  },
+  {
+   "pred_id": "bf27d10fb2f3e5",
+   "league": "F1",
+   "kickoff": "2026-11-21",
+   "home": "Strasbourg",
+   "away": "Brest",
+   "p": {
+    "home": 0.5015,
+    "draw": 0.2409,
+    "away": 0.2576
+   },
+   "xg": {
+    "home": 1.84,
+    "away": 1.29
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "0-1",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-22T22:35:02+00:00"
+  },
+  {
+   "pred_id": "5d5751f47d265c",
+   "league": "F1",
+   "kickoff": "2026-11-21",
+   "home": "Lille",
+   "away": "Lyon",
+   "p": {
+    "home": 0.4435,
+    "draw": 0.3348,
+    "away": 0.2217
+   },
+   "xg": {
+    "home": 1.5,
+    "away": 1.19
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "0-1",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-22T22:35:02+00:00"
+  },
+  {
+   "pred_id": "94db83fd361cd6",
+   "league": "F1",
+   "kickoff": "2026-11-21",
+   "home": "Lens",
+   "away": "Toulouse",
+   "p": {
+    "home": 0.456,
+    "draw": 0.2514,
+    "away": 0.2926
+   },
+   "xg": {
+    "home": 1.68,
+    "away": 1.04
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-1",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-22T22:35:02+00:00"
+  },
+  {
+   "pred_id": "13ef242974a197",
+   "league": "T1",
+   "kickoff": "2026-11-21",
+   "home": "Kocaelispor",
+   "away": "Fenerbahce",
+   "p": {
+    "home": 0.1896,
+    "draw": 0.2352,
+    "away": 0.5752
+   },
+   "xg": {
+    "home": 1.07,
+    "away": 1.6
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-2",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-22T22:35:01+00:00"
+  },
+  {
+   "pred_id": "44b9d9dcfebc8e",
+   "league": "E1",
+   "kickoff": "2026-11-21",
+   "home": "Middlesbrough",
+   "away": "Bristol City",
+   "p": {
+    "home": 0.7158,
+    "draw": 0.1813,
+    "away": 0.1029
+   },
+   "xg": {
+    "home": 1.58,
+    "away": 1.07
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-22T22:35:01+00:00"
+  },
+  {
+   "pred_id": "f687f33c06b65c",
+   "league": "E0",
+   "kickoff": "2026-11-21",
+   "home": "Aston Villa",
+   "away": "Sunderland",
+   "p": {
+    "home": 0.5674,
+    "draw": 0.2668,
+    "away": 0.1659
+   },
+   "xg": {
+    "home": 1.51,
+    "away": 1.12
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "0-0",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-22T22:35:01+00:00"
+  },
+  {
+   "pred_id": "58547dcf6c2e82",
+   "league": "E1",
+   "kickoff": "2026-11-21",
+   "home": "Sheffield United",
+   "away": "Watford",
+   "p": {
+    "home": 0.5103,
+    "draw": 0.3249,
+    "away": 0.1647
+   },
+   "xg": {
+    "home": 1.56,
+    "away": 1.04
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "4-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-22T22:35:01+00:00"
+  },
+  {
+   "pred_id": "deeaf6f3608f14",
+   "league": "SC0",
+   "kickoff": "2026-11-21",
+   "home": "Kilmarnock",
+   "away": "Aberdeen",
+   "p": {
+    "home": 0.334,
+    "draw": 0.4251,
+    "away": 0.2409
+   },
+   "xg": {
+    "home": 1.47,
+    "away": 1.22
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-4",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-22T22:35:01+00:00"
+  },
+  {
+   "pred_id": "cc1caa1e08ec0c",
+   "league": "SC0",
+   "kickoff": "2026-11-21",
+   "home": "Falkirk",
+   "away": "St Johnstone",
+   "p": {
+    "home": 0.557,
+    "draw": 0.246,
+    "away": 0.1969
+   },
+   "xg": {
+    "home": 1.58,
+    "away": 1.08
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-1",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-22T22:35:01+00:00"
+  },
+  {
+   "pred_id": "ff75d2bf8d0946",
+   "league": "SC0",
+   "kickoff": "2026-11-21",
+   "home": "Celtic",
+   "away": "St Mirren",
+   "p": {
+    "home": 0.8729,
+    "draw": 0.0876,
+    "away": 0.0395
+   },
+   "xg": {
+    "home": 2.39,
+    "away": 0.75
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "4-1",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-22T22:35:01+00:00"
+  },
+  {
+   "pred_id": "141c6e65b38562",
+   "league": "SC0",
+   "kickoff": "2026-11-21",
+   "home": "Hibernian",
+   "away": "Dundee United",
+   "p": {
+    "home": 0.3645,
+    "draw": 0.4017,
+    "away": 0.2338
+   },
+   "xg": {
+    "home": 1.86,
+    "away": 1.01
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "0-4",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-22T22:35:01+00:00"
+  },
+  {
+   "pred_id": "6782e495123cf1",
+   "league": "I1",
+   "kickoff": "2026-11-21",
+   "home": "Como",
+   "away": "Cagliari",
+   "p": {
+    "home": 0.7244,
+    "draw": 0.1681,
+    "away": 0.1075
+   },
+   "xg": {
+    "home": 1.67,
+    "away": 0.92
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-22T22:35:01+00:00"
+  },
+  {
+   "pred_id": "447d70d3a6c5ef",
+   "league": "I1",
+   "kickoff": "2026-11-21",
+   "home": "Lazio",
+   "away": "Lecce",
+   "p": {
+    "home": 0.6907,
+    "draw": 0.221,
+    "away": 0.0883
+   },
+   "xg": {
+    "home": 1.39,
+    "away": 0.81
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "3-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-22T22:35:01+00:00"
+  },
+  {
+   "pred_id": "acb7040054ea1f",
+   "league": "T1",
+   "kickoff": "2026-11-21",
+   "home": "Galatasaray",
+   "away": "Samsunspor",
+   "p": {
+    "home": 0.847,
+    "draw": 0.1088,
+    "away": 0.0442
+   },
+   "xg": {
+    "home": 2.25,
+    "away": 0.95
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-1",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-22T22:35:01+00:00"
+  },
   {
    "pred_id": "2cf08d0abaa11b",
    "league": "P1",
@@ -1612,11 +1948,21 @@
  "by_league": [
   {
    "league": "E1",
-   "n": 13,
-   "hit_rate": 0.3846
+   "n": 15,
+   "hit_rate": 0.4667
   },
   {
    "league": "I1",
+   "n": 11,
+   "hit_rate": 0.7273
+  },
+  {
+   "league": "F1",
+   "n": 9,
+   "hit_rate": 0.5556
+  },
+  {
+   "league": "T1",
    "n": 8,
    "hit_rate": 0.625
   },
@@ -1631,19 +1977,14 @@
    "hit_rate": 0.5
   },
   {
-   "league": "T1",
-   "n": 6,
-   "hit_rate": 0.6667
-  },
-  {
    "league": "SP1",
    "n": 6,
    "hit_rate": 0.6667
   },
   {
-   "league": "F1",
+   "league": "SC0",
    "n": 6,
-   "hit_rate": 0.8333
+   "hit_rate": 0.5
   },
   {
    "league": "G1",
@@ -1656,19 +1997,14 @@
    "hit_rate": 0.4
   },
   {
+   "league": "E0",
+   "n": 4,
+   "hit_rate": 0.5
+  },
+  {
    "league": "D1",
    "n": 3,
    "hit_rate": 0.6667
-  },
-  {
-   "league": "E0",
-   "n": 3,
-   "hit_rate": 0.6667
-  },
-  {
-   "league": "SC0",
-   "n": 1,
-   "hit_rate": 0.0
   }
  ]
 }
