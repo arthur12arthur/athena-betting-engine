@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-16T10:36:06+00:00",
+ "generated_at": "2026-11-23T11:43:54+00:00",
  "seasons": [
   2024,
   2025,
@@ -1692,7 +1692,7 @@
    "bankroll_final": 961.27,
    "w_dc": 0.15000000000000002,
    "temperature": 0.982054412166039,
-   "version": "athena-1.0-20261116",
+   "version": "athena-1.0-20261123",
    "metrics": {
     "val_logloss_blend": 0.97383,
     "val_logloss_calibrated": 0.9738
@@ -1710,7 +1710,7 @@
    "bankroll_final": 1032.88,
    "w_dc": 0.30000000000000004,
    "temperature": 0.9811822801714285,
-   "version": "athena-1.0-20261116",
+   "version": "athena-1.0-20261123",
    "metrics": {
     "val_logloss_blend": 0.98654,
     "val_logloss_calibrated": 0.98651
@@ -1728,7 +1728,7 @@
    "bankroll_final": 1280.54,
    "w_dc": 0.30000000000000004,
    "temperature": 0.9767817222415077,
-   "version": "athena-1.0-20261116",
+   "version": "athena-1.0-20261123",
    "metrics": {
     "val_logloss_blend": 0.99795,
     "val_logloss_calibrated": 0.9979
