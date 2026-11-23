@@ -3,8 +3,8 @@
   "bankroll": 1040.35,
   "initial_bankroll": 1000.0,
   "pnl_total": 40.35,
-  "n_bets": 70,
-  "n_open": 21,
+  "n_bets": 71,
+  "n_open": 22,
   "n_settled": 49,
   "n_won": 13,
   "win_rate": 0.2653,
@@ -15,7 +15,7 @@
   "avg_edge": 0.0629,
   "clv_avg": 0.0068,
   "max_drawdown": 0.0667,
-  "exposure": 71.71
+  "exposure": 74.77
  },
  "bets": [
   {
@@ -1797,7 +1797,8 @@
    "bet_id": "3f07ab1866137f",
    "created_at": "2026-11-22T22:36:26+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 3.63
   },
   {
    "league": "E1",
@@ -1822,7 +1823,8 @@
    "bet_id": "effdb3713f9ace",
    "created_at": "2026-11-22T22:36:26+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 3.23
   },
   {
    "league": "E1",
@@ -1847,7 +1849,8 @@
    "bet_id": "8a44c0fc1d4d4a",
    "created_at": "2026-11-22T22:36:26+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 4.87
   },
   {
    "league": "E1",
@@ -1872,7 +1875,8 @@
    "bet_id": "ac9ed460004ab2",
    "created_at": "2026-11-22T22:36:26+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 2.41
   },
   {
    "league": "SP1",
@@ -1897,7 +1901,8 @@
    "bet_id": "84922cddb53635",
    "created_at": "2026-11-22T22:36:26+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 3.56
   },
   {
    "league": "T1",
@@ -1922,7 +1927,8 @@
    "bet_id": "bdce88dea83e02",
    "created_at": "2026-11-22T22:36:26+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 3.95
   },
   {
    "league": "SC0",
@@ -1947,7 +1953,8 @@
    "bet_id": "89d58cc2d16f06",
    "created_at": "2026-11-22T22:36:26+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 4.91
   },
   {
    "league": "E0",
@@ -1971,6 +1978,32 @@
    "kelly_full": 0.0156,
    "bet_id": "9983df6b4bcb6d",
    "created_at": "2026-11-22T22:36:26+00:00",
+   "status": "open",
+   "pnl": 0.0,
+   "closing_price": 3.5
+  },
+  {
+   "league": "E1",
+   "home": "Middlesbrough",
+   "away": "Swansea",
+   "kickoff": "2026-11-24",
+   "market": "OU25",
+   "selection": "under",
+   "line": 2.5,
+   "label": "Moins de 2,5 buts",
+   "price": 2.58,
+   "p_model": 0.5083,
+   "p_fair": 0.404,
+   "p_sharp": 0.3593,
+   "edge": 0.0424,
+   "book": "pinnacle",
+   "n_books": 0,
+   "multi_book": false,
+   "stake_scale": 0.5,
+   "stake": 3.06,
+   "kelly_full": 0.0268,
+   "bet_id": "cd5cd69d086e2e",
+   "created_at": "2026-11-23T16:12:08+00:00",
    "status": "open",
    "pnl": 0.0
   }
