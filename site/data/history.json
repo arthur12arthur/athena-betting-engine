@@ -1,143 +1,269 @@
 {
  "stats": {
-  "n": 86,
-  "hit_rate": 0.5814,
-  "logloss": 0.94188,
-  "brier": 0.55664,
-  "n_total": 151,
+  "n": 135,
+  "hit_rate": 0.5704,
+  "logloss": 0.99003,
+  "brier": 0.58874,
+  "n_total": 162,
   "by_league": [
    {
     "league": "E1",
-    "n": 15,
-    "hit_rate": 0.4667
+    "n": 24,
+    "hit_rate": 0.4583
    },
    {
     "league": "I1",
-    "n": 11,
-    "hit_rate": 0.7273
+    "n": 13,
+    "hit_rate": 0.6923
    },
    {
-    "league": "F1",
-    "n": 9,
-    "hit_rate": 0.5556
+    "league": "SP1",
+    "n": 12,
+    "hit_rate": 0.5
+   },
+   {
+    "league": "N1",
+    "n": 11,
+    "hit_rate": 0.4545
    },
    {
     "league": "T1",
+    "n": 11,
+    "hit_rate": 0.6364
+   },
+   {
+    "league": "F1",
+    "n": 11,
+    "hit_rate": 0.4545
+   },
+   {
+    "league": "E0",
+    "n": 11,
+    "hit_rate": 0.5455
+   },
+   {
+    "league": "B1",
+    "n": 10,
+    "hit_rate": 0.6
+   },
+   {
+    "league": "D1",
+    "n": 10,
+    "hit_rate": 0.7
+   },
+   {
+    "league": "G1",
     "n": 8,
     "hit_rate": 0.625
+   },
+   {
+    "league": "SC0",
+    "n": 7,
+    "hit_rate": 0.5714
    },
    {
     "league": "P1",
     "n": 7,
     "hit_rate": 0.8571
-   },
-   {
-    "league": "N1",
-    "n": 6,
-    "hit_rate": 0.5
-   },
-   {
-    "league": "SP1",
-    "n": 6,
-    "hit_rate": 0.6667
-   },
-   {
-    "league": "SC0",
-    "n": 6,
-    "hit_rate": 0.5
-   },
-   {
-    "league": "G1",
-    "n": 6,
-    "hit_rate": 0.5
-   },
-   {
-    "league": "B1",
-    "n": 5,
-    "hit_rate": 0.4
-   },
-   {
-    "league": "E0",
-    "n": 4,
-    "hit_rate": 0.5
-   },
-   {
-    "league": "D1",
-    "n": 3,
-    "hit_rate": 0.6667
    }
   ]
  },
  "stats_30d": {
-  "n": 86,
-  "hit_rate": 0.5814,
-  "logloss": 0.94188,
-  "brier": 0.55664,
-  "n_total": 151,
+  "n": 135,
+  "hit_rate": 0.5704,
+  "logloss": 0.99003,
+  "brier": 0.58874,
+  "n_total": 162,
   "by_league": [
    {
     "league": "E1",
-    "n": 15,
-    "hit_rate": 0.4667
+    "n": 24,
+    "hit_rate": 0.4583
    },
    {
     "league": "I1",
-    "n": 11,
-    "hit_rate": 0.7273
+    "n": 13,
+    "hit_rate": 0.6923
    },
    {
-    "league": "F1",
-    "n": 9,
-    "hit_rate": 0.5556
+    "league": "SP1",
+    "n": 12,
+    "hit_rate": 0.5
+   },
+   {
+    "league": "N1",
+    "n": 11,
+    "hit_rate": 0.4545
    },
    {
     "league": "T1",
+    "n": 11,
+    "hit_rate": 0.6364
+   },
+   {
+    "league": "F1",
+    "n": 11,
+    "hit_rate": 0.4545
+   },
+   {
+    "league": "E0",
+    "n": 11,
+    "hit_rate": 0.5455
+   },
+   {
+    "league": "B1",
+    "n": 10,
+    "hit_rate": 0.6
+   },
+   {
+    "league": "D1",
+    "n": 10,
+    "hit_rate": 0.7
+   },
+   {
+    "league": "G1",
     "n": 8,
     "hit_rate": 0.625
+   },
+   {
+    "league": "SC0",
+    "n": 7,
+    "hit_rate": 0.5714
    },
    {
     "league": "P1",
     "n": 7,
     "hit_rate": 0.8571
-   },
-   {
-    "league": "N1",
-    "n": 6,
-    "hit_rate": 0.5
-   },
-   {
-    "league": "SP1",
-    "n": 6,
-    "hit_rate": 0.6667
-   },
-   {
-    "league": "SC0",
-    "n": 6,
-    "hit_rate": 0.5
-   },
-   {
-    "league": "G1",
-    "n": 6,
-    "hit_rate": 0.5
-   },
-   {
-    "league": "B1",
-    "n": 5,
-    "hit_rate": 0.4
-   },
-   {
-    "league": "E0",
-    "n": 4,
-    "hit_rate": 0.5
-   },
-   {
-    "league": "D1",
-    "n": 3,
-    "hit_rate": 0.6667
    }
   ]
  },
  "recent": [
+  {
+   "pred_id": "228e323290bb1e",
+   "league": "SP1",
+   "kickoff": "2026-11-23",
+   "home": "Levante",
+   "away": "Elche",
+   "p": {
+    "home": 0.394,
+    "draw": 0.3602,
+    "away": 0.2458
+   },
+   "xg": {
+    "home": 1.7,
+    "away": 1.17
+   },
+   "created_at": "2026-11-22T22:36:26+00:00",
+   "result": "1-1",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "eb0eb9319c2f40",
+   "league": "E0",
+   "kickoff": "2026-11-23",
+   "home": "Brentford",
+   "away": "Everton",
+   "p": {
+    "home": 0.4045,
+    "draw": 0.3422,
+    "away": 0.2533
+   },
+   "xg": {
+    "home": 1.5,
+    "away": 1.13
+   },
+   "created_at": "2026-11-22T22:36:26+00:00",
+   "result": "4-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "ab8effe6a7484c",
+   "league": "I1",
+   "kickoff": "2026-11-23",
+   "home": "Monza",
+   "away": "Fiorentina",
+   "p": {
+    "home": 0.2205,
+    "draw": 0.2989,
+    "away": 0.4806
+   },
+   "xg": {
+    "home": 1.19,
+    "away": 1.42
+   },
+   "created_at": "2026-11-22T22:36:26+00:00",
+   "result": "3-0",
+   "outcome": "home",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "cf80f848077d7d",
+   "league": "T1",
+   "kickoff": "2026-11-23",
+   "home": "Buyuksehyr",
+   "away": "Corum",
+   "p": {
+    "home": 0.4703,
+    "draw": 0.3455,
+    "away": 0.1842
+   },
+   "xg": {
+    "home": 1.9,
+    "away": 1.15
+   },
+   "created_at": "2026-11-22T22:36:26+00:00",
+   "result": "4-2",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "cd70d8e1e305b4",
+   "league": "G1",
+   "kickoff": "2026-11-23",
+   "home": "Asteras Tripolis",
+   "away": "Aris",
+   "p": {
+    "home": 0.2337,
+    "draw": 0.3591,
+    "away": 0.4072
+   },
+   "xg": {
+    "home": 1.07,
+    "away": 1.16
+   },
+   "created_at": "2026-11-22T22:36:26+00:00",
+   "result": "0-1",
+   "outcome": "away",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "5f3f1a809ceb24",
+   "league": "SP1",
+   "kickoff": "2026-11-21",
+   "home": "Real Madrid",
+   "away": "Celta",
+   "p": {
+    "home": 0.9005,
+    "draw": 0.0636,
+    "away": 0.0359
+   },
+   "xg": {
+    "home": 2.1,
+    "away": 0.91
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-1",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
   {
    "pred_id": "8d5f8c6d10d149",
    "league": "SC0",
@@ -158,6 +284,90 @@
    "outcome": "away",
    "hit": true,
    "settled_at": "2026-11-22T22:35:02+00:00"
+  },
+  {
+   "pred_id": "1c671b8f8ad072",
+   "league": "N1",
+   "kickoff": "2026-11-21",
+   "home": "Groningen",
+   "away": "Heerenveen",
+   "p": {
+    "home": 0.2585,
+    "draw": 0.3429,
+    "away": 0.3986
+   },
+   "xg": {
+    "home": 1.65,
+    "away": 1.36
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-3",
+   "outcome": "away",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "4c9af40e8ad3ec",
+   "league": "N1",
+   "kickoff": "2026-11-21",
+   "home": "Telstar",
+   "away": "Zwolle",
+   "p": {
+    "home": 0.3762,
+    "draw": 0.3186,
+    "away": 0.3052
+   },
+   "xg": {
+    "home": 1.81,
+    "away": 1.3
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-3",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "1b188e440a6fca",
+   "league": "B1",
+   "kickoff": "2026-11-21",
+   "home": "Waregem",
+   "away": "Antwerp",
+   "p": {
+    "home": 0.3427,
+    "draw": 0.3604,
+    "away": 0.297
+   },
+   "xg": {
+    "home": 1.54,
+    "away": 1.22
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-2",
+   "outcome": "draw",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "ec093d374dbf2c",
+   "league": "F1",
+   "kickoff": "2026-11-21",
+   "home": "Monaco",
+   "away": "Auxerre",
+   "p": {
+    "home": 0.5358,
+    "draw": 0.341,
+    "away": 0.1232
+   },
+   "xg": {
+    "home": 1.93,
+    "away": 1.11
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-1",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
   },
   {
    "pred_id": "6a2b4a0e173d9d",
@@ -223,6 +433,27 @@
    "settled_at": "2026-11-22T22:35:02+00:00"
   },
   {
+   "pred_id": "6a301b232de85f",
+   "league": "B1",
+   "kickoff": "2026-11-21",
+   "home": "Mechelen",
+   "away": "Club Brugge",
+   "p": {
+    "home": 0.0947,
+    "draw": 0.169,
+    "away": 0.7363
+   },
+   "xg": {
+    "home": 1.18,
+    "away": 2.03
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-5",
+   "outcome": "away",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
    "pred_id": "94db83fd361cd6",
    "league": "F1",
    "kickoff": "2026-11-21",
@@ -244,6 +475,195 @@
    "settled_at": "2026-11-22T22:35:02+00:00"
   },
   {
+   "pred_id": "bf0a1a9c6a91c3",
+   "league": "N1",
+   "kickoff": "2026-11-21",
+   "home": "Utrecht",
+   "away": "Cambuur",
+   "p": {
+    "home": 0.5237,
+    "draw": 0.2631,
+    "away": 0.2132
+   },
+   "xg": {
+    "home": 2.37,
+    "away": 1.23
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-3",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "82bf07ea31bfcb",
+   "league": "N1",
+   "kickoff": "2026-11-21",
+   "home": "Feyenoord",
+   "away": "Excelsior",
+   "p": {
+    "home": 0.7888,
+    "draw": 0.1518,
+    "away": 0.0594
+   },
+   "xg": {
+    "home": 2.24,
+    "away": 1.11
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-3",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "279abf03b27ff1",
+   "league": "SC0",
+   "kickoff": "2026-11-21",
+   "home": "Dundee",
+   "away": "Hearts",
+   "p": {
+    "home": 0.2566,
+    "draw": 0.3155,
+    "away": 0.4279
+   },
+   "xg": {
+    "home": 1.18,
+    "away": 1.58
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "0-8",
+   "outcome": "away",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "8ba7387a4008f6",
+   "league": "D1",
+   "kickoff": "2026-11-21",
+   "home": "Schalke 04",
+   "away": "Stuttgart",
+   "p": {
+    "home": 0.2194,
+    "draw": 0.3747,
+    "away": 0.4059
+   },
+   "xg": {
+    "home": 1.44,
+    "away": 1.76
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "0-0",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "caeb17efe25003",
+   "league": "G1",
+   "kickoff": "2026-11-21",
+   "home": "Kalamata",
+   "away": "AEK",
+   "p": {
+    "home": 0.1483,
+    "draw": 0.1734,
+    "away": 0.6783
+   },
+   "xg": {
+    "home": 0.95,
+    "away": 1.56
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "0-1",
+   "outcome": "away",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "b9e7a6426edbdd",
+   "league": "SP1",
+   "kickoff": "2026-11-21",
+   "home": "Sevilla",
+   "away": "Betis",
+   "p": {
+    "home": 0.3049,
+    "draw": 0.2845,
+    "away": 0.4106
+   },
+   "xg": {
+    "home": 1.4,
+    "away": 1.31
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-1",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "aeb6cd985f5128",
+   "league": "E0",
+   "kickoff": "2026-11-21",
+   "home": "Newcastle",
+   "away": "Arsenal",
+   "p": {
+    "home": 0.1452,
+    "draw": 0.2397,
+    "away": 0.6151
+   },
+   "xg": {
+    "home": 1.25,
+    "away": 1.57
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-2",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "1794048105b03d",
+   "league": "B1",
+   "kickoff": "2026-11-21",
+   "home": "Genk",
+   "away": "RAAL La Louviere",
+   "p": {
+    "home": 0.6104,
+    "draw": 0.2694,
+    "away": 0.1202
+   },
+   "xg": {
+    "home": 1.85,
+    "away": 0.96
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "3-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "09f9a651d3ea41",
+   "league": "I1",
+   "kickoff": "2026-11-21",
+   "home": "Parma",
+   "away": "Roma",
+   "p": {
+    "home": 0.105,
+    "draw": 0.1917,
+    "away": 0.7033
+   },
+   "xg": {
+    "home": 0.87,
+    "away": 1.48
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-5",
+   "outcome": "away",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
    "pred_id": "13ef242974a197",
    "league": "T1",
    "kickoff": "2026-11-21",
@@ -263,6 +683,90 @@
    "outcome": "draw",
    "hit": false,
    "settled_at": "2026-11-22T22:35:01+00:00"
+  },
+  {
+   "pred_id": "ce2dbb08bccf46",
+   "league": "N1",
+   "kickoff": "2026-11-21",
+   "home": "Nijmegen",
+   "away": "PSV Eindhoven",
+   "p": {
+    "home": 0.1383,
+    "draw": 0.2795,
+    "away": 0.5823
+   },
+   "xg": {
+    "home": 1.7,
+    "away": 2.37
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-4",
+   "outcome": "away",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "cf47724f290e3a",
+   "league": "SP1",
+   "kickoff": "2026-11-21",
+   "home": "Vallecano",
+   "away": "Valencia",
+   "p": {
+    "home": 0.4673,
+    "draw": 0.3499,
+    "away": 0.1828
+   },
+   "xg": {
+    "home": 1.41,
+    "away": 0.98
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "0-1",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "a009b421a0961d",
+   "league": "E0",
+   "kickoff": "2026-11-21",
+   "home": "Coventry",
+   "away": "Crystal Palace",
+   "p": {
+    "home": 0.4516,
+    "draw": 0.3487,
+    "away": 0.1998
+   },
+   "xg": {
+    "home": 1.54,
+    "away": 1.21
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "3-2",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "093113d5d1a902",
+   "league": "E0",
+   "kickoff": "2026-11-21",
+   "home": "Chelsea",
+   "away": "Leeds",
+   "p": {
+    "home": 0.4396,
+    "draw": 0.3244,
+    "away": 0.236
+   },
+   "xg": {
+    "home": 1.71,
+    "away": 1.21
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-4",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
   },
   {
    "pred_id": "44b9d9dcfebc8e",
@@ -307,6 +811,132 @@
    "settled_at": "2026-11-22T22:35:01+00:00"
   },
   {
+   "pred_id": "fefbf95bb329db",
+   "league": "E0",
+   "kickoff": "2026-11-21",
+   "home": "Bournemouth",
+   "away": "Nott'm Forest",
+   "p": {
+    "home": 0.4895,
+    "draw": 0.2789,
+    "away": 0.2316
+   },
+   "xg": {
+    "home": 1.52,
+    "away": 1.21
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "e8d39daed99678",
+   "league": "E0",
+   "kickoff": "2026-11-21",
+   "home": "Tottenham",
+   "away": "Ipswich",
+   "p": {
+    "home": 0.3806,
+    "draw": 0.3374,
+    "away": 0.282
+   },
+   "xg": {
+    "home": 1.9,
+    "away": 1.25
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "2c10c52b3d8547",
+   "league": "B1",
+   "kickoff": "2026-11-21",
+   "home": "Charleroi",
+   "away": "St Truiden",
+   "p": {
+    "home": 0.6399,
+    "draw": 0.2172,
+    "away": 0.143
+   },
+   "xg": {
+    "home": 1.47,
+    "away": 1.25
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-2",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "e0e4ab7bcd20bd",
+   "league": "E1",
+   "kickoff": "2026-11-21",
+   "home": "Bolton",
+   "away": "Portsmouth",
+   "p": {
+    "home": 0.3053,
+    "draw": 0.2541,
+    "away": 0.4406
+   },
+   "xg": {
+    "home": 1.49,
+    "away": 1.19
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-1",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "46872559cac03b",
+   "league": "E1",
+   "kickoff": "2026-11-21",
+   "home": "Lincoln",
+   "away": "Wrexham",
+   "p": {
+    "home": 0.3922,
+    "draw": 0.3455,
+    "away": 0.2623
+   },
+   "xg": {
+    "home": 1.39,
+    "away": 1.22
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "0-1",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "3cbb84771869dd",
+   "league": "E1",
+   "kickoff": "2026-11-21",
+   "home": "West Ham",
+   "away": "Preston",
+   "p": {
+    "home": 0.7129,
+    "draw": 0.193,
+    "away": 0.094
+   },
+   "xg": {
+    "home": 1.7,
+    "away": 1.1
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-1",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
    "pred_id": "58547dcf6c2e82",
    "league": "E1",
    "kickoff": "2026-11-21",
@@ -328,6 +958,27 @@
    "settled_at": "2026-11-22T22:35:01+00:00"
   },
   {
+   "pred_id": "348f71ae975c23",
+   "league": "E1",
+   "kickoff": "2026-11-21",
+   "home": "Wolves",
+   "away": "Charlton",
+   "p": {
+    "home": 0.4771,
+    "draw": 0.3282,
+    "away": 0.1947
+   },
+   "xg": {
+    "home": 1.58,
+    "away": 1.09
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-1",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
    "pred_id": "deeaf6f3608f14",
    "league": "SC0",
    "kickoff": "2026-11-21",
@@ -347,6 +998,27 @@
    "outcome": "away",
    "hit": false,
    "settled_at": "2026-11-22T22:35:01+00:00"
+  },
+  {
+   "pred_id": "514345a9f1deee",
+   "league": "E1",
+   "kickoff": "2026-11-21",
+   "home": "Stoke",
+   "away": "Birmingham",
+   "p": {
+    "home": 0.3609,
+    "draw": 0.3214,
+    "away": 0.3177
+   },
+   "xg": {
+    "home": 1.28,
+    "away": 1.13
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
   },
   {
    "pred_id": "cc1caa1e08ec0c",
@@ -412,6 +1084,132 @@
    "settled_at": "2026-11-22T22:35:01+00:00"
   },
   {
+   "pred_id": "c1ba4c217e9f71",
+   "league": "E1",
+   "kickoff": "2026-11-21",
+   "home": "Swansea",
+   "away": "West Brom",
+   "p": {
+    "home": 0.4135,
+    "draw": 0.2976,
+    "away": 0.2889
+   },
+   "xg": {
+    "home": 1.31,
+    "away": 1.08
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-2",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "9158cc13f89a54",
+   "league": "D1",
+   "kickoff": "2026-11-21",
+   "home": "Leverkusen",
+   "away": "Paderborn",
+   "p": {
+    "home": 0.6802,
+    "draw": 0.2319,
+    "away": 0.088
+   },
+   "xg": {
+    "home": 2.17,
+    "away": 1.17
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "4-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "54a02ff9cfb6f6",
+   "league": "D1",
+   "kickoff": "2026-11-21",
+   "home": "Union Berlin",
+   "away": "RB Leipzig",
+   "p": {
+    "home": 0.2221,
+    "draw": 0.3233,
+    "away": 0.4546
+   },
+   "xg": {
+    "home": 1.32,
+    "away": 1.66
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-5",
+   "outcome": "away",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "12aca3c1d22bf1",
+   "league": "D1",
+   "kickoff": "2026-11-21",
+   "home": "Elversberg",
+   "away": "Freiburg",
+   "p": {
+    "home": 0.324,
+    "draw": 0.259,
+    "away": 0.417
+   },
+   "xg": {
+    "home": 1.7,
+    "away": 1.39
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "0-1",
+   "outcome": "away",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "5b0bcc825917ce",
+   "league": "D1",
+   "kickoff": "2026-11-21",
+   "home": "Ein Frankfurt",
+   "away": "Hoffenheim",
+   "p": {
+    "home": 0.3818,
+    "draw": 0.3656,
+    "away": 0.2526
+   },
+   "xg": {
+    "home": 2.05,
+    "away": 1.64
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "dad08aab392188",
+   "league": "D1",
+   "kickoff": "2026-11-21",
+   "home": "M'gladbach",
+   "away": "Dortmund",
+   "p": {
+    "home": 0.1606,
+    "draw": 0.2047,
+    "away": 0.6347
+   },
+   "xg": {
+    "home": 1.29,
+    "away": 1.8
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "0-1",
+   "outcome": "away",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
    "pred_id": "6782e495123cf1",
    "league": "I1",
    "kickoff": "2026-11-21",
@@ -454,6 +1252,48 @@
    "settled_at": "2026-11-22T22:35:01+00:00"
   },
   {
+   "pred_id": "428c93b64e2975",
+   "league": "T1",
+   "kickoff": "2026-11-21",
+   "home": "Amedspor",
+   "away": "Rizespor",
+   "p": {
+    "home": 0.4986,
+    "draw": 0.336,
+    "away": 0.1655
+   },
+   "xg": {
+    "home": 1.67,
+    "away": 1.21
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "0-2",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "2ef3d8aee6e0dc",
+   "league": "SP1",
+   "kickoff": "2026-11-21",
+   "home": "Alaves",
+   "away": "La Coruna",
+   "p": {
+    "home": 0.3927,
+    "draw": 0.382,
+    "away": 0.2253
+   },
+   "xg": {
+    "home": 1.45,
+    "away": 1.17
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "3-1",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
    "pred_id": "acb7040054ea1f",
    "league": "T1",
    "kickoff": "2026-11-21",
@@ -473,6 +1313,195 @@
    "outcome": "home",
    "hit": true,
    "settled_at": "2026-11-22T22:35:01+00:00"
+  },
+  {
+   "pred_id": "a9fdcc02e91f08",
+   "league": "E1",
+   "kickoff": "2026-11-21",
+   "home": "Southampton",
+   "away": "Derby",
+   "p": {
+    "home": 0.6523,
+    "draw": 0.1967,
+    "away": 0.151
+   },
+   "xg": {
+    "home": 1.84,
+    "away": 1.11
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "f23ca1161a7cfa",
+   "league": "E0",
+   "kickoff": "2026-11-21",
+   "home": "Man City",
+   "away": "Fulham",
+   "p": {
+    "home": 0.7499,
+    "draw": 0.14,
+    "away": 0.1101
+   },
+   "xg": {
+    "home": 2.08,
+    "away": 0.98
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-1",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "88fadd8840f474",
+   "league": "E1",
+   "kickoff": "2026-11-21",
+   "home": "Norwich",
+   "away": "Cardiff",
+   "p": {
+    "home": 0.5882,
+    "draw": 0.2481,
+    "away": 0.1637
+   },
+   "xg": {
+    "home": 1.72,
+    "away": 1.08
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "2-1",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "47a6a1cbfbdfc8",
+   "league": "E1",
+   "kickoff": "2026-11-21",
+   "home": "Millwall",
+   "away": "QPR",
+   "p": {
+    "home": 0.3659,
+    "draw": 0.4018,
+    "away": 0.2323
+   },
+   "xg": {
+    "home": 1.52,
+    "away": 1.02
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "0-1",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "90f7104f38403e",
+   "league": "T1",
+   "kickoff": "2026-11-21",
+   "home": "Genclerbirligi",
+   "away": "Gaziantep",
+   "p": {
+    "home": 0.4135,
+    "draw": 0.3675,
+    "away": 0.219
+   },
+   "xg": {
+    "home": 1.47,
+    "away": 1.15
+   },
+   "created_at": "2026-11-18T14:18:38+00:00",
+   "result": "1-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "2ed567c984a5cd",
+   "league": "SP1",
+   "kickoff": "2026-11-20",
+   "home": "Ath Bilbao",
+   "away": "Espanol",
+   "p": {
+    "home": 0.4984,
+    "draw": 0.3478,
+    "away": 0.1537
+   },
+   "xg": {
+    "home": 1.56,
+    "away": 0.97
+   },
+   "created_at": "2026-11-17T00:55:16+00:00",
+   "result": "0-1",
+   "outcome": "away",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "3e14ff5acdb487",
+   "league": "F1",
+   "kickoff": "2026-11-20",
+   "home": "Troyes",
+   "away": "Le Havre",
+   "p": {
+    "home": 0.2929,
+    "draw": 0.5159,
+    "away": 0.1912
+   },
+   "xg": {
+    "home": 1.5,
+    "away": 1.21
+   },
+   "created_at": "2026-11-17T00:55:16+00:00",
+   "result": "3-1",
+   "outcome": "home",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "b676cb6a2e27f0",
+   "league": "B1",
+   "kickoff": "2026-11-20",
+   "home": "Cercle Brugge",
+   "away": "Westerlo",
+   "p": {
+    "home": 0.4048,
+    "draw": 0.2758,
+    "away": 0.3194
+   },
+   "xg": {
+    "home": 1.71,
+    "away": 1.44
+   },
+   "created_at": "2026-11-17T00:55:16+00:00",
+   "result": "1-0",
+   "outcome": "home",
+   "hit": true,
+   "settled_at": "2026-11-24T03:23:38+00:00"
+  },
+  {
+   "pred_id": "df7d9237256563",
+   "league": "D1",
+   "kickoff": "2026-11-20",
+   "home": "Bayern Munich",
+   "away": "FC Koln",
+   "p": {
+    "home": 0.8678,
+    "draw": 0.0957,
+    "away": 0.0365
+   },
+   "xg": {
+    "home": 3.41,
+    "away": 1.02
+   },
+   "created_at": "2026-11-17T00:55:16+00:00",
+   "result": "1-1",
+   "outcome": "draw",
+   "hit": false,
+   "settled_at": "2026-11-24T03:23:38+00:00"
   },
   {
    "pred_id": "2cf08d0abaa11b",
@@ -1628,383 +2657,68 @@
    "outcome": "away",
    "hit": false,
    "settled_at": "2026-11-02T23:57:00+00:00"
-  },
-  {
-   "pred_id": "2c9420d4e82416",
-   "league": "D1",
-   "kickoff": "2026-11-01",
-   "home": "Union Berlin",
-   "away": "FC Koln",
-   "p": {
-    "home": 0.3613,
-    "draw": 0.3317,
-    "away": 0.3069
-   },
-   "xg": {
-    "home": 1.62,
-    "away": 1.32
-   },
-   "created_at": "2026-10-31T23:58:01+00:00",
-   "result": "1-1",
-   "outcome": "draw",
-   "hit": false,
-   "settled_at": "2026-11-02T23:57:00+00:00"
-  },
-  {
-   "pred_id": "87bb524e48aab4",
-   "league": "I1",
-   "kickoff": "2026-11-01",
-   "home": "Lazio",
-   "away": "Cagliari",
-   "p": {
-    "home": 0.6454,
-    "draw": 0.228,
-    "away": 0.1267
-   },
-   "xg": {
-    "home": 1.42,
-    "away": 0.96
-   },
-   "created_at": "2026-10-31T23:58:01+00:00",
-   "result": "2-1",
-   "outcome": "home",
-   "hit": true,
-   "settled_at": "2026-11-01T21:16:07+00:00"
-  },
-  {
-   "pred_id": "ef8c7c135db3c8",
-   "league": "I1",
-   "kickoff": "2026-11-01",
-   "home": "Frosinone",
-   "away": "Torino",
-   "p": {
-    "home": 0.3699,
-    "draw": 0.3493,
-    "away": 0.2808
-   },
-   "xg": {
-    "home": 1.39,
-    "away": 1.13
-   },
-   "created_at": "2026-10-31T23:58:01+00:00",
-   "result": "2-0",
-   "outcome": "home",
-   "hit": true,
-   "settled_at": "2026-11-01T21:16:07+00:00"
-  },
-  {
-   "pred_id": "d647246a6095d1",
-   "league": "F1",
-   "kickoff": "2026-11-01",
-   "home": "Strasbourg",
-   "away": "Auxerre",
-   "p": {
-    "home": 0.4017,
-    "draw": 0.2765,
-    "away": 0.3218
-   },
-   "xg": {
-    "home": 1.71,
-    "away": 1.14
-   },
-   "created_at": "2026-10-31T23:58:01+00:00",
-   "result": "5-1",
-   "outcome": "home",
-   "hit": true,
-   "settled_at": "2026-11-02T23:57:00+00:00"
-  },
-  {
-   "pred_id": "6be5c05998b139",
-   "league": "N1",
-   "kickoff": "2026-11-01",
-   "home": "Telstar",
-   "away": "Utrecht",
-   "p": {
-    "home": 0.3587,
-    "draw": 0.3358,
-    "away": 0.3055
-   },
-   "xg": {
-    "home": 1.56,
-    "away": 1.53
-   },
-   "created_at": "2026-10-31T23:58:01+00:00",
-   "result": "4-2",
-   "outcome": "home",
-   "hit": true,
-   "settled_at": "2026-11-02T23:57:00+00:00"
-  },
-  {
-   "pred_id": "89aa955d18b3d7",
-   "league": "N1",
-   "kickoff": "2026-11-01",
-   "home": "Excelsior",
-   "away": "Twente",
-   "p": {
-    "home": 0.1965,
-    "draw": 0.2729,
-    "away": 0.5307
-   },
-   "xg": {
-    "home": 1.34,
-    "away": 1.63
-   },
-   "created_at": "2026-10-31T23:58:01+00:00",
-   "result": "0-9",
-   "outcome": "away",
-   "hit": true,
-   "settled_at": "2026-11-02T23:57:00+00:00"
-  },
-  {
-   "pred_id": "ac821d5fa82b04",
-   "league": "T1",
-   "kickoff": "2026-11-01",
-   "home": "Trabzonspor",
-   "away": "Gaziantep",
-   "p": {
-    "home": 0.7276,
-    "draw": 0.1821,
-    "away": 0.0903
-   },
-   "xg": {
-    "home": 1.97,
-    "away": 1.03
-   },
-   "created_at": "2026-10-31T23:58:01+00:00",
-   "result": "2-0",
-   "outcome": "home",
-   "hit": true,
-   "settled_at": "2026-11-02T23:57:00+00:00"
-  },
-  {
-   "pred_id": "ea24dcab16242b",
-   "league": "T1",
-   "kickoff": "2026-11-01",
-   "home": "Buyuksehyr",
-   "away": "Samsunspor",
-   "p": {
-    "home": 0.6121,
-    "draw": 0.29,
-    "away": 0.0979
-   },
-   "xg": {
-    "home": 1.67,
-    "away": 1.11
-   },
-   "created_at": "2026-10-31T23:58:01+00:00",
-   "result": "5-2",
-   "outcome": "home",
-   "hit": true,
-   "settled_at": "2026-11-02T23:57:00+00:00"
-  },
-  {
-   "pred_id": "723ac9ade8420d",
-   "league": "SC0",
-   "kickoff": "2026-11-01",
-   "home": "Falkirk",
-   "away": "Celtic",
-   "p": {
-    "home": 0.1081,
-    "draw": 0.166,
-    "away": 0.7259
-   },
-   "xg": {
-    "home": 1.13,
-    "away": 2.01
-   },
-   "created_at": "2026-10-31T23:58:01+00:00",
-   "result": "2-0",
-   "outcome": "home",
-   "hit": false,
-   "settled_at": "2026-11-01T21:16:07+00:00"
-  },
-  {
-   "pred_id": "fd06f022b88943",
-   "league": "SP1",
-   "kickoff": "2026-11-01",
-   "home": "Getafe",
-   "away": "Sevilla",
-   "p": {
-    "home": 0.3477,
-    "draw": 0.3313,
-    "away": 0.321
-   },
-   "xg": {
-    "home": 1.29,
-    "away": 0.96
-   },
-   "created_at": "2026-10-31T23:58:01+00:00",
-   "result": "3-1",
-   "outcome": "home",
-   "hit": true,
-   "settled_at": "2026-11-01T21:16:07+00:00"
-  },
-  {
-   "pred_id": "a5b7722082e9c8",
-   "league": "B1",
-   "kickoff": "2026-11-01",
-   "home": "Cercle Brugge",
-   "away": "Antwerp",
-   "p": {
-    "home": 0.3754,
-    "draw": 0.302,
-    "away": 0.3225
-   },
-   "xg": {
-    "home": 1.43,
-    "away": 1.31
-   },
-   "created_at": "2026-10-31T23:58:01+00:00",
-   "result": "2-1",
-   "outcome": "home",
-   "hit": true,
-   "settled_at": "2026-11-02T23:57:00+00:00"
-  },
-  {
-   "pred_id": "deb151c7daf6d3",
-   "league": "I1",
-   "kickoff": "2026-11-01",
-   "home": "Como",
-   "away": "Venezia",
-   "p": {
-    "home": 0.7874,
-    "draw": 0.1524,
-    "away": 0.0602
-   },
-   "xg": {
-    "home": 1.66,
-    "away": 0.87
-   },
-   "created_at": "2026-10-31T23:58:01+00:00",
-   "result": "1-0",
-   "outcome": "home",
-   "hit": true,
-   "settled_at": "2026-11-01T21:16:07+00:00"
-  },
-  {
-   "pred_id": "0371a4a9f8a698",
-   "league": "N1",
-   "kickoff": "2026-11-01",
-   "home": "Zwolle",
-   "away": "Den Haag",
-   "p": {
-    "home": 0.4933,
-    "draw": 0.2364,
-    "away": 0.2702
-   },
-   "xg": {
-    "home": 1.7,
-    "away": 1.49
-   },
-   "created_at": "2026-10-31T23:58:01+00:00",
-   "result": "1-0",
-   "outcome": "home",
-   "hit": true,
-   "settled_at": "2026-11-02T23:57:00+00:00"
-  },
-  {
-   "pred_id": "c82eb5df1a990f",
-   "league": "T1",
-   "kickoff": "2026-11-01",
-   "home": "Amedspor",
-   "away": "Eyupspor",
-   "p": {
-    "home": 0.7344,
-    "draw": 0.1754,
-    "away": 0.0901
-   },
-   "xg": {
-    "home": 1.46,
-    "away": 1.09
-   },
-   "created_at": "2026-10-31T23:58:01+00:00",
-   "result": "5-1",
-   "outcome": "home",
-   "hit": true,
-   "settled_at": "2026-11-02T23:57:00+00:00"
-  },
-  {
-   "pred_id": "670601b8871eb7",
-   "league": "N1",
-   "kickoff": "2026-10-31",
-   "home": "Cambuur",
-   "away": "Go Ahead Eagles",
-   "p": {
-    "home": 0.3158,
-    "draw": 0.3275,
-    "away": 0.3567
-   },
-   "xg": {
-    "home": 1.52,
-    "away": 1.94
-   },
-   "created_at": "2026-10-31T23:58:01+00:00",
-   "result": "4-0",
-   "outcome": "home",
-   "hit": false,
-   "settled_at": "2026-11-02T23:57:00+00:00"
   }
  ],
  "by_league": [
   {
    "league": "E1",
-   "n": 15,
-   "hit_rate": 0.4667
+   "n": 24,
+   "hit_rate": 0.4583
   },
   {
    "league": "I1",
-   "n": 11,
-   "hit_rate": 0.7273
+   "n": 13,
+   "hit_rate": 0.6923
   },
   {
-   "league": "F1",
-   "n": 9,
-   "hit_rate": 0.5556
+   "league": "SP1",
+   "n": 12,
+   "hit_rate": 0.5
+  },
+  {
+   "league": "N1",
+   "n": 11,
+   "hit_rate": 0.4545
   },
   {
    "league": "T1",
+   "n": 11,
+   "hit_rate": 0.6364
+  },
+  {
+   "league": "F1",
+   "n": 11,
+   "hit_rate": 0.4545
+  },
+  {
+   "league": "E0",
+   "n": 11,
+   "hit_rate": 0.5455
+  },
+  {
+   "league": "B1",
+   "n": 10,
+   "hit_rate": 0.6
+  },
+  {
+   "league": "D1",
+   "n": 10,
+   "hit_rate": 0.7
+  },
+  {
+   "league": "G1",
    "n": 8,
    "hit_rate": 0.625
+  },
+  {
+   "league": "SC0",
+   "n": 7,
+   "hit_rate": 0.5714
   },
   {
    "league": "P1",
    "n": 7,
    "hit_rate": 0.8571
-  },
-  {
-   "league": "N1",
-   "n": 6,
-   "hit_rate": 0.5
-  },
-  {
-   "league": "SP1",
-   "n": 6,
-   "hit_rate": 0.6667
-  },
-  {
-   "league": "SC0",
-   "n": 6,
-   "hit_rate": 0.5
-  },
-  {
-   "league": "G1",
-   "n": 6,
-   "hit_rate": 0.5
-  },
-  {
-   "league": "B1",
-   "n": 5,
-   "hit_rate": 0.4
-  },
-  {
-   "league": "E0",
-   "n": 4,
-   "hit_rate": 0.5
-  },
-  {
-   "league": "D1",
-   "n": 3,
-   "hit_rate": 0.6667
   }
  ]
 }

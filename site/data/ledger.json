@@ -1,21 +1,21 @@
 {
  "stats": {
-  "bankroll": 1040.35,
+  "bankroll": 1016.69,
   "initial_bankroll": 1000.0,
-  "pnl_total": 40.35,
-  "n_bets": 71,
-  "n_open": 22,
-  "n_settled": 49,
-  "n_won": 13,
-  "win_rate": 0.2653,
-  "staked": 245.3,
-  "roi": 0.1645,
-  "pnl_realized": 40.35,
-  "avg_odds": 3.771,
-  "avg_edge": 0.0629,
-  "clv_avg": 0.0068,
+  "pnl_total": 16.69,
+  "n_bets": 73,
+  "n_open": 8,
+  "n_settled": 65,
+  "n_won": 16,
+  "win_rate": 0.2462,
+  "staked": 298.48,
+  "roi": 0.0559,
+  "pnl_realized": 16.69,
+  "avg_odds": 3.696,
+  "avg_edge": 0.0626,
+  "clv_avg": 0.0064,
   "max_drawdown": 0.0667,
-  "exposure": 74.77
+  "exposure": 26.23
  },
  "bets": [
   {
@@ -1437,9 +1437,13 @@
    "kelly_full": 0.0522,
    "bet_id": "d4cdb711b87cf1",
    "created_at": "2026-11-17T23:54:29+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 1.962
+   "status": "lost",
+   "pnl": -5.99,
+   "closing_price": 1.962,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1034.36,
+   "result": "3-1",
+   "clv": 0.01937
   },
   {
    "league": "E1",
@@ -1463,9 +1467,13 @@
    "kelly_full": 0.0347,
    "bet_id": "7b465ac1e19102",
    "created_at": "2026-11-18T14:18:38+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 3.52
+   "status": "lost",
+   "pnl": -3.98,
+   "closing_price": 3.52,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1030.38,
+   "result": "0-1",
+   "clv": 0.0
   },
   {
    "league": "T1",
@@ -1489,9 +1497,13 @@
    "kelly_full": 0.023,
    "bet_id": "97d49e5da8788c",
    "created_at": "2026-11-18T14:18:38+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 4.23
+   "status": "lost",
+   "pnl": -2.65,
+   "closing_price": 4.23,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1027.73,
+   "result": "0-2",
+   "clv": 0.0
   },
   {
    "league": "SP1",
@@ -1515,9 +1527,13 @@
    "kelly_full": 0.0277,
    "bet_id": "22c86373a9fc9f",
    "created_at": "2026-11-18T14:18:38+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 3.42
+   "status": "lost",
+   "pnl": -3.17,
+   "closing_price": 3.42,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1024.56,
+   "result": "3-1",
+   "clv": 0.0
   },
   {
    "league": "T1",
@@ -1541,9 +1557,13 @@
    "kelly_full": 0.0205,
    "bet_id": "dd7a5dc3cbd6e7",
    "created_at": "2026-11-18T14:18:38+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 3.54
+   "status": "lost",
+   "pnl": -2.35,
+   "closing_price": 3.54,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1022.21,
+   "result": "1-0",
+   "clv": 0.0
   },
   {
    "league": "E1",
@@ -1567,9 +1587,13 @@
    "kelly_full": 0.0247,
    "bet_id": "0fdb3ce569c779",
    "created_at": "2026-11-18T14:18:38+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 3.1
+   "status": "lost",
+   "pnl": -2.83,
+   "closing_price": 3.1,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1019.38,
+   "result": "2-1",
+   "clv": 0.0
   },
   {
    "league": "D1",
@@ -1593,8 +1617,11 @@
    "kelly_full": 0.0167,
    "bet_id": "d35d42e988b3bf",
    "created_at": "2026-11-18T23:27:59+00:00",
-   "status": "open",
-   "pnl": 0.0
+   "status": "lost",
+   "pnl": -1.92,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1017.46,
+   "result": "4-0"
   },
   {
    "league": "SC0",
@@ -1646,8 +1673,11 @@
    "kelly_full": 0.0646,
    "bet_id": "2edf7811fe63cb",
    "created_at": "2026-11-18T23:27:59+00:00",
-   "status": "open",
-   "pnl": 0.0
+   "status": "lost",
+   "pnl": -7.41,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1010.05,
+   "result": "2-2"
   },
   {
    "league": "E0",
@@ -1671,8 +1701,11 @@
    "kelly_full": 0.0393,
    "bet_id": "d2d353570e7e07",
    "created_at": "2026-11-18T23:27:59+00:00",
-   "status": "open",
-   "pnl": 0.0
+   "status": "won",
+   "pnl": 6.4,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1016.45,
+   "result": "2-0"
   },
   {
    "league": "E0",
@@ -1696,8 +1729,11 @@
    "kelly_full": 0.0205,
    "bet_id": "fa37a69960677b",
    "created_at": "2026-11-18T23:27:59+00:00",
-   "status": "open",
-   "pnl": 0.0
+   "status": "lost",
+   "pnl": -2.35,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1014.1,
+   "result": "3-2"
   },
   {
    "league": "N1",
@@ -1721,8 +1757,11 @@
    "kelly_full": 0.0189,
    "bet_id": "27f1d7c93d31c9",
    "created_at": "2026-11-18T23:27:59+00:00",
-   "status": "open",
-   "pnl": 0.0
+   "status": "lost",
+   "pnl": -2.17,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1011.93,
+   "result": "1-3"
   },
   {
    "league": "E1",
@@ -1746,8 +1785,11 @@
    "kelly_full": 0.0375,
    "bet_id": "3a513b08a4af2d",
    "created_at": "2026-11-18T23:27:59+00:00",
-   "status": "open",
-   "pnl": 0.0
+   "status": "lost",
+   "pnl": -4.3,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1007.63,
+   "result": "2-1"
   },
   {
    "league": "B1",
@@ -1771,8 +1813,11 @@
    "kelly_full": 0.019,
    "bet_id": "578848b7e85833",
    "created_at": "2026-11-18T23:27:59+00:00",
-   "status": "open",
-   "pnl": 0.0
+   "status": "won",
+   "pnl": 5.67,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1013.3,
+   "result": "2-2"
   },
   {
    "league": "E1",
@@ -1824,7 +1869,7 @@
    "created_at": "2026-11-22T22:36:26+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 3.23
+   "closing_price": 3.29
   },
   {
    "league": "E1",
@@ -1850,7 +1895,7 @@
    "created_at": "2026-11-22T22:36:26+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 4.87
+   "closing_price": 4.89
   },
   {
    "league": "E1",
@@ -1876,7 +1921,7 @@
    "created_at": "2026-11-22T22:36:26+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 2.41
+   "closing_price": 2.39
   },
   {
    "league": "SP1",
@@ -1900,9 +1945,13 @@
    "kelly_full": 0.0257,
    "bet_id": "84922cddb53635",
    "created_at": "2026-11-22T22:36:26+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 3.56
+   "status": "won",
+   "pnl": 7.82,
+   "closing_price": 3.56,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1021.12,
+   "result": "1-1",
+   "clv": 0.02809
   },
   {
    "league": "T1",
@@ -1926,9 +1975,13 @@
    "kelly_full": 0.0232,
    "bet_id": "bdce88dea83e02",
    "created_at": "2026-11-22T22:36:26+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 3.95
+   "status": "lost",
+   "pnl": -2.65,
+   "closing_price": 3.95,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1018.47,
+   "result": "4-2",
+   "clv": -0.02025
   },
   {
    "league": "SC0",
@@ -1954,7 +2007,7 @@
    "created_at": "2026-11-22T22:36:26+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 4.91
+   "closing_price": 4.99
   },
   {
    "league": "E0",
@@ -1978,9 +2031,13 @@
    "kelly_full": 0.0156,
    "bet_id": "9983df6b4bcb6d",
    "created_at": "2026-11-22T22:36:26+00:00",
-   "status": "open",
-   "pnl": 0.0,
-   "closing_price": 3.5
+   "status": "lost",
+   "pnl": -1.78,
+   "closing_price": 3.5,
+   "settled_at": "2026-11-24T03:23:38+00:00",
+   "bankroll_after": 1016.69,
+   "result": "4-0",
+   "clv": 0.01429
   },
   {
    "league": "E1",
@@ -2004,6 +2061,57 @@
    "kelly_full": 0.0268,
    "bet_id": "cd5cd69d086e2e",
    "created_at": "2026-11-23T16:12:08+00:00",
+   "status": "open",
+   "pnl": 0.0,
+   "closing_price": 2.61
+  },
+  {
+   "league": "E1",
+   "home": "Wolves",
+   "away": "Derby",
+   "kickoff": "2026-11-24",
+   "market": "1X2",
+   "selection": "draw",
+   "line": null,
+   "label": "X (nul)",
+   "price": 5.6,
+   "p_model": 0.2718,
+   "p_fair": 0.1949,
+   "p_sharp": 0.162,
+   "edge": 0.0915,
+   "book": "pinnacle",
+   "n_books": 0,
+   "multi_book": false,
+   "stake_scale": 0.5,
+   "stake": 2.23,
+   "kelly_full": 0.0199,
+   "bet_id": "258fa217cc6377",
+   "created_at": "2026-11-24T03:25:15+00:00",
+   "status": "open",
+   "pnl": 0.0
+  },
+  {
+   "league": "E1",
+   "home": "Portsmouth",
+   "away": "West Ham",
+   "kickoff": "2026-11-24",
+   "market": "1X2",
+   "selection": "draw",
+   "line": null,
+   "label": "X (nul)",
+   "price": 3.94,
+   "p_model": 0.338,
+   "p_fair": 0.2699,
+   "p_sharp": 0.2407,
+   "edge": 0.0633,
+   "book": "pinnacle",
+   "n_books": 0,
+   "multi_book": false,
+   "stake_scale": 0.5,
+   "stake": 2.41,
+   "kelly_full": 0.0216,
+   "bet_id": "43ce95b5a5c48a",
+   "created_at": "2026-11-24T03:25:15+00:00",
    "status": "open",
    "pnl": 0.0
   }
@@ -2208,6 +2316,70 @@
   {
    "ts": "2026-11-22T22:35:01+00:00",
    "bankroll": 1040.35
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1034.36
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1030.38
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1027.73
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1024.56
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1022.21
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1019.38
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1017.46
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1010.05
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1016.45
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1014.1
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1011.93
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1007.63
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1013.3
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1021.12
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1018.47
+  },
+  {
+   "ts": "2026-11-24T03:23:38+00:00",
+   "bankroll": 1016.69
   }
  ]
 }
