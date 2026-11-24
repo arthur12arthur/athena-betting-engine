@@ -3,8 +3,8 @@
   "bankroll": 1016.69,
   "initial_bankroll": 1000.0,
   "pnl_total": 16.69,
-  "n_bets": 73,
-  "n_open": 8,
+  "n_bets": 74,
+  "n_open": 9,
   "n_settled": 65,
   "n_won": 16,
   "win_rate": 0.2462,
@@ -15,7 +15,7 @@
   "avg_edge": 0.0626,
   "clv_avg": 0.0064,
   "max_drawdown": 0.0667,
-  "exposure": 26.23
+  "exposure": 30.55
  },
  "bets": [
   {
@@ -1869,7 +1869,7 @@
    "created_at": "2026-11-22T22:36:26+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 3.29
+   "closing_price": 3.2
   },
   {
    "league": "E1",
@@ -1895,7 +1895,7 @@
    "created_at": "2026-11-22T22:36:26+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 4.89
+   "closing_price": 5.16
   },
   {
    "league": "E1",
@@ -1921,7 +1921,7 @@
    "created_at": "2026-11-22T22:36:26+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 2.39
+   "closing_price": 2.25
   },
   {
    "league": "SP1",
@@ -2007,7 +2007,7 @@
    "created_at": "2026-11-22T22:36:26+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 4.99
+   "closing_price": 5.75
   },
   {
    "league": "E0",
@@ -2063,7 +2063,7 @@
    "created_at": "2026-11-23T16:12:08+00:00",
    "status": "open",
    "pnl": 0.0,
-   "closing_price": 2.61
+   "closing_price": 2.84
   },
   {
    "league": "E1",
@@ -2088,7 +2088,8 @@
    "bet_id": "258fa217cc6377",
    "created_at": "2026-11-24T03:25:15+00:00",
    "status": "open",
-   "pnl": 0.0
+   "pnl": 0.0,
+   "closing_price": 5.73
   },
   {
    "league": "E1",
@@ -2112,6 +2113,32 @@
    "kelly_full": 0.0216,
    "bet_id": "43ce95b5a5c48a",
    "created_at": "2026-11-24T03:25:15+00:00",
+   "status": "open",
+   "pnl": 0.0,
+   "closing_price": 3.97
+  },
+  {
+   "league": "SC0",
+   "home": "Hibernian",
+   "away": "Dundee",
+   "kickoff": "2026-11-24",
+   "market": "OU25",
+   "selection": "under",
+   "line": 2.5,
+   "label": "Moins de 2,5 buts",
+   "price": 2.35,
+   "p_model": 0.5456,
+   "p_fair": 0.4477,
+   "p_sharp": 0.4057,
+   "edge": 0.052,
+   "book": "pinnacle",
+   "n_books": 0,
+   "multi_book": false,
+   "stake_scale": 0.5,
+   "stake": 4.32,
+   "kelly_full": 0.0386,
+   "bet_id": "065cf30af913be",
+   "created_at": "2026-11-24T16:01:48+00:00",
    "status": "open",
    "pnl": 0.0
   }

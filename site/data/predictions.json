@@ -1,8 +1,8 @@
 {
- "generated_at": "2026-11-24T03:25:20+00:00",
+ "generated_at": "2026-11-24T16:01:50+00:00",
  "model": {
   "version": "athena-1.0-20261124",
-  "trained_at": "2026-11-24T03:23:58.212528",
+  "trained_at": "2026-11-24T16:00:34.237980",
   "w_dc": 0.25,
   "temperature": 0.851,
   "calibration": {
@@ -84,18 +84,18 @@
     1.4
    ],
    "sharp_odds": {
-    "home": 2.45,
-    "away": 3.02,
-    "draw": 3.37
+    "home": 2.51,
+    "away": 3.04,
+    "draw": 3.3
    },
    "sharp_totals": {
-    "over": 2.12,
-    "under": 1.76
+    "over": 2.3,
+    "under": 1.67
    },
    "sharp_handicap": {
     "line": 0.0,
-    "home": 1.75,
-    "away": 2.16
+    "home": 1.78,
+    "away": 2.15
    },
    "ah": {
     "line": 0.0,
@@ -154,25 +154,25 @@
     1.0
    ],
    "sharp_odds": {
-    "home": 1.54,
-    "away": 5.32,
-    "draw": 4.9
+    "home": 1.5,
+    "away": 5.84,
+    "draw": 5.06
    },
    "sharp_totals": {
-    "over": 1.42,
-    "under": 2.92
+    "over": 1.41,
+    "under": 2.99
    },
    "sharp_handicap": {
-    "line": 0.0,
-    "home": 1.24,
-    "away": 4.27
+    "line": -0.25,
+    "home": 1.35,
+    "away": 3.38
    },
    "ah": {
-    "line": 0.0,
-    "home": 0.6559,
-    "away": 0.3441,
-    "fair_home": 1.52,
-    "fair_away": 2.91
+    "line": -0.25,
+    "home": 0.5751,
+    "away": 0.4249,
+    "fair_home": 1.74,
+    "fair_away": 2.35
    }
   },
   {
@@ -224,18 +224,18 @@
     0.6
    ],
    "sharp_odds": {
-    "home": 2.78,
-    "away": 2.69,
-    "draw": 3.29
+    "home": 3.06,
+    "away": 2.56,
+    "draw": 3.2
    },
    "sharp_totals": {
-    "over": 2.04,
-    "under": 1.84
+    "over": 2.17,
+    "under": 1.75
    },
    "sharp_handicap": {
     "line": 0.0,
-    "home": 1.98,
-    "away": 1.91
+    "home": 2.15,
+    "away": 1.79
    },
    "ah": {
     "line": 0.0,
@@ -294,18 +294,18 @@
     0.8
    ],
    "sharp_odds": {
-    "home": 1.47,
-    "away": 6.43,
-    "draw": 4.89
+    "home": 1.45,
+    "away": 6.57,
+    "draw": 5.16
    },
    "sharp_totals": {
-    "over": 1.52,
-    "under": 2.61
+    "over": 1.45,
+    "under": 2.84
    },
    "sharp_handicap": {
     "line": -0.25,
-    "home": 1.32,
-    "away": 3.55
+    "home": 1.31,
+    "away": 3.67
    },
    "ah": {
     "line": -0.25,
@@ -364,18 +364,18 @@
     2.0
    ],
    "sharp_odds": {
-    "home": 2.0,
-    "away": 3.65,
-    "draw": 3.78
+    "home": 2.04,
+    "away": 3.7,
+    "draw": 3.69
    },
    "sharp_totals": {
-    "over": 1.68,
-    "under": 2.26
+    "over": 1.67,
+    "under": 2.3
    },
    "sharp_handicap": {
     "line": 0.0,
-    "home": 1.49,
-    "away": 2.73
+    "home": 1.5,
+    "away": 2.74
    },
    "ah": {
     "line": 0.0,
@@ -434,18 +434,18 @@
     0.4
    ],
    "sharp_odds": {
-    "home": 4.14,
-    "away": 1.84,
-    "draw": 3.94
+    "home": 4.29,
+    "away": 1.83,
+    "draw": 3.97
    },
    "sharp_totals": {
     "over": 1.82,
-    "under": 2.05
+    "under": 2.07
    },
    "sharp_handicap": {
     "line": 0.0,
-    "home": 3.15,
-    "away": 1.39
+    "home": 3.23,
+    "away": 1.38
    },
    "ah": {
     "line": 0.0,
@@ -453,8 +453,7 @@
     "away": 0.592,
     "fair_home": 2.45,
     "fair_away": 1.69
-   },
-   "briefing": "Ce match de Championship oppose Portsmouth à West Ham, avec les Hammers cherchant"
+   }
   },
   {
    "league": "E1",
@@ -505,18 +504,18 @@
     2.0
    ],
    "sharp_odds": {
-    "home": 2.57,
-    "away": 2.66,
-    "draw": 3.69
+    "home": 2.6,
+    "away": 2.72,
+    "draw": 3.61
    },
    "sharp_totals": {
-    "over": 1.7,
-    "under": 2.22
+    "over": 1.73,
+    "under": 2.19
    },
    "sharp_handicap": {
     "line": 0.0,
     "home": 1.91,
-    "away": 1.98
+    "away": 2.0
    },
    "ah": {
     "line": 0.0,
@@ -575,18 +574,18 @@
     0.8
    ],
    "sharp_odds": {
-    "home": 1.65,
-    "away": 4.99,
-    "draw": 4.25
+    "home": 1.55,
+    "away": 5.75,
+    "draw": 4.64
    },
    "sharp_totals": {
-    "over": 1.69,
-    "under": 2.23
+    "over": 1.64,
+    "under": 2.35
    },
    "sharp_handicap": {
     "line": 0.0,
-    "home": 1.28,
-    "away": 3.87
+    "home": 1.23,
+    "away": 4.54
    },
    "ah": {
     "line": 0.0,
@@ -594,7 +593,8 @@
     "away": 0.3869,
     "fair_home": 1.63,
     "fair_away": 2.58
-   }
+   },
+   "briefing": "Hibernian cherchera à consolider sa position en championnat face à un"
   },
   {
    "league": "E1",
@@ -645,18 +645,18 @@
     0.8
    ],
    "sharp_odds": {
-    "home": 1.33,
-    "away": 9.16,
-    "draw": 5.6
+    "home": 1.32,
+    "away": 9.92,
+    "draw": 5.73
    },
    "sharp_totals": {
-    "over": 1.61,
-    "under": 2.39
+    "over": 1.7,
+    "under": 2.25
    },
    "sharp_handicap": {
     "line": -0.5,
-    "home": 1.32,
-    "away": 3.56
+    "home": 1.31,
+    "away": 3.7
    },
    "ah": {
     "line": -0.5,
@@ -664,8 +664,7 @@
     "away": 0.4393,
     "fair_home": 1.78,
     "fair_away": 2.28
-   },
-   "briefing": "Les Wolves, favoris à domicile, chercheront à confirmer leur supérior"
+   }
   },
   {
    "league": "SC0",
@@ -716,25 +715,25 @@
     1.2
    ],
    "sharp_odds": {
-    "home": 1.24,
-    "away": 10.85,
-    "draw": 6.58
+    "home": 1.21,
+    "away": 12.13,
+    "draw": 7.24
    },
    "sharp_totals": {
-    "over": 1.41,
-    "under": 2.88
+    "over": 1.32,
+    "under": 3.4
    },
    "sharp_handicap": {
-    "line": -0.75,
-    "home": 1.26,
-    "away": 3.84
+    "line": -1.0,
+    "home": 1.27,
+    "away": 3.81
    },
    "ah": {
-    "line": -0.75,
-    "home": 0.7934,
-    "away": 0.2066,
-    "fair_home": 1.26,
-    "fair_away": 4.84
+    "line": -1.0,
+    "home": 0.737,
+    "away": 0.263,
+    "fair_home": 1.36,
+    "fair_away": 3.8
    }
   },
   {
@@ -786,18 +785,18 @@
     1.8
    ],
    "sharp_odds": {
-    "home": 2.64,
-    "away": 2.46,
-    "draw": 3.82
+    "home": 2.7,
+    "away": 2.45,
+    "draw": 3.73
    },
    "sharp_totals": {
-    "over": 1.7,
-    "under": 2.18
+    "over": 1.78,
+    "under": 2.08
    },
    "sharp_handicap": {
     "line": 0.0,
-    "home": 2.0,
-    "away": 1.85
+    "home": 2.03,
+    "away": 1.84
    },
    "ah": {
     "line": 0.0,
@@ -861,13 +860,13 @@
     "draw": 3.63
    },
    "sharp_totals": {
-    "over": 1.83,
-    "under": 2.01
+    "over": 1.84,
+    "under": 2.02
    },
    "sharp_handicap": {
     "line": 0.0,
-    "home": 1.88,
-    "away": 1.98
+    "home": 1.89,
+    "away": 1.99
    },
    "ah": {
     "line": 0.0,
@@ -926,18 +925,18 @@
     1.8
    ],
    "sharp_odds": {
-    "home": 3.63,
-    "away": 2.0,
-    "draw": 3.68
+    "home": 3.5,
+    "away": 2.06,
+    "draw": 3.62
    },
    "sharp_totals": {
-    "over": 1.72,
-    "under": 2.14
+    "over": 1.77,
+    "under": 2.1
    },
    "sharp_handicap": {
     "line": 0.0,
-    "home": 2.71,
-    "away": 1.48
+    "home": 2.61,
+    "away": 1.52
    },
    "ah": {
     "line": 0.0,
@@ -996,18 +995,18 @@
     0.6
    ],
    "sharp_odds": {
-    "home": 2.26,
-    "away": 3.29,
-    "draw": 3.33
+    "home": 2.24,
+    "away": 3.32,
+    "draw": 3.35
    },
    "sharp_totals": {
     "over": 2.0,
-    "under": 1.84
+    "under": 1.85
    },
    "sharp_handicap": {
     "line": 0.0,
     "home": 1.61,
-    "away": 2.36
+    "away": 2.4
    },
    "ah": {
     "line": 0.0,
@@ -1636,52 +1635,27 @@
  ],
  "bets": [
   {
-   "league": "E1",
-   "home": "Wolves",
-   "away": "Derby",
+   "league": "SC0",
+   "home": "Hibernian",
+   "away": "Dundee",
    "kickoff": "2026-11-24",
-   "market": "1X2",
-   "selection": "draw",
-   "line": null,
-   "label": "X (nul)",
-   "price": 5.6,
-   "p_model": 0.2718,
-   "p_fair": 0.1949,
-   "p_sharp": 0.162,
-   "edge": 0.0915,
+   "market": "OU25",
+   "selection": "under",
+   "line": 2.5,
+   "label": "Moins de 2,5 buts",
+   "price": 2.35,
+   "p_model": 0.5456,
+   "p_fair": 0.4477,
+   "p_sharp": 0.4057,
+   "edge": 0.052,
    "book": "pinnacle",
    "n_books": 0,
    "multi_book": false,
    "stake_scale": 0.5,
-   "stake": 2.23,
-   "kelly_full": 0.0199,
-   "bet_id": "258fa217cc6377",
-   "created_at": "2026-11-24T03:25:15+00:00",
-   "status": "open",
-   "pnl": 0.0
-  },
-  {
-   "league": "E1",
-   "home": "Portsmouth",
-   "away": "West Ham",
-   "kickoff": "2026-11-24",
-   "market": "1X2",
-   "selection": "draw",
-   "line": null,
-   "label": "X (nul)",
-   "price": 3.94,
-   "p_model": 0.338,
-   "p_fair": 0.2699,
-   "p_sharp": 0.2407,
-   "edge": 0.0633,
-   "book": "pinnacle",
-   "n_books": 0,
-   "multi_book": false,
-   "stake_scale": 0.5,
-   "stake": 2.41,
-   "kelly_full": 0.0216,
-   "bet_id": "43ce95b5a5c48a",
-   "created_at": "2026-11-24T03:25:15+00:00",
+   "stake": 4.32,
+   "kelly_full": 0.0386,
+   "bet_id": "065cf30af913be",
+   "created_at": "2026-11-24T16:01:48+00:00",
    "status": "open",
    "pnl": 0.0
   }
